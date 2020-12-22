@@ -1,17 +1,42 @@
 {
-  "name": "new-bridgetown-site",
-  "version": "1.0.0",
-  "private": true,
+  "name": "stardew-valley-companion-app",
+  "version": "0.0.0",
+  "description": "This web application provides a user a companion app to the Stardew Valley game.",
+  "private": false,
   "scripts": {
+    "markdown": "markdownlint src/**/*.md .github/**/*.md CHANGELOG.md CODE_OF_CONDUCT.md CONTRIBUTING.md README.md -c .markdownlint.yml",
+    "html": "html-linter --config html-linter.json",
+    "javascript": "eslint frontend/javascript/*.js frontend/javascript/controllers/*.js frontend/javascript/generators/data/*.js frontend/javascript/utils/*.js start.js sync.js webpack.config.js tailwind.config.js postcss.config.js",
+    "css": "stylelint frontend/**/*.scss",
     "build": "bundle exec bridgetown build",
     "serve": "bundle exec bridgetown serve",
-    "clean": "bundle exec bridgetown clean",
     "webpack-build": "webpack --mode production",
     "webpack-dev": "webpack --mode development -w",
-    "deploy": "yarn clean && yarn webpack-build && yarn build",
+    "deploy": "yarn webpack-build && yarn build",
     "sync": "node sync.js",
     "start": "node start.js"
   },
+  "homepage": "https://github.com/chiefpansancolt/stardew-valley-companion-app",
+  "bugs": {
+    "url": "https://github.com/chiefpansancolt/stardew-valley-companion-app/issues",
+    "email": "github@chiefpansancolt.live"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chiefpansancolt/stardew-valley-companion-app"
+  },
+  "author": {
+    "name": "Christopher Pezza",
+    "email": "github@chiefpansancolt.live"
+  },
+  "contributors": [
+    {
+      "name": "Christopher Pezza",
+      "email": "github@chiefpansancolt.live",
+      "url": "https://chiefpansancolt.live"
+    }
+  ],
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
