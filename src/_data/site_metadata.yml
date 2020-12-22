@@ -4,7 +4,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.metadata.myvariable }}.
 
-title: Your awesome title
-tagline: This site is totally awesome
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+title: Stardew Valley Companion App
+tagline: A campanion App to Stardew Valley Game
+email: stardewvalleycompanionapp@chiefpansancolt.live
+description: This web application provides a user a companion app to the Stardew Valley game to all you to track items and tasks completed in the game.
+copyright: "&copy; 2020 Stardew Valley Companion App. All rights reserved."
