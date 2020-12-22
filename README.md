@@ -7,9 +7,9 @@ This web application provides a user a companion app to the Stardew Valley game 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-![Setup](https://github.com/chiefpansancolt/developer-file-generator/workflows/Setup/badge.svg)
-![Lints](https://github.com/chiefpansancolt/developer-file-generator/workflows/Lints/badge.svg)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/60fe0d1c-b295-4875-af15-0cef406641fd/deploy-status)](https://app.netlify.com/sites/app-devgenerator/deploys)
+![Setup](https://github.com/chiefpansancolt/stardew-valley-companion-app/workflows/Setup/badge.svg)
+![Lints](https://github.com/chiefpansancolt/stardew-valley-companion-app/workflows/Lints/badge.svg)
+![CodeQL](https://github.com/chiefpansancolt/stardew-valley-companion-app/workflows/CodeQL/badge.svg)
 
 ## Usage
 
