@@ -10,13 +10,13 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     amazing_print (1.2.2)
-    bridgetown (0.18.6)
-      bridgetown-builder (= 0.18.6)
-      bridgetown-core (= 0.18.6)
-      bridgetown-paginate (= 0.18.6)
-    bridgetown-builder (0.18.6)
-      bridgetown-core (= 0.18.6)
-    bridgetown-core (0.18.6)
+    bridgetown (0.19.0)
+      bridgetown-builder (= 0.19.0)
+      bridgetown-core (= 0.19.0)
+      bridgetown-paginate (= 0.19.0)
+    bridgetown-builder (0.19.0)
+      bridgetown-core (= 0.19.0)
+    bridgetown-core (0.19.0)
       activesupport (~> 6.0)
       addressable (~> 2.4)
       amazing_print (~> 1.2)
@@ -38,11 +38,12 @@ GEM
       terminal-table (~> 1.8)
       thor (~> 1.0)
       tilt (~> 2.0)
+      webrick (~> 1.7)
     bridgetown-inline-svg (1.1.1)
       bridgetown (>= 0.15, < 2.0)
       svg_optimizer (~> 0.2.5)
-    bridgetown-paginate (0.18.6)
-      bridgetown-core (= 0.18.6)
+    bridgetown-paginate (0.19.0)
+      bridgetown-core (= 0.19.0)
     bridgetown-seo-tag (3.0.5)
       bridgetown (>= 0.15.0, < 2.0)
     colorator (1.1.0)
@@ -54,7 +55,6 @@ GEM
     faraday_middleware (1.0.0)
       faraday (~> 1.0)
     ffi (1.14.2)
-    ffi (1.14.2-x64-mingw32)
     forwardable-extended (2.6.0)
     hash_with_dot_access (1.1.0)
       activesupport (>= 5.0.0, < 7.0)
@@ -77,8 +77,6 @@ GEM
     multipart-post (2.1.1)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
-    nokogiri (1.10.10-x64-mingw32)
-      mini_portile2 (~> 2.4.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (4.0.6)
@@ -98,11 +96,11 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.7.0)
+    webrick (1.7.0)
     zeitwerk (2.4.2)
 
 PLATFORMS
-  x64-mingw32
-  x86_64-linux
+  x86_64-darwin-19
 
 DEPENDENCIES
   bridgetown
@@ -110,4 +108,4 @@ DEPENDENCIES
   bridgetown-seo-tag
 
 BUNDLED WITH
-   2.2.2
+   2.2.3
