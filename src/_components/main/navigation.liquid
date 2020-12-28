@@ -1,56 +1,96 @@
-<nav class="bg-blue-700" aria-label="Global">
-    <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+<nav aria-label="Global" data-controller="mobile"
+     data-mobile-hide-class="hidden"
+     data-mobile-invisible-class="opacity-0 scale-95"
+     data-mobile-visible-class="opacity-100 scale-100"
+     data-mobile-entering-class="ease-out duration-100"
+     data-mobile-enter-timeout-value="100"
+     data-mobile-leaving-class="ease-in duration-75"
+     data-mobile-leave-timeout-value="75">
+    <div class="px-2 sm:px-4 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex items-center px-2 lg:px-0">
-                <div class="flex-shrink-0 flex items-center">
+                <a href="/" class="flex-shrink-0 flex items-center">
                     <img class="h-8 w-auto" src="/images/SDV_logo_3x.png" alt="Workflow">
                     <span class="text-white">&nbsp;| Companion</span>
-                </div>
+                </a>
                 <div class="hidden lg:ml-8 lg:flex lg:space-x-4">
-                    <a href="#" class="rounded-md py-2 px-3 text-sm font-medium text-white hover:bg-blue-400">
-                        Dashboard
+                    <a href="/" class="rounded-md py-2 px-3 text-sm font-medium text-white hover:bg-blue-400">
+                        Home
                     </a>
-
-                    <a href="#" class="rounded-md py-2 px-3 text-sm font-medium text-white hover:bg-blue-400">
-                        Jobs
+                    <a href="/about" class="rounded-md py-2 px-3 text-sm font-medium text-white hover:bg-blue-400">
+                        About
                     </a>
-
-                    <a href="#" class="rounded-md py-2 px-3 text-sm font-medium text-white hover:bg-blue-400">
-                        Applicants
-                    </a>
-
-                    <a href="#" class="rounded-md py-2 px-3 text-sm font-medium text-white hover:bg-blue-400">
-                        Company
-                    </a>
+                    <div class="relative" data-controller="dropdown" data-playthroughs-target="navigation"
+                         data-action="click->dropdown#toggle click@window->dropdown#hide"
+                         data-dropdown-hide-class="hidden"
+                         data-dropdown-invisible-class="opacity-0 scale-95"
+                         data-dropdown-visible-class="opacity-100 scale-100"
+                         data-dropdown-entering-class="ease-out duration-150"
+                         data-dropdown-enter-timeout-value="100"
+                         data-dropdown-leaving-class="ease-in duration-100"
+                         data-dropdown-leave-timeout-value="75">
+                        <button type="button" class="group bg-blue-700 rounded-md text-white inline-flex items-center py-2 px-3 text-sm font-medium hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <span>Active Trackings</span>
+                            {% svg "/images/heroicons/outline/chevron-down.svg" class="ml-2 h-5 w-5 text-white transition ease-in-out duration-150"%}
+                        </button>
+                        <div data-dropdown-target="menu"
+                             class="hidden absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-xs sm:px-0">
+                            <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                                <div data-playthroughs-target="container" class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end">
-
+            <div class="flex-1 flex items-center justify-center px-2 lg:ml-6 lg:justify-end"></div>
+            <div class="mr-4 flex items-center">
+                <button class="hidden mr-4 flex-shrink-0 bg-blue-700 p-1 text-blue-200 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-500 focus:ring-white"
+                        data-controller="popover" data-action="mouseover->popover#mouseOver mouseout->popover#mouseOut click->playthroughs#remove"
+                        data-popover-hide-class="hidden" data-playthroughs-target="minus">
+                    <span class="sr-only">Minus</span>
+                    {% svg "/images/heroicons/outline/minus-circle.svg" class="h-6 w-6" %}
+                    <span data-popover-target="content" class="hidden p-2 absolute z-50 ml-2 text-sm rounded-lg bg-blue-400 text-gray-900">Remove current Playthrough Tracking Data!</span>
+                </button>
+                <div data-controller="modal" data-modal-allow-close-value="true" data-modal-hide-class="hidden"
+                     data-modal-entering-class="ease-out duration-300" data-modal-leaving-class="ease-in duration-200"
+                     data-modal-to-background-class="opacity-100" data-modal-from-background-class="opacity-0"
+                     data-modal-to-view-class="opacity-100 translate-y-0 sm:scale-100"
+                     data-modal-from-view-class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                     data-modal-success-save-value="false" data-playthroughs-target="addWrapper">
+                    <button class="mr-4 flex-shrink-0 bg-blue-700 p-1 text-blue-200 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-500 focus:ring-white"
+                            data-controller="popover" data-action="mouseover->popover#mouseOver mouseout->popover#mouseOut click->modal#open"
+                            data-popover-hide-class="hidden">
+                        <span class="sr-only">Add</span>
+                        {% svg "/images/heroicons/outline/plus-circle.svg" class="h-6 w-6" %}
+                        <span data-popover-target="content" class="hidden p-2 absolute z-50 ml-2 text-sm rounded-lg bg-blue-400 text-gray-900">Add a new Playthrough Tracking!</span>
+                    </button>
+                    {% render "modals/add_tracking" %}
+                </div>
+                <a href="https://github.com/chiefpansancolt/stardew-valley-companion-app/issues/new?assignees=chiefpansancolt&labels=bug%2C+new&template=bug_report.md&title="
+                   class="flex-shrink-0 bg-blue-700 p-1 text-blue-200 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-500 focus:ring-white"
+                   data-controller="popover" data-action="mouseover->popover#mouseOver mouseout->popover#mouseOut"
+                   data-popover-hide-class="hidden">
+                    <span class="sr-only">Report Issues</span>
+                    {% svg "/images/heroicons/outline/shield-exclamation.svg" class="h-6 w-6" %}
+                    <span data-popover-target="content" class="hidden p-2 absolute z-50 ml-2 text-sm rounded-lg bg-blue-400 text-gray-900">Report a Bug!</span>
+                </a>
             </div>
             <div class="flex items-center lg:hidden">
                 <button class="inline-flex items-center justify-center p-2 rounded-md text-blue-200 hover:text-white hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-                    aria-expanded="false">
+                        data-action="click->mobile#toggle">
                     <span class="sr-only">Open menu</span>
-                    {% svg "/images/heroicons/outline/menu.svg" class="block h-6 w-6" %}
-                    {% svg "/images/heroicons/outline/x.svg" class="hidden h-6 w-6" %}
+                    {% svg "/images/heroicons/outline/menu.svg" class="block h-6 w-6" data-mobile-target="iconOff" %}
+                    {% svg "/images/heroicons/outline/x.svg" class="hidden h-6 w-6" data-mobile-target="iconOn" %}
                 </button>
             </div>
         </div>
     </div>
 
-    <div class="hidden lg:hidden">
+    <div class="hidden lg:hidden" data-mobile-target="menu">
         <div class="pt-2 pb-3 px-2 space-y-1">
-            <a href="#"
-                class="block rounded-md py-2 px-3 text-base font-medium text-white hover:text-white hover:bg-blue-500">Dashboard</a>
-
-            <a href="#"
-                class="block rounded-md py-2 px-3 text-base font-medium text-white hover:text-white hover:bg-blue-500">Jobs</a>
-
-            <a href="#"
-                class="block rounded-md py-2 px-3 text-base font-medium text-white hover:text-white hover:bg-blue-500">Applicants</a>
-
-            <a href="#"
-                class="block rounded-md py-2 px-3 text-base font-medium text-white hover:text-white hover:bg-blue-500">Company</a>
+            <a href="#" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:text-white hover:bg-blue-500">Home</a>
+            <a href="#" class="block rounded-md py-2 px-3 text-base font-medium text-white hover:text-white hover:bg-blue-500">About</a>
         </div>
     </div>
 </nav>

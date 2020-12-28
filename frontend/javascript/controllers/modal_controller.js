@@ -1,0 +1,103 @@
+import {Controller} from 'stimulus';
+import {CONSTANTS} from '../constants';
+
+export default class extends Controller {
+  static targets = [CONSTANTS.TARGETS.CONTAINER, CONSTANTS.TARGETS.BACKGROUND, CONSTANTS.TARGETS.VIEW];
+  static classes = [
+    CONSTANTS.CLASSES.HIDE, CONSTANTS.CLASSES.ENTERING, CONSTANTS.CLASSES.LEAVING,
+    CONSTANTS.CLASSES.TOBACKGROUND, CONSTANTS.CLASSES.FROMBACKGROUND, CONSTANTS.CLASSES.TOVIEW,
+    CONSTANTS.CLASSES.FROMVIEW,
+  ];
+  static values = {allowClose: Boolean, successSave: Boolean};
+
+  disconnect() {
+    this.close();
+  }
+
+  open(e) {
+    e.target.blur();
+    this.lockScroll();
+    this.containerTarget.classList.remove(this.hideClass);
+
+    requestAnimationFrame(
+      (() => {
+        this.enteringClass.split(CONSTANTS.BLANKSPACE).forEach((klass) => this.backgroundTarget.classList.add(klass));
+        this.backgroundTarget.classList.add(this.toBackgroundClass);
+        this.enteringClass.split(CONSTANTS.BLANKSPACE).forEach((klass) => this.viewTarget.classList.add(klass));
+        this.toViewClass.split(CONSTANTS.BLANKSPACE).forEach((klass) => this.viewTarget.classList.add(klass));
+        setTimeout(() => {
+          this.leavingClass.split(CONSTANTS.BLANKSPACE).forEach((klass) => this.backgroundTarget.classList.remove(klass));
+          this.backgroundTarget.classList.remove(this.fromBackgroundClass);
+          this.leavingClass.split(CONSTANTS.BLANKSPACE).forEach((klass) => this.viewTarget.classList.remove(klass));
+          this.toViewClass.split(CONSTANTS.BLANKSPACE).forEach((klass) => this.viewTarget.classList.remove(klass));
+        }, 250);
+      }),
+    );
+  }
+
+  close() {
+    this.unlockScroll();
+
+    requestAnimationFrame(
+      (() => {
+        this.enteringClass.split(CONSTANTS.BLANKSPACE).forEach((klass) => this.backgroundTarget.classList.remove(klass));
+        this.backgroundTarget.classList.remove(this.toBackgroundClass);
+        this.enteringClass.split(CONSTANTS.BLANKSPACE).forEach((klass) => this.viewTarget.classList.remove(klass));
+        this.toViewClass.split(CONSTANTS.BLANKSPACE).forEach((klass) => this.viewTarget.classList.remove(klass));
+        this.leavingClass.split(CONSTANTS.BLANKSPACE).forEach((klass) => this.backgroundTarget.classList.add(klass));
+        this.backgroundTarget.classList.add(this.fromBackgroundClass);
+        this.leavingClass.split(CONSTANTS.BLANKSPACE).forEach((klass) => this.viewTarget.classList.add(klass));
+        this.toViewClass.split(CONSTANTS.BLANKSPACE).forEach((klass) => this.viewTarget.classList.add(klass));
+        setTimeout(() => {
+          this.containerTarget.classList.add(this.hideClass);
+        }, 100);
+      }),
+    );
+  }
+
+  closeBackground(e) {
+    if (this.allowCloseValue && e.target === this.backgroundTarget.children[0]) {
+      this.close();
+    }
+  }
+
+  closeWithKeyboard(e) {
+    if (e.keyCode === 27 && !this.containerTarget.classList.contains(this.hideClass)) {
+      this.close();
+    }
+  }
+
+  lockScroll() {
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+
+    this.saveScrollPosition();
+
+    document.body.classList.add(CONSTANTS.POSITION.FIXED, CONSTANTS.INSET.X0, CONSTANTS.OVERFLOW.HIDDEN);
+    document.body.style.top = `-${this.scrollPosition}px`;
+  }
+
+  unlockScroll() {
+    document.body.style.paddingRight = null;
+    document.body.classList.remove(CONSTANTS.POSITION.FIXED, CONSTANTS.INSET.X0, CONSTANTS.OVERFLOW.HIDDEN);
+
+    this.restoreScrollPosition();
+
+    document.body.style.top = null;
+  }
+
+  saveScrollPosition() {
+    this.scrollPosition = window.pageYOffset || document.body.scrollTop;
+  }
+
+  restoreScrollPosition() {
+    document.documentElement.scrollTop = this.scrollPosition;
+  }
+
+  successSaveValueChanged() {
+    if (this.successSaveValue) {
+      this.close();
+      this.successSaveValue = false;
+    }
+  }
+}
