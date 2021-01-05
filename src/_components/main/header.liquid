@@ -1,3 +1,11 @@
+---
+name: Header
+description: Header Section.
+variables:
+    labels:
+        - data
+---
+
 <div class="lg:flex lg:items-center lg:justify-between py-4 px-2">
     <div class="flex-1 min-w-0">
         <h2 class="text-2xl font-bold leading-7 text-gray-50 sm:text-3xl sm:truncate">
@@ -24,7 +32,16 @@
             </button>
         </span>
 
-        <div class="relative inline-block text-left ml-2 pt-1" data-controller="dropdown"
+        <span data-controller="slideover" data-slideover-hide-class="hidden" data-slideover-allow-close-value="true"
+              data-slideover-to-background-class="opacity-100" data-slideover-from-background-class="opacity-0"
+              data-slideover-to-view-class="translate-x-0" data-slideover-from-view-class="translate-x-full" class="ml-2">
+            <button type="button" data-action="click->slideover#open click->generate#generate" class="inline-flex items-center justify-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" role="menuitem">
+                Upload
+            </button>
+            {% render "slideovers/file_upload", labels: labels.upload %}
+        </span>
+
+        {% comment %} <div class="relative inline-block text-left ml-2 pt-1" data-controller="dropdown"
              data-action="click->dropdown#toggle click@window->dropdown#hide"
              data-dropdown-hide-class="hidden"
              data-dropdown-invisible-class="opacity-0 scale-95"
@@ -49,12 +66,8 @@
                         {% svg "/images/heroicons/outline/cloud-download.svg" class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500" %}
                         Download
                     </a>
-                    <a href="#" class="group flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900" role="menuitem">
-                        {% svg "/images/heroicons/outline/cloud-upload.svg" class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500" %}
-                        Upload
-                    </a>
                 </div>
             </div>
-        </div>
+        </div> {% endcomment %}
     </div>
 </div>

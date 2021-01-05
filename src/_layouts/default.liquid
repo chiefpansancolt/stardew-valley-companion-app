@@ -11,7 +11,7 @@
         <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:divide-y lg:divide-gray-200 lg:px-8">
             {% render "main/navigation", metadata: site.metadata, page: page %}
             {% if page.header %}
-                {% render "main/header" %}
+                {% render "main/header", labels: site.metadata %}
             {% endif %}
         </div>
     </header>
