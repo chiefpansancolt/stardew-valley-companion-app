@@ -4,3 +4,152 @@ title: Tracking
 permalink: /tracking
 header: true
 ---
+
+<div class="py-6" data-controller="tabs" data-tabs-hide-class="hidden" data-tabs-index-value="0"
+     data-tabs-active-tab-class="bg-gray-200 text-gray-900" data-tabs-inactive-tab-class="text-gray-600 hover:bg-gray-50"
+     data-tabs-active-tab-icon-class="text-gray-500" data-tabs-inactive-tab-icon-class="text-gray-400 group-hover:text-gray-500">
+    <div class="max-w-3xl mx-auto sm:px-6 lg:max-w-full lg:px-8 lg:grid lg:grid-cols-12 lg:gap-8">
+        <div class="hidden lg:block lg:col-span-3 xl:col-span-2">
+            <nav aria-label="Sidebar" class="sticky top-6 divide-y divide-gray-300">
+                <div class="pb-8 space-y-1">
+                    <a data-tabs-target="tab" data-action="click->tabs#change" data-index="0" href="#dashboard-panel" class="text-gray-600 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-md" aria-current="page">
+                        {% svg "images/heroicons/outline/home.svg" class="text-gray-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6" %}
+                        <span class="truncate">
+                            Dashboard
+                        </span>
+                    </a>
+
+                    <a data-tabs-target="tab" data-action="click->tabs#change" data-index="1" href="#grandpa-panel" class="text-gray-600 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-md" aria-current="false">
+                        {% svg "images/heroicons/outline/collection.svg" class="text-gray-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6" %}
+                        <span class="truncate">
+                            Grandpa List
+                        </span>
+                    </a>
+
+                    <a data-tabs-target="tab" data-action="click->tabs#change" data-index="2" href="#quests-panel" class="text-gray-600 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-md" aria-current="false">
+                        {% svg "images/heroicons/outline/book-open.svg" class="text-gray-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6" %}
+                        <span class="truncate">
+                            Quests
+                        </span>
+                    </a>
+
+                    <a data-tabs-target="tab" data-action="click->tabs#change" data-index="3" href="#community-panel" class="text-gray-600 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-md" aria-current="false">
+                        {% svg "images/heroicons/outline/library.svg" class="text-gray-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6" %}
+                        <span class="truncate">
+                            Community Center
+                        </span>
+                    </a>
+
+                    <a data-tabs-target="tab" data-action="click->tabs#change" data-index="4" href="#joja-panel" class="text-gray-600 hover:bg-gray-50 group flex items-center px-3 py-2 text-sm font-medium rounded-md" aria-current="false">
+                        {% svg "images/heroicons/outline/library.svg" class="text-gray-500 flex-shrink-0 -ml-1 mr-3 h-6 w-6" %}
+                        <span class="truncate">
+                            Joja Membership
+                        </span>
+                    </a>
+                </div>
+                <div class="pt-10">
+                    <p class="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider" id="communities-headline">
+                        Other Items
+                    </p>
+                    <div class="mt-3 space-y-2" aria-labelledby="communities-headline">
+                        <a data-tabs-target="tab" data-action="click->tabs#change" data-index="5" href="#minerals-panel" class="hide group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                            <span class="truncate">
+                                Minerals
+                            </span>
+                        </a>
+
+                        <a data-tabs-target="tab" data-action="click->tabs#change" data-index="6" href="#artifacts-panel" class="hide group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                            <span class="truncate">
+                                Artifacts
+                            </span>
+                        </a>
+
+                        <a data-tabs-target="tab" data-action="click->tabs#change" data-index="7" href="#fish-panel" class="hide group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                            <span class="truncate">
+                                Fish
+                            </span>
+                        </a>
+
+                        <a data-tabs-target="tab" data-action="click->tabs#change" data-index="8" href="#shipping-panel" class="hide group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                            <span class="truncate">
+                                Shipping Items
+                            </span>
+                        </a>
+
+                        <a data-tabs-target="tab" data-action="click->tabs#change" data-index="9" href="#monsters-panel" class="hide group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                            <span class="truncate">
+                                Monsters
+                            </span>
+                        </a>
+
+                        <a data-tabs-target="tab" data-action="click->tabs#change" data-index="10" href="#residents-panel" class="hide group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                            <span class="truncate">
+                                Residents
+                            </span>
+                        </a>
+
+                        <a data-tabs-target="tab" data-action="click->tabs#change" data-index="11" href="#receipies-panel" class="hide group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                            <span class="truncate">
+                                Receipies
+                            </span>
+                        </a>
+
+                        <a data-tabs-target="tab" data-action="click->tabs#change" data-index="12" href="#rarecrows-panel" class="hide group flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
+                            <span class="truncate">
+                                Rarecrows
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <main class="lg:col-span-9 xl:col-span-6">
+            <div class="tabs-content">
+                <div data-tabs-target="panel" id="dashboard-panel" class="prose">
+                    <h3>Overview</h3>
+                </div>
+                <div data-tabs-target="panel" id="grandpa-panel" class="prose">
+                    <h3>Grandpa List</h3>
+                </div>
+                <div data-tabs-target="panel" id="quests-panel" class="prose">
+                    <h3>Quests</h3>
+                </div>
+                <div data-tabs-target="panel" id="community-panel" class="prose">
+                    <h3>Community Center</h3>
+                </div>
+                <div data-tabs-target="panel" id="joja-panel" class="prose">
+                    <h3>Joja Membership</h3>
+                </div>
+                <div data-tabs-target="panel" id="minerals-panel" class="prose">
+                    <h3>Minerals</h3>
+                </div>
+                <div data-tabs-target="panel" id="artifacts-panel" class="prose">
+                    <h3>Artifacts</h3>
+                </div>
+                <div data-tabs-target="panel" id="fish-panel" class="prose">
+                    <h3>Fish</h3>
+                </div>
+                <div data-tabs-target="panel" id="shipping-panel" class="prose">
+                    <h3>Shipping Items</h3>
+                </div>
+                <div data-tabs-target="panel" id="monsters-panel" class="prose">
+                    <h3>Monsters</h3>
+                </div>
+                <div data-tabs-target="panel" id="residents-panel" class="prose">
+                    <h3>Residents</h3>
+                </div>
+                <div data-tabs-target="panel" id="receipies-panel" class="prose">
+                    <h3>Receipies</h3>
+                </div>
+                <div data-tabs-target="panel" id="rarecrows-panel" class="prose">
+                    <h3>Rarecrows</h3>
+                </div>
+            </div>
+        </main>
+        <aside class="hidden xl:block xl:col-span-4">
+            <div class="sticky top-6 space-y-4 prose">
+                <h3>Items Needed</h3>
+            </div>
+        </aside>
+    </div>
+</div>

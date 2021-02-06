@@ -21,6 +21,8 @@ const CONSTANTS = {
     INPUT: 'input',
     TEXTAREA: 'textarea',
     DROPZONE: 'dropzone',
+    TAB: 'tab',
+    PANEL: 'panel',
   },
   CLASSES: {
     HIDE: 'hide',
@@ -32,6 +34,10 @@ const CONSTANTS = {
     FROMBACKGROUND: 'fromBackground',
     TOVIEW: 'toView',
     FROMVIEW: 'fromView',
+    ACTIVETAB: 'activeTab',
+    INACTIVETAB: 'inactiveTab',
+    ACTIVETABICON: 'activeTabIcon',
+    INACTIVETABICON: 'inactiveTabIcon',
   },
   DOM: {
     H1: 'h1',
