@@ -13,6 +13,18 @@ export default class extends Controller {
     this.hasFiles = ({dataTransfer: {types = []}}) => types.indexOf(CONSTANTS.FILE) > -1;
     this.counter = 0;
     this.reader = new FileReader();
+
+    if (window.location.pathname == '/tracking') {
+      this.currentValue = new URLSearchParams(window.location.search).get('id');
+      const store = window.localStorage.getItem(this.currentValue);
+      this.details = JSON.parse(store);
+    }
+  }
+
+  update() {
+    this.details.fileName = Object.values(CONSTANTS.FILES)[0].name;
+    this.details.filePath = this.textareaTarget.value;
+    window.localStorage.setItem(this.currentValue, JSON.stringify(this.details));
   }
 
   upload() {
@@ -70,11 +82,6 @@ export default class extends Controller {
       Math.round(file.size / 1048576) + CONSTANTS.TYPE.MB : Math.round(file.size / 1024) + CONSTANTS.TYPE.KB : file.size + CONSTANTS.TYPE.BYTE;
 
     this.emptyTarget.classList.add(this.hideClass);
-    this.reader.readAsText(file, CONSTANTS.UTF8);
-    this.reader.onload = function(evt) {
-      // textarea.value = evt.target.result;
-    };
-
     this.galleryTarget.prepend(clone);
 
     CONSTANTS.FILES[objectURL] = file;

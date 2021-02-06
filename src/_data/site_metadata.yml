@@ -21,3 +21,4 @@ upload:
   doc_upload_accepted_details: .XML up to 5MB
   accept_docs: application/xml
   no_files_selected: No Files Selected
+  link_button_label: Update

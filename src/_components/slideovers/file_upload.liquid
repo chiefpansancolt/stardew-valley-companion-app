@@ -21,7 +21,7 @@ variables:
                                         {{ labels.title }}
                                     </h2>
                                     <div class="ml-3 h-7 flex items-center">
-                                        <button data-action="click->slideover#close" data-slideover-target="file-upload" type="button" class="bg-blue-700 rounded-md text-gray-50 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
+                                        <button data-action="click->slideover#close" type="button" class="bg-blue-700 rounded-md text-gray-50 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
                                             <span class="sr-only">Close panel</span>
                                             {% svg "/images/heroicons/outline/x.svg" class="h-6 w-6" %}
                                         </button>
@@ -35,7 +35,30 @@ variables:
                             </div>
                             <div class="flex-1 flex flex-col justify-between">
                                 <div class="divide-y divide-gray-200">
-                                    <div class="space-y-6 pt-4 divide-y divide-gray-800 dark:divide-gray-100">
+                                    <div class="space-y-6 pt-4">
+                                        <div class="px-4 sm:px-6 pt-4">
+                                            <p class="prose-sm">
+                                                Please use the full save file named with your farm name and an ID number (e.g. Chris_321456123);
+                                                Please do not use the SaveFileInfo as this does not have the details needed.
+                                                <br/><br/>
+                                                These are default save locations when searching:
+                                            </p>
+                                            <div class="pl-6">
+                                                <ul class="list-disc text-sm">
+                                                    <li><strong>Windows:</strong> %AppData%\StardewValley\Saves\</li>
+                                                    <li><strong>Mac OSX & Linux:</strong> ~/.config/StardewValley/Saves/</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="px-4 sm:px-6 pt-4">
+                                            <label for="path" class="block text-sm font-medium text-gray-700">Path to File on Computer</label>
+                                            <div class="mt-1">
+                                                <input type="text" name="path" id="path" data-upload-target="textarea"
+                                                       placeholder="C:\Users\John\AppData\Roaming\StardewValley\Saves\PezzaHillTop_268281717"
+                                                       class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"/>
+                                                <p class="mt-2 text-sm text-gray-500" id="email-description">This is saved to keep as a reminder of file location for the user.</p>
+                                            </div>
+                                        </div>
                                         <div class="px-4 sm:px-6 pt-4">
                                             <div>
                                                 <label class="block text-sm leading-5 font-medium text-gray-700 dark:text-gray-50">
@@ -69,6 +92,14 @@ variables:
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="flex-shrink-0 px-4 border-t border-gray-200 py-5 sm:px-6">
+                            <div class="space-x-3 flex justify-end">
+                                <button data-action="click->upload#update" data-slideover-target="file-upload"
+                                        type="button" class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 dark:border-gray-600 shadow-sm text-sm font-medium rounded-md text-gray-700 dark:text-gray-50 bg-white dark:bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500">
+                                    {{ labels.link_button_label }}
+                                </button>
                             </div>
                         </div>
                     </form>
