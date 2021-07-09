@@ -6,7 +6,7 @@ export default function characters() {
 
   for (let index = 0; index < myCharacters.length; index++) {
     const char = myCharacters[index];
-    if(char.value === currentCharacter) {
+    if(char.value === currentCharacter.value) {
       myCharacters.splice(index, 1);
       break;
     }

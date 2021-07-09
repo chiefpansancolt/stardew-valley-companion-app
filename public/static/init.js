@@ -6,7 +6,10 @@ function init() {
   const defaultSettings = {
     darkMode: false,
     hasAccounts: false,
-    currentCharacter: ""
+    currentCharacter: {
+      label: "",
+      value: ""
+    }
   }
 
   const mySettings = window.localStorage.getItem('Settings');

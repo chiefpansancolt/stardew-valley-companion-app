@@ -3,6 +3,7 @@ import { Menu, Transition } from "@headlessui/react";
 import classNames from "@/scripts/class-names";
 import { ChevronDownIcon } from "@heroicons/react/solid";
 import characters from "@/scripts/characters";
+import currentCharacter from "@/scripts/current-character";
 
 export default function Profile() {
   return (
@@ -17,7 +18,7 @@ export default function Profile() {
                 alt=""
               />
               <span className="hidden ml-3 text-gray-700 text-sm font-medium lg:block">
-                <span className="sr-only">Open user menu for </span>Emilia Birch
+                <span className="sr-only">Open user menu for </span>{currentCharacter.label}
               </span>
               <ChevronDownIcon
                 className="hidden flex-shrink-0 ml-1 h-5 w-5 text-gray-400 lg:block"
@@ -39,24 +40,22 @@ export default function Profile() {
               static
               className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
             >
-              {characters.length > 0 &&
-                {characters.map((char) => (
-                  <Menu.Item>
-                    {({ active }) => (
-                      <a
-                        href="#"
-                        data-item={char.value}
-                        className={classNames(
-                          active ? "bg-gray-100" : "",
-                          "block px-4 py-2 text-sm text-gray-700"
-                        )}
-                      >
-                        {char.label}
-                      </a>
-                    )}
-                  </Menu.Item>
-                ))}
-              }
+              {characters.map((char) => (
+                <Menu.Item>
+                  {({ active }) => (
+                    <a
+                      href="#"
+                      data-item={char.value}
+                      className={classNames(
+                        active ? "bg-gray-100" : "",
+                        "block px-4 py-2 text-sm text-gray-700"
+                      )}
+                    >
+                      {char.label}
+                    </a>
+                  )}
+                </Menu.Item>
+              ))}
               <Menu.Item>
                 {({ active }) => (
                   <a
