@@ -1,5 +1,7 @@
 import { SETTINGS } from "@/scripts/constants";
 
 export default function currentCharacter() {
-  return JSON.parse(window.localStorage.getItem(SETTINGS).currentCharacter);
+  const current = JSON.parse(window.localStorage.getItem(SETTINGS).currentCharacter);
+
+  return current ? JSON.parse(window.localStorage.getItem(current.value)) : "";
 }
