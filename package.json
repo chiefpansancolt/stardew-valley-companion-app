@@ -5,10 +5,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format": "prettier '{pages,components,data}/**/*.{css,js,mdx}' --write",
-    "lint": "eslint components/ data/ pages/ next.config.js postcss.config.js prettier.config.js tailwind.config.js"
+    "format": "prettier 'src/{pages,components,data,styles}/**/*.{css,js,mdx}' --write",
+    "lint": "eslint src/ next.config.js postcss.config.js prettier.config.js tailwind.config.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@headlessui/react": "^1.3.0",
     "@heroicons/react": "^1.0.1",
     "@iconicicons/react": "^1.5.0",
