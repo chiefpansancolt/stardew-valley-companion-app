@@ -2,15 +2,14 @@ import { useState } from "react";
 import { ScaleIcon } from "@heroicons/react/outline";
 import {
   CashIcon,
-  CheckCircleIcon,
-  ChevronRightIcon,
-  OfficeBuildingIcon
+  ChevronRightIcon
 } from "@heroicons/react/solid";
 
 import classNames from "@/scripts/class-names";
 import Static from "@/components/navigation/static";
 import Mobile from "@/components/navigation/mobile";
 import Topbar from "@/components/topbar/topbar";
+import PageHeader from "@/components/dashboard-page-header";
 
 const cards = [{ name: "Account balance", href: "#", icon: ScaleIcon, amount: "$30,659.45" }];
 const transactions = [
@@ -42,8 +41,7 @@ export default function Dashboard() {
       <div className="flex-1 overflow-auto focus:outline-none">
         <Topbar setSidebarOpen={setSidebarOpen} />
         <main className="flex-1 relative pb-8 z-0 overflow-y-auto">
-          {/* Page header */}
-          
+          <PageHeader />
 
           <div className="mt-8">
             <div className="mx-auto px-4 sm:px-6 lg:px-8">
