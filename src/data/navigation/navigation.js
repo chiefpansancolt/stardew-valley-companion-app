@@ -19,7 +19,7 @@ import { DashboardIcon, UserIcon } from "@iconicicons/react";
 const navigation = [
   { name: "Overview", href: "/", icon: DashboardIcon, standardIcon: true },
   { name: "Character", href: "/character", icon: UserIcon, standardIcon: true },
-  { name: "Town People", href: "#", icon: UserGroupIcon, standardIcon: true },
+  { name: "Town People", href: "/town-people", icon: UserGroupIcon, standardIcon: true },
   {
     name: "Collections",
     href: "#",
