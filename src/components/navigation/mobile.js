@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import Link from "next/link";
 import { Dialog, Transition, Disclosure } from "@headlessui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import navigation from "@/navigation/navigation";
@@ -66,9 +67,8 @@ export default function Mobile({ sidebarOpen, setSidebarOpen }) {
               <div className="px-2 space-y-1">
                 {navigation.map((item) =>
                   !item.children ? (
-                    <div key={item.name}>
+                    <Link key={item.name} href={item.href}>
                       <a
-                        href="#"
                         className={classNames(
                           item.current
                             ? "bg-cyan-800 text-white"
@@ -96,7 +96,7 @@ export default function Mobile({ sidebarOpen, setSidebarOpen }) {
                         )}
                         {item.name}
                       </a>
-                    </div>
+                    </Link>
                   ) : (
                     <Disclosure as="div" key={item.name} className="space-y-1">
                       {({ open }) => (
@@ -141,31 +141,29 @@ export default function Mobile({ sidebarOpen, setSidebarOpen }) {
                           </Disclosure.Button>
                           <Disclosure.Panel className="space-y-1">
                             {item.children.map((subItem) => (
-                              <a
-                                key={subItem.name}
-                                href={subItem.href}
-                                className="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-cyan-100 hover:text-white hover:bg-cyan-600 rounded-md"
-                              >
-                                {subItem.standardIcon ? (
-                                  <subItem.icon
-                                    className={classNames(
-                                      subItem.current ? "text-cyan-500" : "text-cyan-200",
-                                      "mr-3 flex-shrink-0 h-6 w-6"
-                                    )}
-                                    aria-hidden="true"
-                                  />
-                                ) : (
-                                  <FontAwesomeIcon
-                                    icon={subItem.icon}
-                                    size="lg"
-                                    className={classNames(
-                                      subItem.current ? "text-cyan-500" : "text-cyan-200",
-                                      "mr-3 flex-shrink-0 h-6 w-6"
-                                    )}
-                                  />
-                                )}
-                                {subItem.name}
-                              </a>
+                              <Link key={subItem.name} href={subItem.href}>
+                                <a className="group w-full flex items-center pl-11 pr-2 py-2 text-sm font-medium text-cyan-100 hover:text-white hover:bg-cyan-600 rounded-md">
+                                  {subItem.standardIcon ? (
+                                    <subItem.icon
+                                      className={classNames(
+                                        subItem.current ? "text-cyan-500" : "text-cyan-200",
+                                        "mr-3 flex-shrink-0 h-6 w-6"
+                                      )}
+                                      aria-hidden="true"
+                                    />
+                                  ) : (
+                                    <FontAwesomeIcon
+                                      icon={subItem.icon}
+                                      size="lg"
+                                      className={classNames(
+                                        subItem.current ? "text-cyan-500" : "text-cyan-200",
+                                        "mr-3 flex-shrink-0 h-6 w-6"
+                                      )}
+                                    />
+                                  )}
+                                  {subItem.name}
+                                </a>
+                              </Link>
                             ))}
                           </Disclosure.Panel>
                         </>
@@ -177,14 +175,12 @@ export default function Mobile({ sidebarOpen, setSidebarOpen }) {
               <div className="mt-6 pt-6">
                 <div className="px-2 space-y-1">
                   {secondaryNavigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="group flex items-center px-2 py-2 text-base font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600"
-                    >
-                      <item.icon className="mr-4 h-6 w-6 text-cyan-200" aria-hidden="true" />
-                      {item.name}
-                    </a>
+                    <Link key={item.name} href={item.href}>
+                      <a className="group flex items-center px-2 py-2 text-base font-medium rounded-md text-cyan-100 hover:text-white hover:bg-cyan-600">
+                        <item.icon className="mr-4 h-6 w-6 text-cyan-200" aria-hidden="true" />
+                        {item.name}
+                      </a>
+                    </Link>
                   ))}
                 </div>
               </div>
