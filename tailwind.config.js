@@ -1,7 +1,7 @@
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-  mode: 'jit',
+  // mode: 'jit',
    purge: ['./src/pages/**/*.js', './src/components/**/*.js', './src/data/**/*.js'],
   darkMode: false,
   theme: {
@@ -33,7 +33,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      opacity: ['disabled'],
+    }
   },
   plugins: [
     require('@tailwindcss/typography'),
