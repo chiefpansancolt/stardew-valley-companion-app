@@ -1,5 +1,5 @@
 import Head from "next/head";
-import PageHeader from "@/components/dashboard/page-header";
+import Dashboard from "@/components/page-headings/dashboard";
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" /> */}
       </Head>
       <div>
-        <PageHeader />
+        <Dashboard />
       </div>
     </div>
   );
