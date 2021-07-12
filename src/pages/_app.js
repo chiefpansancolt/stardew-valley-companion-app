@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import Head from 'next/head';
+import Head from "next/head";
 import { useEffect, useState } from "react";
 import Static from "@/components/navigation/static";
 import Mobile from "@/components/navigation/mobile";
@@ -33,10 +33,8 @@ function MyApp({ Component, pageProps }) {
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-      {(!character && !characterList) && 
-        <Loading />
-      }
-      {(character && characterList) &&
+      {!character && !characterList && <Loading />}
+      {character && characterList && (
         <div>
           <div className="h-screen flex overflow-hidden bg-gray-100">
             <Mobile sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
@@ -61,9 +59,9 @@ function MyApp({ Component, pageProps }) {
             <AddNewCharacter open={newCharOpen} setOpen={setNewCharOpen} />
           )}
         </div>
-      }
+      )}
     </>
-  )
+  );
 }
 
 export default MyApp;
