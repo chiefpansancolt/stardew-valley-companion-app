@@ -1,9 +1,8 @@
 import Profile from "@/components/topbar/profile";
 import Search from "@/components/topbar/search";
-import characters from "@/scripts/characters";
 import { MenuAlt1Icon } from "@heroicons/react/outline";
 
-export default function Topbar({ setSidebarOpen }) {
+export default function Topbar({ character, characters, setSidebarOpen, setNewCharOpen }) {
   return (
     <div className="relative z-10 flex-shrink-0 flex h-16 bg-white border-b border-gray-200 lg:border-none">
       <button
@@ -13,17 +12,20 @@ export default function Topbar({ setSidebarOpen }) {
         <span className="sr-only">Open sidebar</span>
         <MenuAlt1Icon className="h-6 w-6" aria-hidden="true" />
       </button>
-      {/* Search bar */}
       <div className="flex-1 px-4 flex justify-between sm:px-6 lg:mx-auto lg:px-8">
         <div className="flex-1 flex">
-          <Search/>
+          <Search />
         </div>
         <div className="ml-4 flex items-center md:ml-6">
-          {characters.length > 0 &&
-            <Profile/>
-          }
+          {character && (
+            <Profile
+              character={character}
+              characters={characters}
+              setNewCharOpen={setNewCharOpen}
+            />
+          )}
         </div>
       </div>
     </div>
-  )
+  );
 }

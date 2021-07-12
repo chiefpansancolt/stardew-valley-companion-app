@@ -21,7 +21,7 @@ export default function Static() {
                 !item.children ? (
                   <div key={item.name}>
                     <a
-                      href="#"
+                      href={item.href}
                       className={classNames(
                         item.current
                           ? "bg-cyan-800 text-white"

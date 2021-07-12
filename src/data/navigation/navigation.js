@@ -17,7 +17,7 @@ import { CollectionIcon, UserGroupIcon } from "@heroicons/react/outline";
 import { DashboardIcon, UserIcon } from "@iconicicons/react";
 
 const navigation = [
-  { name: "Overview", href: "#", icon: DashboardIcon, standardIcon: true, current: true },
+  { name: "Overview", href: "/", icon: DashboardIcon, standardIcon: true, current: true },
   { name: "Character", href: "#", icon: UserIcon, standardIcon: true, current: false },
   { name: "Town People", href: "#", icon: UserGroupIcon, standardIcon: true, current: false },
   {

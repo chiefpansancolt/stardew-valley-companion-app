@@ -1,7 +1,5 @@
 init();
 
-
-
 function init() {
   const defaultSettings = {
     darkMode: false,
