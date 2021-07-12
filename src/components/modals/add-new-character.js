@@ -109,6 +109,7 @@ export default function AddNewCharacter({ open, setOpen }) {
     setCurrentCharacterSetting(data.characterName);
     createCharacterData(data);
     addCharactersList(data.characterName);
+    window.location.reload();
   }
 
   return (
