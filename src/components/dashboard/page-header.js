@@ -1,8 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTasks, faList } from "@fortawesome/free-solid-svg-icons";
 import { CalendarIcon, CurrencyDollarIcon, LocationMarkerIcon } from "@heroicons/react/solid";
+import { useContext } from 'react';
+import CharacterContext from '@/components/characterContext';
 
-export default function PageHeader({ character }) {
+export default function PageHeader() {
+  const { character } = useContext(CharacterContext);
   return (
     <div className="bg-white shadow">
       <div className="px-4 sm:px-6 lg:mx-auto lg:px-8">
