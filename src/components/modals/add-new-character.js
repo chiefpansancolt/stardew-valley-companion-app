@@ -2,17 +2,8 @@
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import {
-  XIcon,
-  MapIcon,
-  UserIcon,
-  CalendarIcon,
-  CurrencyDollarIcon,
+  XIcon
 } from "@heroicons/react/outline";
-import { faCalendarDay, faCalendarWeek } from "@fortawesome/free-solid-svg-icons";
-import maps from "@/data/character/farm-maps";
-import { seasons, days, years } from "@/data/character/calendar";
-import Picklist from "@/components/forms/picklist";
-import Input from "../forms/input";
 import {
   characterAnalysis,
   characterData,
@@ -20,87 +11,32 @@ import {
   createCharacterData,
   addCharactersList,
 } from "@/scripts/character/new-character";
-import { NONE, NEWCHARACTER } from "@/scripts/constants";
+import { CloudUploadIcon } from "@heroicons/react/solid";
+import { DocumentIcon } from "@heroicons/react/outline";
+import { LockIcon } from "@iconicicons/react";
 
 export default function AddNewCharacter({ open, setOpen }) {
-  const [characterNameError, setCharacterNameError] = useState(false);
-  const [farmNameError, setFarmNameError] = useState(false);
-  const [farmMapError, setFarmMapError] = useState(false);
-  const [moneyError, setMoneyError] = useState(false);
-  const [farmingError, setFarmingError] = useState(false);
-  const [farmingMinMaxError, setFarmingMinMaxError] = useState(false);
-  const [miningError, setMiningError] = useState(false);
-  const [miningMinMaxError, setMiningMinMaxError] = useState(false);
-  const [foragingError, setForagingError] = useState(false);
-  const [foragingMinMaxError, setForagingMinMaxError] = useState(false);
-  const [fishingError, setFishingError] = useState(false);
-  const [fishingMinMaxError, setFishingMinMaxError] = useState(false);
-  const [combatError, setCombatError] = useState(false);
-  const [combatMinMaxError, setCombatMinMaxError] = useState(false);
-  const [seasonsError, setSeasonsError] = useState(false);
-  const [daysError, setDaysError] = useState(false);
-  const [yearsError, setYearsError] = useState(false);
+  const [fileDetails, setFileDetails] = useState({
+    name: "",
+    size: 0,
+    ext: "text/xml",
+    complete: false
+  });
   const [formComplete, setFromComplate] = useState(true);
   const cancelButtonRef = useRef(null);
 
   function handleFormChange(event) {
-    switch (event.target.id) {
-      case NEWCHARACTER.CHARACTERNAME:
-        event.target.value ? setCharacterNameError(false) : setCharacterNameError(true);
-        break;
-      case NEWCHARACTER.FARMNAME:
-        event.target.value ? setFarmNameError(false) : setFarmNameError(true);
-        break;
-      case NEWCHARACTER.MAP:
-        event.target.value !== NONE ? setFarmMapError(false) : setFarmMapError(true);
-        break;
-      case NEWCHARACTER.CURRENTMONEY:
-        event.target.value ? setMoneyError(false) : setMoneyError(true);
-        break;
-      case NEWCHARACTER.FARMING:
-        event.target.value ? setFarmingError(false) : setFarmingError(true);
-        event.target.value >= 0 && event.target.value <= 10
-          ? setFarmingMinMaxError(false)
-          : setFarmingMinMaxError(true);
-        break;
-      case NEWCHARACTER.MINING:
-        event.target.value ? setMiningError(false) : setMiningError(true);
-        event.target.value >= 0 && event.target.value <= 10
-          ? setMiningMinMaxError(false)
-          : setMiningMinMaxError(true);
-        break;
-      case NEWCHARACTER.FORAGING:
-        event.target.value ? setForagingError(false) : setForagingError(true);
-        event.target.value >= 0 && event.target.value <= 10
-          ? setForagingMinMaxError(false)
-          : setForagingMinMaxError(true);
-        break;
-      case NEWCHARACTER.FISHING:
-        event.target.value ? setFishingError(false) : setFishingError(true);
-        event.target.value >= 0 && event.target.value <= 10
-          ? setFishingMinMaxError(false)
-          : setFishingMinMaxError(true);
-        break;
-      case NEWCHARACTER.COMBAT:
-        event.target.value ? setCombatError(false) : setCombatError(true);
-        event.target.value >= 0 && event.target.value <= 10
-          ? setCombatMinMaxError(false)
-          : setCombatMinMaxError(true);
-        break;
-      case NEWCHARACTER.SEASONS:
-        event.target.value !== NONE ? setSeasonsError(false) : setSeasonsError(true);
-        break;
-      case NEWCHARACTER.DAYS:
-        event.target.value !== NONE ? setDaysError(false) : setDaysError(true);
-        break;
-      case NEWCHARACTER.YEARS:
-        event.target.value !== NONE ? setYearsError(false) : setYearsError(true);
-        break;
-      default:
-        console.log("Default Never Set");
-    }
-
-    characterAnalysis(characterData()) ? setFromComplate(false) : setFromComplate(true);
+    const fileSize = event.target.files[0].size > 1024 ? event.target.files[0].size > 1048576 ?
+      Math.round(event.target.files[0].size / 1048576) + 'mb' : Math.round(event.target.files[0].size / 1024) + 'kb' : event.target.files[0].size + 'b';
+    setFileDetails({
+      name: event.target.files[0].name,
+      size: fileSize,
+      ext: event.target.files[0].type,
+      file: event.target.files[0],
+      complete: true
+    });
+    console.log(event.target.files);
+    setFromComplate(false);
   }
 
   function handleSubmit() {
@@ -147,7 +83,7 @@ export default function AddNewCharacter({ open, setOpen }) {
             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
-            <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
+            <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
               <div className="hidden sm:block absolute top-0 right-0 pt-4 pr-4">
                 <button
                   type="button"
@@ -159,147 +95,50 @@ export default function AddNewCharacter({ open, setOpen }) {
                 </button>
               </div>
               <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                <div className="sm:flex sm:items-start">
-                  <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                    <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
-                      Create New Character
-                    </Dialog.Title>
-                    <form id="new-character-form" className="mt-2" onChange={handleFormChange}>
-                      <div className="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-10">
-                        <Input
-                          id={NEWCHARACTER.CHARACTERNAME}
-                          span="5"
-                          required={true}
-                          label="Character Name"
-                          type="text"
-                          hasIcon={true}
-                          Icon={UserIcon}
-                          hasError={characterNameError}
-                        />
-                        <Input
-                          id={NEWCHARACTER.FARMNAME}
-                          span="5"
-                          required={true}
-                          label="Farm Name"
-                          type="text"
-                          hasIcon={false}
-                          hasError={farmNameError}
-                        />
-                        <Picklist
-                          id={NEWCHARACTER.MAP}
-                          span="5"
-                          required={true}
-                          label="Farm Map"
-                          hasIcon={true}
-                          Icon={MapIcon}
-                          hasError={farmMapError}
-                          options={maps}
-                        />
-                        <Input
-                          id={NEWCHARACTER.CURRENTMONEY}
-                          span="5"
-                          required={true}
-                          label="Current Money"
-                          type="number"
-                          hasIcon={true}
-                          Icon={CurrencyDollarIcon}
-                          hasError={moneyError}
-                        />
-                        <Picklist
-                          id={NEWCHARACTER.SEASONS}
-                          span="3"
-                          required={true}
-                          label="Season"
-                          hasIcon={true}
-                          Icon={CalendarIcon}
-                          hasError={seasonsError}
-                          options={seasons}
-                        />
-                        <Picklist
-                          id={NEWCHARACTER.DAYS}
-                          span="3"
-                          required={true}
-                          label="Day"
-                          hasIcon={true}
-                          fa={true}
-                          Icon={faCalendarDay}
-                          hasError={daysError}
-                          options={days}
-                        />
-                        <Picklist
-                          id={NEWCHARACTER.YEARS}
-                          span="4"
-                          required={true}
-                          label="Year"
-                          hasIcon={true}
-                          fa={true}
-                          Icon={faCalendarWeek}
-                          hasError={yearsError}
-                          options={years}
-                        />
-                        <Input
-                          id={NEWCHARACTER.FARMING}
-                          span="2"
-                          required={true}
-                          label="Farming"
-                          value={0}
-                          max={10}
-                          type="number"
-                          hasIcon={false}
-                          hasError={farmingError}
-                          harMinMaxError={farmingMinMaxError}
-                        />
-                        <Input
-                          id={NEWCHARACTER.MINING}
-                          span="2"
-                          required={true}
-                          label="Mining"
-                          value={0}
-                          max={10}
-                          type="number"
-                          hasIcon={false}
-                          hasError={miningError}
-                          harMinMaxError={miningMinMaxError}
-                        />
-                        <Input
-                          id={NEWCHARACTER.FORAGING}
-                          span="2"
-                          required={true}
-                          label="Foraging"
-                          value={0}
-                          max={10}
-                          type="number"
-                          hasIcon={false}
-                          hasError={foragingError}
-                          harMinMaxError={foragingMinMaxError}
-                        />
-                        <Input
-                          id={NEWCHARACTER.FISHING}
-                          span="2"
-                          required={true}
-                          label="Fishing"
-                          value={0}
-                          max={10}
-                          type="number"
-                          hasIcon={false}
-                          hasError={fishingError}
-                          harMinMaxError={fishingMinMaxError}
-                        />
-                        <Input
-                          id={NEWCHARACTER.COMBAT}
-                          span="2"
-                          required={true}
-                          label="Combat"
-                          value={0}
-                          max={10}
-                          type="number"
-                          hasIcon={false}
-                          hasError={combatError}
-                          harMinMaxError={combatMinMaxError}
-                        />
-                      </div>
-                    </form>
+                <div className="mt-3 text-center sm:mt-0 sm:text-left">
+                  <Dialog.Title as="h3" className="text-lg leading-6 font-medium text-gray-900">
+                    Create New Character
+                  </Dialog.Title>
+                  <div className="mt-2 text-sm">
+                    <p className="text-gray-700">
+                      Please use the full save file (e.g. Chief_132427894); do not use the SaveGameInfo
+                      file as it does not contain all the necessary information.
+                    </p>
+                    <p className="text-gray-800 mt-2">Default save file locations are:</p>
+                    <ul className="list-disc list-inside text-gray-600">
+                      <li>Windows: %AppData%\StardewValley\Saves\</li>
+                      <li>Mac OSX & Linux: ~/.config/StardewValley/Saves/</li>
+                    </ul>
                   </div>
+                  <form id="new-character-form" className="mt-2" onChange={handleFormChange}>
+                    <div className="w-full">
+                      <div className="relative h-40 rounded-lg border-dashed border-2 border-gray-200 bg-white flex justify-center items-center">
+                        <div className="absolute">
+                          <div className="flex flex-col items-center ">
+                            <CloudUploadIcon className="h-10 w-10 text-gray-200"/>
+                            <span className="block text-gray-400 font-normal">Upload you file here</span>
+                            <span className="block text-gray-400 font-normal">or</span>
+                            <span className="block text-blue-400 font-normal">Browse files</span>
+                          </div>
+                        </div>
+                        <input type="file" className="h-full w-full opacity-0 cursor-pointer" accept="text/xml"/>
+                      </div>
+                      <div className="flex justify-between items-center text-gray-400">
+                        <span>Accepted file type: .xml</span>
+                        <span className="flex items-center ">
+                          <LockIcon className="mr-1"/> secure
+                        </span>
+                      </div>
+                    </div>
+                    {fileDetails.complete && (
+                      <div className="mt-2 flex text-gray-700">
+                        <DocumentIcon className="h-6 w-6"/>
+                        <span>{fileDetails.name}</span>
+                        &nbsp;- 
+                        (<span>{fileDetails.size}</span>)
+                      </div>
+                    )}
+                  </form>
                 </div>
               </div>
               <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
