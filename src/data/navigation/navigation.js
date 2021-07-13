@@ -37,7 +37,7 @@ const navigation = [
       { name: "Crafting", href: "#", icon: faHammer, standardIcon: false },
     ],
   },
-  { name: "Animals", href: "#", icon: faHorse, standardIcon: false },
+  { name: "Animals", href: "/animals", icon: faHorse, standardIcon: false },
   { name: "Community Center", href: "#", icon: faBuilding, standardIcon: false },
   { name: "Quests", href: "#", icon: faExclamationCircle, standardIcon: false },
   { name: "Mines", href: "#", icon: faShoppingCart, standardIcon: false },
