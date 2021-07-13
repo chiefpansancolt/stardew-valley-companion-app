@@ -5,29 +5,30 @@ import Base from "@/components/page-headings/base";
 
 export default function Dashboard() {
   const { character } = useContext(CharacterContext);
+
   return (
-    <Base title={character.label}>
+    <Base title={character && (character.label)}>
       <div className="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
         <div className="mt-2 flex items-center text-sm text-gray-500">
           <LocationMarkerIcon
             className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
             aria-hidden="true"
           />
-          {character.map}
+          {character && (character.map)}
         </div>
         <div className="mt-2 flex items-center text-sm text-gray-500">
           <CurrencyDollarIcon
             className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
             aria-hidden="true"
           />
-          {character.money}
+          {character && (character.money)}
         </div>
         <div className="mt-2 flex items-center text-sm text-gray-500">
           <CalendarIcon
             className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
             aria-hidden="true"
           />
-          {character.season} - {character.day} - {character.year}
+          {character && (character.season)} - {character && (character.day)} - {character && (character.year)}
         </div>
       </div>
     </Base>

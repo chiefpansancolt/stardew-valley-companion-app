@@ -5,20 +5,25 @@ import Static from "@/components/navigation/static";
 import Mobile from "@/components/navigation/mobile";
 import Topbar from "@/components/topbar/topbar";
 import AddNewCharacter from "@/components/modals/add-new-character";
-import { currentCharacter } from "@/scripts/character/current-character";
+import { currentCharacter, hasCurrentCharacter } from "@/scripts/character/current-character";
 import { characters } from "@/scripts/character/characters";
 import Loading from "@/components/loading";
 import CharacterContext from "@/components/characterContext";
+import { initialize } from "@/scripts/character/initalize";
 
 function MyApp({ Component, pageProps }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [newCharOpen, setNewCharOpen] = useState(false);
   const [character, setCharacter] = useState(null);
   const [characterList, setCharacterList] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    initialize(localStorage);
     setCharacter(currentCharacter(localStorage));
     setCharacterList(characters(localStorage));
+    setNewCharOpen(hasCurrentCharacter(localStorage));
+    setIsLoading(false);
   }, []);
 
   return (
@@ -33,8 +38,8 @@ function MyApp({ Component, pageProps }) {
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/favicon.ico" /> */}
       </Head>
-      {!character && !characterList && <Loading />}
-      {character && characterList && (
+      {isLoading && <Loading />}
+      {!isLoading && (
         <div>
           <div className="h-screen flex overflow-hidden bg-gray-100">
             <Mobile sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
@@ -55,7 +60,7 @@ function MyApp({ Component, pageProps }) {
             </div>
           </div>
 
-          {(!character || newCharOpen) && (
+          {newCharOpen && (
             <AddNewCharacter open={newCharOpen} setOpen={setNewCharOpen} />
           )}
         </div>
