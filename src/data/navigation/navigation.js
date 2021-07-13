@@ -27,7 +27,7 @@ const navigation = [
     standardIcon: true,
     current: false,
     children: [
-      { name: "Artifacts", href: "#", icon: faMortarPestle, standardIcon: false },
+      { name: "Artifacts", href: "/collection/artifacts", icon: faMortarPestle, standardIcon: false },
       { name: "Minerals", href: "#", icon: faGem, standardIcon: false },
       { name: "Fish", href: "#", icon: faFish, standardIcon: false },
       { name: "Artisan Goods", href: "#", icon: faCheese, standardIcon: false },
