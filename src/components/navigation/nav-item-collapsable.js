@@ -32,7 +32,7 @@ export default function NavItemCollapsable({ item }) {
           </Disclosure.Button>
           <Disclosure.Panel className="space-y-1">
             {item.children.map((subItem) => (
-              <NavItem item={subItem} sub={true} />
+              <NavItem item={subItem} sub={true} key={subItem.name} />
             ))}
           </Disclosure.Panel>
         </>

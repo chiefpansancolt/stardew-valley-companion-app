@@ -15,16 +15,16 @@ export default function Static() {
             <div className="px-2 space-y-1">
               {navigation.map((item) =>
                 !item.children ? (
-                  <NavItem item={item} sub={false} />
+                  <NavItem item={item} sub={false} key={item.name} />
                 ) : (
-                  <NavItemCollapsable item={item} />
+                  <NavItemCollapsable item={item} key={item.name} />
                 )
               )}
             </div>
             <div className="mt-6 pt-6">
               <div className="px-2 space-y-1">
                 {secondaryNavigation.map((item) => (
-                  <NavItem item={item} sub={false} />
+                  <NavItem item={item} sub={false} key={item.name} />
                 ))}
               </div>
             </div>
