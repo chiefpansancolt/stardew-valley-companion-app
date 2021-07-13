@@ -30,7 +30,7 @@ const navigation = [
       { name: "Artifacts", href: "/collection/artifacts", icon: faMortarPestle, standardIcon: false },
       { name: "Minerals", href: "/collection/minerals", icon: faGem, standardIcon: false },
       { name: "Fish", href: "/collection/fish", icon: faFish, standardIcon: false },
-      { name: "Artisan Goods", href: "#", icon: faCheese, standardIcon: false },
+      { name: "Artisan Goods", href: "/collection/artisan-goods", icon: faCheese, standardIcon: false },
       { name: "Food", href: "#", icon: faHamburger, standardIcon: false },
       { name: "Foraging", href: "#", icon: faTree, standardIcon: false },
       { name: "Crops", href: "#", icon: faSeedling, standardIcon: false },
