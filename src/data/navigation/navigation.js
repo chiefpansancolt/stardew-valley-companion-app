@@ -41,7 +41,7 @@ const navigation = [
   { name: "Community Center", href: "/community-center", icon: faBuilding, standardIcon: false },
   { name: "Quests", href: "/quests", icon: faExclamationCircle, standardIcon: false },
   { name: "Mines", href: "/mines", icon: faShoppingCart, standardIcon: false },
-  { name: "GrandFather Note", href: "#", icon: faStickyNote, standardIcon: false },
+  { name: "GrandFather Note", href: "/grandfather-note", icon: faStickyNote, standardIcon: false },
 ];
 
 export default navigation;
