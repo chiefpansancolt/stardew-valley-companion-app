@@ -39,7 +39,7 @@ const navigation = [
   },
   { name: "Animals", href: "/animals", icon: faHorse, standardIcon: false },
   { name: "Community Center", href: "/community-center", icon: faBuilding, standardIcon: false },
-  { name: "Quests", href: "#", icon: faExclamationCircle, standardIcon: false },
+  { name: "Quests", href: "/quests", icon: faExclamationCircle, standardIcon: false },
   { name: "Mines", href: "#", icon: faShoppingCart, standardIcon: false },
   { name: "GrandFather Note", href: "#", icon: faStickyNote, standardIcon: false },
 ];
