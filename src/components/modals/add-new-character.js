@@ -1,19 +1,12 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import {
-  XIcon
-} from "@heroicons/react/outline";
-import {
-  characterAnalysis,
-  characterData,
-  setCurrentCharacterSetting,
-  createCharacterData,
-  addCharactersList,
-} from "@/scripts/character/new-character";
+import { XIcon } from "@heroicons/react/outline";
+import { fileData } from "@/scripts/character/new-character";
 import { CloudUploadIcon } from "@heroicons/react/solid";
 import { DocumentIcon } from "@heroicons/react/outline";
 import { LockIcon } from "@iconicicons/react";
+import { handleFileSelect } from "@/scripts/character/file-reader";
 
 export default function AddNewCharacter({ open, setOpen }) {
   const [fileDetails, setFileDetails] = useState({
@@ -26,26 +19,13 @@ export default function AddNewCharacter({ open, setOpen }) {
   const cancelButtonRef = useRef(null);
 
   function handleFormChange(event) {
-    const fileSize = event.target.files[0].size > 1024 ? event.target.files[0].size > 1048576 ?
-      Math.round(event.target.files[0].size / 1048576) + 'mb' : Math.round(event.target.files[0].size / 1024) + 'kb' : event.target.files[0].size + 'b';
-    setFileDetails({
-      name: event.target.files[0].name,
-      size: fileSize,
-      ext: event.target.files[0].type,
-      file: event.target.files[0],
-      complete: true
-    });
-    console.log(event.target.files);
+    setFileDetails(fileData(event.target.files[0]));
     setFromComplate(false);
   }
 
   function handleSubmit() {
-    const data = characterData();
-
-    setCurrentCharacterSetting(data.characterName);
-    createCharacterData(data);
-    addCharactersList(data.characterName);
-    window.location.reload();
+    handleFileSelect(fileDetails.file);
+    // window.location.reload();
   }
 
   return (
@@ -121,7 +101,7 @@ export default function AddNewCharacter({ open, setOpen }) {
                             <span className="block text-blue-400 font-normal">Browse files</span>
                           </div>
                         </div>
-                        <input type="file" className="h-full w-full opacity-0 cursor-pointer" accept="text/xml"/>
+                        <input type="file" className="h-full w-full opacity-0 cursor-pointer"/>
                       </div>
                       <div className="flex justify-between items-center text-gray-400">
                         <span>Accepted file type: .xml</span>
@@ -134,7 +114,7 @@ export default function AddNewCharacter({ open, setOpen }) {
                       <div className="mt-2 flex text-gray-700">
                         <DocumentIcon className="h-6 w-6"/>
                         <span>{fileDetails.name}</span>
-                        &nbsp;- 
+                        &nbsp;-
                         (<span>{fileDetails.size}</span>)
                       </div>
                     )}

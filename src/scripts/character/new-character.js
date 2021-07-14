@@ -1,47 +1,15 @@
-import { SETTINGS, CHARACTERS, NONE, ZERO } from "@/scripts/constants";
+import { SETTINGS, CHARACTERS, MB, KB, BYTE } from "@/scripts/constants";
 
-export function characterAnalysis(data) {
-  return data.characterName && data.farmName && data.map !== NONE && data.currentMoney &&
-    data.currentMoney >= ZERO && data.farming && data.farming >= ZERO && data.mining &&
-    data.mining >= ZERO && data.foraging && data.foraging >= ZERO && data.fishing &&
-    data.fishing >= ZERO && data.combat && data.combat >= ZERO && data.season !== NONE &&
-    data.day !== NONE && data.year !== NONE
-}
-
-export function characterData() {
+export function fileData(file) {
+  const fileSize = file.size > 1024 ? file.size > 1048576 ?
+    Math.round(file.size / 1048576) + MB : Math.round(file.size / 1024) + KB : file.size + BYTE;
   return {
-    characterName: document.getElementById("character-name").value,
-    farmName: document.getElementById("farm-name").value,
-    map: document.getElementById("map").value,
-    currentMoney: document.getElementById("current-money").value,
-    farming: document.getElementById("farming").value,
-    mining: document.getElementById("mining").value,
-    foraging: document.getElementById("foraging").value,
-    fishing: document.getElementById("fishing").value,
-    combat: document.getElementById("combat").value,
-    season: document.getElementById("seasons").value,
-    day: document.getElementById("days").value,
-    year: document.getElementById("years").value
-  }
-}
-
-export function createCharacterData(data) {
-  const character = {
-    label: data.characterName,
-    farmName: data.farmName,
-    map: data.map,
-    money: data.currentMoney,
-    farming: data.farming,
-    mining: data.mining,
-    foraging: data.foraging,
-    fishing: data.fishing,
-    combat: data.combat,
-    season: data.season,
-    day: data.day,
-    year: data.year
-  }
-
-  window.localStorage.setItem(data.characterName, JSON.stringify(character));
+    name: file.name,
+    size: fileSize,
+    ext: file.type,
+    file: file,
+    complete: true
+  };
 }
 
 export function addCharactersList(characterName) {

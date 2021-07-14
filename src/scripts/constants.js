@@ -1,6 +1,9 @@
 const SETTINGS = 'Settings';
 const CHARACTERS = 'Characters';
 const NONE = 'none';
+const MB = 'mb';
+const KB = 'kb';
+const BYTE = 'b';
 
 const NEWCHARACTER = {
   CHARACTERNAME: "character-name",
@@ -19,4 +22,4 @@ const NEWCHARACTER = {
 
 const ZERO = 0;
 
-export { SETTINGS, CHARACTERS, NONE, ZERO, NEWCHARACTER };
+export { SETTINGS, CHARACTERS, MB, KB, BYTE, NONE, ZERO, NEWCHARACTER };
