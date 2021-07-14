@@ -15,6 +15,8 @@ const COMMA = ",";
 const PLAYEDFOR = "Played for";
 const TEN = "10";
 const NA = "N/A";
+const LEVEL5 = "Level 5 Required";
+const LEVEL10 = "Level 10 Required";
 
 const NEWCHARACTER = {
   CHARACTERNAME: "character-name",
@@ -53,4 +55,6 @@ export {
   NA,
   ZERO,
   NEWCHARACTER,
+  LEVEL5,
+  LEVEL10
 };

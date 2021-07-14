@@ -25,7 +25,7 @@ export default function AddNewCharacter({ open, setOpen }) {
 
   function handleSubmit() {
     handleFileSelect(fileDetails.file);
-    // window.location.reload();
+    window.location.reload();
   }
 
   return (

@@ -14,7 +14,7 @@ export default function Profile({ character, characters, setNewCharOpen }) {
               <img className="h-8 w-8 rounded-full" src="/img/The_Player_Icon.png" alt="" />
               <span className="hidden ml-3 text-gray-700 text-sm font-medium lg:block">
                 <span className="sr-only">Open user menu for </span>
-                {character && (character.label)}
+                {character && (character.character.name)}
               </span>
               <ChevronDownIcon
                 className="hidden flex-shrink-0 ml-1 h-5 w-5 text-gray-400 lg:block"
@@ -40,6 +40,7 @@ export default function Profile({ character, characters, setNewCharOpen }) {
                 <Menu.Item key={char.label}>
                   {({ active }) => (
                     <a
+                      name={char.value}
                       onClick={setCharacterContext}
                       className={classNames(
                         active ? "bg-gray-100" : "",

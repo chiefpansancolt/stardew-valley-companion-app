@@ -16,21 +16,31 @@ export function fileData(file) {
   };
 }
 
-export function addCharactersList(characterName) {
+export function addCharactersList(character) {
   const characters = window.localStorage.getItem(CHARACTERS);
   const list = characters ? JSON.parse(characters) : [];
-  const newChar = {
-    label: characterName,
-    value: characterName,
-  };
+  if (list.length === 0){
+    const newChar = {
+      label: character.name,
+      value: character.fileName,
+    };
 
-  list.push(newChar);
+    list.push(newChar);
+  } else if (!list.find(e => e.value === character.fileName)){
+    const newChar = {
+      label: character.name,
+      value: character.fileName,
+    };
+
+    list.push(newChar);
+  }
+
   window.localStorage.setItem(CHARACTERS, JSON.stringify(list));
 }
 
-export function setCurrentCharacterSetting(characterName) {
+export function setCurrentCharacterSetting(character) {
   const settings = JSON.parse(window.localStorage.getItem(SETTINGS));
-  settings.currentCharacter.label = characterName;
-  settings.currentCharacter.value = characterName;
+  settings.currentCharacter.label = character.name;
+  settings.currentCharacter.value = character.fileName;
   window.localStorage.setItem(SETTINGS, JSON.stringify(settings));
 }

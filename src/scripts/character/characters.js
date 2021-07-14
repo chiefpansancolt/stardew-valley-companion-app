@@ -7,7 +7,7 @@ export function characters(storage) {
 
   for (let index = 0; index < myCharacters.length; index++) {
     const char = myCharacters[index];
-    if (char.label === character.label) {
+    if (char.value === character.character.fileName) {
       myCharacters.splice(index, 1);
       break;
     }
