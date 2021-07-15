@@ -2,6 +2,7 @@ import { CalendarIcon, CurrencyDollarIcon, LocationMarkerIcon } from "@heroicons
 import { useContext } from "react";
 import CharacterContext from "@/components/characterContext";
 import Base from "@/components/page-headings/base";
+import { ClockIcon, CodeIcon } from "@heroicons/react/outline";
 
 export default function Dashboard() {
   const { character } = useContext(CharacterContext);
@@ -14,7 +15,7 @@ export default function Dashboard() {
             className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
             aria-hidden="true"
           />
-          {character && (character.character.farmType)}
+          {character && (character.character.farmType.name)}
         </div>
         <div className="mt-2 flex items-center text-sm text-gray-500">
           <CurrencyDollarIcon
@@ -29,6 +30,20 @@ export default function Dashboard() {
             aria-hidden="true"
           />
           {character && (character.character.date.full)}
+        </div>
+        <div className="mt-2 flex items-center text-sm text-gray-500">
+          <ClockIcon
+            className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+            aria-hidden="true"
+          />
+          {character && (character.character.timePlayed.full)}
+        </div>
+        <div className="mt-2 flex items-center text-sm text-gray-500">
+          <CodeIcon
+            className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+            aria-hidden="true"
+          />
+          {character && (character.character.version)}
         </div>
       </div>
     </Base>
