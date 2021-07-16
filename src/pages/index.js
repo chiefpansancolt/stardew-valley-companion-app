@@ -22,12 +22,12 @@ export default function Home() {
       </Head>
       <div>
         <Dashboard />
-        <div className="h-screen flex overflow-hidden">
+        <div className="min-h-screen flex overflow-hidden">
           <div className="flex flex-col min-w-0 flex-1 overflow-hidden">
-            <div className="flex-1 relative z-0 flex overflow-hidden">
+            <div className="flex-1 relative z-0 xl:flex overflow-hidden">
               <main className="flex-1 relative z-0 overflow-y-auto focus:outline-none">
-                <div className="absolute inset-0 py-6 pl-6 pr-3">
-                  <div className="mx-auto px-4 py-4">
+                <div className="relative inset-0 py-6 px-5 xl:pl-6 xl:pr-3">
+                  <div className="mx-auto">
                     <h2 className="text-lg leading-6 font-medium text-gray-900">Skills</h2>
                     <div className="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                       {skills.map((skill) => (
@@ -51,8 +51,9 @@ export default function Home() {
                           </div>
                           {character.character.skills[skill.name].profession1 && (
                             <div className="bg-gray-50 px-5 py-3">
-                              <div className="text-sm text-center">
-                                <strong>{character.character.skills[skill.name].profession1}</strong> | <strong>{character.character.skills[skill.name].profession2}</strong>
+                              <div className="text-sm xl:text-center flex xl:flex-col justify-center 2xl:flex-row">
+                                <span className="font-bold pr-1">{character.character.skills[skill.name].profession1}</span>
+                                <span className="font-bold pl-1 border-l xl:border-t xl:border-l-0 2xl:border-l 2xl:border-t-0 border-gray-800">{character.character.skills[skill.name].profession2}</span>
                               </div>
                             </div>
                           )}
@@ -61,7 +62,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="mx-auto px-4 py-4">
+                  <div className="mx-auto mt-6">
                     <h2 className="text-lg leading-6 font-medium text-gray-900">Other</h2>
                     <div className="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                         <div className="bg-white overflow-hidden shadow rounded-lg">
@@ -94,8 +95,8 @@ export default function Home() {
                   </div>
                 </div>
               </main>
-              <aside className="hidden relative xl:flex xl:flex-col flex-shrink-0 w-1/3">
-                <div className="absolute inset-0 py-6 pl-3 pr-6">
+              <aside className="relative xl:flex xl:flex-col flex-shrink-0 xl:w-1/3">
+                <div className="relative inset-0 pb-6 pt-3 px-5 xl:py-6 xl:pl-3 xl:pr-6">
                   <div className="bg-white shadow overflow-hidden sm:rounded-lg">
                     <img src={character.character.farmType.map} alt="Map" className="w-full" />
                   </div>
