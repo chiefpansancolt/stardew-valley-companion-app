@@ -12,7 +12,7 @@ export default function Mobile({ sidebarOpen, setSidebarOpen }) {
       <Dialog
         as="div"
         static
-        className="fixed inset-0 flex z-40 lg:hidden"
+        className="fixed inset-0 flex z-40 xl:hidden"
         open={sidebarOpen}
         onClose={setSidebarOpen}
       >

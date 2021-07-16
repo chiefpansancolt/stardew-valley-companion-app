@@ -5,7 +5,7 @@ import NavItemCollapsable from "@/components/navigation/nav-item-collapsable";
 
 export default function Static() {
   return (
-    <div className="hidden lg:flex lg:flex-shrink-0">
+    <div className="hidden xl:flex xl:flex-shrink-0">
       <div className="flex flex-col w-64">
         <div className="flex flex-col flex-grow bg-cyan-700 pt-5 pb-4 overflow-y-auto">
           <div className="flex items-center flex-shrink-0 px-4">
