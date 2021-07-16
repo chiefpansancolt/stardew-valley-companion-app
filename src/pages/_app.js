@@ -60,9 +60,7 @@ function MyApp({ Component, pageProps }) {
             </div>
           </div>
 
-          {newCharOpen && (
-            <AddNewCharacter open={newCharOpen} setOpen={setNewCharOpen} />
-          )}
+          {newCharOpen && <AddNewCharacter open={newCharOpen} setOpen={setNewCharOpen} />}
         </div>
       )}
     </>

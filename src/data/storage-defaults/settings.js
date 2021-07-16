@@ -3,8 +3,8 @@ const settings = {
   hasAccounts: false,
   currentCharacter: {
     label: "",
-    value: ""
-  }
-}
+    value: "",
+  },
+};
 
 export default settings;

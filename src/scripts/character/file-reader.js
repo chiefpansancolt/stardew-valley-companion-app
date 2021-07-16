@@ -15,7 +15,7 @@ import {
   TEN,
   NA,
   LEVEL5,
-  LEVEL10
+  LEVEL10,
 } from "@/scripts/constants";
 import professions from "@/data/game-constants/professions";
 import achievements from "@/data/game-constants/achievements";
@@ -51,21 +51,31 @@ export function handleFileSelect(file) {
 
 function buildCharacterInfo(fileName, data) {
   const player = data.SaveGame.player[0];
-  const farming1 = player.professions[0].int.find(e => e === "0" || e === "1");
-  const farming2 = player.professions[0].int.find(e => e === "2" || e === "3" || e === "4" || e === "5");
-  const fishing1 = player.professions[0].int.find(e => e === "6" || e === "7");
-  const fishing2 = player.professions[0].int.find(e => e === "8" || e === "9" || e === "10" || e === "11");
-  const foraging1 = player.professions[0].int.find(e => e === "12" || e === "13");
-  const foraging2 = player.professions[0].int.find(e => e === "14" || e === "15" || e === "16" || e === "17");
-  const mining1 = player.professions[0].int.find(e => e === "18" || e === "19");
-  const mining2 = player.professions[0].int.find(e => e === "20" || e === "21" || e === "22" || e === "23");
-  const combat1 = player.professions[0].int.find(e => e === "24" || e === "25");
-  const combat2 = player.professions[0].int.find(e => e === "26" || e === "27" || e === "28" || e === "29");
+  const farming1 = player.professions[0].int.find((e) => e === "0" || e === "1");
+  const farming2 = player.professions[0].int.find(
+    (e) => e === "2" || e === "3" || e === "4" || e === "5"
+  );
+  const fishing1 = player.professions[0].int.find((e) => e === "6" || e === "7");
+  const fishing2 = player.professions[0].int.find(
+    (e) => e === "8" || e === "9" || e === "10" || e === "11"
+  );
+  const foraging1 = player.professions[0].int.find((e) => e === "12" || e === "13");
+  const foraging2 = player.professions[0].int.find(
+    (e) => e === "14" || e === "15" || e === "16" || e === "17"
+  );
+  const mining1 = player.professions[0].int.find((e) => e === "18" || e === "19");
+  const mining2 = player.professions[0].int.find(
+    (e) => e === "20" || e === "21" || e === "22" || e === "23"
+  );
+  const combat1 = player.professions[0].int.find((e) => e === "24" || e === "25");
+  const combat2 = player.professions[0].int.find(
+    (e) => e === "26" || e === "27" || e === "28" || e === "29"
+  );
   const achieve = [];
 
   for (let i = 0; i < achievements.length; i++) {
     const el = achievements[i];
-    if (player.achievements[0].int.find(e => parseInt(e) === el.key)) {
+    if (player.achievements[0].int.find((e) => parseInt(e) === el.key)) {
       el.value.completed = true;
     } else {
       el.value.completed = false;
@@ -118,7 +128,7 @@ function buildCharacterInfo(fileName, data) {
     },
     totalMoneyEarned: {
       number: parseInt(player.totalMoneyEarned),
-      full: Intl.NumberFormat().format(parseInt(player.totalMoneyEarned)) + CURRENCY
+      full: Intl.NumberFormat().format(parseInt(player.totalMoneyEarned)) + CURRENCY,
     },
     skills: {
       title: skillTitle(
@@ -171,8 +181,7 @@ function buildCharacterInfo(fileName, data) {
         exp: parseInt(player.experiencePoints[0].int[3]),
         nextLevelExp:
           player.miningLevel[0] !== TEN
-            ? skillLevelNumbers[player.miningLevel[0]] -
-              parseInt(player.experiencePoints[0].int[3])
+            ? skillLevelNumbers[player.miningLevel[0]] - parseInt(player.experiencePoints[0].int[3])
             : NA,
         profession1: mining1 ? professions.mining[mining1] : LEVEL5,
         profession2: mining2 ? professions.mining[mining2] : LEVEL10,
@@ -182,8 +191,7 @@ function buildCharacterInfo(fileName, data) {
         exp: parseInt(player.experiencePoints[0].int[4]),
         nextLevelExp:
           player.combatLevel[0] !== TEN
-            ? skillLevelNumbers[player.combatLevel[0]] -
-              parseInt(player.experiencePoints[0].int[4])
+            ? skillLevelNumbers[player.combatLevel[0]] - parseInt(player.experiencePoints[0].int[4])
             : NA,
         profession1: combat1 ? professions.combat[combat1] : LEVEL5,
         profession2: combat2 ? professions.combat[combat2] : LEVEL10,
@@ -193,11 +201,10 @@ function buildCharacterInfo(fileName, data) {
         exp: parseInt(player.experiencePoints[0].int[5]),
         nextLevelExp:
           player.luckLevel[0] !== TEN
-            ? skillLevelNumbers[player.luckLevel[0]] -
-              parseInt(player.experiencePoints[0].int[5])
+            ? skillLevelNumbers[player.luckLevel[0]] - parseInt(player.experiencePoints[0].int[5])
             : NA,
       },
     },
-    achievements: achieve
+    achievements: achieve,
   };
 }

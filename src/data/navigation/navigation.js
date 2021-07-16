@@ -27,10 +27,20 @@ const navigation = [
     standardIcon: true,
     current: false,
     children: [
-      { name: "Artifacts", href: "/collection/artifacts", icon: faMortarPestle, standardIcon: false },
+      {
+        name: "Artifacts",
+        href: "/collection/artifacts",
+        icon: faMortarPestle,
+        standardIcon: false,
+      },
       { name: "Minerals", href: "/collection/minerals", icon: faGem, standardIcon: false },
       { name: "Fish", href: "/collection/fish", icon: faFish, standardIcon: false },
-      { name: "Artisan Goods", href: "/collection/artisan-goods", icon: faCheese, standardIcon: false },
+      {
+        name: "Artisan Goods",
+        href: "/collection/artisan-goods",
+        icon: faCheese,
+        standardIcon: false,
+      },
       { name: "Food", href: "/collection/food", icon: faHamburger, standardIcon: false },
       { name: "Foraging", href: "/collection/foraging", icon: faTree, standardIcon: false },
       { name: "Crops", href: "/collection/crops", icon: faSeedling, standardIcon: false },

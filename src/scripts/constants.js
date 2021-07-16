@@ -56,5 +56,5 @@ export {
   ZERO,
   NEWCHARACTER,
   LEVEL5,
-  LEVEL10
+  LEVEL10,
 };

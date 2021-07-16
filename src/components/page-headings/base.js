@@ -47,5 +47,5 @@ export default function Base({ children, title, showButtons }) {
         </div>
       </div>
     </div>
-  )
+  );
 }

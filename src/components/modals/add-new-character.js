@@ -13,7 +13,7 @@ export default function AddNewCharacter({ open, setOpen }) {
     name: "",
     size: 0,
     ext: "text/xml",
-    complete: false
+    complete: false,
   });
   const [formComplete, setFromComplate] = useState(true);
   const cancelButtonRef = useRef(null);
@@ -81,8 +81,8 @@ export default function AddNewCharacter({ open, setOpen }) {
                   </Dialog.Title>
                   <div className="mt-2 text-sm">
                     <p className="text-gray-700">
-                      Please use the full save file (e.g. Chief_132427894); do not use the SaveGameInfo
-                      file as it does not contain all the necessary information.
+                      Please use the full save file (e.g. Chief_132427894); do not use the
+                      SaveGameInfo file as it does not contain all the necessary information.
                     </p>
                     <p className="text-gray-800 mt-2">Default save file locations are:</p>
                     <ul className="list-disc list-inside text-gray-600">
@@ -95,27 +95,28 @@ export default function AddNewCharacter({ open, setOpen }) {
                       <div className="relative h-40 rounded-lg border-dashed border-2 border-gray-200 bg-white flex justify-center items-center">
                         <div className="absolute">
                           <div className="flex flex-col items-center ">
-                            <CloudUploadIcon className="h-10 w-10 text-gray-200"/>
-                            <span className="block text-gray-400 font-normal">Upload you file here</span>
+                            <CloudUploadIcon className="h-10 w-10 text-gray-200" />
+                            <span className="block text-gray-400 font-normal">
+                              Upload you file here
+                            </span>
                             <span className="block text-gray-400 font-normal">or</span>
                             <span className="block text-blue-400 font-normal">Browse files</span>
                           </div>
                         </div>
-                        <input type="file" className="h-full w-full opacity-0 cursor-pointer"/>
+                        <input type="file" className="h-full w-full opacity-0 cursor-pointer" />
                       </div>
                       <div className="flex justify-between items-center text-gray-400">
                         <span>Accepted file type: .xml</span>
                         <span className="flex items-center ">
-                          <LockIcon className="mr-1"/> secure
+                          <LockIcon className="mr-1" /> secure
                         </span>
                       </div>
                     </div>
                     {fileDetails.complete && (
                       <div className="mt-2 flex text-gray-700">
-                        <DocumentIcon className="h-6 w-6"/>
+                        <DocumentIcon className="h-6 w-6" />
                         <span>{fileDetails.name}</span>
-                        &nbsp;-
-                        (<span>{fileDetails.size}</span>)
+                        &nbsp;- (<span>{fileDetails.size}</span>)
                       </div>
                     )}
                   </form>

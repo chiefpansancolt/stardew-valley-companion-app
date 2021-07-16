@@ -23,5 +23,5 @@ export default function NavItemIcon({ active, Icon, fa }) {
         />
       )}
     </>
-  )
+  );
 }

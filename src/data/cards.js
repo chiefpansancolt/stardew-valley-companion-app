@@ -4,7 +4,7 @@ const skills = [
   { name: "foraging", label: "Foraging" },
   { name: "mining", label: "Mining" },
   { name: "combat", label: "Combat" },
-  { name: "luck", label: "Luck" }
+  { name: "luck", label: "Luck" },
 ];
 
 export { skills };

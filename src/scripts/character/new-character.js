@@ -19,14 +19,14 @@ export function fileData(file) {
 export function addCharactersList(character) {
   const characters = window.localStorage.getItem(CHARACTERS);
   const list = characters ? JSON.parse(characters) : [];
-  if (list.length === 0){
+  if (list.length === 0) {
     const newChar = {
       label: character.name,
       value: character.fileName,
     };
 
     list.push(newChar);
-  } else if (!list.find(e => e.value === character.fileName)){
+  } else if (!list.find((e) => e.value === character.fileName)) {
     const newChar = {
       label: character.name,
       value: character.fileName,

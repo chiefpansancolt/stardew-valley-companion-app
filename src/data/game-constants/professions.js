@@ -5,7 +5,7 @@ const professions = {
     2: "Coopmaster",
     3: "Shepherd",
     4: "Artisan",
-    5: "Agriculturist"
+    5: "Agriculturist",
   },
   fishing: {
     6: "Fisher",
@@ -13,7 +13,7 @@ const professions = {
     8: "Angler",
     9: "Pirate",
     10: "Luremaster",
-    11: "Mariner"
+    11: "Mariner",
   },
   foraging: {
     12: "Forester",
@@ -21,7 +21,7 @@ const professions = {
     14: "Lumberjack",
     15: "Tapper",
     16: "Botanist",
-    17: "Tracker"
+    17: "Tracker",
   },
   mining: {
     18: "Miner",
@@ -29,7 +29,7 @@ const professions = {
     20: "Blacksmith",
     21: "Prospector",
     22: "Excavator",
-    23: "Gemologist"
+    23: "Gemologist",
   },
   combat: {
     24: "Fighter",
@@ -37,8 +37,8 @@ const professions = {
     26: "Brute",
     27: "Defender",
     28: "Acrobat",
-    29: "Desperado"
-  }
-}
+    29: "Desperado",
+  },
+};
 
 export default professions;

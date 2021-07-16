@@ -11,12 +11,8 @@ export default function NavItem({ item, sub }) {
     <Link key={item.name} href={item.href}>
       <a
         className={classNames(
-          active
-            ? "bg-cyan-800 text-white"
-            : "text-cyan-100 hover:text-white hover:bg-cyan-600",
-          sub
-            ? "pl-6"
-            : "pl-2",
+          active ? "bg-cyan-800 text-white" : "text-cyan-100 hover:text-white hover:bg-cyan-600",
+          sub ? "pl-6" : "pl-2",
           "group w-full flex items-center py-2 text-sm font-medium rounded-md"
         )}
       >
@@ -24,5 +20,5 @@ export default function NavItem({ item, sub }) {
         {item.name}
       </a>
     </Link>
-  )
+  );
 }
