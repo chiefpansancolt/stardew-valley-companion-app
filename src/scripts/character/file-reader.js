@@ -111,9 +111,15 @@ function buildCharacterInfo(fileName, data) {
         SPACE +
         MIN,
     },
-    spouse: player.spouse,
-    money: Intl.NumberFormat().format(parseInt(player.money)) + CURRENCY,
-    totalMoneyEarned: Intl.NumberFormat().format(parseInt(player.totalMoneyEarned)) + CURRENCY,
+    spouse: player.spouse[0],
+    money: {
+      number: parseInt(player.money),
+      full: Intl.NumberFormat().format(parseInt(player.money)) + CURRENCY,
+    },
+    totalMoneyEarned: {
+      number: parseInt(player.totalMoneyEarned),
+      full: Intl.NumberFormat().format(parseInt(player.totalMoneyEarned)) + CURRENCY
+    },
     skills: {
       title: skillTitle(
         Math.floor(
