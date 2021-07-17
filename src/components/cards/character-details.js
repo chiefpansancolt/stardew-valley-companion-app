@@ -45,6 +45,10 @@ export default function CharacterDetails({ character }) {
               <dd className="mt-1 text-sm text-gray-900">{character.totalMoneyEarned.full}</dd>
             </div>
             <div className="sm:col-span-1">
+              <dt className="text-sm font-medium text-gray-500">Farm House Level</dt>
+              <dd className="mt-1 text-sm text-gray-900">{character.farmHouseLevel} / 3</dd>
+            </div>
+            <div className="sm:col-span-1">
               <dt className="text-sm font-medium text-gray-500">Health</dt>
               <dd className="mt-1 text-sm text-gray-900">{character.health} / 205</dd>
             </div>

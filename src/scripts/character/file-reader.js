@@ -97,6 +97,7 @@ function buildCharacterInfo(fileName, data) {
     rainChance: parseFloat(data.SaveGame.chanceToRainTomorrow[0]).toFixed(4),
     dailyLuck: parseFloat(data.SaveGame.dailyLuck[0]).toFixed(4),
     weatherTomorrow: weather[data.SaveGame.weatherForTomorrow[0]],
+    farmHouseLevel: player.houseUpgradeLevel[0],
     date: {
       season: data.SaveGame.currentSeason[0].capitalize(),
       day: data.SaveGame.dayOfMonth[0],
