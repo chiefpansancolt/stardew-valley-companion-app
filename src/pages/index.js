@@ -30,10 +30,7 @@ export default function Home() {
             <h2 className="text-lg leading-6 font-medium text-gray-900">Skills</h2>
             <div className="mt-2 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {skills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="bg-white overflow-hidden shadow rounded-lg"
-                >
+                <div key={skill.name} className="bg-white overflow-hidden shadow rounded-lg">
                   <div className="p-5">
                     <div className="flex items-center">
                       <div className="w-0 flex-1">
@@ -44,8 +41,7 @@ export default function Home() {
                           <dd>
                             <div className="text-lg font-medium text-gray-900">
                               {character.character.skills[skill.name].level}
-                              {character.character.skills[skill.name].nextLevelExp !==
-                                "N/A" && (
+                              {character.character.skills[skill.name].nextLevelExp !== "N/A" && (
                                 <span>
                                   {" "}
                                   - {character.character.skills[skill.name].nextLevelExp}xp
@@ -85,15 +81,12 @@ export default function Home() {
                     </div>
                     <div className="ml-5 w-0 flex-1">
                       <dl>
-                        <dt className="text-sm font-medium text-gray-500 truncate">
-                          Achievements
-                        </dt>
+                        <dt className="text-sm font-medium text-gray-500 truncate">Achievements</dt>
                         <dd>
                           <div className="text-lg font-medium text-gray-900">
                             {
-                              character.character.achievements.filter(
-                                (e) => e.completed === true
-                              ).length
+                              character.character.achievements.filter((e) => e.completed === true)
+                                .length
                             }{" "}
                             / 30
                           </div>
