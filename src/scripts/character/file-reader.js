@@ -20,6 +20,7 @@ import {
 import professions from "@/data/game-constants/professions";
 import achievements from "@/data/game-constants/achievements";
 import { addCharactersList, setCurrentCharacterSetting } from "./new-character";
+import weather from "@/data/game-constants/weather";
 
 export function handleFileSelect(file) {
   String.prototype.capitalize = function () {
@@ -93,6 +94,9 @@ function buildCharacterInfo(fileName, data) {
     health: player.maxHealth[0],
     stamina: player.maxStamina[0],
     items: player.maxItems[0],
+    rainChance: parseFloat(data.SaveGame.chanceToRainTomorrow[0]).toFixed(4),
+    dailyLuck: parseFloat(data.SaveGame.dailyLuck[0]).toFixed(4),
+    weatherTomorrow: weather[data.SaveGame.weatherForTomorrow[0]],
     date: {
       season: data.SaveGame.currentSeason[0].capitalize(),
       day: data.SaveGame.dayOfMonth[0],

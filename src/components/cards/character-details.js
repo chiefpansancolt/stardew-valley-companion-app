@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Map from "@/components/modals/map";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import classNames from "@/scripts/class-names";
 
 export default function CharacterDetails({ character }) {
   const [openMap, setOpenMap] = useState(false);
@@ -51,8 +53,23 @@ export default function CharacterDetails({ character }) {
               <dd className="mt-1 text-sm text-gray-900">{character.stamina} / 508</dd>
             </div>
             <div className="sm:col-span-1">
-              <dt className="text-sm font-medium text-gray-500">Items Storage</dt>
+              <dt className="text-sm font-medium text-gray-500">Backpack Item Storage</dt>
               <dd className="mt-1 text-sm text-gray-900">{character.items} / 36</dd>
+            </div>
+            <div className="sm:col-span-1">
+              <dt className="text-sm font-medium text-gray-500">Today's Luck</dt>
+              <dd className="mt-1 text-sm text-gray-900">{character.dailyLuck}</dd>
+            </div>
+            <div className="sm:col-span-1">
+              <dt className="text-sm font-medium text-gray-500">Rain Chance Tomorrow</dt>
+              <dd className="mt-1 text-sm text-gray-900">{character.rainChance}</dd>
+            </div>
+            <div className="sm:col-span-1">
+              <dt className="text-sm font-medium text-gray-500">Tomorrow's Weather</dt>
+              <dd className="mt-1 text-sm text-gray-900">
+                <span className="sr-only">{character.weatherTomorrow.name}</span>
+                <FontAwesomeIcon icon={character.weatherTomorrow.icon} className={classNames(character.weatherTomorrow.color, "h-6 w-6")}/>
+              </dd>
             </div>
             <div className="sm:col-span-1">
               <dt className="text-sm font-medium text-gray-500">Time Played</dt>
