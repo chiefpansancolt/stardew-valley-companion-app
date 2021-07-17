@@ -14,7 +14,7 @@ export default function SkillItems({ items }) {
             </>
           )}
           {item.img === "" && item.link === "" && (
-            <span class="text-xs">{item.name}</span>
+            <span className="text-xs">{item.name}</span>
           )}
         </li>
       ))}

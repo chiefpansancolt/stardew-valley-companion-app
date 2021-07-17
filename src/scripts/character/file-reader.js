@@ -51,6 +51,7 @@ export function handleFileSelect(file) {
 
 function buildCharacterInfo(fileName, data) {
   const player = data.SaveGame.player[0];
+  console.log(player);
   const farming1 = player.professions[0].int.find((e) => e === "0" || e === "1");
   const farming2 = player.professions[0].int.find(
     (e) => e === "2" || e === "3" || e === "4" || e === "5"
@@ -89,6 +90,9 @@ function buildCharacterInfo(fileName, data) {
     name: player.name[0],
     farmName: player.farmName[0],
     farmType: farmTypes[parseInt(data.SaveGame.whichFarm[0])],
+    health: player.maxHealth[0],
+    stamina: player.maxStamina[0],
+    items: player.maxItems[0],
     date: {
       season: data.SaveGame.currentSeason[0].capitalize(),
       day: data.SaveGame.dayOfMonth[0],

@@ -43,6 +43,18 @@ export default function CharacterDetails({ character }) {
               <dd className="mt-1 text-sm text-gray-900">{character.totalMoneyEarned.full}</dd>
             </div>
             <div className="sm:col-span-1">
+              <dt className="text-sm font-medium text-gray-500">Health</dt>
+              <dd className="mt-1 text-sm text-gray-900">{character.health} / 205</dd>
+            </div>
+            <div className="sm:col-span-1">
+              <dt className="text-sm font-medium text-gray-500">Stamina</dt>
+              <dd className="mt-1 text-sm text-gray-900">{character.stamina} / 508</dd>
+            </div>
+            <div className="sm:col-span-1">
+              <dt className="text-sm font-medium text-gray-500">Items Storage</dt>
+              <dd className="mt-1 text-sm text-gray-900">{character.items} / 36</dd>
+            </div>
+            <div className="sm:col-span-1">
               <dt className="text-sm font-medium text-gray-500">Time Played</dt>
               <dd className="mt-1 text-sm text-gray-900">{character.timePlayed.full}</dd>
             </div>
