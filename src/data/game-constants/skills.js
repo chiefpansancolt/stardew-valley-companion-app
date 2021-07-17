@@ -444,7 +444,9 @@ const skills = [
             link: "/collection/crafting",
           },
           {
-            name: "Trees sometimes drop seeds.", img: "", link: "",
+            name: "Trees sometimes drop seeds.",
+            img: "",
+            link: "",
           },
         ],
       },

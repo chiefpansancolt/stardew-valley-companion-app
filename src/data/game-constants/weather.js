@@ -1,7 +1,6 @@
 import { faSnowflake } from "@fortawesome/free-regular-svg-icons";
 import { faBolt, faCloudRain, faSun, faWind } from "@fortawesome/free-solid-svg-icons";
 
-
 const weather = [
   { name: "Sunny", icon: faSun, color: "text-yellow-500" },
   { name: "Rain", icon: faCloudRain, color: "text-blue-500" },
