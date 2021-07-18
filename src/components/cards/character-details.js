@@ -72,7 +72,10 @@ export default function CharacterDetails({ character }) {
               <dt className="text-sm font-medium text-gray-500">Tomorrow's Weather</dt>
               <dd className="mt-1 text-sm text-gray-900">
                 <span className="sr-only">{character.weatherTomorrow.name}</span>
-                <FontAwesomeIcon icon={character.weatherTomorrow.icon} className={classNames(character.weatherTomorrow.color, "h-6 w-6")}/>
+                <FontAwesomeIcon
+                  icon={character.weatherTomorrow.icon}
+                  className={classNames(character.weatherTomorrow.color, "h-6 w-6")}
+                />
               </dd>
             </div>
             <div className="sm:col-span-1">

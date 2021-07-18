@@ -282,11 +282,21 @@ const artifacts = [
   },
   {
     key: 126,
-    value: { name: "Strange Doll (green)", img: "https://stardewvalleywiki.com/mediawiki/images/3/39/Strange_Doll_%28green%29.png", description: "???", price: "1,000g" },
+    value: {
+      name: "Strange Doll (green)",
+      img: "https://stardewvalleywiki.com/mediawiki/images/3/39/Strange_Doll_%28green%29.png",
+      description: "???",
+      price: "1,000g",
+    },
   },
   {
     key: 127,
-    value: { name: "Strange Doll (yellow)", img: "https://stardewvalleywiki.com/mediawiki/images/e/ef/Strange_Doll_%28yellow%29.png", description: "???", price: "1,000g" },
+    value: {
+      name: "Strange Doll (yellow)",
+      img: "https://stardewvalleywiki.com/mediawiki/images/e/ef/Strange_Doll_%28yellow%29.png",
+      description: "???",
+      price: "1,000g",
+    },
   },
   {
     key: 579,
