@@ -58,7 +58,7 @@ const skills = [
     img: "https://stardewvalleywiki.com/mediawiki/images/8/82/Farming_Skill_Icon.png",
     description:
       "Farming skill is gained by harvesting crops. Caring for animals also adds experience: Petting, milking, and shearing farm animals or picking up an animal product inside a barn or coop each give 5 experience points. Using a hoe or watering can does not grant experience by itself. Each level grants +1 proficiency to hoes and watering cans.",
-    height: "h-44",
+    height: "h-48",
     levels: [
       {
         name: "Level 1",
@@ -275,7 +275,7 @@ const skills = [
     img: "https://stardewvalleywiki.com/mediawiki/images/thumb/2/2f/Mining_Skill_Icon.png/32px-Mining_Skill_Icon.png",
     description:
       "Mining skill is increased by breaking rocks. Each level adds +1 to Pickaxe proficiency. You are awarded mining skill points when rocks are destroyed -- it doesn't matter if this is done by Pickaxe, Bombs, or by the action of Monsters. Different rock types give different numbers of experience points.",
-    height: "h-32",
+    height: "h-44",
     levels: [
       {
         name: "Level 1",
@@ -427,7 +427,7 @@ const skills = [
     img: "https://stardewvalleywiki.com/mediawiki/images/thumb/f/f1/Foraging_Skill_Icon.png/32px-Foraging_Skill_Icon.png",
     description:
       "Foraging skill is increased both by gathering forage items found on the ground throughout Stardew Valley and by chopping down Trees with an Axe. Each foraging skill level adds +1 axe proficiency.",
-    height: "h-40",
+    height: "h-48",
     levels: [
       {
         name: "Level 1",
@@ -624,7 +624,7 @@ const skills = [
     img: "https://stardewvalleywiki.com/mediawiki/images/thumb/e/e7/Fishing_Skill_Icon.png/32px-Fishing_Skill_Icon.png",
     description:
       "Fishing Skill is increased by catching Fish, Trash, Seaweed, Green Algae, or White Algae with a Fishing Rod/Pole or by harvesting Crab Pots. Each level grants +1 Fishing Rod Proficiency, increases the minimum fish size (in/cm) and bobber bar height, and decreases the max amount of time before fish bite. Fishing skill also increases the chance to find quality (silver or gold star) fish.",
-    height: "h-60",
+    height: "h-64",
     levels: [
       {
         name: "Level 1",
@@ -841,7 +841,7 @@ const skills = [
     img: "https://stardewvalleywiki.com/mediawiki/images/thumb/c/cf/Combat_Skill_Icon.png/32px-Combat_Skill_Icon.png",
     description:
       "Combat skill is increased by fighting monsters. Some levels add to the player's total HP (health points), as shown by an increase in the health meter.",
-    height: "h-36",
+    height: "h-44",
     levels: [
       {
         name: "Level 1",
