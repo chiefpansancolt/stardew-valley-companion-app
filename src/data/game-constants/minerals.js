@@ -132,6 +132,33 @@ const minerals = [
     },
   },
   {
+    key: 535,
+    value: {
+      name: "Geode",
+      type: "Geode",
+      img: "https://stardewvalleywiki.com/mediawiki/images/4/43/Geode.png",
+      description: "A blacksmith can break this open for you.",
+    },
+  },
+  {
+    key: 536,
+    value: {
+      name: "Frozen Geode",
+      type: "Geode",
+      img: "https://stardewvalleywiki.com/mediawiki/images/b/bf/Frozen_Geode.png",
+      description: "A blacksmith can break this open for you.",
+    },
+  },
+  {
+    key: 537,
+    value: {
+      name: "Magma Geode",
+      type: "Geode",
+      img: "https://stardewvalleywiki.com/mediawiki/images/8/89/Magma_Geode.png",
+      description: "A blacksmith can break this open for you.",
+    },
+  },
+  {
     key: 538,
     value: {
       name: "Alamite",
@@ -588,6 +615,16 @@ const minerals = [
         "Star Shards	No one knows how these form. Some scientists claim that the microscopic structure displays unnatural regularity.",
       price: "500g",
       gemologistPrice: "650g",
+    },
+  },
+  {
+    key: 749,
+    value: {
+      name: "Omni Geode",
+      type: "Geode",
+      img: "https://stardewvalleywiki.com/mediawiki/images/0/09/Omni_Geode.png",
+      description:
+        "A blacksmith can break this open for you. These geodes contain a wide variety of Minerals.",
     },
   },
 ];
