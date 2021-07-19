@@ -274,14 +274,10 @@ function buildMinerals(data) {
 
   for (let i = 0; i < minerals.length; i++) {
     const mineral = minerals[i].value;
-    const isFound = mineralsFound.find(
-      (e) => String(e.key[0].int[0]) === String(minerals[i].key)
-    )
+    const isFound = mineralsFound.find((e) => String(e.key[0].int[0]) === String(minerals[i].key))
       ? true
       : false;
-    const isDonated = museumItems.find(
-      (e) => String(e.value[0].int[0]) === String(minerals[i].key)
-    )
+    const isDonated = museumItems.find((e) => String(e.value[0].int[0]) === String(minerals[i].key))
       ? true
       : false;
 

@@ -39,16 +39,25 @@ export default function Minerals() {
                   collection={character.minerals}
                 >
                   {(!currentTab || currentTab === "All") && (
-                    <MineralsTableView isGeode={false} collection={character.minerals.fullList.filter((e) => e.type !== "Geode")} />
+                    <MineralsTableView
+                      isGeode={false}
+                      collection={character.minerals.fullList.filter((e) => e.type !== "Geode")}
+                    />
                   )}
                   {currentTab === "Found" && (
                     <MineralsTableView isGeode={false} collection={character.minerals.foundList} />
                   )}
                   {currentTab === "Donated" && (
-                    <MineralsTableView isGeode={false} collection={character.minerals.foundList.filter((e) => e.donated === true)} />
+                    <MineralsTableView
+                      isGeode={false}
+                      collection={character.minerals.foundList.filter((e) => e.donated === true)}
+                    />
                   )}
                   {currentTab === "To-Do" && (
-                    <MineralsTableView isGeode={false} collection={character.minerals.unfoundList} />
+                    <MineralsTableView
+                      isGeode={false}
+                      collection={character.minerals.unfoundList}
+                    />
                   )}
                 </Tabs>
               )}
@@ -59,13 +68,16 @@ export default function Minerals() {
             <div className="px-4 py-5 sm:px-6">
               <h3 className="text-lg leading-6 font-medium text-gray-900">Geode Items</h3>
               <p className="mt-1 text-sm text-gray-500">
-                Geodes are mineral deposits that contain other minerals. They can be found
-                primarily by breaking rocks in The Mines.
+                Geodes are mineral deposits that contain other minerals. They can be found primarily
+                by breaking rocks in The Mines.
               </p>
             </div>
             <div className="border-t border-gray-200">
               {character.minerals && (
-                <MineralsTableView isGeode={true} collection={character.minerals.fullList.filter((e) => e.type === "Geode")} />
+                <MineralsTableView
+                  isGeode={true}
+                  collection={character.minerals.fullList.filter((e) => e.type === "Geode")}
+                />
               )}
             </div>
           </div>

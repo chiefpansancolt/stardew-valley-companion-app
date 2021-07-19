@@ -4,7 +4,7 @@ const artifactsTabs = [
   {
     name: "All",
     icon: null,
-    img: "https://stardewvalleywiki.com/mediawiki/images/d/d1/Arrowhead.png"
+    img: "https://stardewvalleywiki.com/mediawiki/images/d/d1/Arrowhead.png",
   },
   { name: "Found", icon: faCheckDouble },
   { name: "Donated", icon: faBuilding },
@@ -15,7 +15,7 @@ const mineralsTab = [
   {
     name: "All",
     icon: null,
-    img: "https://stardewvalleywiki.com/mediawiki/images/0/0e/Diamond_Node.png"
+    img: "https://stardewvalleywiki.com/mediawiki/images/0/0e/Diamond_Node.png",
   },
   { name: "Found", icon: faCheckDouble },
   { name: "Donated", icon: faBuilding },
