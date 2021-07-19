@@ -21,6 +21,7 @@ import professions from "@/data/game-constants/professions";
 import achievements from "@/data/game-constants/achievements";
 import { addCharactersList, setCurrentCharacterSetting } from "./new-character";
 import weather from "@/data/game-constants/weather";
+import artifacts from "@/data/game-constants/artifacts";
 
 export function handleFileSelect(file) {
   String.prototype.capitalize = function () {
@@ -41,6 +42,7 @@ export function handleFileSelect(file) {
     });
 
     saveInfo.character = buildCharacterInfo(file.name, gameData);
+    saveInfo.artifacts = buildArtifacts(gameData);
     localStorage.setItem(file.name, JSON.stringify(saveInfo));
     addCharactersList(saveInfo.character);
     setCurrentCharacterSetting(saveInfo.character);
@@ -52,7 +54,6 @@ export function handleFileSelect(file) {
 
 function buildCharacterInfo(fileName, data) {
   const player = data.SaveGame.player[0];
-  console.log(player);
   const farming1 = player.professions[0].int.find((e) => e === "0" || e === "1");
   const farming2 = player.professions[0].int.find(
     (e) => e === "2" || e === "3" || e === "4" || e === "5"
@@ -216,4 +217,47 @@ function buildCharacterInfo(fileName, data) {
     },
     achievements: achieve,
   };
+}
+
+function buildArtifacts(data) {
+  const museumItems = data.SaveGame.locations[0].GameLocation.find(isLibraryMuseum).museumPieces[0].item;
+  const archaeologyFound = data.SaveGame.player[0].archaeologyFound[0].item;
+  let found = [];
+  let unfound = [];
+  let all = [];
+
+  for (let i = 0; i < artifacts.length; i++) {
+    const artifact = artifacts[i].value;
+    const isFound = archaeologyFound.find((e) => String(e.key[0].int[0]) === String(artifacts[i].key)) ? true : false;
+    const isDonated = museumItems.find((e) => String(e.value[0].int[0]) === String(artifacts[i].key)) ? true : false;
+
+    artifact.found = isFound;
+    artifact.donated = isDonated;
+
+    if (isFound) {
+      found.push(artifact);
+    } else {
+      unfound.push(artifact);
+    }
+
+    all.push(artifact);
+  }
+
+  return {
+    found: found.length,
+    donated: found.filter((e) => e.donated === true).length,
+    unfound: unfound.length,
+    fullList: all,
+    foundList: found,
+    unfoundList: unfound
+  };
+}
+
+
+function isLibraryMuseum(element) {
+  if (element["xsi:type"]) {
+    return element["xsi:type"][0] === "LibraryMuseum";
+  } else {
+    return false;
+  }
 }

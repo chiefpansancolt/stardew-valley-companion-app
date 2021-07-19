@@ -1,10 +1,17 @@
+import { useContext } from "react";
+import { useRouter } from "next/router";
+import CharacterContext from "@/components/characterContext";
 import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
 import Base from "@/components/page-headings/base";
 import Tabs from "@/components/tabs";
 import collectionTabs from "@/data/collection-tabs";
+import CollectionTableView from "@/components/tables/collection-table-view";
 
 export default function Artifacts() {
+  const { character } = useContext(CharacterContext);
+  const router = useRouter();
+  const { currentTab } = router.query;
   return (
     <>
       <Base title="Artifacts" showButtons={true} />
@@ -20,9 +27,20 @@ export default function Artifacts() {
                 but each artifact may only be donated once.
               </p>
             </div>
-            <div className="border-t border-gray-200 px-4 py-5 sm:px-6">
-              <Tabs tabs={collectionTabs} current="/collection/artifacts">
-                
+            <div className="border-t border-gray-200">
+              <Tabs tabs={collectionTabs} currentTab={currentTab} current="/collection/artifacts" collection={character.artifacts}>
+                {(!currentTab || currentTab === "All") && (
+                  <CollectionTableView collection={character.artifacts.fullList} />
+                )}
+                {currentTab === "Found" && (
+                  <CollectionTableView collection={character.artifacts.foundList} />
+                )}
+                {currentTab === "Donated" && (
+                  <CollectionTableView collection={character.artifacts.foundList.filter((e) => e.donated === true)} />
+                )}
+                {currentTab === "To-Do" && (
+                  <CollectionTableView collection={character.artifacts.unfoundList} />
+                )}
               </Tabs>
             </div>
           </div>
