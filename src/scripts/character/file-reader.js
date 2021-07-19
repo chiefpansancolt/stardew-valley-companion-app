@@ -220,7 +220,8 @@ function buildCharacterInfo(fileName, data) {
 }
 
 function buildArtifacts(data) {
-  const museumItems = data.SaveGame.locations[0].GameLocation.find(isLibraryMuseum).museumPieces[0].item;
+  const museumItems =
+    data.SaveGame.locations[0].GameLocation.find(isLibraryMuseum).museumPieces[0].item;
   const archaeologyFound = data.SaveGame.player[0].archaeologyFound[0].item;
   let found = [];
   let unfound = [];
@@ -228,8 +229,16 @@ function buildArtifacts(data) {
 
   for (let i = 0; i < artifacts.length; i++) {
     const artifact = artifacts[i].value;
-    const isFound = archaeologyFound.find((e) => String(e.key[0].int[0]) === String(artifacts[i].key)) ? true : false;
-    const isDonated = museumItems.find((e) => String(e.value[0].int[0]) === String(artifacts[i].key)) ? true : false;
+    const isFound = archaeologyFound.find(
+      (e) => String(e.key[0].int[0]) === String(artifacts[i].key)
+    )
+      ? true
+      : false;
+    const isDonated = museumItems.find(
+      (e) => String(e.value[0].int[0]) === String(artifacts[i].key)
+    )
+      ? true
+      : false;
 
     artifact.found = isFound;
     artifact.donated = isDonated;
@@ -249,10 +258,9 @@ function buildArtifacts(data) {
     unfound: unfound.length,
     fullList: all,
     foundList: found,
-    unfoundList: unfound
+    unfoundList: unfound,
   };
 }
-
 
 function isLibraryMuseum(element) {
   if (element["xsi:type"]) {

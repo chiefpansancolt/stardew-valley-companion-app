@@ -1,4 +1,4 @@
-export default function CollectionTableView({ collection }) {
+export default function ArtifactsTableView({ collection }) {
   return (
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -51,24 +51,26 @@ export default function CollectionTableView({ collection }) {
                       {item.price}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      {item.found
-                        ? (<span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                            Found
-                          </span>)
-                        : (<span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                            Not Found
-                          </span>)
-                      }
+                      {item.found ? (
+                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                          Found
+                        </span>
+                      ) : (
+                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                          Not Found
+                        </span>
+                      )}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      {item.donated
-                        ? (<span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                            Donated
-                          </span>)
-                        : (<span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                            Not Donated
-                          </span>)
-                      }
+                      {item.donated ? (
+                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                          Donated
+                        </span>
+                      ) : (
+                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                          Not Donated
+                        </span>
+                      )}
                     </td>
                   </tr>
                 ))}
@@ -78,5 +80,5 @@ export default function CollectionTableView({ collection }) {
         </div>
       </div>
     </div>
-  )
+  );
 }

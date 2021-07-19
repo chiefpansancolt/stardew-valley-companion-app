@@ -24,31 +24,37 @@ export default function Tabs({ tabs, current, currentTab, collection, children }
               <Link key={tab.name} href={{ pathname: current, query: { currentTab: tab.name } }}>
                 <a
                   className={classNames(
-                    ((!currentTab && index === 0) || currentTab === tab.name)
+                    (!currentTab && index === 0) || currentTab === tab.name
                       ? "border-cyan-500 text-cyan-600"
                       : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-200",
                     "whitespace-nowrap flex py-4 px-1 border-b-2 font-medium text-sm cursor-pointer"
                   )}
-                  aria-current={((!currentTab && index === 0) || currentTab === tab.name) ? "page" : undefined}
+                  aria-current={
+                    (!currentTab && index === 0) || currentTab === tab.name ? "page" : undefined
+                  }
                 >
                   {tab.icon && (
                     <FontAwesomeIcon
                       icon={tab.icon}
                       className={classNames(
-                        ((!currentTab && index === 0) || currentTab === tab.name) ? "text-cyan-500" : "text-gray-400 group-hover:text-gray-500",
+                        (!currentTab && index === 0) || currentTab === tab.name
+                          ? "text-cyan-500"
+                          : "text-gray-400 group-hover:text-gray-500",
                         "-ml-0.5 mr-2 h-5 w-5"
                       )}
                       aria-hidden="true"
                     />
                   )}
                   {!tab.icon && (
-                    <img src={tab.img} className="-ml-0.5 mr-2 h-5 w-5" alt="All Img"/>
+                    <img src={tab.img} className="-ml-0.5 mr-2 h-5 w-5" alt="All Img" />
                   )}
                   {tab.name}
                   {tab.count ? (
                     <span
                       className={classNames(
-                        ((!currentTab && index === 0) || currentTab === tab.name) ? "bg-cyan-100 text-cyan-600" : "bg-gray-100 text-gray-900",
+                        (!currentTab && index === 0) || currentTab === tab.name
+                          ? "bg-cyan-100 text-cyan-600"
+                          : "bg-gray-100 text-gray-900",
                         "hidden ml-3 py-0.5 px-2.5 rounded-full text-xs font-medium md:inline-block"
                       )}
                     >
@@ -61,9 +67,7 @@ export default function Tabs({ tabs, current, currentTab, collection, children }
           </nav>
         </div>
       </div>
-      <div>
-        {children}
-      </div>
+      <div>{children}</div>
     </div>
-  )
+  );
 }

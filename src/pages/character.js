@@ -15,15 +15,19 @@ export default function Character() {
     <>
       <Base title="Character" showButtons={true} />
       <LayoutContainer>
-        <LayoutMain>
-          <CharacterDetails character={character.character} />
-          {skills.map((skill) => (
-            <SkillCard key={skill.name} skill={skill} character={character.character} />
-          ))}
-        </LayoutMain>
-        <LayoutAside>
-          <AchievementsCard character={character.character} />
-        </LayoutAside>
+        {character.character && (
+          <>
+            <LayoutMain isAlone={false}>
+              <CharacterDetails character={character.character} />
+              {skills.map((skill) => (
+                <SkillCard key={skill.name} skill={skill} character={character.character} />
+              ))}
+            </LayoutMain>
+            <LayoutAside>
+              <AchievementsCard character={character.character} />
+            </LayoutAside>
+          </>
+        )}
       </LayoutContainer>
     </>
   );
