@@ -4,12 +4,22 @@ const artifactsTabs = [
   {
     name: "All",
     icon: null,
-    img: "https://stardewvalleywiki.com/mediawiki/images/d/d1/Arrowhead.png",
-    current: true,
+    img: "https://stardewvalleywiki.com/mediawiki/images/d/d1/Arrowhead.png"
   },
-  { name: "Found", icon: faCheckDouble, current: false },
-  { name: "Donated", icon: faBuilding, current: false },
-  { name: "To-Do", icon: faListAlt, current: false },
+  { name: "Found", icon: faCheckDouble },
+  { name: "Donated", icon: faBuilding },
+  { name: "To-Do", icon: faListAlt },
 ];
 
-export { artifactsTabs };
+const mineralsTab = [
+  {
+    name: "All",
+    icon: null,
+    img: "https://stardewvalleywiki.com/mediawiki/images/0/0e/Diamond_Node.png"
+  },
+  { name: "Found", icon: faCheckDouble },
+  { name: "Donated", icon: faBuilding },
+  { name: "To-Do", icon: faListAlt },
+];
+
+export { artifactsTabs, mineralsTab };

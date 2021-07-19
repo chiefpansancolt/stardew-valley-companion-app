@@ -22,6 +22,7 @@ import achievements from "@/data/game-constants/achievements";
 import { addCharactersList, setCurrentCharacterSetting } from "./new-character";
 import weather from "@/data/game-constants/weather";
 import artifacts from "@/data/game-constants/artifacts";
+import minerals from "@/data/game-constants/minerals";
 
 export function handleFileSelect(file) {
   String.prototype.capitalize = function () {
@@ -43,6 +44,7 @@ export function handleFileSelect(file) {
 
     saveInfo.character = buildCharacterInfo(file.name, gameData);
     saveInfo.artifacts = buildArtifacts(gameData);
+    saveInfo.minerals = buildMinerals(gameData);
     localStorage.setItem(file.name, JSON.stringify(saveInfo));
     addCharactersList(saveInfo.character);
     setCurrentCharacterSetting(saveInfo.character);
@@ -256,6 +258,49 @@ function buildArtifacts(data) {
     found: found.length,
     donated: found.filter((e) => e.donated === true).length,
     unfound: unfound.length,
+    fullList: all,
+    foundList: found,
+    unfoundList: unfound,
+  };
+}
+
+function buildMinerals(data) {
+  const museumItems =
+    data.SaveGame.locations[0].GameLocation.find(isLibraryMuseum).museumPieces[0].item;
+  const mineralsFound = data.SaveGame.player[0].mineralsFound[0].item;
+  let found = [];
+  let unfound = [];
+  let all = [];
+
+  for (let i = 0; i < minerals.length; i++) {
+    const mineral = minerals[i].value;
+    const isFound = mineralsFound.find(
+      (e) => String(e.key[0].int[0]) === String(minerals[i].key)
+    )
+      ? true
+      : false;
+    const isDonated = museumItems.find(
+      (e) => String(e.value[0].int[0]) === String(minerals[i].key)
+    )
+      ? true
+      : false;
+
+    mineral.found = isFound;
+    mineral.donated = isDonated;
+
+    if (isFound) {
+      found.push(mineral);
+    } else if (mineral.type !== "Geode") {
+      unfound.push(mineral);
+    }
+
+    all.push(mineral);
+  }
+
+  return {
+    found: found.length,
+    donated: found.filter((e) => e.donated === true).length,
+    unfound: unfound.filter((e) => e.type !== "Geode").length,
     fullList: all,
     foundList: found,
     unfoundList: unfound,

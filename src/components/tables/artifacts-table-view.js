@@ -17,13 +17,13 @@ export default function ArtifactsTableView({ collection }) {
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    Found
+                    Sell Price
                   </th>
                   <th
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    Sell Price
+                    Found
                   </th>
                   <th
                     scope="col"
