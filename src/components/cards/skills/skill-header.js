@@ -24,6 +24,11 @@ export default function SkillHeader({ skillName, level, character }) {
       {level.num <= character.skills[skillName].level && (
         <CheckCircleIcon className="h-5 w-5 text-green-600 ml-2" />
       )}
+      {level.num === (character.skills[skillName].level + 1) && (
+        " - " + 
+        Intl.NumberFormat().format(character.skills[skillName].nextLevelExp) +
+        "xp"
+      )}
     </dt>
   );
 }
