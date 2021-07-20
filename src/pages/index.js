@@ -17,7 +17,7 @@ function SkillDetails({ skill }) {
       {skill.nextLevelExp !== "N/A" && (
         <span>
           {" - "}
-          {skill.nextLevelExp}
+          {Intl.NumberFormat().format(skill.nextLevelExp)}
           {"xp"}
         </span>
       )}
