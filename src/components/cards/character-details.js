@@ -53,12 +53,11 @@ export default function CharacterDetails({ character }) {
                     <FontAwesomeIcon icon={pets[character.pet.type].icon} className="h-6 w-6" />
                     <span className="ml-2">
                       {character.pet.name}
-                      {" - "}
-                      ({Intl.NumberFormat().format(character.pet.friendshipLevel)}/1,000)
+                      {" - "}({Intl.NumberFormat().format(character.pet.friendshipLevel)}/1,000)
                     </span>
                   </>
                 )}
-                {character.pet.type === "Not Picked Yet" && (character.pet.type)}
+                {character.pet.type === "Not Picked Yet" && character.pet.type}
               </dd>
             </div>
             <div className="sm:col-span-1">

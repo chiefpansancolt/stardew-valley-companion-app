@@ -257,7 +257,7 @@ function buildCharacterPet(data) {
     }
   }
 
-  return { type: "Not Picked Yet" }
+  return { type: "Not Picked Yet" };
 }
 
 function buildArtifacts(data) {
@@ -351,7 +351,7 @@ function isLibraryMuseum(element) {
 }
 
 function isDog(element) {
-  if(element["xsi:type"]) {
+  if (element["xsi:type"]) {
     return element["xsi:type"][0] === "Dog";
   } else {
     return false;
@@ -359,7 +359,7 @@ function isDog(element) {
 }
 
 function isCat(element) {
-  if(element["xsi:type"]) {
+  if (element["xsi:type"]) {
     return element["xsi:type"][0] === "Cat";
   } else {
     return false;
@@ -367,7 +367,7 @@ function isCat(element) {
 }
 
 function isFarmHouse(element) {
-  if(element["xsi:type"]) {
+  if (element["xsi:type"]) {
     return element["xsi:type"][0] === "FarmHouse";
   } else {
     return false;
@@ -375,7 +375,7 @@ function isFarmHouse(element) {
 }
 
 function isFarm(element) {
-  if(element["xsi:type"]) {
+  if (element["xsi:type"]) {
     return element["xsi:type"][0] === "Farm";
   } else {
     return false;
