@@ -2,6 +2,7 @@ import { useState } from "react";
 import Map from "@/components/modals/map";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "@/scripts/class-names";
+import pets from "@/data/game-constants/pet";
 
 export default function CharacterDetails({ character }) {
   const [openMap, setOpenMap] = useState(false);
@@ -43,6 +44,22 @@ export default function CharacterDetails({ character }) {
             <div className="sm:col-span-1">
               <dt className="text-sm font-medium text-gray-500">Total Earned</dt>
               <dd className="mt-1 text-sm text-gray-900">{character.totalMoneyEarned.full}</dd>
+            </div>
+            <div className="sm:col-span-1">
+              <dt className="text-sm font-medium text-gray-500">Pet</dt>
+              <dd className="mt-1 text-sm text-gray-900">
+                {character.pet.type !== "Not Picked Yet" && (
+                  <>
+                    <FontAwesomeIcon icon={pets[character.pet.type].icon} className="h-6 w-6" />
+                    <span className="ml-2">
+                      {character.pet.name}
+                      {" - "}
+                      ({Intl.NumberFormat().format(character.pet.friendshipLevel)}/1,000)
+                    </span>
+                  </>
+                )}
+                {character.pet.type === "Not Picked Yet" && (character.pet.type)}
+              </dd>
             </div>
             <div className="sm:col-span-1">
               <dt className="text-sm font-medium text-gray-500">Farm House Level</dt>

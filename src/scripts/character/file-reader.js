@@ -76,17 +76,8 @@ function buildCharacterInfo(fileName, data) {
   const combat2 = player.professions[0].int.find(
     (e) => e === "26" || e === "27" || e === "28" || e === "29"
   );
-  const achieve = [];
 
-  for (let i = 0; i < achievements.length; i++) {
-    const el = achievements[i];
-    if (player.achievements[0].int.find((e) => parseInt(e) === el.key)) {
-      el.value.completed = true;
-    } else {
-      el.value.completed = false;
-    }
-    achieve.push(el.value);
-  }
+  const pet = buildCharacterPet(data);
 
   return {
     fileName: fileName,
@@ -101,6 +92,11 @@ function buildCharacterInfo(fileName, data) {
     dailyLuck: parseFloat(data.SaveGame.dailyLuck[0]).toFixed(4),
     weatherTomorrow: weather[data.SaveGame.weatherForTomorrow[0]],
     farmHouseLevel: player.houseUpgradeLevel[0],
+    pet: {
+      type: pet.type ? pet.type : pet["xsi:type"][0],
+      name: !pet.type ? pet.name[0] : "",
+      friendshipLevel: !pet.type ? parseInt(pet.friendshipTowardFarmer[0]) : "",
+    },
     date: {
       season: data.SaveGame.currentSeason[0].capitalize(),
       day: data.SaveGame.dayOfMonth[0],
@@ -217,8 +213,51 @@ function buildCharacterInfo(fileName, data) {
             : NA,
       },
     },
-    achievements: achieve,
+    achievements: buildCharacterAchievements(player.achievements[0].int),
   };
+}
+
+function buildCharacterAchievements(playerAchievements) {
+  const achieve = [];
+
+  for (let i = 0; i < achievements.length; i++) {
+    const el = achievements[i];
+    if (playerAchievements.find((e) => parseInt(e) === el.key)) {
+      el.value.completed = true;
+    } else {
+      el.value.completed = false;
+    }
+    achieve.push(el.value);
+  }
+
+  return achieve;
+}
+
+function buildCharacterPet(data) {
+  const FarmHouse = data.SaveGame.locations[0].GameLocation.find(isFarmHouse);
+  const Farm = data.SaveGame.locations[0].GameLocation.find(isFarm);
+
+  if (FarmHouse.characters[0] !== "") {
+    if (FarmHouse.characters[0].NPC.find(isDog)) {
+      return FarmHouse.characters[0].NPC.find(isDog);
+    }
+
+    if (FarmHouse.characters[0].NPC.find(isCat)) {
+      return FarmHouse.characters[0].NPC.find(isCat);
+    }
+  }
+
+  if (Farm.characters[0] !== "") {
+    if (Farm.characters[0].NPC.find(isDog)) {
+      return Farm.characters[0].NPC.find(isDog);
+    }
+
+    if (Farm.characters[0].NPC.find(isCat)) {
+      return Farm.characters[0].NPC.find(isCat);
+    }
+  }
+
+  return { type: "Not Picked Yet" }
 }
 
 function buildArtifacts(data) {
@@ -306,6 +345,38 @@ function buildMinerals(data) {
 function isLibraryMuseum(element) {
   if (element["xsi:type"]) {
     return element["xsi:type"][0] === "LibraryMuseum";
+  } else {
+    return false;
+  }
+}
+
+function isDog(element) {
+  if(element["xsi:type"]) {
+    return element["xsi:type"][0] === "Dog";
+  } else {
+    return false;
+  }
+}
+
+function isCat(element) {
+  if(element["xsi:type"]) {
+    return element["xsi:type"][0] === "Cat";
+  } else {
+    return false;
+  }
+}
+
+function isFarmHouse(element) {
+  if(element["xsi:type"]) {
+    return element["xsi:type"][0] === "FarmHouse";
+  } else {
+    return false;
+  }
+}
+
+function isFarm(element) {
+  if(element["xsi:type"]) {
+    return element["xsi:type"][0] === "Farm";
   } else {
     return false;
   }
