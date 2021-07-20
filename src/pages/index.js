@@ -131,7 +131,7 @@ export default function Home() {
             <CardGroup hasPadding={true} title="Museum">
               {museum.map((item) => (
                 <FullStat
-                  key={item.name}
+                  key={item.label}
                   item={item}
                   details={<MuseumDetails name={item.label} character={character} />}
                   hasButton={item.link}
@@ -143,6 +143,7 @@ export default function Home() {
             <CardGroup hasPadding={true} title="Other">
               {other.map((item) => (
                 <FullStat
+                  key={item.label}
                   item={item}
                   details={<OtherDetails name={item.label} character={character} />}
                   hasButton={item.link}
