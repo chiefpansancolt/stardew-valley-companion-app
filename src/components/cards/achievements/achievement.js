@@ -12,7 +12,7 @@ export default function Achievement({ achievement, character }) {
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-sm font-medium text-gray-900 truncate">{achievement.name}</p>
-          <p className="text-sm text-gray-500 truncate">{achievement.description}</p>
+          <p className="text-sm text-gray-500">{achievement.description}</p>
         </div>
         <div className="pr-4">
           {achievement.completed && <Badge label="Completed" />}
