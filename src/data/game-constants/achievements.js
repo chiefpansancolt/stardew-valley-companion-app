@@ -56,6 +56,7 @@ const achievements = [
       description: "Complete the museum collection.",
       linkType: "Link",
       detailLink: "/collection/artifacts",
+      count: "Calculated",
     },
   },
   {
@@ -239,6 +240,7 @@ const achievements = [
       description: "Donate 40 different items to the museum.",
       linkType: "Link",
       detailLink: "/collection/artifacts",
+      count: 40,
     },
   },
   {
