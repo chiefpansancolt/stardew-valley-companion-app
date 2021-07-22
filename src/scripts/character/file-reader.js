@@ -23,6 +23,7 @@ import { addCharactersList, setCurrentCharacterSetting } from "./new-character";
 import weather from "@/data/game-constants/weather";
 import artifacts from "@/data/game-constants/artifacts";
 import minerals from "@/data/game-constants/minerals";
+import townPeople from "@/data/game-constants/town-people";
 
 export function handleFileSelect(file) {
   String.prototype.capitalize = function () {
@@ -43,8 +44,9 @@ export function handleFileSelect(file) {
     });
 
     saveInfo.character = buildCharacterInfo(file.name, gameData);
-    saveInfo.artifacts = buildArtifacts(gameData);
-    saveInfo.minerals = buildMinerals(gameData);
+    saveInfo.artifacts = buildCollectionArtifacts(gameData);
+    saveInfo.minerals = buildCollectionMinerals(gameData);
+    saveInfo.townPeople = buildTownPeople(gameData);
     localStorage.setItem(file.name, JSON.stringify(saveInfo));
     addCharactersList(saveInfo.character);
     setCurrentCharacterSetting(saveInfo.character);
@@ -260,7 +262,42 @@ function buildCharacterPet(data) {
   return { type: "Not Picked Yet" };
 }
 
-function buildArtifacts(data) {
+function buildTownPeople(data) {
+  const friendshipData = data.SaveGame.player[0].friendshipData[0].item;
+  const spouse = data.SaveGame.player[0].spouse[0];
+  const events = data.SaveGame.player[0].eventsSeen[0].int;
+  const results = [];
+
+  for (let i = 0; i < townPeople.length; i++) {
+    const person = townPeople[i];
+    const friendData = friendshipData.find((e) => e.key[0].string[0] === person.name);
+    if (person.name === spouse) {
+      person.isMarried = true;
+    }
+
+    if (friendData) {
+      const friendDataValue = friendData.value[0].Friendship[0];
+      person.status = friendDataValue.Status[0];
+      person.points = parseInt(friendDataValue.Points[0]);
+    }
+
+    for (let e = 0; e < person.events.length; e++) {
+      const eventsList = String(person.events[e].id).split("|");
+      for (let ev = 0; ev < eventsList.length; ev++) {
+        if (events.find((v) => v === String(eventsList[ev]))) {
+          person.events[e].completed = true;
+          break;
+        }
+      }
+    }
+
+    results.push(person);
+  }
+
+  return results;
+}
+
+function buildCollectionArtifacts(data) {
   const museumItems =
     data.SaveGame.locations[0].GameLocation.find(isLibraryMuseum).museumPieces[0].item;
   const archaeologyFound = data.SaveGame.player[0].archaeologyFound[0].item;
@@ -303,7 +340,7 @@ function buildArtifacts(data) {
   };
 }
 
-function buildMinerals(data) {
+function buildCollectionMinerals(data) {
   const museumItems =
     data.SaveGame.locations[0].GameLocation.find(isLibraryMuseum).museumPieces[0].item;
   const mineralsFound = data.SaveGame.player[0].mineralsFound[0].item;

@@ -65,6 +65,8 @@ const achievements = [
       description: "Reach a 5-heart friend level with someone.",
       linkType: "Link",
       detailLink: "/town-people",
+      heartLevel: 5,
+      count: 1,
     },
   },
   {
@@ -74,6 +76,8 @@ const achievements = [
       description: "Reach a 10-heart friend level with someone.",
       linkType: "Link",
       detailLink: "/town-people",
+      heartLevel: 10,
+      count: 1,
     },
   },
   {
@@ -83,6 +87,8 @@ const achievements = [
       description: "Reach a 10-heart friend level with 8 people.",
       linkType: "Link",
       detailLink: "/town-people",
+      heartLevel: 10,
+      count: 8,
     },
   },
   {
@@ -92,6 +98,8 @@ const achievements = [
       description: "Reach a 5-heart friend level with 4 people.",
       linkType: "Link",
       detailLink: "/town-people",
+      heartLevel: 5,
+      count: 4,
     },
   },
   {
@@ -101,6 +109,8 @@ const achievements = [
       description: "Reach a 5-heart friend level with 10 people.",
       linkType: "Link",
       detailLink: "/town-people",
+      heartLevel: 5,
+      count: 10,
     },
   },
   {
@@ -110,6 +120,8 @@ const achievements = [
       description: "Reach a 5-heart friend level with 20 people.",
       linkType: "Link",
       detailLink: "/town-people",
+      heartLevel: 5,
+      count: 20,
     },
   },
   {
