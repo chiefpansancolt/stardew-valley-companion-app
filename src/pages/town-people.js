@@ -11,7 +11,7 @@ function analyzeTownPeople(townPeople) {
   let count5 = 0;
   let count10 = 0;
   for (let i = 0; i < townPeople.length; i++) {
-    const hearts = townPeople[i].points/250;
+    const hearts = townPeople[i].points / 250;
     count5 += hearts >= 5 ? 1 : 0;
     count10 += hearts >= 10 ? 1 : 0;
   }
@@ -37,7 +37,7 @@ function DetailsView({ achievement, townPeople }) {
         </span>
       )}
     </div>
-  )
+  );
 }
 
 export default function TownPeople() {
@@ -52,16 +52,23 @@ export default function TownPeople() {
               <div className="mx-auto">
                 <h2 className="text-lg leading-6 font-medium text-gray-900">Achievements</h2>
                 <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {character.character.achievements.filter((e) => e.detailLink === "/town-people").map((achievement) => (
-                    <FullStat
-                      key={achievement.name}
-                      item={achievement}
-                      hasButton={false}
-                      details={<DetailsView achievement={achievement} townPeople={character.townPeople}/>}
-                      Icon={StarIcon}
-                      iconColor="text-yellow-400"
-                    />
-                  ))}
+                  {character.character.achievements
+                    .filter((e) => e.detailLink === "/town-people")
+                    .map((achievement) => (
+                      <FullStat
+                        key={achievement.name}
+                        item={achievement}
+                        hasButton={false}
+                        details={
+                          <DetailsView
+                            achievement={achievement}
+                            townPeople={character.townPeople}
+                          />
+                        }
+                        Icon={StarIcon}
+                        iconColor="text-yellow-400"
+                      />
+                    ))}
                 </div>
               </div>
 
