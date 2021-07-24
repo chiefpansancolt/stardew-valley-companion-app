@@ -1,5 +1,5 @@
 const FISHERVAL = 1.25;
-const ANGLERVAL = 1.50;
+const ANGLERVAL = 1.5;
 const LOCATION = {
   OCEAN: "Ocean",
   OCEANG: "Ginger Island Oceans",
@@ -41,7 +41,7 @@ const COLORS = {
   GRAY: "text-gray-500",
   YELLOW: "text-yellow-500",
   PURPLE: "text-purple-500",
-}
+};
 
 const fish = [
   {
@@ -73,9 +73,7 @@ const fish = [
       description: "It's really slimy.",
       img: "https://stardewvalleywiki.com/mediawiki/images/6/6d/Green_Algae.png",
       prices: {
-        standard: [
-          { color: COLORS.BLANK, cost: "15g" },
-        ],
+        standard: [{ color: COLORS.BLANK, cost: "15g" }],
       },
       locations: ["Everywhere but the Farm Pond of the Standard Farm"],
       time: ANYTIME,
@@ -92,9 +90,7 @@ const fish = [
       description: "It's super slimy.",
       img: "https://stardewvalleywiki.com/mediawiki/images/f/f7/White_Algae.png",
       prices: {
-        standard: [
-          { color: COLORS.BLANK, cost: "25g" },
-        ],
+        standard: [{ color: COLORS.BLANK, cost: "25g" }],
       },
       locations: ["Mines", "Sewers", "Mutant Bug Lair", LOCATION.WITCHSSWAMP],
       time: ANYTIME,
@@ -538,9 +534,18 @@ const fish = [
           { color: COLORS.PURPLE, cost: Math.floor(400 * ANGLERVAL) + "g" },
         ],
       },
-      locations: [LOCATION.RIVER, LOCATION.TOWNFOREST, LOCATION.SECRETWOODPOND, LOCATION.WITCHSSWAMP],
+      locations: [
+        LOCATION.RIVER,
+        LOCATION.TOWNFOREST,
+        LOCATION.SECRETWOODPOND,
+        LOCATION.WITCHSSWAMP,
+      ],
       time: "6am – 12am",
-      seasons: [SEASONS.SPRING, SEASONS.FALL, SEASONS.SPRING + SEASONS.SUMMER + " in Secret Woods Pond"],
+      seasons: [
+        SEASONS.SPRING,
+        SEASONS.FALL,
+        SEASONS.SPRING + SEASONS.SUMMER + " in Secret Woods Pond",
+      ],
       weathers: [WEATHER.RAIN],
       type: TYPE.FISH,
       trackable: true,
@@ -968,16 +973,40 @@ const fish = [
           { color: COLORS.PURPLE, cost: "3,000g" },
         ],
         fisher: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(1500 * FISHERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(1875 * FISHERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(2250 * FISHERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(3000 * FISHERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(1500 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(1875 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(2250 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(3000 * FISHERVAL)) + "g",
+          },
         ],
         angler: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(1500 * ANGLERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(1875 * ANGLERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(2250 * ANGLERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(3000 * ANGLERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(1500 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(1875 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(2250 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(3000 * ANGLERVAL)) + "g",
+          },
         ],
       },
       locations: ["East Pier on The Beach. Requires level 5 fishing."],
@@ -1002,16 +1031,40 @@ const fish = [
           { color: COLORS.PURPLE, cost: "1,800g" },
         ],
         fisher: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(900 * FISHERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(1125 * FISHERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(1350 * FISHERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(1800 * FISHERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(900 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(1125 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(1350 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(1800 * FISHERVAL)) + "g",
+          },
         ],
         angler: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(900 * ANGLERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(1125 * ANGLERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(1350 * ANGLERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(1800 * ANGLERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(900 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(1125 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(1350 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(1800 * ANGLERVAL)) + "g",
+          },
         ],
       },
       locations: ["North of JojaMart on the wooden plank bridge. Requires level 3 fishing."],
@@ -1039,13 +1092,22 @@ const fish = [
           { color: COLORS.BLANK, cost: Math.floor(500 * FISHERVAL) + "g" },
           { color: COLORS.GRAY, cost: Math.floor(625 * FISHERVAL) + "g" },
           { color: COLORS.YELLOW, cost: Math.floor(750 * FISHERVAL) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(1000 * FISHERVAL)) + "g" },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(1000 * FISHERVAL)) + "g",
+          },
         ],
         angler: [
           { color: COLORS.BLANK, cost: Math.floor(500 * ANGLERVAL) + "g" },
           { color: COLORS.GRAY, cost: Math.floor(625 * ANGLERVAL) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(750 * ANGLERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(1000 * ANGLERVAL)) + "g" },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(750 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(1000 * ANGLERVAL)) + "g",
+          },
         ],
       },
       locations: ["Mines 60F"],
@@ -1072,14 +1134,32 @@ const fish = [
         fisher: [
           { color: COLORS.BLANK, cost: Math.floor(700 * FISHERVAL) + "g" },
           { color: COLORS.GRAY, cost: Math.floor(875 * FISHERVAL) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(1050 * FISHERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(1400 * FISHERVAL)) + "g" },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(1050 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(1400 * FISHERVAL)) + "g",
+          },
         ],
         angler: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(700 * ANGLERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(875 * ANGLERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(1050 * ANGLERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(1400 * ANGLERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(700 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(875 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(1050 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(1400 * ANGLERVAL)) + "g",
+          },
         ],
       },
       locations: ["Mines 100F", "Volcano Caldera"],
@@ -1104,16 +1184,40 @@ const fish = [
           { color: COLORS.PURPLE, cost: "10,000g" },
         ],
         fisher: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(5000 * FISHERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(6250 * FISHERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(7500 * FISHERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(10000 * FISHERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(5000 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(6250 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(7500 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(10000 * FISHERVAL)) + "g",
+          },
         ],
         angler: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(5000 * ANGLERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(6250 * ANGLERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(7500 * ANGLERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(10000 * ANGLERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(5000 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(6250 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(7500 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(10000 * ANGLERVAL)) + "g",
+          },
         ],
       },
       locations: ["The Mountain Lake near the log. Requires level 10 fishing."],
@@ -1240,16 +1344,40 @@ const fish = [
           { color: COLORS.PURPLE, cost: "2,000g" },
         ],
         fisher: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(1000 * FISHERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(1250 * FISHERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(1500 * FISHERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(2000 * FISHERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(1000 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(1250 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(1500 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(2000 * FISHERVAL)) + "g",
+          },
         ],
         angler: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(1000 * ANGLERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(1250 * ANGLERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(1500 * ANGLERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(2000 * ANGLERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(1000 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(1250 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(1500 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(2000 * ANGLERVAL)) + "g",
+          },
         ],
       },
       locations: ["The Sewers"],
@@ -1264,7 +1392,8 @@ const fish = [
     key: 698,
     value: {
       name: "Sturgeon",
-      description: "An ancient bottom-feeder with a dwindling population. Females can live up to 150 years.",
+      description:
+        "An ancient bottom-feeder with a dwindling population. Females can live up to 150 years.",
       img: "https://stardewvalleywiki.com/mediawiki/images/4/42/Sturgeon.png",
       prices: {
         standard: [
@@ -1350,8 +1479,8 @@ const fish = [
         angler: [
           { color: COLORS.BLANK, cost: Math.floor(75 * ANGLERVAL) + "g" },
           { color: COLORS.GRAY, cost: Math.floor(93 * ANGLERVAL) + "g" },
-          { color: COLORS.YELLOW, cost: Math.floor( 112* ANGLERVAL) + "g" },
-          { color: COLORS.PURPLE, cost: Math.floor( 150* ANGLERVAL) + "g" },
+          { color: COLORS.YELLOW, cost: Math.floor(112 * ANGLERVAL) + "g" },
+          { color: COLORS.PURPLE, cost: Math.floor(150 * ANGLERVAL) + "g" },
         ],
       },
       locations: [LOCATION.MOUNTAINLAKE],
@@ -1468,7 +1597,7 @@ const fish = [
     key: 705,
     value: {
       name: "Albacore",
-      description: "Prefers temperature \"edges\" where cool and warm water meet.",
+      description: 'Prefers temperature "edges" where cool and warm water meet.',
       img: "https://stardewvalleywiki.com/mediawiki/images/e/e1/Albacore.png",
       prices: {
         standard: [
@@ -1486,8 +1615,8 @@ const fish = [
         angler: [
           { color: COLORS.BLANK, cost: Math.floor(75 * ANGLERVAL) + "g" },
           { color: COLORS.GRAY, cost: Math.floor(93 * ANGLERVAL) + "g" },
-          { color: COLORS.YELLOW, cost: Math.floor(112* ANGLERVAL) + "g" },
-          { color: COLORS.PURPLE, cost: Math.floor(150* ANGLERVAL) + "g" },
+          { color: COLORS.YELLOW, cost: Math.floor(112 * ANGLERVAL) + "g" },
+          { color: COLORS.PURPLE, cost: Math.floor(150 * ANGLERVAL) + "g" },
         ],
       },
       locations: [LOCATION.OCEAN],
@@ -1607,15 +1736,9 @@ const fish = [
       description: "A large ocean-dwelling crustacean with a strong tail.",
       img: "https://stardewvalleywiki.com/mediawiki/images/9/9f/Lobster.png",
       prices: {
-        standard: [
-          { color: COLORS.BLANK, cost: "120g" },
-        ],
-        fisher: [
-          { color: COLORS.BLANK, cost: Math.floor(120 * FISHERVAL) + "g" },
-        ],
-        angler: [
-          { color: COLORS.BLANK, cost: Math.floor(120 * ANGLERVAL) + "g" },
-        ],
+        standard: [{ color: COLORS.BLANK, cost: "120g" }],
+        fisher: [{ color: COLORS.BLANK, cost: Math.floor(120 * FISHERVAL) + "g" }],
+        angler: [{ color: COLORS.BLANK, cost: Math.floor(120 * ANGLERVAL) + "g" }],
       },
       locations: [LOCATION.OCEAN],
       time: ANYTIME,
@@ -1632,15 +1755,9 @@ const fish = [
       description: "A small freshwater relative of the lobster.",
       img: "https://stardewvalleywiki.com/mediawiki/images/5/53/Crayfish.png",
       prices: {
-        standard: [
-          { color: COLORS.BLANK, cost: "75g" },
-        ],
-        fisher: [
-          { color: COLORS.BLANK, cost: Math.floor(75 * FISHERVAL) + "g" },
-        ],
-        angler: [
-          { color: COLORS.BLANK, cost: Math.floor(75 * ANGLERVAL) + "g" },
-        ],
+        standard: [{ color: COLORS.BLANK, cost: "75g" }],
+        fisher: [{ color: COLORS.BLANK, cost: Math.floor(75 * FISHERVAL) + "g" }],
+        angler: [{ color: COLORS.BLANK, cost: Math.floor(75 * ANGLERVAL) + "g" }],
       },
       locations: ["Freshwater"],
       time: ANYTIME,
@@ -1657,15 +1774,9 @@ const fish = [
       description: "A marine crustacean with two powerful pincers.",
       img: "https://stardewvalleywiki.com/mediawiki/images/6/63/Crab.png",
       prices: {
-        standard: [
-          { color: COLORS.BLANK, cost: "100g" },
-        ],
-        fisher: [
-          { color: COLORS.BLANK, cost: Math.floor(100 * FISHERVAL) + "g" },
-        ],
-        angler: [
-          { color: COLORS.BLANK, cost: Math.floor(100 * ANGLERVAL) + "g" },
-        ],
+        standard: [{ color: COLORS.BLANK, cost: "100g" }],
+        fisher: [{ color: COLORS.BLANK, cost: Math.floor(100 * FISHERVAL) + "g" }],
+        angler: [{ color: COLORS.BLANK, cost: Math.floor(100 * ANGLERVAL) + "g" }],
       },
       locations: [LOCATION.OCEAN],
       time: ANYTIME,
@@ -1750,15 +1861,9 @@ const fish = [
       description: "A scavenger that feeds off the ocean floor. Widely prized for its meat.",
       img: "https://stardewvalleywiki.com/mediawiki/images/9/91/Shrimp.png",
       prices: {
-        standard: [
-          { color: COLORS.BLANK, cost: "60g" },
-        ],
-        fisher: [
-          { color: COLORS.BLANK, cost: Math.floor(60 * FISHERVAL) + "g" },
-        ],
-        angler: [
-          { color: COLORS.BLANK, cost: Math.floor(60 * ANGLERVAL) + "g" },
-        ],
+        standard: [{ color: COLORS.BLANK, cost: "60g" }],
+        fisher: [{ color: COLORS.BLANK, cost: Math.floor(60 * FISHERVAL) + "g" }],
+        angler: [{ color: COLORS.BLANK, cost: Math.floor(60 * ANGLERVAL) + "g" }],
       },
       locations: [LOCATION.OCEAN],
       time: ANYTIME,
@@ -1775,15 +1880,9 @@ const fish = [
       description: "A wide-ranging mollusc that lives in a spiral shell.",
       img: "https://stardewvalleywiki.com/mediawiki/images/d/d2/Snail.png",
       prices: {
-        standard: [
-          { color: COLORS.BLANK, cost: "65g" },
-        ],
-        fisher: [
-          { color: COLORS.BLANK, cost: Math.floor(65 * FISHERVAL) + "g" },
-        ],
-        angler: [
-          { color: COLORS.BLANK, cost: Math.floor(65 * ANGLERVAL) + "g" },
-        ],
+        standard: [{ color: COLORS.BLANK, cost: "65g" }],
+        fisher: [{ color: COLORS.BLANK, cost: Math.floor(65 * FISHERVAL) + "g" }],
+        angler: [{ color: COLORS.BLANK, cost: Math.floor(65 * ANGLERVAL) + "g" }],
       },
       locations: ["Freshwater"],
       time: ANYTIME,
@@ -1800,15 +1899,9 @@ const fish = [
       description: "A tiny freshwater snail that lives in a blue shell.",
       img: "https://stardewvalleywiki.com/mediawiki/images/1/1d/Periwinkle.png",
       prices: {
-        standard: [
-          { color: COLORS.BLANK, cost: "20g" },
-        ],
-        fisher: [
-          { color: COLORS.BLANK, cost: Math.floor(20 * FISHERVAL) + "g" },
-        ],
-        angler: [
-          { color: COLORS.BLANK, cost: Math.floor(20 * ANGLERVAL) + "g" },
-        ],
+        standard: [{ color: COLORS.BLANK, cost: "20g" }],
+        fisher: [{ color: COLORS.BLANK, cost: Math.floor(20 * FISHERVAL) + "g" }],
+        angler: [{ color: COLORS.BLANK, cost: Math.floor(20 * ANGLERVAL) + "g" }],
       },
       locations: ["Freshwater"],
       time: ANYTIME,
@@ -1822,7 +1915,8 @@ const fish = [
     key: 723,
     value: {
       name: "Oyster",
-      description: "Constantly filters water to find food. In the process, it removes dangerous toxins from the environment.",
+      description:
+        "Constantly filters water to find food. In the process, it removes dangerous toxins from the environment.",
       img: "https://stardewvalleywiki.com/mediawiki/images/5/54/Oyster.png",
       prices: {
         standard: [
@@ -1900,16 +1994,40 @@ const fish = [
           { color: COLORS.PURPLE, cost: "2000g" },
         ],
         fisher: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(1000 * FISHERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(1250 * FISHERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(1500 * FISHERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(2000 * FISHERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(1000 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(1250 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(1500 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(2000 * FISHERVAL)) + "g",
+          },
         ],
         angler: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(1000 * ANGLERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(1250 * ANGLERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(1500 * ANGLERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(2000 * ANGLERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(1000 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(1250 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(1500 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(2000 * ANGLERVAL)) + "g",
+          },
         ],
       },
       locations: ["South end of Arrowhead Island in Cindersap Forest. Requires level 6 fishing."],
@@ -1924,7 +2042,8 @@ const fish = [
     key: 795,
     value: {
       name: "Void Salmon",
-      description: "A salmon, twisted by void energy. The fresh meat is jet black, but rapidly turns pink when exposed to air.",
+      description:
+        "A salmon, twisted by void energy. The fresh meat is jet black, but rapidly turns pink when exposed to air.",
       img: "https://stardewvalleywiki.com/mediawiki/images/a/ad/Void_Salmon.png",
       prices: {
         standard: [
@@ -1958,7 +2077,8 @@ const fish = [
     key: 796,
     value: {
       name: "Slimejack",
-      description: "He's coated in a very thick layer of slime. He keeps slipping out of your hands!",
+      description:
+        "He's coated in a very thick layer of slime. He keeps slipping out of your hands!",
       img: "https://stardewvalleywiki.com/mediawiki/images/3/34/Slimejack.png",
       prices: {
         standard: [
@@ -2060,7 +2180,8 @@ const fish = [
     key: 800,
     value: {
       name: "Blobfish",
-      description: "This odd creature floats above the ocean floor, consuming any edible material in its path.",
+      description:
+        "This odd creature floats above the ocean floor, consuming any edible material in its path.",
       img: "https://stardewvalleywiki.com/mediawiki/images/7/7f/Blobfish.png",
       prices: {
         standard: [
@@ -2073,13 +2194,22 @@ const fish = [
           { color: COLORS.BLANK, cost: Math.floor(500 * FISHERVAL) + "g" },
           { color: COLORS.GRAY, cost: Math.floor(625 * FISHERVAL) + "g" },
           { color: COLORS.YELLOW, cost: Math.floor(750 * FISHERVAL) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(1000 * FISHERVAL)) + "g" },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(1000 * FISHERVAL)) + "g",
+          },
         ],
         angler: [
           { color: COLORS.BLANK, cost: Math.floor(500 * ANGLERVAL) + "g" },
           { color: COLORS.GRAY, cost: Math.floor(625 * ANGLERVAL) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(750 * ANGLERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(1000 * ANGLERVAL)) + "g" },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(750 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(1000 * ANGLERVAL)) + "g",
+          },
         ],
       },
       locations: ["Magic Bait in the South-western corner of the beach"],
@@ -2264,7 +2394,8 @@ const fish = [
     key: 898,
     value: {
       name: "Son of Crimsonfish",
-      description: "He hatched in the warm summer water, and followed in the footsteps of his father.",
+      description:
+        "He hatched in the warm summer water, and followed in the footsteps of his father.",
       img: "https://stardewvalleywiki.com/mediawiki/images/1/12/Son_of_Crimsonfish.png",
       prices: {
         standard: [
@@ -2274,16 +2405,40 @@ const fish = [
           { color: COLORS.PURPLE, cost: "3,000g" },
         ],
         fisher: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(1500 * FISHERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(1875 * FISHERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(2250 * FISHERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(3000 * FISHERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(1500 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(1875 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(2250 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(3000 * FISHERVAL)) + "g",
+          },
         ],
         angler: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(1500 * ANGLERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(1875 * ANGLERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(2250 * ANGLERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(3000 * ANGLERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(1500 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(1875 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(2250 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(3000 * ANGLERVAL)) + "g",
+          },
         ],
       },
       locations: ["East Pier on The Beach. Requires level 5 fishing."],
@@ -2308,16 +2463,40 @@ const fish = [
           { color: COLORS.PURPLE, cost: "1,800g" },
         ],
         fisher: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(900 * FISHERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(1125 * FISHERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(1350 * FISHERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(1800 * FISHERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(900 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(1125 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(1350 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(1800 * FISHERVAL)) + "g",
+          },
         ],
         angler: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(900 * ANGLERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(1125 * ANGLERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(1350 * ANGLERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(1800 * ANGLERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(900 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(1125 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(1350 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(1800 * ANGLERVAL)) + "g",
+          },
         ],
       },
       locations: ["North of JojaMart on the wooden plank bridge. Requires level 3 fishing."],
@@ -2342,16 +2521,40 @@ const fish = [
           { color: COLORS.PURPLE, cost: "10,000g" },
         ],
         fisher: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(5000 * FISHERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(6250 * FISHERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(7500 * FISHERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(10000 * FISHERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(5000 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(6250 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(7500 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(10000 * FISHERVAL)) + "g",
+          },
         ],
         angler: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(5000 * ANGLERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(6250 * ANGLERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(7500 * ANGLERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(10000 * ANGLERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(5000 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(6250 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(7500 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(10000 * ANGLERVAL)) + "g",
+          },
         ],
       },
       locations: ["The Mountain Lake near the log. Requires level 10 fishing."],
@@ -2376,16 +2579,40 @@ const fish = [
           { color: COLORS.PURPLE, cost: "2,000g" },
         ],
         fisher: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(1000 * FISHERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(1250 * FISHERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(1500 * FISHERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(2000 * FISHERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(1000 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(1250 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(1500 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(2000 * FISHERVAL)) + "g",
+          },
         ],
         angler: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(1000 * ANGLERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(1250 * ANGLERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(1500 * ANGLERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(2000 * ANGLERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(1000 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(1250 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(1500 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(2000 * ANGLERVAL)) + "g",
+          },
         ],
       },
       locations: ["The Sewers"],
@@ -2410,16 +2637,40 @@ const fish = [
           { color: COLORS.PURPLE, cost: "2,000g" },
         ],
         fisher: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(1000 * FISHERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(1250 * FISHERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(1500 * FISHERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(2000 * FISHERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(1000 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(1250 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(1500 * FISHERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(2000 * FISHERVAL)) + "g",
+          },
         ],
         angler: [
-          { color: COLORS.BLANK, cost: Intl.NumberFormat().format(Math.floor(1000 * ANGLERVAL)) + "g" },
-          { color: COLORS.GRAY, cost: Intl.NumberFormat().format(Math.floor(1250 * ANGLERVAL)) + "g" },
-          { color: COLORS.YELLOW, cost: Intl.NumberFormat().format(Math.floor(1500 * ANGLERVAL)) + "g" },
-          { color: COLORS.PURPLE, cost: Intl.NumberFormat().format(Math.floor(2000 * ANGLERVAL)) + "g" },
+          {
+            color: COLORS.BLANK,
+            cost: Intl.NumberFormat().format(Math.floor(1000 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.GRAY,
+            cost: Intl.NumberFormat().format(Math.floor(1250 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.YELLOW,
+            cost: Intl.NumberFormat().format(Math.floor(1500 * ANGLERVAL)) + "g",
+          },
+          {
+            color: COLORS.PURPLE,
+            cost: Intl.NumberFormat().format(Math.floor(2000 * ANGLERVAL)) + "g",
+          },
         ],
       },
       locations: ["South end of Arrowhead Island in Cindersap Forest. Requires level 6 fishing."],

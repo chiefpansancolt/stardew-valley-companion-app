@@ -204,7 +204,7 @@ const achievements = [
       description: "Catch 10 different fish.",
       linkType: "Link",
       detailLink: "/collection/fish",
-      count: 10
+      count: 10,
     },
   },
   {
@@ -214,7 +214,7 @@ const achievements = [
       description: "Catch 24 different fish.",
       linkType: "Link",
       detailLink: "/collection/fish",
-      count: 24
+      count: 24,
     },
   },
   {
@@ -224,7 +224,7 @@ const achievements = [
       description: "Catch every fish.",
       linkType: "Link",
       detailLink: "/collection/fish",
-      count: "Calculated"
+      count: "Calculated",
     },
   },
   {

@@ -44,7 +44,7 @@ export default function FishTableView({ collection, profession }) {
                     scope="col"
                     className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                   >
-                    Price {(profession !== "") && " " + (profession)}
+                    Price {profession !== "" && " " + profession}
                   </th>
                   <th
                     scope="col"
@@ -77,7 +77,7 @@ export default function FishTableView({ collection, profession }) {
                     </td>
                     <td className="px-6 py-4 whitespace-wrap text-sm text-gray-900">
                       <ul>
-                        {item.locations.map(location => (
+                        {item.locations.map((location) => (
                           <li key={location}>{location}</li>
                         ))}
                       </ul>
@@ -87,38 +87,41 @@ export default function FishTableView({ collection, profession }) {
                     </td>
                     <td className="px-6 py-4 whitespace-wrap text-sm text-gray-900">
                       <ul>
-                        {item.seasons.map(season => (
+                        {item.seasons.map((season) => (
                           <li key={season}>{season}</li>
                         ))}
                       </ul>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       <ul>
-                        {item.weathers.map(weather => (
+                        {item.weathers.map((weather) => (
                           <li key={weather}>{weather}</li>
                         ))}
                       </ul>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       <ul>
-                        {profession === "" && item.prices.standard.map((price) => (
-                          <li key={price.cost} className="flex items-center">
-                            <StarIcon className={classNames(price.color, "h-4 w-4 mr-1")}/>
-                            {price.cost}
-                          </li>
-                        ))}
-                        {profession === "Fisher" && item.prices.fisher.map((price) => (
-                          <li key={price.cost} className="flex items-center">
-                            <StarIcon className={classNames(price.color, "h-4 w-4 mr-1")}/>
-                            {price.cost}
-                          </li>
-                        ))}
-                        {profession === "Angler" && item.prices.angler.map((price) => (
-                          <li key={price.cost} className="flex items-center">
-                            <StarIcon className={classNames(price.color, "h-4 w-4 mr-1")}/>
-                            {price.cost}
-                          </li>
-                        ))}
+                        {profession === "" &&
+                          item.prices.standard.map((price) => (
+                            <li key={price.cost} className="flex items-center">
+                              <StarIcon className={classNames(price.color, "h-4 w-4 mr-1")} />
+                              {price.cost}
+                            </li>
+                          ))}
+                        {profession === "Fisher" &&
+                          item.prices.fisher.map((price) => (
+                            <li key={price.cost} className="flex items-center">
+                              <StarIcon className={classNames(price.color, "h-4 w-4 mr-1")} />
+                              {price.cost}
+                            </li>
+                          ))}
+                        {profession === "Angler" &&
+                          item.prices.angler.map((price) => (
+                            <li key={price.cost} className="flex items-center">
+                              <StarIcon className={classNames(price.color, "h-4 w-4 mr-1")} />
+                              {price.cost}
+                            </li>
+                          ))}
                       </ul>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">

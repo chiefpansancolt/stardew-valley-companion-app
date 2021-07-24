@@ -26,7 +26,7 @@ const fishTabs = [
   {
     name: "All",
     icon: null,
-    img: "https://stardewvalleywiki.com/mediawiki/images/8/82/Bream.png"
+    img: "https://stardewvalleywiki.com/mediawiki/images/8/82/Bream.png",
   },
   { name: "Caught", icon: faCheckDouble },
   { name: "To-Do", icon: faListAlt },
