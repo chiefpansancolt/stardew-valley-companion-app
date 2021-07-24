@@ -25,6 +25,7 @@ import artifacts from "@/data/game-constants/artifacts";
 import minerals from "@/data/game-constants/minerals";
 import townPeople from "@/data/game-constants/town-people";
 import fish from "@/data/game-constants/fish";
+import monsterTypes from "@/data/game-constants/monsters";
 
 export function handleFileSelect(file) {
   String.prototype.capitalize = function () {
@@ -49,6 +50,7 @@ export function handleFileSelect(file) {
     saveInfo.minerals = buildCollectionMinerals(gameData);
     saveInfo.townPeople = buildTownPeople(gameData);
     saveInfo.fishing = buildFishing(gameData);
+    saveInfo.minesMonsters = buildMinesAndMonsters(gameData);
     localStorage.setItem(file.name, JSON.stringify(saveInfo));
     addCharactersList(saveInfo.character);
     setCurrentCharacterSetting(saveInfo.character);
@@ -407,6 +409,33 @@ function buildFishing(data) {
     fullList: all,
     foundList: caught,
     unfoundList: unfound,
+  };
+}
+
+function buildMinesAndMonsters(data) {
+  let monsterList = monsterTypes;
+  for (let i = 0; i < monsterList.length; i++) {
+    const types = monsterList[i];
+    
+    for (let m = 0; m < types.monsters.length; m++) {
+      const monster = types.monsters[m];
+      const current = data.SaveGame.player[0].stats[0].specificMonstersKilled[0].item.find((e) => e.key[0].string[0] === monster.name);
+
+      monster.count = current ? parseInt(current.value[0].int[0]) : 0;
+    }
+  }
+
+  return {
+    monsterList: monsterList,
+    hasSkullKey: data.SaveGame.player[0].hasSkullKey[0] === "true",
+    mineLevel:
+      parseInt(data.SaveGame.player[0].deepestMineLevel[0]) >= 120
+        ? 120
+        : parseInt(data.SaveGame.player[0].deepestMineLevel[0]),
+    skullCavernLevel:
+      parseInt(data.SaveGame.player[0].deepestMineLevel[0]) > 120
+        ? parseInt(data.SaveGame.player[0].deepestMineLevel[0]) - 120
+        : 0,
   };
 }
 
