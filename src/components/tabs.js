@@ -12,6 +12,8 @@ export default function Tabs({ tabs, current, currentTab, collection, children }
       tabs[i].count = collection.donated;
     } else if (tabs[i].name === "To-Do") {
       tabs[i].count = collection.unfound;
+    } else if (tabs[i].name === "Caught") {
+      tabs[i].count = collection.caught;
     }
   }
 

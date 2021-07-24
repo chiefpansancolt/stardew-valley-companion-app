@@ -22,4 +22,14 @@ const mineralsTab = [
   { name: "To-Do", icon: faListAlt },
 ];
 
-export { artifactsTabs, mineralsTab };
+const fishTabs = [
+  {
+    name: "All",
+    icon: null,
+    img: "https://stardewvalleywiki.com/mediawiki/images/8/82/Bream.png"
+  },
+  { name: "Caught", icon: faCheckDouble },
+  { name: "To-Do", icon: faListAlt },
+];
+
+export { artifactsTabs, mineralsTab, fishTabs };

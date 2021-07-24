@@ -24,6 +24,7 @@ import weather from "@/data/game-constants/weather";
 import artifacts from "@/data/game-constants/artifacts";
 import minerals from "@/data/game-constants/minerals";
 import townPeople from "@/data/game-constants/town-people";
+import fish from "@/data/game-constants/fish";
 
 export function handleFileSelect(file) {
   String.prototype.capitalize = function () {
@@ -47,6 +48,7 @@ export function handleFileSelect(file) {
     saveInfo.artifacts = buildCollectionArtifacts(gameData);
     saveInfo.minerals = buildCollectionMinerals(gameData);
     saveInfo.townPeople = buildTownPeople(gameData);
+    saveInfo.fishing = buildFishing(gameData);
     localStorage.setItem(file.name, JSON.stringify(saveInfo));
     addCharactersList(saveInfo.character);
     setCurrentCharacterSetting(saveInfo.character);
@@ -375,6 +377,35 @@ function buildCollectionMinerals(data) {
     unfound: unfound.filter((e) => e.type !== "Geode").length,
     fullList: all,
     foundList: found,
+    unfoundList: unfound,
+  };
+}
+
+function buildFishing(data) {
+  const fishCaught = data.SaveGame.player[0].fishCaught[0].item;
+  let all = [];
+  let caught = [];
+  let unfound = [];
+
+  for (let i = 0; i < fish.length; i++) {
+    const current = fish[i].value;
+    if (fishCaught.find((e) => e.key[0].int[0] === String(fish[i].key))) {
+      current.caught = true;
+      caught.push(current);
+    } else {
+      current.caught = false;
+      unfound.push(current);
+    }
+
+    all.push(current);
+  }
+
+  return {
+    fishCaught: data.SaveGame.player[0].stats[0].fishCaught[0],
+    caught: caught.length,
+    unfound: unfound.filter((e) => e.trackable === true).length,
+    fullList: all,
+    foundList: caught,
     unfoundList: unfound,
   };
 }
