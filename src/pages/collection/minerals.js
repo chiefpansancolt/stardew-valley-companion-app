@@ -7,7 +7,7 @@ import Base from "@/components/page-headings/base";
 import Tabs from "@/components/tabs";
 import MineralsTableView from "@/components/tables/minerals-table-view";
 import FullStat from "@/components/cards/full-stat";
-import { mineralsTab } from "@/data/collection-tabs";
+import { mineralTabs } from "@/data/collection-tabs";
 import { StarIcon } from "@heroicons/react/outline";
 
 function DetailsView({ achievement, artifacts, minerals }) {
@@ -82,7 +82,7 @@ export default function Minerals() {
             <div className="border-t border-gray-200">
               {character.minerals && (
                 <Tabs
-                  tabs={mineralsTab}
+                  tabs={mineralTabs}
                   currentTab={currentTab}
                   current="/collection/minerals"
                   collection={character.minerals}

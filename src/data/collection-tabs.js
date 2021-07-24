@@ -11,7 +11,7 @@ const artifactsTabs = [
   { name: "To-Do", icon: faListAlt },
 ];
 
-const mineralsTab = [
+const mineralTabs = [
   {
     name: "All",
     icon: null,
@@ -32,4 +32,4 @@ const fishTabs = [
   { name: "To-Do", icon: faListAlt },
 ];
 
-export { artifactsTabs, mineralsTab, fishTabs };
+export { artifactsTabs, mineralTabs, fishTabs };
