@@ -413,20 +413,31 @@ function buildFishing(data) {
 }
 
 function buildMinesAndMonsters(data) {
-  let monsterList = monsterTypes;
-  for (let i = 0; i < monsterList.length; i++) {
-    const types = monsterList[i];
-    
-    for (let m = 0; m < types.monsters.length; m++) {
-      const monster = types.monsters[m];
-      const current = data.SaveGame.player[0].stats[0].specificMonstersKilled[0].item.find((e) => e.key[0].string[0] === monster.name);
+  const reducer = (accumulator, currentValue) => accumulator + currentValue.count;
+  let types = monsterTypes;
+  let monsters = [];
+  for (let i = 0; i < types.length; i++) {
+    const type = types[i];
+
+    for (let m = 0; m < type.monsters.length; m++) {
+      const monster = type.monsters[m];
+      const current = data.SaveGame.player[0].stats[0].specificMonstersKilled[0].item.find(
+        (e) => e.key[0].string[0] === monster.name
+      );
 
       monster.count = current ? parseInt(current.value[0].int[0]) : 0;
+      monsters.push(monster);
     }
+
+    type.trackableSum = type.monsters.filter((e) => e.trackable === true).reduce(reducer, 0);
+    type.untrackableSum = type.monsters.filter((e) => e.trackable === false).reduce(reducer, 0);
+    type.total = type.trackableSum + type.untrackableSum;
+    type.percent = ((type.trackableSum / type.goal) * 100).toFixed(2);
   }
 
   return {
-    monsterList: monsterList,
+    monsterList: monsters,
+    monsterTypes: types,
     hasSkullKey: data.SaveGame.player[0].hasSkullKey[0] === "true",
     mineLevel:
       parseInt(data.SaveGame.player[0].deepestMineLevel[0]) >= 120

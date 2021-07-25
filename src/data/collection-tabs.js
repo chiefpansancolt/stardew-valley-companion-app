@@ -32,4 +32,20 @@ const fishTabs = [
   { name: "To-Do", icon: faListAlt },
 ];
 
-export { artifactsTabs, mineralTabs, fishTabs };
+const monsterTabs = [
+  {
+    name: "All Monsters",
+    icon: null,
+    img: "https://stardewvalleywiki.com/mediawiki/images/thumb/7/7d/Bug.png/32px-Bug.png",
+  },
+  {
+    name: "Eradication Goals",
+    icon: faCheckDouble,
+  },
+  {
+    name: "No Eradication Goals",
+    icon: faListAlt,
+  },
+];
+
+export { artifactsTabs, mineralTabs, fishTabs, monsterTabs };

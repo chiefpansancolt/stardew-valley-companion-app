@@ -165,7 +165,8 @@ const monsterTypes = [
         count: 0,
       },
       {
-        name: "Cave Fly",
+        name: "Fly",
+        label: "Cave Fly",
         img: "https://stardewvalleywiki.com/mediawiki/images/thumb/8/8f/Cave_Fly.png/48px-Cave_Fly.png",
         locations: [LOCATION.THEMINES, LOCATION.DANGEROUSMINES],
         trackable: true,
