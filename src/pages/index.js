@@ -84,6 +84,14 @@ function OtherDetails({ name, character }) {
         {character.character.achievements.length}
       </>
     );
+  } else if (name === "Stardrops") {
+    return (
+      <>
+        {character.character.stardrops.filter((e) => e.completed === true).length}
+        {" / "}
+        {character.character.stardrops.length}
+      </>
+    );
   }
 }
 

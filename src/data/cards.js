@@ -1,5 +1,3 @@
-import { StarIcon } from "@heroicons/react/outline";
-
 const skills = [
   {
     name: "farming",
@@ -46,6 +44,9 @@ const museum = [
   },
 ];
 
-const other = [{ label: "Achievements", icon: StarIcon, link: "/character" }];
+const other = [
+  { label: "Stardrops", img: "https://stardewvalleywiki.com/mediawiki/images/a/a5/Stardrop.png", link: "/character" },
+  { label: "Achievements", img: "https://stardewvalleywiki.com/mediawiki/images/thumb/2/24/Achievements_Icon.png/32px-Achievements_Icon.png", link: "/character" },
+];
 
 export { skills, museum, other };

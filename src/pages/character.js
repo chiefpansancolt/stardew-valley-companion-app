@@ -7,6 +7,7 @@ import AchievementsCard from "@/components/cards/achievements/achievements-card"
 import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
 import LayoutAside from "@/components/layouts/layout-aside";
+import StardropCard from "@/components/cards/stardrops/stardrop-card";
 import { skills } from "@/data/game-constants/skills";
 
 export default function Character() {
@@ -24,6 +25,7 @@ export default function Character() {
               ))}
             </LayoutMain>
             <LayoutAside>
+              <StardropCard character={character.character} />
               <AchievementsCard character={character.character} />
             </LayoutAside>
           </>

@@ -26,6 +26,7 @@ import minerals from "@/data/game-constants/minerals";
 import townPeople from "@/data/game-constants/town-people";
 import fish from "@/data/game-constants/fish";
 import monsterTypes from "@/data/game-constants/monsters";
+import stardrops from "@/data/game-constants/stardrop";
 
 export function handleFileSelect(file) {
   String.prototype.capitalize = function () {
@@ -220,11 +221,22 @@ function buildCharacterInfo(fileName, data) {
       },
     },
     achievements: buildCharacterAchievements(player.achievements[0].int),
+    stardrops: buildCharacterStardrops(player.mailReceived[0].string),
   };
 }
 
+function buildCharacterStardrops(playerMail) {
+  const results = stardrops;
+
+  for (let i = 0; i < results.length; i++) {
+    results[i].completed = playerMail.find((e) => e === results[i].id) ? true : false;
+  }
+
+  return results;
+}
+
 function buildCharacterAchievements(playerAchievements) {
-  const achieve = [];
+  const results = [];
 
   for (let i = 0; i < achievements.length; i++) {
     const el = achievements[i];
@@ -233,10 +245,10 @@ function buildCharacterAchievements(playerAchievements) {
     } else {
       el.value.completed = false;
     }
-    achieve.push(el.value);
+    results.push(el.value);
   }
 
-  return achieve;
+  return results;
 }
 
 function buildCharacterPet(data) {
