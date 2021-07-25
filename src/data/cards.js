@@ -30,7 +30,7 @@ const skills = [
 const museum = [
   {
     label: "Museum Donations",
-    img: "https://stardewvalleywiki.com/mediawiki/images/9/91/Gunther_Icon.png",
+    img: "https://stardewvalleywiki.com/mediawiki/images/c/c6/Achievement_A_Complete_Collection.jpg",
   },
   {
     label: "Artifacts Donated",

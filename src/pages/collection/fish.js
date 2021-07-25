@@ -8,7 +8,7 @@ import Tabs from "@/components/tabs";
 import FishTableView from "@/components/tables/fish-table-view";
 import FullStat from "@/components/cards/full-stat";
 import { fishTabs } from "@/data/collection-tabs";
-import { StarIcon } from "@heroicons/react/outline";
+import Badge from "@/components/badges/badge";
 
 function DetailsView({ achievement, fish }) {
   const total = achievement.count === "Calculated" ? fish.caught + fish.unfound : achievement.count;
@@ -21,11 +21,7 @@ function DetailsView({ achievement, fish }) {
           {current} / {total}
         </span>
       )}
-      {current >= total && (
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-          Completed
-        </span>
-      )}
+      {current >= total && <Badge label="Completed" isSuccess={true} />}
     </div>
   );
 }
@@ -57,8 +53,6 @@ export default function Fish() {
                     item={achievement}
                     hasButton={false}
                     details={<DetailsView achievement={achievement} fish={character.fishing} />}
-                    Icon={StarIcon}
-                    iconColor="text-yellow-400"
                   />
                 ))}
             </div>

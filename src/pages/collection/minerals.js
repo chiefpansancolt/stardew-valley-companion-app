@@ -8,7 +8,7 @@ import Tabs from "@/components/tabs";
 import MineralsTableView from "@/components/tables/minerals-table-view";
 import FullStat from "@/components/cards/full-stat";
 import { mineralTabs } from "@/data/collection-tabs";
-import { StarIcon } from "@heroicons/react/outline";
+import Badge from "@/components/badges/badge";
 
 function DetailsView({ achievement, artifacts, minerals }) {
   const total =
@@ -24,11 +24,7 @@ function DetailsView({ achievement, artifacts, minerals }) {
           {current} / {total}
         </span>
       )}
-      {current >= total && (
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-          Completed
-        </span>
-      )}
+      {current >= total && <Badge label="Completed" isSuccess={true} />}
     </div>
   );
 }
@@ -60,8 +56,6 @@ export default function Minerals() {
                         minerals={character.minerals}
                       />
                     }
-                    Icon={StarIcon}
-                    iconColor="text-yellow-400"
                   />
                 ))}
             </div>

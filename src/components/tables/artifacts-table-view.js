@@ -1,3 +1,5 @@
+import Badge from "../badges/badge";
+
 export default function ArtifactsTableView({ collection }) {
   return (
     <div className="flex flex-col">
@@ -51,26 +53,13 @@ export default function ArtifactsTableView({ collection }) {
                       {item.price}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      {item.found ? (
-                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                          Found
-                        </span>
-                      ) : (
-                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                          Not Found
-                        </span>
-                      )}
+                      <Badge label={item.found ? "Found" : "Not Found"} isSuccess={item.found} />
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      {item.donated ? (
-                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                          Donated
-                        </span>
-                      ) : (
-                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                          Not Donated
-                        </span>
-                      )}
+                      <Badge
+                        label={item.donated ? "Donated" : "Not Donated"}
+                        isSuccess={item.donated}
+                      />
                     </td>
                   </tr>
                 ))}

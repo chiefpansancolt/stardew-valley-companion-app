@@ -7,7 +7,7 @@ export default function FullStat({ item, details, hasButton, buttonDetails, Icon
         <div className="flex items-center">
           {(Icon || item.img || item.icon) && (
             <div className="flex-shrink-0">
-              {item.img && <img src={item.img} className="h-8 w-8" alt={item.label + " Image"} />}
+              {item.img && <img src={item.img} className="h-10 w-10" alt={item.label + " Image"} />}
               {item.icon && <item.icon className="h-6 w-6 text-gray-400" aria-hidden="true" />}
               {Icon && <Icon className={classNames(iconColor, "h-6 w-6")} aria-hidden="true" />}
             </div>

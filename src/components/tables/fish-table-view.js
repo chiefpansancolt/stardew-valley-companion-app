@@ -1,5 +1,6 @@
 import classNames from "@/scripts/class-names";
 import { StarIcon } from "@heroicons/react/solid";
+import Badge from "../badges/badge";
 
 export default function FishTableView({ collection, profession }) {
   return (
@@ -125,15 +126,10 @@ export default function FishTableView({ collection, profession }) {
                       </ul>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      {item.caught ? (
-                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                          Caught
-                        </span>
-                      ) : (
-                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                          Not Caught
-                        </span>
-                      )}
+                      <Badge
+                        label={item.caught ? "Caught" : "Not Caught"}
+                        isSuccess={item.caught}
+                      />
                     </td>
                   </tr>
                 ))}

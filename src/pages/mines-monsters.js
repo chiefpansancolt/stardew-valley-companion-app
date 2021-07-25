@@ -9,6 +9,7 @@ import FullStat from "@/components/cards/full-stat";
 import Tabs from "@/components/tabs";
 import { monsterTabs } from "@/data/collection-tabs";
 import MinesMonstersTableView from "@/components/tables/mines-monsters-table-view";
+import Badge from "@/components/badges/badge";
 
 export default function MinesMonsters() {
   const { character } = useContext(CharacterContext);
@@ -61,11 +62,7 @@ export default function MinesMonsters() {
                           <div key={type.category} className="mt-4">
                             <h2 className="px-4 pb-4 text-lg leading-6 font-medium text-gray-900 flex justify-between">
                               <span>{type.category}</span>
-                              {type.percent >= 100 && (
-                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                                  Complete
-                                </span>
-                              )}
+                              {type.percent >= 100 && <Badge label="Complete" isSuccess={true} />}
                               {type.percent < 100 && (
                                 <span className="text-sm">
                                   {type.trackableSum} / {type.goal}
@@ -117,9 +114,7 @@ export default function MinesMonsters() {
                       <span>{character.minesMonsters.mineLevel} / 120</span>
                     )}
                     {character.minesMonsters.mineLevel >= 120 && (
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                        The Bottom
-                      </span>
+                      <Badge label="The Bottom" isSuccess={true} />
                     )}
                   </div>
                 }
@@ -135,9 +130,7 @@ export default function MinesMonsters() {
                       <span>{character.minesMonsters.skullCavernLevel} / &infin;</span>
                     )}
                     {character.minesMonsters.skullCavernLevel === 0 && (
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
-                        Has not Explored
-                      </span>
+                      <Badge label="Has not Explored" isSuccess={false} />
                     )}
                   </div>
                 }
@@ -149,16 +142,10 @@ export default function MinesMonsters() {
                 details={
                   <div className="flex justify-between">
                     <span>Obtained on Floor 120</span>
-                    {!character.minesMonsters.hasSkullKey && (
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">
-                        Not Obtained
-                      </span>
-                    )}
-                    {character.minesMonsters.hasSkullKey && (
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                        Obtained
-                      </span>
-                    )}
+                    <Badge
+                      label={character.minesMonsters.hasSkullKey ? "Obtained" : "Not Obtained"}
+                      isSuccess={character.minesMonsters.hasSkullKey}
+                    />
                   </div>
                 }
               />

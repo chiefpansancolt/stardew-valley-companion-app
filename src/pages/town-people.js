@@ -6,6 +6,7 @@ import LayoutMain from "@/components/layouts/layout-main";
 import PersonCard from "@/components/cards/town-people/person-card";
 import FullStat from "@/components/cards/full-stat";
 import { StarIcon } from "@heroicons/react/outline";
+import Badge from "@/components/badges/badge";
 
 function analyzeTownPeople(townPeople) {
   let count5 = 0;
@@ -31,11 +32,7 @@ function DetailsView({ achievement, townPeople }) {
           {usage} / {achievement.count}
         </span>
       )}
-      {calc >= 1 && (
-        <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-          Completed
-        </span>
-      )}
+      {calc >= 1 && <Badge label="Completed" isSuccess={true} />}
     </div>
   );
 }

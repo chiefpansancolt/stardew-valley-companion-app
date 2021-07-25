@@ -2,6 +2,8 @@ import { ChevronRightIcon, CakeIcon } from "@heroicons/react/solid";
 import Heart from "@/components/cards/town-people/heart";
 import { CheckIcon, XIcon } from "@heroicons/react/outline";
 import Link from "next/link";
+import Badge from "@/components/badges/badge";
+import BadgeOther from "@/components/badges/badge-other";
 
 export default function PersonCard({ person }) {
   const heartCount = person.points / 250;
@@ -152,15 +154,9 @@ export default function PersonCard({ person }) {
               </div>
               <div className="mt-4 flex-shrink-0 sm:mt-0 sm:ml-5">
                 <p className="text-sm text-gray-900">
-                  {person.status === "Married" && (
-                    <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">
-                      {person.status}
-                    </span>
-                  )}
+                  {person.status === "Married" && <Badge label={person.status} isSuccess={true} />}
                   {person.status !== "Married" && (
-                    <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-                      {person.status ? person.status : "TBD"}
-                    </span>
+                    <BadgeOther label={person.status ? person.status : "TBD"} type="blue" />
                   )}
                 </p>
                 <p className="mt-2 text-sm text-gray-500">
