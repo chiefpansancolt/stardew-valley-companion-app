@@ -25,7 +25,7 @@ export default function Minerals() {
               {character.character.achievements.achievements
                 .filter((e) => e.detailLink === "/collection/artifacts")
                 .map((achievement) => (
-                  <AchievementStat achievement={achievement} />
+                  <AchievementStat key={achievement.name} achievement={achievement} />
                 ))}
             </div>
           </div>

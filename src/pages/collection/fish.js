@@ -31,7 +31,7 @@ export default function Fish() {
               {character.character.achievements.achievements
                 .filter((e) => e.detailLink === "/collection/fish")
                 .map((achievement) => (
-                  <AchievementStat achievement={achievement} />
+                  <AchievementStat key={achievement.name} achievement={achievement} />
                 ))}
             </div>
           </div>

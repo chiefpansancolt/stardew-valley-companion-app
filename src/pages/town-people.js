@@ -21,7 +21,7 @@ export default function TownPeople() {
                   {character.character.achievements.achievements
                     .filter((e) => e.detailLink === "/town-people")
                     .map((achievement) => (
-                      <AchievementStat achievement={achievement} />
+                      <AchievementStat key={achievement.name} achievement={achievement} />
                     ))}
                 </div>
               </div>
