@@ -79,9 +79,9 @@ function OtherDetails({ name, character }) {
   if (name === "Achievements") {
     return (
       <>
-        {character.character.achievements.filter((e) => e.completed === true).length}
+        {character.character.achievements.achievements.filter((e) => e.completed === true).length}
         {" / "}
-        {character.character.achievements.length}
+        {character.character.achievements.achievements.length}
       </>
     );
   } else if (name === "Stardrops") {

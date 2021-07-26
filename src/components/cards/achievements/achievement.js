@@ -1,6 +1,4 @@
-import LinkBadge from "@/components/cards/achievements/link-badge";
-import Badge from "@/components/badges/badge";
-import MoneyBadge from "@/components/cards/achievements/money-badge";
+import DetailsView from "@/components/badges/details-view";
 
 export default function Achievement({ achievement, character }) {
   return (
@@ -14,13 +12,7 @@ export default function Achievement({ achievement, character }) {
           <p className="text-sm text-gray-500">{achievement.description}</p>
         </div>
         <div className="pr-4">
-          {achievement.completed && <Badge label="Completed" isSuccess={true} />}
-          {!achievement.completed && achievement.linkType === "Link" && (
-            <LinkBadge link={achievement.detailLink} label="View Details" />
-          )}
-          {!achievement.completed && achievement.linkType === "Money" && (
-            <MoneyBadge money={character.totalMoneyEarned} amount={achievement.amount} />
-          )}
+          <DetailsView achievement={achievement} showPercent={true} fontSize="text-sm" />
         </div>
       </div>
     </li>

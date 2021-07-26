@@ -52,6 +52,7 @@ export function handleFileSelect(file) {
     saveInfo.townPeople = buildTownPeople(gameData);
     saveInfo.fishing = buildFishing(gameData);
     saveInfo.minesMonsters = buildMinesAndMonsters(gameData);
+    saveInfo.character.achievements = buildCharacterAchievements(gameData, saveInfo);
     localStorage.setItem(file.name, JSON.stringify(saveInfo));
     addCharactersList(saveInfo.character);
     setCurrentCharacterSetting(saveInfo.character);
@@ -137,13 +138,14 @@ function buildCharacterInfo(fileName, data) {
         MIN,
     },
     spouse: player.spouse[0],
+    children: buildCharacterChildren(data),
     money: {
-      number: parseInt(player.money),
-      full: Intl.NumberFormat().format(parseInt(player.money)) + CURRENCY,
+      number: parseInt(player.money[0]),
+      full: Intl.NumberFormat().format(parseInt(player.money[0])) + CURRENCY,
     },
     totalMoneyEarned: {
-      number: parseInt(player.totalMoneyEarned),
-      full: Intl.NumberFormat().format(parseInt(player.totalMoneyEarned)) + CURRENCY,
+      number: parseInt(player.totalMoneyEarned[0]),
+      full: Intl.NumberFormat().format(parseInt(player.totalMoneyEarned[0])) + CURRENCY,
     },
     skills: {
       title: skillTitle(
@@ -220,7 +222,6 @@ function buildCharacterInfo(fileName, data) {
             : NA,
       },
     },
-    achievements: buildCharacterAchievements(player.achievements[0].int),
     stardrops: buildCharacterStardrops(player.mailReceived[0].string),
   };
 }
@@ -235,20 +236,165 @@ function buildCharacterStardrops(playerMail) {
   return results;
 }
 
-function buildCharacterAchievements(playerAchievements) {
+function buildCharacterAchievements(data, saveInfo) {
   const results = [];
 
   for (let i = 0; i < achievements.length; i++) {
     const el = achievements[i];
-    if (playerAchievements.find((e) => parseInt(e) === el.key)) {
+    if (data.SaveGame.player[0].achievements[0].int.find((e) => parseInt(e) === el.key)) {
       el.value.completed = true;
+    } else if (el.key === "theBottom") {
+      el.value.completed = saveInfo.minesMonsters.mineLevel === el.value.count ? true : false;
+      el.value.current =
+        saveInfo.minesMonsters.mineLevel < el.value.count
+          ? saveInfo.minesMonsters.mineLevel
+          : "Completed";
+    } else if (el.key === "localLegend") {
+      el.value.completed = false;
+    } else if (el.key === "joJa") {
+      el.value.completed = false;
+    } else if (el.key === "stardrops") {
+      el.value.count = saveInfo.character.stardrops.length;
+      el.value.completed =
+        saveInfo.character.stardrops.filter((e) => e.completed === true).length === el.value.count
+          ? true
+          : false;
+      el.value.current = saveInfo.character.stardrops.filter((e) => e.completed === true).length;
+      el.value.percent = percentCalc(
+        saveInfo.character.stardrops.filter((e) => e.completed === true).length,
+        el.value.count
+      );
+    } else if (el.key === "fullHouse") {
+      el.value.isMarried = saveInfo.character.spouse !== "" ? true : false;
+      el.value.current = saveInfo.character.children;
+      el.value.percent = percentCalc(el.value.current, el.value.count);
+      el.value.completed = el.value.isMarried && el.value.current >= el.value.count ? true : false;
+    } else if (el.key === "singleTalent") {
+      el.value.current = Math.max(
+        saveInfo.character.skills.farming.level,
+        saveInfo.character.skills.foraging.level,
+        saveInfo.character.skills.fishing.level,
+        saveInfo.character.skills.mining.level,
+        saveInfo.character.skills.combat.level
+      );
+      el.value.percent = percentCalc(el.value.current, el.value.count);
+      el.value.completed = el.value.current === el.value.count ? true : false;
+    } else if (el.key === "masterTalent") {
+      el.value.current =
+        saveInfo.character.skills.farming.level +
+        saveInfo.character.skills.foraging.level +
+        saveInfo.character.skills.fishing.level +
+        saveInfo.character.skills.mining.level +
+        saveInfo.character.skills.combat.level;
+      el.value.percent = percentCalc(el.value.current, el.value.count);
+      el.value.completed = el.value.current === el.value.count ? true : false;
+    } else if (el.key === "protecter") {
+      el.value.count = saveInfo.minesMonsters.monsterTypes.filter((e) => e.goal !== "None").length;
+      el.value.current = saveInfo.minesMonsters.monsterTypes.filter((e) => e.percent >= 100).length;
+      el.value.percent = percentCalc(el.value.current, el.value.count);
+      el.value.percent = el.value.current === el.value.count ? true : false;
     } else {
       el.value.completed = false;
+      switch (el.key) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+          el.value.current = saveInfo.character.totalMoneyEarned.number;
+          el.value.percent = percentCalc(
+            saveInfo.character.totalMoneyEarned.number,
+            el.value.count
+          );
+          break;
+        case 5:
+          el.value.count =
+            saveInfo.minerals.fullList.filter((e) => e.type !== "Geode").length +
+            saveInfo.artifacts.fullList.length;
+          el.value.current = saveInfo.minerals.donated + saveInfo.artifacts.donated;
+          el.value.percent = percentCalc(el.value.current, el.value.count);
+          break;
+        case 6:
+        case 7:
+        case 9:
+        case 11:
+        case 12:
+        case 13:
+          let count5 = 0;
+          let count10 = 0;
+          for (let i = 0; i < saveInfo.townPeople.length; i++) {
+            const friendData = saveInfo.townPeople[i];
+            const hearts = friendData.points / 250;
+            count5 += hearts >= 5 ? 1 : 0;
+            count10 += hearts >= 10 ? 1 : 0;
+          }
+
+          el.value.current = el.value.heartLevel === 5 ? count5 : count10;
+          el.value.percent = percentCalc(
+            el.value.heartLevel === 5 ? count5 : count10,
+            el.value.count
+          );
+          break;
+        case 15:
+        case 16:
+        case 17:
+          break;
+        case 18:
+        case 19:
+          el.value.current = saveInfo.character.farmHouseLevel;
+          el.value.percent = percentCalc(saveInfo.character.farmHouseLevel, el.value.count);
+          break;
+        case 20:
+        case 21:
+        case 22:
+          break;
+        case 24:
+        case 25:
+        case 26:
+          el.value.count =
+            el.value.count === "Calculated" ? saveInfo.fishing.fullList.length : el.value.count;
+          el.value.current = saveInfo.fishing.caught;
+          el.value.percent = percentCalc(saveInfo.fishing.caught, el.value.count);
+          break;
+        case 27:
+          el.value.current = parseInt(data.SaveGame.player[0].stats[0].fishCaught[0]);
+          el.value.percent = percentCalc(
+            parseInt(data.SaveGame.player[0].stats[0].fishCaught[0]),
+            el.value.count
+          );
+          break;
+        case 28:
+          el.value.current = saveInfo.minerals.donated + saveInfo.artifacts.donated;
+          el.value.percent = percentCalc(el.value.current, el.value.count);
+          break;
+        case 29:
+        case 30:
+          break;
+        case 31:
+        case 32:
+          break;
+        case 34:
+          break;
+        default:
+          console.log(el.key);
+      }
     }
     results.push(el.value);
   }
 
-  return results;
+  return {
+    achievements: results,
+    isSteam: results.filter((e) => e.isSteam === true).length,
+    isSteamCompleted: results.filter((e) => e.isSteam === true && e.completed === true).length,
+    isInGame: results.filter((e) => e.isInGame === true).length,
+    isInGameCompleted: results.filter((e) => e.isInGame === true && e.completed === true).length,
+  };
+}
+
+function buildCharacterChildren(data) {
+  const FarmHouse = data.SaveGame.locations[0].GameLocation.find(isFarmHouse);
+
+  return FarmHouse.characters[0] !== "" ? FarmHouse.characters[0].NPC.filter(isChild).length : 0;
 }
 
 function buildCharacterPet(data) {
@@ -486,6 +632,14 @@ function isCat(element) {
   }
 }
 
+function isChild(element) {
+  if (element["xsi:type"]) {
+    return element["xsi:type"][0] === "Child";
+  } else {
+    return false;
+  }
+}
+
 function isFarmHouse(element) {
   if (element["xsi:type"]) {
     return element["xsi:type"][0] === "FarmHouse";
@@ -500,4 +654,8 @@ function isFarm(element) {
   } else {
     return false;
   }
+}
+
+function percentCalc(top, bottom) {
+  return ((top / bottom) * 100).toFixed(2);
 }

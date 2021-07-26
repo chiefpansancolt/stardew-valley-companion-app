@@ -10,6 +10,7 @@ import Tabs from "@/components/tabs";
 import { monsterTabs } from "@/data/collection-tabs";
 import MinesMonstersTableView from "@/components/tables/mines-monsters-table-view";
 import Badge from "@/components/badges/badge";
+import AchievementStat from "@/components/cards/achievement-stat";
 
 export default function MinesMonsters() {
   const { character } = useContext(CharacterContext);
@@ -102,6 +103,16 @@ export default function MinesMonsters() {
         </LayoutMain>
         <LayoutAside>
           <div className="mx-auto">
+            <h2 className="text-lg leading-6 font-medium text-gray-900">Achievements</h2>
+            <div className="mt-2 grid grid-cols-1 gap-4">
+              {character.character.achievements.achievements
+                .filter((e) => e.detailLink === "/mines-monsters")
+                .map((achievement) => (
+                  <AchievementStat key={achievement.name} achievement={achievement} />
+                ))}
+            </div>
+          </div>
+          <div className="mt-4 mx-auto">
             <h2 className="text-lg leading-6 font-medium text-gray-900">Mine Details</h2>
             <div className="mt-2 grid grid-cols-1 gap-4">
               <FullStat

@@ -6,28 +6,8 @@ import LayoutMain from "@/components/layouts/layout-main";
 import Base from "@/components/page-headings/base";
 import Tabs from "@/components/tabs";
 import MineralsTableView from "@/components/tables/minerals-table-view";
-import FullStat from "@/components/cards/full-stat";
 import { mineralTabs } from "@/data/collection-tabs";
-import Badge from "@/components/badges/badge";
-
-function DetailsView({ achievement, artifacts, minerals }) {
-  const total =
-    achievement.count === "Calculated"
-      ? artifacts.fullList.length + minerals.fullList.filter((e) => e.type !== "Geode").length
-      : achievement.count;
-  const current = artifacts.donated + minerals.donated;
-  return (
-    <div className="flex justify-between">
-      <span>{achievement.description}</span>
-      {current < total && (
-        <span>
-          {current} / {total}
-        </span>
-      )}
-      {current >= total && <Badge label="Completed" isSuccess={true} />}
-    </div>
-  );
-}
+import AchievementStat from "@/components/cards/achievement-stat";
 
 export default function Minerals() {
   const { character } = useContext(CharacterContext);
@@ -42,21 +22,10 @@ export default function Minerals() {
           <div className="mx-auto">
             <h2 className="text-lg leading-6 font-medium text-gray-900">Achievements</h2>
             <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
-              {character.character.achievements
+              {character.character.achievements.achievements
                 .filter((e) => e.detailLink === "/collection/artifacts")
                 .map((achievement) => (
-                  <FullStat
-                    key={achievement.name}
-                    item={achievement}
-                    hasButton={false}
-                    details={
-                      <DetailsView
-                        achievement={achievement}
-                        artifacts={character.artifacts}
-                        minerals={character.minerals}
-                      />
-                    }
-                  />
+                  <AchievementStat achievement={achievement} />
                 ))}
             </div>
           </div>

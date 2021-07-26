@@ -4,38 +4,7 @@ import CharacterContext from "@/components/characterContext";
 import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
 import PersonCard from "@/components/cards/town-people/person-card";
-import FullStat from "@/components/cards/full-stat";
-import { StarIcon } from "@heroicons/react/outline";
-import Badge from "@/components/badges/badge";
-
-function analyzeTownPeople(townPeople) {
-  let count5 = 0;
-  let count10 = 0;
-  for (let i = 0; i < townPeople.length; i++) {
-    const hearts = townPeople[i].points / 250;
-    count5 += hearts >= 5 ? 1 : 0;
-    count10 += hearts >= 10 ? 1 : 0;
-  }
-
-  return { count5, count10 };
-}
-
-function DetailsView({ achievement, townPeople }) {
-  const { count5, count10 } = analyzeTownPeople(townPeople);
-  const usage = achievement.heartLevel === 5 ? count5 : count10;
-  const calc = usage / achievement.count;
-  return (
-    <div className="flex justify-between">
-      <span>{achievement.description}</span>
-      {calc < 1 && (
-        <span>
-          {usage} / {achievement.count}
-        </span>
-      )}
-      {calc >= 1 && <Badge label="Completed" isSuccess={true} />}
-    </div>
-  );
-}
+import AchievementStat from "@/components/cards/achievement-stat";
 
 export default function TownPeople() {
   const { character } = useContext(CharacterContext);
@@ -49,22 +18,10 @@ export default function TownPeople() {
               <div className="mx-auto">
                 <h2 className="text-lg leading-6 font-medium text-gray-900">Achievements</h2>
                 <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {character.character.achievements
+                  {character.character.achievements.achievements
                     .filter((e) => e.detailLink === "/town-people")
                     .map((achievement) => (
-                      <FullStat
-                        key={achievement.name}
-                        item={achievement}
-                        hasButton={false}
-                        details={
-                          <DetailsView
-                            achievement={achievement}
-                            townPeople={character.townPeople}
-                          />
-                        }
-                        Icon={StarIcon}
-                        iconColor="text-yellow-400"
-                      />
+                      <AchievementStat achievement={achievement} />
                     ))}
                 </div>
               </div>
