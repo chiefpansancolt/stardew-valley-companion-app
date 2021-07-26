@@ -129,7 +129,7 @@ export default function PersonCard({ person }) {
                     )}
                   </div>
                 </div>
-                <div className="">
+                <div>
                   <div>
                     <p className="text-sm flex text-gray-900">
                       <CakeIcon
@@ -152,7 +152,7 @@ export default function PersonCard({ person }) {
                   </div>
                 </div>
               </div>
-              <div className="mt-4 flex-shrink-0 sm:mt-0 sm:ml-5">
+              <div className="mt-4 flex-shrink-0 sm:mt-0 sm:ml-5 sm:w-20">
                 <p className="text-sm text-gray-900">
                   {person.status === "Married" && <Badge label={person.status} isSuccess={true} />}
                   {person.status !== "Married" && (
