@@ -16,7 +16,7 @@ export default function PersonCard({ person }) {
           <div className="flex items-center px-4 py-4 sm:px-6">
             <div className="min-w-0 flex-1 flex items-center">
               <div className="flex-shrink-0">
-                <img className="h-12 w-12 rounded-full" src={person.img} alt="" />
+                <img className="h-12 w-12" src={person.img} alt="" />
               </div>
               <div className="min-w-0 flex-1 px-4 grid grid-cols-1 lg:grid-cols-2 gap-4">
                 <div>
