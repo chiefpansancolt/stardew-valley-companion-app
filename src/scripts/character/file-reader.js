@@ -27,6 +27,7 @@ import townPeople from "@/data/game-constants/town-people";
 import fish from "@/data/game-constants/fish";
 import monsterTypes from "@/data/game-constants/monsters";
 import stardrops from "@/data/game-constants/stardrop";
+import recipes from "@/data/game-constants/recipes";
 
 export function handleFileSelect(file) {
   String.prototype.capitalize = function () {
@@ -52,6 +53,7 @@ export function handleFileSelect(file) {
     saveInfo.townPeople = buildTownPeople(gameData);
     saveInfo.fishing = buildFishing(gameData);
     saveInfo.minesMonsters = buildMinesAndMonsters(gameData);
+    saveInfo.recipes = buildCooking(gameData);
     saveInfo.character.achievements = buildCharacterAchievements(gameData, saveInfo);
     localStorage.setItem(file.name, JSON.stringify(saveInfo));
     addCharactersList(saveInfo.character);
@@ -338,6 +340,9 @@ function buildCharacterAchievements(data, saveInfo) {
         case 15:
         case 16:
         case 17:
+          el.value.count = el.value.count === "Calculated" ? saveInfo.recipes.fullList.length : el.value.count;
+          el.value.current = saveInfo.reciepes.cooked;
+          el.value.percent = percentCalc(saveInfo.reciepes.cooked, el.value.count);
           break;
         case 18:
         case 19:
@@ -605,6 +610,28 @@ function buildMinesAndMonsters(data) {
       parseInt(data.SaveGame.player[0].deepestMineLevel[0]) > 120
         ? parseInt(data.SaveGame.player[0].deepestMineLevel[0]) - 120
         : 0,
+  };
+}
+
+function buildCooking(data) {
+  let recipeList = [];
+
+  for (let i = 0; i < recipes.length; i++) {
+    const recipe = recipes[i];
+
+    recipe.found = data.SaveGame.player[0].cookingRecipes[0].item.find((e) => e.key[0].string[0] === recipe.name) ? true : false;
+    recipe.cooked = data.SaveGame.player[0].recipesCooked[0].item.find((e) => e.key[0].string[0] === recipe.id) ? true : false;
+
+    recipeList.push(recipe);
+  }
+  return {
+    cooked: recipeList.filter((e) => e.cooked === true).length,
+    uncooked: recipeList.filter((e) => e.cooked === false).length,
+    found: recipeList.filter((e) => e.found === true).length,
+    unfound: recipeList.filter((e) => e.found === false).length,
+    fullList: recipeList,
+    foundList: recipeList.filter((e) => e.found === true),
+    unfoundList: recipeList.filter((e) => e.found === false)
   };
 }
 
