@@ -5,7 +5,7 @@ export default function AchievementCard({ character }) {
     <div className="mt-4 bg-white shadow overflow-hidden rounded-lg">
       <div className="px-4 py-5 sm:px-6">
         <h3 className="text-lg leading-6 font-medium text-gray-900">Achievements</h3>
-        <p className="mt-1 max-w-2xl text-sm text-gray-500">
+        <div className="mt-1 max-w-2xl text-sm text-gray-500">
           <span>You have completed:</span>
           <ul>
             <li>
@@ -17,7 +17,7 @@ export default function AchievementCard({ character }) {
               {character.achievements.isSteam}
             </li>
           </ul>
-        </p>
+        </div>
       </div>
       <div className="border-t border-gray-200">
         <ul className="divide-y divide-gray-200">
