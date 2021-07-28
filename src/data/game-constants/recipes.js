@@ -24,7 +24,8 @@ const recipes = [
     price: "110g",
   },
   {
-    name: "Cheese Cauliflower",
+    name: "Cheese Cauli.",
+    label: "Cheese Cauliflower",
     description: "It smells great!",
     img: "https://stardewvalleywiki.com/mediawiki/images/6/6e/Cheese_Cauliflower.png",
     ingredients: ["Cauliflower", "Cheese"],
@@ -48,7 +49,8 @@ const recipes = [
     price: "120g",
   },
   {
-    name: "Vegetable Medley",
+    name: "Vegetable Stew",
+    label: "Vegetable Medley",
     description: "This is very nutritious.",
     img: "https://stardewvalleywiki.com/mediawiki/images/0/0a/Vegetable_Medley.png",
     ingredients: ["Tomato", "Beet"],
@@ -224,7 +226,8 @@ const recipes = [
     price: "400g",
   },
   {
-    name: "Cookie",
+    name: "Cookies",
+    label: "Cookie",
     description: "Very chewy.",
     img: "https://stardewvalleywiki.com/mediawiki/images/7/70/Cookie.png",
     ingredients: ["Wheat Flour", "Sugar", "Egg"],
@@ -288,7 +291,8 @@ const recipes = [
     price: "400g",
   },
   {
-    name: "Eggplant Parmesan",
+    name: "Eggplant Parm.",
+    label: "Eggplant Parmesan",
     description: "Tangy, cheesy, and wonderful.",
     img: "https://stardewvalleywiki.com/mediawiki/images/7/73/Eggplant_Parmesan.png",
     ingredients: ["Eggplant", "Tomato"],
@@ -344,7 +348,8 @@ const recipes = [
     price: "220g",
   },
   {
-    name: "Cranberry Sauce",
+    name: "Cran. Sauce",
+    label: "Cranberry Sauce",
     description: "A festive treat.",
     img: "https://stardewvalleywiki.com/mediawiki/images/0/0b/Cranberry_Sauce.png",
     ingredients: ["Cranberries", "Sugar"],
@@ -376,7 +381,8 @@ const recipes = [
     price: "180g",
   },
   {
-    name: "Dish O' The Sea",
+    name: "Dish o' The Sea",
+    label: "Dish O' The Sea",
     description: "This'll keep you warm in the cold sea air.",
     img: "https://stardewvalleywiki.com/mediawiki/images/f/ff/Dish_O%27_The_Sea.png",
     ingredients: ["Sardine", "Sardine", "Hashbrowns"],
