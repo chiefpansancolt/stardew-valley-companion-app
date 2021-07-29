@@ -16,6 +16,8 @@ export default function Tabs({ tabs, current, currentTab, collection, children }
       tabs[i].count = collection.caught;
     } else if (tabs[i].name === "Eradication Goals") {
       tabs[i].count = collection.monsterTypes.filter((e) => e.percent < 100).length;
+    } else if (tabs[i].name === "Cooked") {
+      tabs[i].count = collection.cooked;
     }
   }
 

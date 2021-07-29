@@ -341,8 +341,8 @@ function buildCharacterAchievements(data, saveInfo) {
         case 16:
         case 17:
           el.value.count = el.value.count === "Calculated" ? saveInfo.recipes.fullList.length : el.value.count;
-          el.value.current = saveInfo.reciepes.cooked;
-          el.value.percent = percentCalc(saveInfo.reciepes.cooked, el.value.count);
+          el.value.current = saveInfo.recipes.cooked;
+          el.value.percent = percentCalc(saveInfo.recipes.cooked, el.value.count);
           break;
         case 18:
         case 19:
@@ -620,7 +620,7 @@ function buildCooking(data) {
     const recipe = recipes[i];
 
     recipe.found = data.SaveGame.player[0].cookingRecipes[0].item.find((e) => e.key[0].string[0] === recipe.name) ? true : false;
-    recipe.cooked = data.SaveGame.player[0].recipesCooked[0].item.find((e) => e.key[0].string[0] === recipe.id) ? true : false;
+    recipe.cooked = data.SaveGame.player[0].recipesCooked[0].item.find((e) => e.key[0].int[0] === recipe.id) ? true : false;
 
     recipeList.push(recipe);
   }

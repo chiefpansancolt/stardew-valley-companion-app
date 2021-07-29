@@ -1,5 +1,6 @@
 const recipes = [
   {
+    id: "194",
     name: "Fried Egg",
     description: "Sunny-side up.",
     img: "https://stardewvalleywiki.com/mediawiki/images/1/18/Fried_Egg.png",
@@ -8,6 +9,7 @@ const recipes = [
     price: "35g",
   },
   {
+    id: "195",
     name: "Omelet",
     description: "It's super fluffy.",
     img: "https://stardewvalleywiki.com/mediawiki/images/1/12/Omelet.png",
@@ -16,6 +18,7 @@ const recipes = [
     price: "125g",
   },
   {
+    id: "196",
     name: "Salad",
     description: "A healthy garden salad.",
     img: "https://stardewvalleywiki.com/mediawiki/images/7/7e/Salad.png",
@@ -24,6 +27,7 @@ const recipes = [
     price: "110g",
   },
   {
+    id: "197",
     name: "Cheese Cauli.",
     label: "Cheese Cauliflower",
     description: "It smells great!",
@@ -33,6 +37,7 @@ const recipes = [
     price: "300g",
   },
   {
+    id: "198",
     name: "Baked Fish",
     description: "Baked fish on a bed of herbs.",
     img: "https://stardewvalleywiki.com/mediawiki/images/9/94/Baked_Fish.png",
@@ -41,6 +46,7 @@ const recipes = [
     price: "100g",
   },
   {
+    id: "199",
     name: "Parsnip Soup",
     description: "It's fresh and hearty.",
     img: "https://stardewvalleywiki.com/mediawiki/images/7/76/Parsnip_Soup.png",
@@ -49,6 +55,7 @@ const recipes = [
     price: "120g",
   },
   {
+    id: "200",
     name: "Vegetable Stew",
     label: "Vegetable Medley",
     description: "This is very nutritious.",
@@ -58,6 +65,7 @@ const recipes = [
     price: "120g",
   },
   {
+    id: "201",
     name: "Complete Breakfast",
     description: "You'll feel ready to take on the world!",
     img: "https://stardewvalleywiki.com/mediawiki/images/3/3d/Complete_Breakfast.png",
@@ -66,6 +74,7 @@ const recipes = [
     price: "350g",
   },
   {
+    id: "202",
     name: "Fried Calamari",
     description: "It's so chewy.",
     img: "https://stardewvalleywiki.com/mediawiki/images/2/25/Fried_Calamari.png",
@@ -74,6 +83,7 @@ const recipes = [
     price: "150g",
   },
   {
+    id: "203",
     name: "Strange Bun",
     description: "What's inside?",
     img: "https://stardewvalleywiki.com/mediawiki/images/5/5e/Strange_Bun.png",
@@ -82,6 +92,7 @@ const recipes = [
     price: "225g",
   },
   {
+    id: "204",
     name: "Lucky Lunch",
     description: "A special little meal.",
     img: "https://stardewvalleywiki.com/mediawiki/images/5/5d/Lucky_Lunch.png",
@@ -90,6 +101,7 @@ const recipes = [
     price: "250g",
   },
   {
+    id: "205",
     name: "Fried Mushroom",
     description: "Earthy and aromatic.",
     img: "https://stardewvalleywiki.com/mediawiki/images/4/4a/Fried_Mushroom.png",
@@ -98,6 +110,7 @@ const recipes = [
     price: "200g",
   },
   {
+    id: "206",
     name: "Pizza",
     description: "It's popular for all the right reasons.",
     img: "https://stardewvalleywiki.com/mediawiki/images/f/f4/Pizza.png",
@@ -106,6 +119,7 @@ const recipes = [
     price: "300g",
   },
   {
+    id: "207",
     name: "Bean Hotpot",
     description: "It sure is healthy.",
     img: "https://stardewvalleywiki.com/mediawiki/images/2/24/Bean_Hotpot.png",
@@ -114,6 +128,7 @@ const recipes = [
     price: "100g",
   },
   {
+    id: "208",
     name: "Glazed Yams",
     description: "Sweet and satisfying... The sugar gives it a hint of caramel.",
     img: "https://stardewvalleywiki.com/mediawiki/images/3/30/Glazed_Yams.png",
@@ -122,6 +137,7 @@ const recipes = [
     price: "200g",
   },
   {
+    id: "209",
     name: "Carp Surprise",
     description: "	It's bland and oily.",
     img: "https://stardewvalleywiki.com/mediawiki/images/c/cc/Carp_Surprise.png",
@@ -130,6 +146,7 @@ const recipes = [
     price: "150g",
   },
   {
+    id: "210",
     name: "Hashbrowns",
     description: "Crispy and golden-brown!",
     img: "https://stardewvalleywiki.com/mediawiki/images/8/8f/Hashbrowns.png",
@@ -138,6 +155,7 @@ const recipes = [
     price: "120g",
   },
   {
+    id: "211",
     name: "Pancakes",
     description: "A double stack of fluffy, soft pancakes.",
     img: "https://stardewvalleywiki.com/mediawiki/images/6/6b/Pancakes.png",
@@ -146,6 +164,7 @@ const recipes = [
     price: "80g",
   },
   {
+    id: "212",
     name: "Salmon Dinner",
     description: "The lemon spritz makes it special.",
     img: "https://stardewvalleywiki.com/mediawiki/images/8/8b/Salmon_Dinner.png",
@@ -154,6 +173,7 @@ const recipes = [
     price: "300g",
   },
   {
+    id: "213",
     name: "Fish Taco",
     description: "It smells delicious.",
     img: "https://stardewvalleywiki.com/mediawiki/images/d/d5/Fish_Taco.png",
@@ -162,6 +182,7 @@ const recipes = [
     price: "500g",
   },
   {
+    id: "214",
     name: "Crispy Bass",
     description: "Wow, the breading is perfect.",
     img: "https://stardewvalleywiki.com/mediawiki/images/5/53/Crispy_Bass.png",
@@ -170,6 +191,7 @@ const recipes = [
     price: "150g",
   },
   {
+    id: "215",
     name: "Pepper Poppers",
     description: "Spicy breaded peppers filled with cheese.",
     img: "https://stardewvalleywiki.com/mediawiki/images/0/08/Pepper_Poppers.png",
@@ -178,6 +200,7 @@ const recipes = [
     price: "200g",
   },
   {
+    id: "216",
     name: "Bread",
     description: "A crusty baguette.",
     img: "https://stardewvalleywiki.com/mediawiki/images/e/e1/Bread.png",
@@ -186,6 +209,7 @@ const recipes = [
     price: "60g",
   },
   {
+    id: "218",
     name: "Tom Kha Soup",
     description: "These flavors are incredible!",
     img: "https://stardewvalleywiki.com/mediawiki/images/3/3b/Tom_Kha_Soup.png",
@@ -194,6 +218,7 @@ const recipes = [
     price: "250g",
   },
   {
+    id: "219",
     name: "Trout Soup",
     description: "Pretty salty.",
     img: "https://stardewvalleywiki.com/mediawiki/images/4/48/Trout_Soup.png",
@@ -202,6 +227,7 @@ const recipes = [
     price: "100g",
   },
   {
+    id: "220",
     name: "Chocolate Cake",
     description: "Rich and moist with a thick fudge icing.",
     img: "https://stardewvalleywiki.com/mediawiki/images/8/87/Chocolate_Cake.png",
@@ -210,6 +236,7 @@ const recipes = [
     price: "200g",
   },
   {
+    id: "221",
     name: "Pink Cake",
     description: "There's little heart candies on top.",
     img: "https://stardewvalleywiki.com/mediawiki/images/3/32/Pink_Cake.png",
@@ -218,6 +245,7 @@ const recipes = [
     price: "480g",
   },
   {
+    id: "222",
     name: "Rhubarb Pie",
     description: "Mmm, tangy and sweet!",
     img: "https://stardewvalleywiki.com/mediawiki/images/2/21/Rhubarb_Pie.png",
@@ -226,6 +254,7 @@ const recipes = [
     price: "400g",
   },
   {
+    id: "223",
     name: "Cookies",
     label: "Cookie",
     description: "Very chewy.",
@@ -235,6 +264,7 @@ const recipes = [
     price: "140g",
   },
   {
+    id: "224",
     name: "Spaghetti",
     description: "An old favorite.",
     img: "https://stardewvalleywiki.com/mediawiki/images/0/08/Spaghetti.png",
@@ -243,7 +273,8 @@ const recipes = [
     price: "120g",
   },
   {
-    name: "	Fried Eel",
+    id: "225",
+    name: "Fried Eel",
     description: "Greasy but flavorful.",
     img: "https://stardewvalleywiki.com/mediawiki/images/8/84/Fried_Eel.png",
     ingredients: ["Eel", "Oil"],
@@ -251,6 +282,7 @@ const recipes = [
     price: "120g",
   },
   {
+    id: "226",
     name: "Spicy Eel",
     description: "It's really spicy! Be careful.",
     img: "https://stardewvalleywiki.com/mediawiki/images/f/f2/Spicy_Eel.png",
@@ -259,6 +291,7 @@ const recipes = [
     price: "175g",
   },
   {
+    id: "227",
     name: "Sashimi",
     description: "Raw fish sliced into thin pieces.",
     img: "https://stardewvalleywiki.com/mediawiki/images/4/41/Sashimi.png",
@@ -267,6 +300,7 @@ const recipes = [
     price: "75g",
   },
   {
+    id: "228",
     name: "Maki Roll",
     description: "Fish and rice wrapped in seaweed.",
     img: "https://stardewvalleywiki.com/mediawiki/images/b/b6/Maki_Roll.png",
@@ -275,6 +309,7 @@ const recipes = [
     price: "220g",
   },
   {
+    id: "229",
     name: "Tortilla",
     description: "Can be used as a vessel for food or eaten by itself.",
     img: "https://stardewvalleywiki.com/mediawiki/images/d/d7/Tortilla.png",
@@ -283,6 +318,7 @@ const recipes = [
     price: "50g",
   },
   {
+    id: "230",
     name: "Red Plate",
     description: "Full of antioxidants.",
     img: "https://stardewvalleywiki.com/mediawiki/images/4/45/Red_Plate.png",
@@ -291,6 +327,7 @@ const recipes = [
     price: "400g",
   },
   {
+    id: "231",
     name: "Eggplant Parm.",
     label: "Eggplant Parmesan",
     description: "Tangy, cheesy, and wonderful.",
@@ -300,6 +337,7 @@ const recipes = [
     price: "200g",
   },
   {
+    id: "232",
     name: "Rice Pudding",
     description: "It's creamy, sweet, and fun to eat.",
     img: "https://stardewvalleywiki.com/mediawiki/images/e/ec/Rice_Pudding.png",
@@ -308,6 +346,7 @@ const recipes = [
     price: "260g",
   },
   {
+    id: "233",
     name: "Ice Cream",
     description: "	It's hard to find someone who doesn't like this.",
     img: "https://stardewvalleywiki.com/mediawiki/images/5/5d/Ice_Cream.png",
@@ -316,6 +355,7 @@ const recipes = [
     price: "120g",
   },
   {
+    id: "234",
     name: "Blueberry Tart",
     description: "It's subtle and refreshing.",
     img: "https://stardewvalleywiki.com/mediawiki/images/9/9b/Blueberry_Tart.png",
@@ -324,6 +364,7 @@ const recipes = [
     price: "150g",
   },
   {
+    id: "235",
     name: "Autumn's Bounty",
     description: "A taste of the season.",
     img: "https://stardewvalleywiki.com/mediawiki/images/f/f4/Autumn%27s_Bounty.png",
@@ -332,6 +373,7 @@ const recipes = [
     price: "350g",
   },
   {
+    id: "236",
     name: "Pumpkin Soup",
     description: "A seasonal favorite.",
     img: "https://stardewvalleywiki.com/mediawiki/images/5/59/Pumpkin_Soup.png",
@@ -340,6 +382,7 @@ const recipes = [
     price: "300g",
   },
   {
+    id: "237",
     name: "Super Meal",
     description: "It's a really energizing meal.",
     img: "https://stardewvalleywiki.com/mediawiki/images/d/d2/Super_Meal.png",
@@ -348,6 +391,7 @@ const recipes = [
     price: "220g",
   },
   {
+    id: "238",
     name: "Cran. Sauce",
     label: "Cranberry Sauce",
     description: "A festive treat.",
@@ -357,6 +401,7 @@ const recipes = [
     price: "120g",
   },
   {
+    id: "239",
     name: "Stuffing",
     description: "Ahh... the smell of warm bread and sage.",
     img: "https://stardewvalleywiki.com/mediawiki/images/9/9a/Stuffing.png",
@@ -365,6 +410,7 @@ const recipes = [
     price: "165g",
   },
   {
+    id: "240",
     name: "Farmer's Lunch",
     description: "This'll keep you going.",
     img: "https://stardewvalleywiki.com/mediawiki/images/7/79/Farmer%27s_Lunch.png",
@@ -373,6 +419,7 @@ const recipes = [
     price: "150g",
   },
   {
+    id: "241",
     name: "Survival Burger",
     description: "A convenient snack for the explorer.",
     img: "https://stardewvalleywiki.com/mediawiki/images/8/87/Survival_Burger.png",
@@ -381,6 +428,7 @@ const recipes = [
     price: "180g",
   },
   {
+    id: "242",
     name: "Dish o' The Sea",
     label: "Dish O' The Sea",
     description: "This'll keep you warm in the cold sea air.",
@@ -390,6 +438,7 @@ const recipes = [
     price: "220g",
   },
   {
+    id: "243",
     name: "Miner's Treat",
     description: "This should keep your energy up.",
     img: "https://stardewvalleywiki.com/mediawiki/images/1/12/Miner%27s_Treat.png",
@@ -398,6 +447,7 @@ const recipes = [
     price: "200g",
   },
   {
+    id: "244",
     name: "Roots Platter",
     description: "This'll get you digging for more.",
     img: "https://stardewvalleywiki.com/mediawiki/images/e/e0/Roots_Platter.png",
@@ -406,6 +456,7 @@ const recipes = [
     price: "100g",
   },
   {
+    id: "253",
     name: "Triple Shot Espresso",
     description: "It's more potent than regular coffee!",
     img: "https://stardewvalleywiki.com/mediawiki/images/3/36/Triple_Shot_Espresso.png",
@@ -414,6 +465,7 @@ const recipes = [
     price: "450g",
   },
   {
+    id: "265",
     name: "Seafoam Pudding",
     description: "This briny pudding will really get you into the maritime mindset!",
     img: "https://stardewvalleywiki.com/mediawiki/images/3/33/Seafoam_Pudding.png",
@@ -422,6 +474,7 @@ const recipes = [
     price: "300g",
   },
   {
+    id: "456",
     name: "Algae Soup",
     description: "It's a little slimy.",
     img: "https://stardewvalleywiki.com/mediawiki/images/5/53/Algae_Soup.png",
@@ -430,6 +483,7 @@ const recipes = [
     price: "100g",
   },
   {
+    id: "457",
     name: "Pale Broth",
     description: "A delicate broth with a hint of sulfur.",
     img: "https://stardewvalleywiki.com/mediawiki/images/7/7e/Pale_Broth.png",
@@ -438,6 +492,7 @@ const recipes = [
     price: "150g",
   },
   {
+    id: "604",
     name: "Plum Pudding",
     description: "A traditional holiday treat.",
     img: "https://stardewvalleywiki.com/mediawiki/images/a/a0/Plum_Pudding.png",
@@ -446,6 +501,7 @@ const recipes = [
     price: "260g",
   },
   {
+    id: "605",
     name: "Artichoke Dip",
     description: "It's cool and refreshing.",
     img: "https://stardewvalleywiki.com/mediawiki/images/7/77/Artichoke_Dip.png",
@@ -454,6 +510,7 @@ const recipes = [
     price: "210g",
   },
   {
+    id: "606",
     name: "Stir Fry",
     description: "Julienned vegetables on a bed of rice.",
     img: "https://stardewvalleywiki.com/mediawiki/images/e/ed/Stir_Fry.png",
@@ -462,6 +519,7 @@ const recipes = [
     price: "335g",
   },
   {
+    id: "607",
     name: "Roasted Hazelnuts",
     description: "The roasting process creates a rich forest flavor.",
     img: "https://stardewvalleywiki.com/mediawiki/images/1/18/Roasted_Hazelnuts.png",
@@ -470,6 +528,7 @@ const recipes = [
     price: "270g",
   },
   {
+    id: "608",
     name: "Pumpkin Pie",
     description: "Silky pumpkin cream in a flakey crust.",
     img: "https://stardewvalleywiki.com/mediawiki/images/7/7d/Pumpkin_Pie.png",
@@ -478,6 +537,7 @@ const recipes = [
     price: "385g",
   },
   {
+    id: "609",
     name: "Radish Salad",
     description: "The radishes are so crisp!",
     img: "https://stardewvalleywiki.com/mediawiki/images/b/b9/Radish_Salad.png",
@@ -486,6 +546,7 @@ const recipes = [
     price: "300g",
   },
   {
+    id: "610",
     name: "Fruit Salad",
     description: "A delicious combination of summer fruits.",
     img: "https://stardewvalleywiki.com/mediawiki/images/9/9e/Fruit_Salad.png",
@@ -494,6 +555,7 @@ const recipes = [
     price: "450g",
   },
   {
+    id: "611",
     name: "Blackberry Cobbler",
     description: "There's nothing quite like it.",
     img: "https://stardewvalleywiki.com/mediawiki/images/7/70/Blackberry_Cobbler.png",
@@ -502,7 +564,8 @@ const recipes = [
     price: "260g",
   },
   {
-    name: "	Cranberry Candy",
+    id: "612",
+    name: "Cranberry Candy",
     description: "It's sweet enough to mask the bitter fruit.",
     img: "https://stardewvalleywiki.com/mediawiki/images/9/9d/Cranberry_Candy.png",
     ingredients: ["Cranberries", "Apple", "Sugar"],
@@ -510,6 +573,7 @@ const recipes = [
     price: "175g",
   },
   {
+    id: "618",
     name: "Bruschetta",
     description: "Roasted tomatoes on a crisp white bread.",
     img: "https://stardewvalleywiki.com/mediawiki/images/c/ca/Bruschetta.png",
@@ -518,6 +582,7 @@ const recipes = [
     price: "210g",
   },
   {
+    id: "648",
     name: "Coleslaw",
     description: "It's light, fresh and very healthy.",
     img: "https://stardewvalleywiki.com/mediawiki/images/e/e1/Coleslaw.png",
@@ -526,6 +591,7 @@ const recipes = [
     price: "345g",
   },
   {
+    id: "649",
     name: "Fiddlehead Risotto",
     description: "A creamy rice dish served with sauteed fern heads. It's a little bland.",
     img: "https://stardewvalleywiki.com/mediawiki/images/2/2d/Fiddlehead_Risotto.png",
@@ -534,6 +600,7 @@ const recipes = [
     price: "350g",
   },
   {
+    id: "651",
     name: "Poppyseed Muffin",
     description: "It has a soothing effect.",
     img: "https://stardewvalleywiki.com/mediawiki/images/8/8e/Poppyseed_Muffin.png",
@@ -542,6 +609,7 @@ const recipes = [
     price: "250g",
   },
   {
+    id: "727",
     name: "Chowder",
     description: "A perfect way to warm yourself after a cold night at sea.",
     img: "https://stardewvalleywiki.com/mediawiki/images/9/95/Chowder.png",
@@ -550,6 +618,7 @@ const recipes = [
     price: "135g",
   },
   {
+    id: "728",
     name: "Fish Stew",
     description: "It smells a lot like the sea. Tastes better, though.",
     img: "https://stardewvalleywiki.com/mediawiki/images/6/6f/Fish_Stew.png",
@@ -558,6 +627,7 @@ const recipes = [
     price: "175g",
   },
   {
+    id: "729",
     name: "Escargot",
     description: "Butter-soaked snails cooked to perfection.",
     img: "https://stardewvalleywiki.com/mediawiki/images/7/78/Escargot.png",
@@ -566,6 +636,7 @@ const recipes = [
     price: "125g",
   },
   {
+    id: "730",
     name: "Lobster Bisque",
     description: "This delicate soup is a secret family recipe of Willy's.",
     img: "https://stardewvalleywiki.com/mediawiki/images/0/0a/Lobster_Bisque.png",
@@ -574,6 +645,7 @@ const recipes = [
     price: "205g",
   },
   {
+    id: "731",
     name: "Maple Bar",
     description: "It's a sweet doughnut topped with a rich maple glaze.",
     img: "https://stardewvalleywiki.com/mediawiki/images/1/18/Maple_Bar.png",
@@ -582,6 +654,7 @@ const recipes = [
     price: "300g",
   },
   {
+    id: "732",
     name: "Crab Cakes",
     description: "Crab, bread crumbs, and egg formed into patties then fried to a golden brown.",
     img: "https://stardewvalleywiki.com/mediawiki/images/7/70/Crab_Cakes.png",
@@ -590,6 +663,7 @@ const recipes = [
     price: "275g",
   },
   {
+    id: "733",
     name: "Shrimp Cocktail",
     description: "A sumptuous appetizer made with freshly-caught shrimp.",
     img: "https://stardewvalleywiki.com/mediawiki/images/8/8e/Shrimp_Cocktail.png",
@@ -598,6 +672,7 @@ const recipes = [
     price: "160g",
   },
   {
+    id: "903",
     name: "Ginger Ale",
     description: "A zesty soda known for its soothing effect on the stomach.",
     img: "https://stardewvalleywiki.com/mediawiki/images/1/1a/Ginger_Ale.png",
@@ -606,6 +681,7 @@ const recipes = [
     price: "200g",
   },
   {
+    id: "904",
     name: "Banana Pudding",
     description: "A creamy dessert with a wonderful tropical flavor.",
     img: "https://stardewvalleywiki.com/mediawiki/images/4/40/Banana_Pudding.png",
@@ -614,6 +690,7 @@ const recipes = [
     price: "260g",
   },
   {
+    id: "905",
     name: "Mango Sticky Rice",
     description: "Sweet mango and coconut transforms this rice into something very special.",
     img: "https://stardewvalleywiki.com/mediawiki/images/6/6e/Mango_Sticky_Rice.png",
@@ -622,6 +699,7 @@ const recipes = [
     price: "250g",
   },
   {
+    id: "906",
     name: "Poi",
     description: "A traditional food with a delicate, sweet flavor when eaten fresh.",
     img: "https://stardewvalleywiki.com/mediawiki/images/f/f1/Poi.png",
@@ -630,6 +708,7 @@ const recipes = [
     price: "400g",
   },
   {
+    id: "907",
     name: "Tropical Curry",
     description: "An exotic, fragrant curry served in a pineapple bowl.",
     img: "https://stardewvalleywiki.com/mediawiki/images/3/32/Tropical_Curry.png",
@@ -638,6 +717,7 @@ const recipes = [
     price: "500g",
   },
   {
+    id: "921",
     name: "Squid Ink Ravioli",
     description: "Temporarily protects from debuffs.",
     img: "https://stardewvalleywiki.com/mediawiki/images/8/86/Squid_Ink_Ravioli.png",

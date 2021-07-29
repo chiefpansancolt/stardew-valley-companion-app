@@ -1,4 +1,4 @@
-import { faCheckDouble, faListAlt, faBuilding } from "@fortawesome/free-solid-svg-icons";
+import { faCheckDouble, faListAlt, faBuilding, faBlender } from "@fortawesome/free-solid-svg-icons";
 
 const artifactsTabs = [
   {
@@ -48,4 +48,15 @@ const monsterTabs = [
   },
 ];
 
-export { artifactsTabs, mineralTabs, fishTabs, monsterTabs };
+const foodTabs = [
+  {
+    name: "All Recipes",
+    icon: null,
+    img: "https://stardewvalleywiki.com/mediawiki/images/1/1d/Cooking_Icon.png"
+  },
+  { name: "Found", icon: faCheckDouble },
+  { name: "Cooked", icon: faBlender },
+  { name: "To-Do", icon: faListAlt },
+];
+
+export { artifactsTabs, mineralTabs, fishTabs, monsterTabs, foodTabs };
