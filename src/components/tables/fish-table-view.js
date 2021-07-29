@@ -1,6 +1,6 @@
 import classNames from "@/scripts/class-names";
 import { StarIcon } from "@heroicons/react/solid";
-import Badge from "../badges/badge";
+import Badge from "@/components/badges/badge";
 
 export default function FishTableView({ collection, profession }) {
   return (

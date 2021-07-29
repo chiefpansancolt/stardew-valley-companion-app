@@ -1,4 +1,4 @@
-import Badge from "../badges/badge";
+import Badge from "@/components/badges/badge";
 
 export default function ArtifactsTableView({ collection }) {
   return (
