@@ -46,7 +46,7 @@ export default function Artifacts() {
                   current="/collection/artifacts"
                   collection={character.artifacts}
                 >
-                  {(!currentTab || currentTab === "All") && (
+                  {(!currentTab || currentTab === "All Artifacts") && (
                     <ArtifactsTableView collection={character.artifacts.fullList} />
                   )}
                   {currentTab === "Found" && (
@@ -57,7 +57,12 @@ export default function Artifacts() {
                       collection={character.artifacts.foundList.filter((e) => e.donated === true)}
                     />
                   )}
-                  {currentTab === "To-Do" && (
+                  {currentTab === "To-Be Donated" && (
+                    <ArtifactsTableView
+                      collection={character.artifacts.foundList.filter((e) => e.donated === false)}
+                    />
+                  )}
+                  {currentTab === "To-Be Found" && (
                     <ArtifactsTableView collection={character.artifacts.unfoundList} />
                   )}
                 </Tabs>

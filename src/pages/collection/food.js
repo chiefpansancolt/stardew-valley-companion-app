@@ -33,11 +33,12 @@ export default function Food() {
               <h3 className="text-lg leading-6 font-medium text-gray-900">Cooking Recipes</h3>
               <p className="mt-1 text-sm text-gray-500">
                 Cooking is a game mechanic that becomes available after upgrading the farmhouse for
-                the first time. The house upgrade adds a kitchen, which includes a stove and a refrigerator.
-                The stove is the cooking interface, while the refrigerator provides 36 slots of storage space,
-                similar to a chest. The refrigerator is unique in that it is directly linked with the cooking
-                interface, as if it were an extension of the player's inventory. Only ingredients in the
-                player's inventory, refrigerator or Mini-Fridge are seen as usable items for a recipe.
+                the first time. The house upgrade adds a kitchen, which includes a stove and a
+                refrigerator. The stove is the cooking interface, while the refrigerator provides 36
+                slots of storage space, similar to a chest. The refrigerator is unique in that it is
+                directly linked with the cooking interface, as if it were an extension of the
+                player's inventory. Only ingredients in the player's inventory, refrigerator or
+                Mini-Fridge are seen as usable items for a recipe.
               </p>
             </div>
             <div className="border-t border-gray-200">
@@ -59,7 +60,12 @@ export default function Food() {
                       collection={character.recipes.foundList.filter((e) => e.cooked === true)}
                     />
                   )}
-                  {currentTab === "To-Do" && (
+                  {currentTab === "To-Be Cooked" && (
+                    <FoodTableView
+                      collection={character.recipes.fullList.filter((e) => e.cooked === false)}
+                    />
+                  )}
+                  {currentTab === "To-Be Found" && (
                     <FoodTableView collection={character.recipes.unfoundList} />
                   )}
                 </Tabs>

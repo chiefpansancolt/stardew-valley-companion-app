@@ -1,30 +1,38 @@
-import { faCheckDouble, faListAlt, faBuilding, faBlender } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheckDouble,
+  faListAlt,
+  faBuilding,
+  faBlender,
+  faPencilRuler,
+} from "@fortawesome/free-solid-svg-icons";
 
 const artifactsTabs = [
   {
-    name: "All",
+    name: "All Artifacts",
     icon: null,
     img: "https://stardewvalleywiki.com/mediawiki/images/d/d1/Arrowhead.png",
   },
   { name: "Found", icon: faCheckDouble },
   { name: "Donated", icon: faBuilding },
-  { name: "To-Do", icon: faListAlt },
+  { name: "To-Be Donated", icon: faListAlt },
+  { name: "To-Be Found", icon: faListAlt },
 ];
 
 const mineralTabs = [
   {
-    name: "All",
+    name: "All Minerals",
     icon: null,
     img: "https://stardewvalleywiki.com/mediawiki/images/0/0e/Diamond_Node.png",
   },
   { name: "Found", icon: faCheckDouble },
   { name: "Donated", icon: faBuilding },
-  { name: "To-Do", icon: faListAlt },
+  { name: "To-Be Donated", icon: faListAlt },
+  { name: "To-Be Found", icon: faListAlt },
 ];
 
 const fishTabs = [
   {
-    name: "All",
+    name: "All Fish",
     icon: null,
     img: "https://stardewvalleywiki.com/mediawiki/images/8/82/Bream.png",
   },
@@ -52,11 +60,24 @@ const foodTabs = [
   {
     name: "All Recipes",
     icon: null,
-    img: "https://stardewvalleywiki.com/mediawiki/images/1/1d/Cooking_Icon.png"
+    img: "https://stardewvalleywiki.com/mediawiki/images/1/1d/Cooking_Icon.png",
   },
   { name: "Found", icon: faCheckDouble },
   { name: "Cooked", icon: faBlender },
-  { name: "To-Do", icon: faListAlt },
+  { name: "To-Be Cooked", icon: faListAlt },
+  { name: "To-Be Found", icon: faListAlt },
 ];
 
-export { artifactsTabs, mineralTabs, fishTabs, monsterTabs, foodTabs };
+const craftingTabs = [
+  {
+    name: "All Crafts",
+    icon: null,
+    img: "https://stardewvalleywiki.com/mediawiki/images/1/1b/Field_Snack.png",
+  },
+  { name: "Found", icon: faCheckDouble },
+  { name: "Crafted", icon: faPencilRuler },
+  { name: "To-Be Crafted", icon: faListAlt },
+  { name: "To-Be Found", icon: faListAlt },
+];
+
+export { artifactsTabs, mineralTabs, fishTabs, monsterTabs, foodTabs, craftingTabs };

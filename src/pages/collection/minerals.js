@@ -50,7 +50,7 @@ export default function Minerals() {
                   current="/collection/minerals"
                   collection={character.minerals}
                 >
-                  {(!currentTab || currentTab === "All") && (
+                  {(!currentTab || currentTab === "All Minerals") && (
                     <MineralsTableView
                       isGeode={false}
                       collection={character.minerals.fullList.filter((e) => e.type !== "Geode")}
@@ -65,7 +65,13 @@ export default function Minerals() {
                       collection={character.minerals.foundList.filter((e) => e.donated === true)}
                     />
                   )}
-                  {currentTab === "To-Do" && (
+                  {currentTab === "To-Be Donated" && (
+                    <MineralsTableView
+                      isGeode={false}
+                      collection={character.minerals.foundList.filter((e) => e.donated === false)}
+                    />
+                  )}
+                  {currentTab === "To-Be Found" && (
                     <MineralsTableView
                       isGeode={false}
                       collection={character.minerals.unfoundList}

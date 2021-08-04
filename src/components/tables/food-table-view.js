@@ -76,7 +76,7 @@ export default function FoodTableView({ collection }) {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       <ul>
-                        {item.sources.map(source => (
+                        {item.sources.map((source) => (
                           <li key={source}>{source}</li>
                         ))}
                       </ul>

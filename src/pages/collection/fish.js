@@ -56,7 +56,7 @@ export default function Fish() {
                   current="/collection/fish"
                   collection={character.fishing}
                 >
-                  {(!currentTab || currentTab === "All") && (
+                  {(!currentTab || currentTab === "All Fish") && (
                     <>
                       <FishTableView
                         collection={character.fishing.fullList.filter((e) => e.type === "Fish")}

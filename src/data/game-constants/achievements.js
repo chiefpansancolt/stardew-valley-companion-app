@@ -249,7 +249,7 @@ const achievements = [
       detailLink: "/collection/crafting",
       isSteam: true,
       isInGame: true,
-      craft: 30,
+      count: 30,
     },
   },
   {

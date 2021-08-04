@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Tabs({ tabs, current, currentTab, collection, children }) {
   for (let i = 0; i < tabs.length; i++) {
-    if (tabs[i].name === "All") {
+    if (tabs[i].name.includes("All")) {
       tabs[i].count = collection.fullList.length;
     } else if (tabs[i].name === "Found") {
       tabs[i].count = collection.found;
@@ -18,6 +18,18 @@ export default function Tabs({ tabs, current, currentTab, collection, children }
       tabs[i].count = collection.monsterTypes.filter((e) => e.percent < 100).length;
     } else if (tabs[i].name === "Cooked") {
       tabs[i].count = collection.cooked;
+    } else if (tabs[i].name === "Crafted") {
+      tabs[i].count = collection.crafted;
+    } else if (tabs[i].name.includes("To-Be")) {
+      if (tabs[i].name.includes("Craft")) {
+        tabs[i].count = collection.uncrafted;
+      } else if (tabs[i].name.includes("Found")) {
+        tabs[i].count = collection.unfound;
+      } else if (tabs[i].name.includes("Cook")) {
+        tabs[i].count = collection.uncooked;
+      } else if (tabs[i].name.includes("Donated")) {
+        tabs[i].count = collection.undonated;
+      }
     }
   }
 
