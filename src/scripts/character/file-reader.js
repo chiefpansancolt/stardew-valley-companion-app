@@ -28,6 +28,7 @@ import fish from "@/data/game-constants/fish";
 import monsterTypes from "@/data/game-constants/monsters";
 import stardrops from "@/data/game-constants/stardrop";
 import recipes from "@/data/game-constants/recipes";
+import crafts from "@/data/game-constants/crafting";
 
 export function handleFileSelect(file) {
   String.prototype.capitalize = function () {
@@ -54,6 +55,7 @@ export function handleFileSelect(file) {
     saveInfo.fishing = buildFishing(gameData);
     saveInfo.minesMonsters = buildMinesAndMonsters(gameData);
     saveInfo.recipes = buildCooking(gameData);
+    saveInfo.crafting = buildCrafting(gameData);
     saveInfo.character.achievements = buildCharacterAchievements(gameData, saveInfo);
     localStorage.setItem(file.name, JSON.stringify(saveInfo));
     addCharactersList(saveInfo.character);
@@ -340,7 +342,8 @@ function buildCharacterAchievements(data, saveInfo) {
         case 15:
         case 16:
         case 17:
-          el.value.count = el.value.count === "Calculated" ? saveInfo.recipes.fullList.length : el.value.count;
+          el.value.count =
+            el.value.count === "Calculated" ? saveInfo.recipes.fullList.length : el.value.count;
           el.value.current = saveInfo.recipes.cooked;
           el.value.percent = percentCalc(saveInfo.recipes.cooked, el.value.count);
           break;
@@ -352,6 +355,10 @@ function buildCharacterAchievements(data, saveInfo) {
         case 20:
         case 21:
         case 22:
+          el.value.count =
+            el.value.count === "Calculated" ? saveInfo.crafting.fullList.length : el.value.count;
+          el.value.current = saveInfo.crafting.crafted;
+          el.value.percent = percentCalc(saveInfo.crafting.crafted, el.value.count);
           break;
         case 24:
         case 25:
@@ -500,6 +507,7 @@ function buildCollectionArtifacts(data) {
   return {
     found: found.length,
     donated: found.filter((e) => e.donated === true).length,
+    undonated: found.filter((e) => e.donated === false).length,
     unfound: unfound.length,
     fullList: all,
     foundList: found,
@@ -539,6 +547,7 @@ function buildCollectionMinerals(data) {
   return {
     found: found.length,
     donated: found.filter((e) => e.donated === true).length,
+    undonated: found.filter((e) => e.donated === false).length,
     unfound: unfound.filter((e) => e.type !== "Geode").length,
     fullList: all,
     foundList: found,
@@ -619,8 +628,16 @@ function buildCooking(data) {
   for (let i = 0; i < recipes.length; i++) {
     const recipe = recipes[i];
 
-    recipe.found = data.SaveGame.player[0].cookingRecipes[0].item.find((e) => e.key[0].string[0] === recipe.name) ? true : false;
-    recipe.cooked = data.SaveGame.player[0].recipesCooked[0].item.find((e) => e.key[0].int[0] === recipe.id) ? true : false;
+    recipe.found = data.SaveGame.player[0].cookingRecipes[0].item.find(
+      (e) => e.key[0].string[0] === recipe.name
+    )
+      ? true
+      : false;
+    recipe.cooked = data.SaveGame.player[0].recipesCooked[0].item.find(
+      (e) => e.key[0].int[0] === recipe.id
+    )
+      ? true
+      : false;
 
     recipeList.push(recipe);
   }
@@ -631,7 +648,34 @@ function buildCooking(data) {
     unfound: recipeList.filter((e) => e.found === false).length,
     fullList: recipeList,
     foundList: recipeList.filter((e) => e.found === true),
-    unfoundList: recipeList.filter((e) => e.found === false)
+    unfoundList: recipeList.filter((e) => e.found === false),
+  };
+}
+
+function buildCrafting(data) {
+  let craftList = [];
+
+  for (let i = 0; i < crafts.length; i++) {
+    const craft = crafts[i];
+    const item = data.SaveGame.player[0].craftingRecipes[0].item.find(
+      (e) => e.key[0].string[0] === craft.name
+    );
+
+    craft.found = item ? true : false;
+    craft.crafted = item && parseInt(item.value[0].int[0]) > 0 ? true : false;
+    craft.craftCount = item ? parseInt(item.value[0].int[0]) : 0;
+
+    craftList.push(craft);
+  }
+
+  return {
+    crafted: craftList.filter((e) => e.crafted === true).length,
+    uncrafted: craftList.filter((e) => e.crafted === false).length,
+    found: craftList.filter((e) => e.found === true).length,
+    unfound: craftList.filter((e) => e.found === false).length,
+    fullList: craftList,
+    foundList: craftList.filter((e) => e.found === true),
+    unfoundList: craftList.filter((e) => e.found === false),
   };
 }
 
