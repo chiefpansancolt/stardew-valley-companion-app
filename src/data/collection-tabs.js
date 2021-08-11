@@ -4,6 +4,7 @@ import {
   faBuilding,
   faBlender,
   faPencilRuler,
+  faShoppingBasket,
 } from "@fortawesome/free-solid-svg-icons";
 
 const artifactsTabs = [
@@ -80,4 +81,16 @@ const craftingTabs = [
   { name: "To-Be Found", icon: faListAlt },
 ];
 
-export { artifactsTabs, mineralTabs, fishTabs, monsterTabs, foodTabs, craftingTabs };
+const cropTabs = [
+  {
+    name: "All Crops",
+    icon: null,
+    img: "https://stardewvalleywiki.com/mediawiki/images/f/f8/Corn.png",
+  },
+  { name: "Shipped", icon: faCheckDouble },
+  { name: "Polycultured", icon: faShoppingBasket },
+  { name: "To-Be Polycultured", icon: faListAlt },
+  { name: "To-Be Shipped", icon: faListAlt },
+];
+
+export { artifactsTabs, mineralTabs, fishTabs, monsterTabs, foodTabs, craftingTabs, cropTabs };

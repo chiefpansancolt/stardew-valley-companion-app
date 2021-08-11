@@ -20,6 +20,10 @@ export default function Tabs({ tabs, current, currentTab, collection, children }
       tabs[i].count = collection.cooked;
     } else if (tabs[i].name === "Crafted") {
       tabs[i].count = collection.crafted;
+    } else if (tabs[i].name === "Shipped") {
+      tabs[i].count = collection.shipped;
+    } else if (tabs[i].name === "Polycultured") {
+      tabs[i].count = collection.polyculture;
     } else if (tabs[i].name.includes("To-Be")) {
       if (tabs[i].name.includes("Craft")) {
         tabs[i].count = collection.uncrafted;
@@ -29,6 +33,10 @@ export default function Tabs({ tabs, current, currentTab, collection, children }
         tabs[i].count = collection.uncooked;
       } else if (tabs[i].name.includes("Donated")) {
         tabs[i].count = collection.undonated;
+      } else if (tabs[i].name.includes("Polyculture")) {
+        tabs[i].count = collection.unpolyculture;
+      } else if (tabs[i].name.includes("Shipped")) {
+        tabs[i].count = collection.unshipped;
       }
     }
   }

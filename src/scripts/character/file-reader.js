@@ -29,6 +29,7 @@ import monsterTypes from "@/data/game-constants/monsters";
 import stardrops from "@/data/game-constants/stardrop";
 import recipes from "@/data/game-constants/recipes";
 import crafts from "@/data/game-constants/crafting";
+import crops from "@/data/game-constants/crops";
 
 export function handleFileSelect(file) {
   String.prototype.capitalize = function () {
@@ -56,6 +57,7 @@ export function handleFileSelect(file) {
     saveInfo.minesMonsters = buildMinesAndMonsters(gameData);
     saveInfo.recipes = buildCooking(gameData);
     saveInfo.crafting = buildCrafting(gameData);
+    saveInfo.crops = buildCrops(gameData);
     saveInfo.character.achievements = buildCharacterAchievements(gameData, saveInfo);
     localStorage.setItem(file.name, JSON.stringify(saveInfo));
     addCharactersList(saveInfo.character);
@@ -383,7 +385,12 @@ function buildCharacterAchievements(data, saveInfo) {
         case 30:
           break;
         case 31:
+          el.value.current = saveInfo.crops.polyculture;
+          el.value.percent = percentCalc(el.value.current, el.value.count);
+          break;
         case 32:
+          el.value.current = saveInfo.crops.monoculture;
+          el.value.percent = percentCalc(el.value.current, el.value.count);
           break;
         case 34:
           break;
@@ -676,6 +683,38 @@ function buildCrafting(data) {
     fullList: craftList,
     foundList: craftList.filter((e) => e.found === true),
     unfoundList: craftList.filter((e) => e.found === false),
+  };
+}
+
+function buildCrops(data) {
+  let cropList = [];
+
+  for (let i = 0; i < crops.length; i++) {
+    const crop = crops[i];
+    const item = data.SaveGame.player[0].basicShipped[0].item.find((e) => e.key[0].int[0] === String(crop.id));
+
+    crop.count = item ? parseInt(item.value[0].int[0]) : 0;
+    crop.shipped = crop.shipping ? crop.count > 0 ? true : false : "n/a";
+    crop.polycultured = crop.polyculture ? crop.count > 15 ? true : false : "n/a";
+    crop.monocultured = crop.monoculture ? crop.count > 300 ? true : false : "n/a";
+
+    cropList.push(crop);
+  }
+
+  return {
+    shipped: cropList.filter((e) => e.shipped === true).length,
+    unshipped: cropList.filter((e) => e.shipped === false).length,
+    polyculture: cropList.filter((e) => e.polycultured === true).length,
+    unpolyculture: cropList.filter((e) => e.polycultured === false).length,
+    monoculture: cropList.filter((e) => e.monocultured === true).length,
+    unmonoculture: cropList.filter((e) => e.monocultured === false).length,
+    fullList: cropList,
+    shippedList: cropList.filter((e) => e.shipped === true),
+    unshippedList: cropList.filter((e) => e.shipped === false),
+    polycultureList: cropList.filter((e) => e.polycultured === true),
+    unpolycultureList: cropList.filter((e) => e.polycultured === false),
+    monocultureList: cropList.filter((e) => e.monocultured === true),
+    unmonocultureList: cropList.filter((e) => e.monocultured === false),
   };
 }
 

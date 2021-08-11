@@ -366,10 +366,7 @@ const achievements = [
       detailLink: "/collection/crops",
       isSteam: true,
       isInGame: true,
-      count: {
-        individual: 15,
-        total: 28,
-      },
+      count: 28,
     },
   },
   {
@@ -382,7 +379,7 @@ const achievements = [
       detailLink: "/collection/crops",
       isSteam: true,
       isInGame: true,
-      count: 300,
+      count: 1,
     },
   },
   {
