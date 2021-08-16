@@ -30,6 +30,7 @@ import stardrops from "@/data/game-constants/stardrop";
 import recipes from "@/data/game-constants/recipes";
 import crafts from "@/data/game-constants/crafting";
 import crops from "@/data/game-constants/crops";
+import foraging from "@/data/game-constants/foraging";
 
 export function handleFileSelect(file) {
   String.prototype.capitalize = function () {
@@ -58,6 +59,7 @@ export function handleFileSelect(file) {
     saveInfo.recipes = buildCooking(gameData);
     saveInfo.crafting = buildCrafting(gameData);
     saveInfo.crops = buildCrops(gameData);
+    saveInfo.foraging = buildForage(gameData);
     saveInfo.character.achievements = buildCharacterAchievements(gameData, saveInfo);
     localStorage.setItem(file.name, JSON.stringify(saveInfo));
     addCharactersList(saveInfo.character);
@@ -715,6 +717,28 @@ function buildCrops(data) {
     unpolycultureList: cropList.filter((e) => e.polycultured === false),
     monocultureList: cropList.filter((e) => e.monocultured === true),
     unmonocultureList: cropList.filter((e) => e.monocultured === false),
+  };
+}
+
+function buildForage(data) {
+  let forageList = [];
+
+  for (let i = 0; i < foraging.length; i++) {
+    const forage = foraging[i];
+    const item = data.SaveGame.player[0].basicShipped[0].item.find((e) => e.key[0].int[0] === String(forage.id));
+
+    forage.count = item ? parseInt(item.value[0].int[0]) : 0;
+    forage.shipped = forage.shipping ? forage.count > 0 ? true : false : "n/a";
+
+    forageList.push(forage);
+  }
+
+  return {
+    shipped: forageList.filter((e) => e.shipped === true).length,
+    unshipped: forageList.filter((e) => e.shipped === false).length,
+    fullList: forageList,
+    shippedList: forageList.filter((e) => e.shipped === true),
+    unshippedList: forageList.filter((e) => e.shipped === false),
   };
 }
 

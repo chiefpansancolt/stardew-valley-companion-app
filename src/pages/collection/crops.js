@@ -30,15 +30,13 @@ export default function Crops() {
           </div>
           <div className="mt-4 bg-white shadow overflow-hidden sm:rounded-lg">
             <div className="px-4 py-5 sm:px-6">
-              <h3 className="text-lg leading-6 font-medium text-gray-900">Cooking Recipes</h3>
+              <h3 className="text-lg leading-6 font-medium text-gray-900">Crops</h3>
               <p className="mt-1 text-sm text-gray-500">
-                Cooking is a game mechanic that becomes available after upgrading the farmhouse for
-                the first time. The house upgrade adds a kitchen, which includes a stove and a
-                refrigerator. The stove is the cooking interface, while the refrigerator provides 36
-                slots of storage space, similar to a chest. The refrigerator is unique in that it is
-                directly linked with the cooking interface, as if it were an extension of the
-                player's inventory. Only ingredients in the player's inventory, refrigerator or
-                Mini-Fridge are seen as usable items for a recipe.
+                Crops are plants that are grown from seeds to be harvested for the purpose of profit,
+                food, or gifting. Generally, each crop is seasonal. It can be planted only during its
+                designated season, and when seasons change (after the 28th day), the crop will wither
+                and die. Multi-season crops (i.e., Ancient Fruit, Coffee Bean, Corn, Sunflower, and Wheat),
+                however, will continue to grow during all specified seasons.
               </p>
             </div>
             <div className="border-t border-gray-200">
