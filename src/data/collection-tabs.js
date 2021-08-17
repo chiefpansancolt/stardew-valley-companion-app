@@ -103,4 +103,14 @@ const forageTabs = [
   { name: "To-Be Shipped", icon: faListAlt },
 ];
 
-export { artifactsTabs, mineralTabs, fishTabs, monsterTabs, foodTabs, craftingTabs, cropTabs, forageTabs };
+const artisanGoodsTabs = [
+  {
+    name: "All Artisan Goods",
+    icon: null,
+    img: "https://stardewvalleywiki.com/mediawiki/images/a/a5/Cheese.png",
+  },
+  { name: "Shipped", icon: faCheckDouble },
+  { name: "To-Be Shipped", icon: faListAlt },
+];
+
+export { artifactsTabs, mineralTabs, fishTabs, monsterTabs, foodTabs, craftingTabs, cropTabs, forageTabs, artisanGoodsTabs };

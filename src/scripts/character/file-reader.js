@@ -31,6 +31,7 @@ import recipes from "@/data/game-constants/recipes";
 import crafts from "@/data/game-constants/crafting";
 import crops from "@/data/game-constants/crops";
 import foraging from "@/data/game-constants/foraging";
+import artisanGoods from "@/data/game-constants/artisan-goods";
 
 export function handleFileSelect(file) {
   String.prototype.capitalize = function () {
@@ -60,6 +61,7 @@ export function handleFileSelect(file) {
     saveInfo.crafting = buildCrafting(gameData);
     saveInfo.crops = buildCrops(gameData);
     saveInfo.foraging = buildForage(gameData);
+    saveInfo.artisanGoods = buildArtisanGoods(gameData);
     saveInfo.character.achievements = buildCharacterAchievements(gameData, saveInfo);
     localStorage.setItem(file.name, JSON.stringify(saveInfo));
     addCharactersList(saveInfo.character);
@@ -739,6 +741,28 @@ function buildForage(data) {
     fullList: forageList,
     shippedList: forageList.filter((e) => e.shipped === true),
     unshippedList: forageList.filter((e) => e.shipped === false),
+  };
+}
+
+function buildArtisanGoods(data) {
+  let artisanGoodsList = [];
+
+  for (let i = 0; i < artisanGoods.length; i++) {
+    const artisanGood = artisanGoods[i];
+    const item = data.SaveGame.player[0].basicShipped[0].item.find((e) => e.key[0].int[0] === String(artisanGood.id));
+
+    artisanGood.count = item ? parseInt(item.value[0].int[0]) : 0;
+    artisanGood.shipped = artisanGood.shipping ? artisanGood.count > 0 ? true : false : "n/a";
+
+    artisanGoodsList.push(artisanGood);
+  }
+
+  return {
+    shipped: artisanGoodsList.filter((e) => e.shipped === true).length,
+    unshipped: artisanGoodsList.filter((e) => e.shipped === false).length,
+    fullList: artisanGoodsList,
+    shippedList: artisanGoodsList.filter((e) => e.shipped === true),
+    unshippedList: artisanGoodsList.filter((e) => e.shipped === false),
   };
 }
 
