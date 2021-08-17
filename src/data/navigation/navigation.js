@@ -13,6 +13,7 @@ import {
   faShoppingCart,
   faStickyNote,
   faShoppingBasket,
+  faFeather,
 } from "@fortawesome/free-solid-svg-icons";
 import { CollectionIcon, UserGroupIcon } from "@heroicons/react/outline";
 import { DashboardIcon, UserIcon } from "@iconicicons/react";
@@ -28,6 +29,8 @@ const navigation = [
     standardIcon: true,
     current: false,
     children: [
+      { name: "Food", href: "/collection/food", icon: faHamburger, standardIcon: false },
+      { name: "Crafting", href: "/collection/crafting", icon: faHammer, standardIcon: false },
       {
         name: "Artifacts",
         href: "/collection/artifacts",
@@ -42,7 +45,6 @@ const navigation = [
         icon: faCheese,
         standardIcon: false,
       },
-      { name: "Food", href: "/collection/food", icon: faHamburger, standardIcon: false },
       {
         name: "Foraging",
         href: "/collection/foraging",
@@ -50,8 +52,13 @@ const navigation = [
         standardIcon: false,
       },
       { name: "Crops", href: "/collection/crops", icon: faSeedling, standardIcon: false },
-      { name: "Crafting", href: "/collection/crafting", icon: faHammer, standardIcon: false },
       { name: "Trees", href: "/collection/trees", icon: faTree, standardIcon: false },
+      {
+        name: "Animal Products",
+        href: "/collection/animal-products",
+        icon: faFeather,
+        standardIcon: false,
+      },
     ],
   },
   { name: "Animals", href: "/animals", icon: faHorse, standardIcon: false },

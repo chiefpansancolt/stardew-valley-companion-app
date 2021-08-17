@@ -25,12 +25,13 @@ export default function Trees() {
                 (Maple, Oak, Pine, and Mahogany) are valuable natural resources, being the primary
                 source of multiple products: Wood for construction and crafting, Sap, Maple Syrup,
                 Oak Resin, and Pine Tar. Special trees have their own unique characteristics.
-                <br/><br/>
-                Fruit Trees require 28 days to mature, after which they produce one fruit per day when in
-                season. Fruit can be allowed to accumulate up to three days before harvesting. Fruit
-                trees do not need to be watered, and will not die in the winter. Fruit saplings will
-                grow during any season, allowing players to plant and prepare for upcoming season to
-                bear fruit.
+                <br />
+                <br />
+                Fruit Trees require 28 days to mature, after which they produce one fruit per day
+                when in season. Fruit can be allowed to accumulate up to three days before
+                harvesting. Fruit trees do not need to be watered, and will not die in the winter.
+                Fruit saplings will grow during any season, allowing players to plant and prepare
+                for upcoming season to bear fruit.
               </p>
             </div>
             <div className="border-t border-gray-200">

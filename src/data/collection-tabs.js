@@ -123,6 +123,16 @@ const treesTabs = [
   { name: "To-Be Shipped", icon: faListAlt },
 ];
 
+const animalProductTabs = [
+  {
+    name: "All Animal Products",
+    icon: null,
+    img: "https://stardewvalleywiki.com/mediawiki/images/5/5d/Large_Egg.png",
+  },
+  { name: "Shipped", icon: faCheckDouble },
+  { name: "To-Be Shipped", icon: faListAlt },
+];
+
 export {
   artifactsTabs,
   mineralTabs,
@@ -134,4 +144,5 @@ export {
   forageTabs,
   artisanGoodsTabs,
   treesTabs,
+  animalProductTabs,
 };
