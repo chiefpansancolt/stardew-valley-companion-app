@@ -16,22 +16,16 @@ const foraging = [
     name: "Sap",
     description: "A fluid obtained from trees.",
     img: "https://stardewvalleywiki.com/mediawiki/images/7/73/Sap.png",
-    locations: [
-      LOCATIONS.ALL,
-    ],
+    locations: [LOCATIONS.ALL],
     shipping: true,
-    prices: [
-      { color: "text-gray-900", cost: "2g" },
-    ],
+    prices: [{ color: "text-gray-900", cost: "2g" }],
   },
   {
     id: 16,
     name: "Wild Horseradish",
     description: "A spicy root found in the spring.",
     img: "https://stardewvalleywiki.com/mediawiki/images/9/90/Wild_Horseradish.png",
-    locations: [
-      LOCATIONS.SPRING,
-    ],
+    locations: [LOCATIONS.SPRING],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "50g" },
@@ -45,9 +39,7 @@ const foraging = [
     name: "Daffodil",
     description: "A traditional spring flower that makes a nice gift.",
     img: "https://stardewvalleywiki.com/mediawiki/images/4/4b/Daffodil.png",
-    locations: [
-      LOCATIONS.SPRING,
-    ],
+    locations: [LOCATIONS.SPRING],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "30g" },
@@ -61,9 +53,7 @@ const foraging = [
     name: "Leek",
     description: "A tasty relative of the onion.",
     img: "https://stardewvalleywiki.com/mediawiki/images/5/57/Leek.png",
-    locations: [
-      LOCATIONS.SPRING,
-    ],
+    locations: [LOCATIONS.SPRING],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "60g" },
@@ -77,9 +67,7 @@ const foraging = [
     name: "Dandelion",
     description: "Not the prettiest flower, but the leaves make a good salad.",
     img: "https://stardewvalleywiki.com/mediawiki/images/b/b1/Dandelion.png",
-    locations: [
-      LOCATIONS.SPRING,
-    ],
+    locations: [LOCATIONS.SPRING],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "40g" },
@@ -93,9 +81,7 @@ const foraging = [
     name: "Spring Onion",
     description: "These grow wild during the spring.",
     img: "https://stardewvalleywiki.com/mediawiki/images/0/0c/Spring_Onion.png",
-    locations: [
-      LOCATIONS.SPRING,
-    ],
+    locations: [LOCATIONS.SPRING],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "8g" },
@@ -109,9 +95,7 @@ const foraging = [
     name: "Morel",
     description: "Sought after for its unique nutty flavor.",
     img: "https://stardewvalleywiki.com/mediawiki/images/b/b1/Morel.png",
-    locations: [
-      LOCATIONS.SPRING,
-    ],
+    locations: [LOCATIONS.SPRING],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "150g" },
@@ -125,11 +109,7 @@ const foraging = [
     name: "Common Mushroom",
     description: "Slightly nutty, with good texture.",
     img: "https://stardewvalleywiki.com/mediawiki/images/2/2e/Common_Mushroom.png",
-    locations: [
-      LOCATIONS.SPRING,
-      LOCATIONS.SUMMER,
-      LOCATIONS.FALL,
-    ],
+    locations: [LOCATIONS.SPRING, LOCATIONS.SUMMER, LOCATIONS.FALL],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "40g" },
@@ -143,9 +123,7 @@ const foraging = [
     name: "Salmonberry",
     description: "A spring-time berry with the flavor of the forest.",
     img: "https://stardewvalleywiki.com/mediawiki/images/5/59/Salmonberry.png",
-    locations: [
-      LOCATIONS.SPRING,
-    ],
+    locations: [LOCATIONS.SPRING],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "5g" },
@@ -159,9 +137,7 @@ const foraging = [
     name: "Spice Berry",
     description: "It fills the air with a pungent aroma.",
     img: "https://stardewvalleywiki.com/mediawiki/images/c/c6/Spice_Berry.png",
-    locations: [
-      LOCATIONS.SUMMER,
-    ],
+    locations: [LOCATIONS.SUMMER],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "80g" },
@@ -175,9 +151,7 @@ const foraging = [
     name: "Grape",
     description: "A sweet cluster of fruit.",
     img: "https://stardewvalleywiki.com/mediawiki/images/c/c2/Grape.png",
-    locations: [
-      LOCATIONS.SUMMER,
-    ],
+    locations: [LOCATIONS.SUMMER],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "80g" },
@@ -191,9 +165,7 @@ const foraging = [
     name: "Sweat Pea",
     description: "A fragrant summer flower.",
     img: "https://stardewvalleywiki.com/mediawiki/images/d/d9/Sweet_Pea.png",
-    locations: [
-      LOCATIONS.SUMMER,
-    ],
+    locations: [LOCATIONS.SUMMER],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "50g" },
@@ -207,11 +179,7 @@ const foraging = [
     name: "Red Mushroom",
     description: "A spotted mushroom sometimes found in caves.	",
     img: "https://stardewvalleywiki.com/mediawiki/images/e/e1/Red_Mushroom.png",
-    locations: [
-      LOCATIONS.SUMMER,
-      LOCATIONS.FALL,
-      LOCATIONS.MINES,
-    ],
+    locations: [LOCATIONS.SUMMER, LOCATIONS.FALL, LOCATIONS.MINES],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "75g" },
@@ -225,9 +193,7 @@ const foraging = [
     name: "Fiddlehead Fern",
     description: "The young shoots are an edible specialty.",
     img: "https://stardewvalleywiki.com/mediawiki/images/4/48/Fiddlehead_Fern.png",
-    locations: [
-      LOCATIONS.SUMMER,
-    ],
+    locations: [LOCATIONS.SUMMER],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "90g" },
@@ -241,9 +207,7 @@ const foraging = [
     name: "Wild Plum",
     description: "Tart and juicy with a pungent aroma.",
     img: "https://stardewvalleywiki.com/mediawiki/images/3/3b/Wild_Plum.png",
-    locations: [
-      LOCATIONS.FALL,
-    ],
+    locations: [LOCATIONS.FALL],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "80g" },
@@ -257,9 +221,7 @@ const foraging = [
     name: "Hazelnut",
     description: "That's one big hazelnut!",
     img: "https://stardewvalleywiki.com/mediawiki/images/3/31/Hazelnut.png",
-    locations: [
-      LOCATIONS.FALL,
-    ],
+    locations: [LOCATIONS.FALL],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "90g" },
@@ -273,9 +235,7 @@ const foraging = [
     name: "Blackberry",
     description: "An early-fall treat.",
     img: "https://stardewvalleywiki.com/mediawiki/images/2/25/Blackberry.png",
-    locations: [
-      LOCATIONS.FALL,
-    ],
+    locations: [LOCATIONS.FALL],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "20g" },
@@ -289,9 +249,7 @@ const foraging = [
     name: "Chanterelle",
     description: "A tasty mushroom with a fruity smell and slightly peppery flavor.",
     img: "https://stardewvalleywiki.com/mediawiki/images/1/1d/Chanterelle.png",
-    locations: [
-      LOCATIONS.FALL,
-    ],
+    locations: [LOCATIONS.FALL],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "160g" },
@@ -305,10 +263,7 @@ const foraging = [
     name: "Purple Mushroom",
     description: "A rare mushroom found deep in caves.",
     img: "https://stardewvalleywiki.com/mediawiki/images/4/4b/Purple_Mushroom.png",
-    locations: [
-      LOCATIONS.FALL,
-      LOCATIONS.MINES,
-    ],
+    locations: [LOCATIONS.FALL, LOCATIONS.MINES],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "250g" },
@@ -322,9 +277,7 @@ const foraging = [
     name: "Winter Root",
     description: "A starchy tuber.",
     img: "https://stardewvalleywiki.com/mediawiki/images/1/11/Winter_Root.png",
-    locations: [
-      LOCATIONS.WINTER,
-    ],
+    locations: [LOCATIONS.WINTER],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "70g" },
@@ -338,9 +291,7 @@ const foraging = [
     name: "Crystal Fruit",
     description: "A delicate fruit that pops up from the snow.",
     img: "https://stardewvalleywiki.com/mediawiki/images/1/16/Crystal_Fruit.png",
-    locations: [
-      LOCATIONS.WINTER,
-    ],
+    locations: [LOCATIONS.WINTER],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "150g" },
@@ -354,9 +305,7 @@ const foraging = [
     name: "Snow Yam",
     description: "This little yam was hiding beneath the snow.",
     img: "https://stardewvalleywiki.com/mediawiki/images/3/3f/Snow_Yam.png",
-    locations: [
-      LOCATIONS.WINTER,
-    ],
+    locations: [LOCATIONS.WINTER],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "100g" },
@@ -370,9 +319,7 @@ const foraging = [
     name: "Crocus",
     description: "A flower that can bloom in the winter.",
     img: "https://stardewvalleywiki.com/mediawiki/images/2/2f/Crocus.png",
-    locations: [
-      LOCATIONS.WINTER,
-    ],
+    locations: [LOCATIONS.WINTER],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "60g" },
@@ -386,9 +333,7 @@ const foraging = [
     name: "Holly",
     description: "The leaves and bright red berries make a popular winter decoration.",
     img: "https://stardewvalleywiki.com/mediawiki/images/b/b8/Holly.png",
-    locations: [
-      LOCATIONS.WINTER,
-    ],
+    locations: [LOCATIONS.WINTER],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "80g" },
@@ -402,10 +347,7 @@ const foraging = [
     name: "Nautilus Shell",
     description: "An ancient shell.",
     img: "https://stardewvalleywiki.com/mediawiki/images/a/a4/Nautilus_Shell.png",
-    locations: [
-      LOCATIONS.BEACH,
-      LOCATIONS.WINTER,
-    ],
+    locations: [LOCATIONS.BEACH, LOCATIONS.WINTER],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "120g" },
@@ -419,9 +361,7 @@ const foraging = [
     name: "Coral",
     description: "A colony of tiny creatures that clump together to form beautiful structures.",
     img: "https://stardewvalleywiki.com/mediawiki/images/b/b1/Coral.png",
-    locations: [
-      LOCATIONS.BEACH,
-    ],
+    locations: [LOCATIONS.BEACH],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "80g" },
@@ -435,9 +375,7 @@ const foraging = [
     name: "Sea Urchin",
     description: "A slow-moving, spiny creature that some consider a delicacy.",
     img: "https://stardewvalleywiki.com/mediawiki/images/e/e7/Sea_Urchin.png",
-    locations: [
-      LOCATIONS.BEACH,
-    ],
+    locations: [LOCATIONS.BEACH],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "160g" },
@@ -451,10 +389,7 @@ const foraging = [
     name: "Rainbow Shell",
     description: "It's a very beautiful shell.",
     img: "https://stardewvalleywiki.com/mediawiki/images/3/3d/Rainbow_Shell.png",
-    locations: [
-      LOCATIONS.BEACH,
-      LOCATIONS.SUMMER,
-    ],
+    locations: [LOCATIONS.BEACH, LOCATIONS.SUMMER],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "300g" },
@@ -468,9 +403,7 @@ const foraging = [
     name: "Clam",
     description: "Someone lived here once.",
     img: "https://stardewvalleywiki.com/mediawiki/images/e/ed/Clam.png",
-    locations: [
-      LOCATIONS.BEACH,
-    ],
+    locations: [LOCATIONS.BEACH],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "50g" },
@@ -484,9 +417,7 @@ const foraging = [
     name: "Cockle",
     description: "A common saltwater clam.",
     img: "https://stardewvalleywiki.com/mediawiki/images/a/ad/Cockle.png",
-    locations: [
-      LOCATIONS.BEACH,
-    ],
+    locations: [LOCATIONS.BEACH],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "50g" },
@@ -500,9 +431,7 @@ const foraging = [
     name: "Mussel",
     description: "A common bivalve that often lives in clusters.",
     img: "https://stardewvalleywiki.com/mediawiki/images/a/aa/Mussel.png",
-    locations: [
-      LOCATIONS.BEACH,
-    ],
+    locations: [LOCATIONS.BEACH],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "30g" },
@@ -514,11 +443,10 @@ const foraging = [
   {
     id: 723,
     name: "Oyster",
-    description: "Constantly filters water to find food. In the process, it removes dangerous toxins from the environment.",
+    description:
+      "Constantly filters water to find food. In the process, it removes dangerous toxins from the environment.",
     img: "https://stardewvalleywiki.com/mediawiki/images/5/54/Oyster.png",
-    locations: [
-      LOCATIONS.BEACH,
-    ],
+    locations: [LOCATIONS.BEACH],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "40g" },
@@ -532,9 +460,7 @@ const foraging = [
     name: "Seaweed",
     description: "It can be used in cooking.",
     img: "https://stardewvalleywiki.com/mediawiki/images/1/13/Seaweed.png",
-    locations: [
-      LOCATIONS.BEACH,
-    ],
+    locations: [LOCATIONS.BEACH],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "20g" },
@@ -548,22 +474,16 @@ const foraging = [
     name: "Cave Carrot",
     description: "A starchy snack found in caves. It helps miners work longer.",
     img: "https://stardewvalleywiki.com/mediawiki/images/3/34/Cave_Carrot.png",
-    locations: [
-      LOCATIONS.MINES,
-    ],
+    locations: [LOCATIONS.MINES],
     shipping: true,
-    prices: [
-      { color: "text-gray-900", cost: "25g" },
-    ],
+    prices: [{ color: "text-gray-900", cost: "25g" }],
   },
   {
     id: 90,
     name: "Cactus Fruit",
     description: "The sweet fruit of the prickly pear cactus.",
     img: "https://stardewvalleywiki.com/mediawiki/images/3/32/Cactus_Fruit.png",
-    locations: [
-      LOCATIONS.DESERT,
-    ],
+    locations: [LOCATIONS.DESERT],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "75g" },
@@ -577,9 +497,7 @@ const foraging = [
     name: "Cocunut",
     description: "A seed of the coconut palm. It has many culinary uses.",
     img: "https://stardewvalleywiki.com/mediawiki/images/2/2f/Coconut.png",
-    locations: [
-      LOCATIONS.DESERT,
-    ],
+    locations: [LOCATIONS.DESERT],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "100g" },
@@ -593,22 +511,16 @@ const foraging = [
     name: "Ginger",
     description: "This sharp, spicy root is said to increase vitality.",
     img: "https://stardewvalleywiki.com/mediawiki/images/8/85/Ginger.png",
-    locations: [
-      LOCATIONS.GINGER,
-    ],
+    locations: [LOCATIONS.GINGER],
     shipping: true,
-    prices: [
-      { color: "text-gray-900", cost: "60g" },
-    ],
+    prices: [{ color: "text-gray-900", cost: "60g" }],
   },
   {
     id: 851,
     name: "Magma Cap",
     description: "A very rare mushroom that lives next to pools of lava.",
     img: "https://stardewvalleywiki.com/mediawiki/images/7/77/Magma_Cap.png",
-    locations: [
-      LOCATIONS.GINGER,
-    ],
+    locations: [LOCATIONS.GINGER],
     shipping: true,
     prices: [
       { color: "text-gray-900", cost: "400g" },

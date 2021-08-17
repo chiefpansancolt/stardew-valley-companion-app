@@ -76,16 +76,14 @@ export default function CropsTableView({ collection }) {
                           <img className="h-10 w-10" src={item.img} alt="" />
                         </div>
                         <div className="ml-4">
-                          <div className="text-sm font-medium text-gray-900">
-                            {item.name}
-                          </div>
+                          <div className="text-sm font-medium text-gray-900">{item.name}</div>
                           <div className="text-sm text-gray-500">{item.description}</div>
                         </div>
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       <span>{item.harvest}</span>
-                      <br/>
+                      <br />
                       {item.regrowth !== "n/a" && <span>/ {item.regrowth}</span>}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
@@ -116,35 +114,30 @@ export default function CropsTableView({ collection }) {
                       </ul>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <Badge label={item.shipped ? "Shipped" : "Not Shipped"} isSuccess={item.shipped} />
+                      <Badge
+                        label={item.shipped ? "Shipped" : "Not Shipped"}
+                        isSuccess={item.shipped}
+                      />
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      {!item.polyculture ? 
-                        <Badge
-                          label="n/a"
-                          isSuccess={false}
-                          isWarning={true}
-                        />
-                        :
+                      {!item.polyculture ? (
+                        <Badge label="n/a" isSuccess={false} isWarning={true} />
+                      ) : (
                         <Badge
                           label={item.polycultured ? "Completed" : item.count + " / 15"}
                           isSuccess={item.polycultured}
                         />
-                      }
+                      )}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      {!item.monoculture ? 
-                        <Badge
-                          label="n/a"
-                          isSuccess={false}
-                          isWarning={true}
-                        />
-                        :
+                      {!item.monoculture ? (
+                        <Badge label="n/a" isSuccess={false} isWarning={true} />
+                      ) : (
                         <Badge
                           label={item.monocultured ? "Completed" : item.count + " / 300"}
                           isSuccess={item.monocultured}
                         />
-                      }
+                      )}
                     </td>
                   </tr>
                 ))}

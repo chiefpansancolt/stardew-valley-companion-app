@@ -43,7 +43,12 @@ const navigation = [
         standardIcon: false,
       },
       { name: "Food", href: "/collection/food", icon: faHamburger, standardIcon: false },
-      { name: "Foraging", href: "/collection/foraging", icon: faShoppingBasket, standardIcon: false },
+      {
+        name: "Foraging",
+        href: "/collection/foraging",
+        icon: faShoppingBasket,
+        standardIcon: false,
+      },
       { name: "Crops", href: "/collection/crops", icon: faSeedling, standardIcon: false },
       { name: "Crafting", href: "/collection/crafting", icon: faHammer, standardIcon: false },
       { name: "Trees", href: "/collection/trees", icon: faTree, standardIcon: false },

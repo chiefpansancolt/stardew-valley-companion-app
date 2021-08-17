@@ -32,11 +32,11 @@ export default function Crops() {
             <div className="px-4 py-5 sm:px-6">
               <h3 className="text-lg leading-6 font-medium text-gray-900">Crops</h3>
               <p className="mt-1 text-sm text-gray-500">
-                Crops are plants that are grown from seeds to be harvested for the purpose of profit,
-                food, or gifting. Generally, each crop is seasonal. It can be planted only during its
-                designated season, and when seasons change (after the 28th day), the crop will wither
-                and die. Multi-season crops (i.e., Ancient Fruit, Coffee Bean, Corn, Sunflower, and Wheat),
-                however, will continue to grow during all specified seasons.
+                Crops are plants that are grown from seeds to be harvested for the purpose of
+                profit, food, or gifting. Generally, each crop is seasonal. It can be planted only
+                during its designated season, and when seasons change (after the 28th day), the crop
+                will wither and die. Multi-season crops (i.e., Ancient Fruit, Coffee Bean, Corn,
+                Sunflower, and Wheat), however, will continue to grow during all specified seasons.
               </p>
             </div>
             <div className="border-t border-gray-200">

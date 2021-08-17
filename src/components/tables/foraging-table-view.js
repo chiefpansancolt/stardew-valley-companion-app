@@ -52,9 +52,7 @@ export default function ForagingTableView({ collection }) {
                           <img className="h-10 w-10" src={item.img} alt="" />
                         </div>
                         <div className="ml-4">
-                          <div className="text-sm font-medium text-gray-900">
-                            {item.name}
-                          </div>
+                          <div className="text-sm font-medium text-gray-900">{item.name}</div>
                           <div className="text-sm text-gray-500">{item.description}</div>
                         </div>
                       </div>
@@ -80,7 +78,10 @@ export default function ForagingTableView({ collection }) {
                       </ul>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <Badge label={item.shipped ? "Shipped" : "Not Shipped"} isSuccess={item.shipped} />
+                      <Badge
+                        label={item.shipped ? "Shipped" : "Not Shipped"}
+                        isSuccess={item.shipped}
+                      />
                     </td>
                   </tr>
                 ))}

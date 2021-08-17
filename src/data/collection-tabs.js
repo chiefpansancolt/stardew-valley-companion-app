@@ -113,4 +113,14 @@ const artisanGoodsTabs = [
   { name: "To-Be Shipped", icon: faListAlt },
 ];
 
-export { artifactsTabs, mineralTabs, fishTabs, monsterTabs, foodTabs, craftingTabs, cropTabs, forageTabs, artisanGoodsTabs };
+export {
+  artifactsTabs,
+  mineralTabs,
+  fishTabs,
+  monsterTabs,
+  foodTabs,
+  craftingTabs,
+  cropTabs,
+  forageTabs,
+  artisanGoodsTabs,
+};

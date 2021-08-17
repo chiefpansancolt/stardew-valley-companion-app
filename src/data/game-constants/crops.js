@@ -15,9 +15,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/2/2f/Blue_Jazz.png",
     harvest: "7 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SPRING,
-    ],
+    seasons: [SEASONS.SPRING],
     shipping: true,
     polyculture: false,
     monoculture: true,
@@ -27,21 +25,17 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(50 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(50 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 30g",
-      "JojaMart: 37g"
-    ]
+    sources: ["Pierre's: 30g", "JojaMart: 37g"],
   },
   {
     id: 190,
     name: "Cauliflower",
-    description: "Valuable, but slow-growing. Despite its pale color, the florets are packed with nutrients.",
+    description:
+      "Valuable, but slow-growing. Despite its pale color, the florets are packed with nutrients.",
     img: "https://stardewvalleywiki.com/mediawiki/images/a/aa/Cauliflower.png",
     harvest: "12 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SPRING,
-    ],
+    seasons: [SEASONS.SPRING],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -51,21 +45,17 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(175 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(175 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 80g",
-      "JojaMart: 100g"
-    ]
+    sources: ["Pierre's: 80g", "JojaMart: 100g"],
   },
   {
     id: 433,
     name: "Coffee Bean",
-    description: "Plant in spring or summer to grow a coffee plant. Place five beans in a keg to make coffee.",
+    description:
+      "Plant in spring or summer to grow a coffee plant. Place five beans in a keg to make coffee.",
     img: "https://stardewvalleywiki.com/mediawiki/images/3/33/Coffee_Bean.png",
     harvest: "10 Days",
     regrowth: "2 Days",
-    seasons: [
-      SEASONS.SPRING,
-    ],
+    seasons: [SEASONS.SPRING],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -75,10 +65,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(15 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(15 * 2) + "g" },
     ],
-    sources: [
-      "Traveling Cart: 2,500g",
-      "Dust Sprite (1% chance)"
-    ]
+    sources: ["Traveling Cart: 2,500g", "Dust Sprite (1% chance)"],
   },
   {
     id: 248,
@@ -87,9 +74,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/c/cc/Garlic.png",
     harvest: "4 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SPRING,
-    ],
+    seasons: [SEASONS.SPRING],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -99,9 +84,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(60 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(60 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 40g",
-    ]
+    sources: ["Pierre's: 40g"],
   },
   {
     id: 188,
@@ -110,9 +93,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/5/5c/Green_Bean.png",
     harvest: "10 Days",
     regrowth: "3 Days",
-    seasons: [
-      SEASONS.SPRING,
-    ],
+    seasons: [SEASONS.SPRING],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -122,10 +103,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(40 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(40 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 60g",
-      "JojaMart: 75g"
-    ]
+    sources: ["Pierre's: 60g", "JojaMart: 75g"],
   },
   {
     id: 250,
@@ -134,9 +112,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/d/d1/Kale.png",
     harvest: "6 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SPRING,
-    ],
+    seasons: [SEASONS.SPRING],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -146,21 +122,17 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(110 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(110 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 70g",
-      "JojaMart: 87g"
-    ]
+    sources: ["Pierre's: 70g", "JojaMart: 87g"],
   },
   {
     id: 24,
     name: "Parsnips",
-    description: "A spring tuber closely related to the carrot. It has an earthy taste and is full of nutrients.",
+    description:
+      "A spring tuber closely related to the carrot. It has an earthy taste and is full of nutrients.",
     img: "https://stardewvalleywiki.com/mediawiki/images/d/db/Parsnip.png",
     harvest: "4 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SPRING,
-    ],
+    seasons: [SEASONS.SPRING],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -170,10 +142,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(35 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(35 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 20g",
-      "JojaMart: 25g"
-    ]
+    sources: ["Pierre's: 20g", "JojaMart: 25g"],
   },
   {
     id: 192,
@@ -182,9 +151,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/c/c2/Potato.png",
     harvest: "6 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SPRING,
-    ],
+    seasons: [SEASONS.SPRING],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -194,10 +161,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(80 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(80 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 50g",
-      "JojaMart: 62g"
-    ]
+    sources: ["Pierre's: 50g", "JojaMart: 62g"],
   },
   {
     id: 252,
@@ -206,9 +170,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/6/6e/Rhubarb.png",
     harvest: "13 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SPRING,
-    ],
+    seasons: [SEASONS.SPRING],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -218,9 +180,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(220 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(220 * 2) + "g" },
     ],
-    sources: [
-      "Oasis: 100g",
-    ]
+    sources: ["Oasis: 100g"],
   },
   {
     id: 400,
@@ -229,9 +189,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/6/6d/Strawberry.png",
     harvest: "8 Days",
     regrowth: "4 Days",
-    seasons: [
-      SEASONS.SPRING,
-    ],
+    seasons: [SEASONS.SPRING],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -241,9 +199,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(120 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(120 * 2) + "g" },
     ],
-    sources: [
-      "Egg Festival: 100g",
-    ]
+    sources: ["Egg Festival: 100g"],
   },
   {
     id: 591,
@@ -252,9 +208,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/c/cf/Tulip.png",
     harvest: "6 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SPRING,
-    ],
+    seasons: [SEASONS.SPRING],
     shipping: true,
     polyculture: false,
     monoculture: true,
@@ -264,10 +218,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(30 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(30 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 20g",
-      "JojaMart: 25g"
-    ]
+    sources: ["Pierre's: 20g", "JojaMart: 25g"],
   },
   {
     id: 271,
@@ -276,9 +227,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/f/fe/Unmilled_Rice.png",
     harvest: "8 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SPRING,
-    ],
+    seasons: [SEASONS.SPRING],
     shipping: true,
     polyculture: false,
     monoculture: false,
@@ -288,20 +237,17 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(30 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(30 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 40g",
-    ]
+    sources: ["Pierre's: 40g"],
   },
   {
     id: 258,
     name: "Blueberry",
-    description: "A popular berry reported to have many health benefits. The blue skin has the highest nutrient concentration.",
+    description:
+      "A popular berry reported to have many health benefits. The blue skin has the highest nutrient concentration.",
     img: "https://stardewvalleywiki.com/mediawiki/images/9/9e/Blueberry.png",
     harvest: "13 Days",
     regrowth: "4 Days",
-    seasons: [
-      SEASONS.SUMMER,
-    ],
+    seasons: [SEASONS.SUMMER],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -311,9 +257,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(50 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(50 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 80g"
-    ]
+    sources: ["Pierre's: 80g"],
   },
   {
     id: 270,
@@ -322,10 +266,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/f/f8/Corn.png",
     harvest: "14 Days",
     regrowth: "4 Days",
-    seasons: [
-      SEASONS.SUMMER,
-      SEASONS.FALL,
-    ],
+    seasons: [SEASONS.SUMMER, SEASONS.FALL],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -335,10 +276,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(50 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(50 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 150g",
-      "JojaMart: 187g"
-    ]
+    sources: ["Pierre's: 150g", "JojaMart: 187g"],
   },
   {
     id: 304,
@@ -347,9 +285,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/5/59/Hops.png",
     harvest: "11 Days",
     regrowth: "1 day",
-    seasons: [
-      SEASONS.SUMMER,
-    ],
+    seasons: [SEASONS.SUMMER],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -359,10 +295,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(25 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(25 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 60g",
-      "JojaMart: 75g"
-    ]
+    sources: ["Pierre's: 60g", "JojaMart: 75g"],
   },
   {
     id: 260,
@@ -371,9 +304,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/f/f1/Hot_Pepper.png",
     harvest: "5 Days",
     regrowth: "3 Days",
-    seasons: [
-      SEASONS.SUMMER,
-    ],
+    seasons: [SEASONS.SUMMER],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -383,10 +314,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(40 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(40 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 40g",
-      "JojaMart: 50g"
-    ]
+    sources: ["Pierre's: 40g", "JojaMart: 50g"],
   },
   {
     id: 254,
@@ -395,9 +323,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/1/19/Melon.png",
     harvest: "12 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SUMMER,
-    ],
+    seasons: [SEASONS.SUMMER],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -407,10 +333,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(250 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(250 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 80g",
-      "JojaMart: 100g"
-    ]
+    sources: ["Pierre's: 80g", "JojaMart: 100g"],
   },
   {
     id: 376,
@@ -419,9 +342,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/3/37/Poppy.png",
     harvest: "7 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SUMMER,
-    ],
+    seasons: [SEASONS.SUMMER],
     shipping: true,
     polyculture: false,
     monoculture: false,
@@ -431,10 +352,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(140 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(140 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 100g",
-      "JojaMart: 125g"
-    ]
+    sources: ["Pierre's: 100g", "JojaMart: 125g"],
   },
   {
     id: 264,
@@ -443,9 +361,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/d/d5/Radish.png",
     harvest: "6 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SUMMER,
-    ],
+    seasons: [SEASONS.SUMMER],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -455,21 +371,17 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(90 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(90 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 40g",
-      "JojaMart: 50g"
-    ]
+    sources: ["Pierre's: 40g", "JojaMart: 50g"],
   },
   {
     id: 266,
     name: "Red Cabbage",
-    description: "Often used in salads and coleslaws. The color can range from purple to blue to green-yellow depending on soil conditions.",
+    description:
+      "Often used in salads and coleslaws. The color can range from purple to blue to green-yellow depending on soil conditions.",
     img: "https://stardewvalleywiki.com/mediawiki/images/2/2d/Red_Cabbage.png",
     harvest: "9 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SUMMER,
-    ],
+    seasons: [SEASONS.SUMMER],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -479,20 +391,17 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(260 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(260 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 100g"
-    ]
+    sources: ["Pierre's: 100g"],
   },
   {
     id: 268,
     name: "Starfruit",
-    description: "An extremely juicy fruit that grows in hot, humid weather. Slightly sweet with a sour undertone.",
+    description:
+      "An extremely juicy fruit that grows in hot, humid weather. Slightly sweet with a sour undertone.",
     img: "https://stardewvalleywiki.com/mediawiki/images/d/db/Starfruit.png",
     harvest: "13 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SUMMER,
-    ],
+    seasons: [SEASONS.SUMMER],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -502,9 +411,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(750 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(750 * 2) + "g" },
     ],
-    sources: [
-      "Oasis: 400g"
-    ]
+    sources: ["Oasis: 400g"],
   },
   {
     id: 593,
@@ -513,9 +420,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/9/9f/Summer_Spangle.png",
     harvest: "8 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SUMMER,
-    ],
+    seasons: [SEASONS.SUMMER],
     shipping: true,
     polyculture: false,
     monoculture: true,
@@ -525,10 +430,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(90 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(90 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 50g",
-      "JojaMart: 62g"
-    ]
+    sources: ["Pierre's: 50g", "JojaMart: 62g"],
   },
   {
     id: 421,
@@ -537,9 +439,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/8/81/Sunflower.png",
     harvest: "8 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SUMMER,
-    ],
+    seasons: [SEASONS.SUMMER],
     shipping: true,
     polyculture: false,
     monoculture: false,
@@ -549,10 +449,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(80 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(80 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 200g",
-      "JojaMart: 125g"
-    ]
+    sources: ["Pierre's: 200g", "JojaMart: 125g"],
   },
   {
     id: 256,
@@ -561,9 +458,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/9/9d/Tomato.png",
     harvest: "11 Days",
     regrowth: "4 Days",
-    seasons: [
-      SEASONS.SUMMER,
-    ],
+    seasons: [SEASONS.SUMMER],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -573,21 +468,17 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(60 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(60 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 50g",
-      "JojaMart: 62g"
-    ]
+    sources: ["Pierre's: 50g", "JojaMart: 62g"],
   },
   {
     id: 262,
     name: "Wheat",
-    description: "One of the most widely cultivated grains. Makes a great flour for breads and cakes.",
+    description:
+      "One of the most widely cultivated grains. Makes a great flour for breads and cakes.",
     img: "https://stardewvalleywiki.com/mediawiki/images/e/e2/Wheat.png",
     harvest: "4 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SUMMER,
-    ],
+    seasons: [SEASONS.SUMMER],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -597,10 +488,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(25 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(25 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 10g",
-      "JojaMart: 12g"
-    ]
+    sources: ["Pierre's: 10g", "JojaMart: 12g"],
   },
   {
     id: 300,
@@ -609,9 +497,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/f/f6/Amaranth.png",
     harvest: "7 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.FALL,
-    ],
+    seasons: [SEASONS.FALL],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -621,21 +507,17 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(150 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(150 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 70g",
-      "JojaMart: 87g"
-    ]
+    sources: ["Pierre's: 70g", "JojaMart: 87g"],
   },
   {
     id: 274,
     name: "Artichoke",
-    description: "The bud of a thistle plant. The spiny outer leaves conceal a fleshy, filling interior.",
+    description:
+      "The bud of a thistle plant. The spiny outer leaves conceal a fleshy, filling interior.",
     img: "https://stardewvalleywiki.com/mediawiki/images/d/dd/Artichoke.png",
     harvest: "8 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.FALL,
-    ],
+    seasons: [SEASONS.FALL],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -645,9 +527,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(160 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(160 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 30g"
-    ]
+    sources: ["Pierre's: 30g"],
   },
   {
     id: 284,
@@ -656,9 +536,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/a/a4/Beet.png",
     harvest: "6 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.FALL,
-    ],
+    seasons: [SEASONS.FALL],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -668,9 +546,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(100 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(100 * 2) + "g" },
     ],
-    sources: [
-      "Oasis: 20g"
-    ]
+    sources: ["Oasis: 20g"],
   },
   {
     id: 278,
@@ -679,9 +555,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/4/40/Bok_Choy.png",
     harvest: "4 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.FALL,
-    ],
+    seasons: [SEASONS.FALL],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -691,10 +565,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(80 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(80 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 50g",
-      "JojaMart: 62g"
-    ]
+    sources: ["Pierre's: 50g", "JojaMart: 62g"],
   },
   {
     id: 282,
@@ -703,9 +574,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/6/6e/Cranberries.png",
     harvest: "7 Days",
     regrowth: "5 Days",
-    seasons: [
-      SEASONS.FALL,
-    ],
+    seasons: [SEASONS.FALL],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -715,10 +584,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(75 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(75 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 240g",
-      "JojaMart: 300g"
-    ]
+    sources: ["Pierre's: 240g", "JojaMart: 300g"],
   },
   {
     id: 272,
@@ -727,9 +593,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/8/8f/Eggplant.png",
     harvest: "5 Days",
     regrowth: "5 Days",
-    seasons: [
-      SEASONS.FALL,
-    ],
+    seasons: [SEASONS.FALL],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -739,21 +603,17 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(60 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(60 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 20g",
-      "JojaMart: 25g"
-    ]
+    sources: ["Pierre's: 20g", "JojaMart: 25g"],
   },
   {
     id: 595,
     name: "Fairy Rose",
-    description: "An old folk legend suggests that the sweet smell of this flower attracts fairies.",
+    description:
+      "An old folk legend suggests that the sweet smell of this flower attracts fairies.",
     img: "https://stardewvalleywiki.com/mediawiki/images/5/5c/Fairy_Rose.png",
     harvest: "12 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.FALL,
-    ],
+    seasons: [SEASONS.FALL],
     shipping: true,
     polyculture: false,
     monoculture: true,
@@ -763,10 +623,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(290 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(290 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 200g",
-      "JojaMart: 250g"
-    ]
+    sources: ["Pierre's: 200g", "JojaMart: 250g"],
   },
   {
     id: 398,
@@ -775,9 +632,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/c/c2/Grape.png",
     harvest: "10 Days",
     regrowth: "3 Days",
-    seasons: [
-      SEASONS.FALL,
-    ],
+    seasons: [SEASONS.FALL],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -787,21 +642,17 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(80 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(80 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 60g",
-      "JojaMart: 75g"
-    ]
+    sources: ["Pierre's: 60g", "JojaMart: 75g"],
   },
   {
     id: 276,
     name: "Pumpkin",
-    description: "A fall favorite, grown for its crunchy seeds and delicately flavored flesh. As a bonus, the hollow shell can be carved into a festive decoration.",
+    description:
+      "A fall favorite, grown for its crunchy seeds and delicately flavored flesh. As a bonus, the hollow shell can be carved into a festive decoration.",
     img: "https://stardewvalleywiki.com/mediawiki/images/6/64/Pumpkin.png",
     harvest: "13 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.FALL,
-    ],
+    seasons: [SEASONS.FALL],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -811,10 +662,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(320 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(320 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 100g",
-      "JojaMart: 125g"
-    ]
+    sources: ["Pierre's: 100g", "JojaMart: 125g"],
   },
   {
     id: 280,
@@ -823,9 +671,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/5/52/Yam.png",
     harvest: "10 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.FALL,
-    ],
+    seasons: [SEASONS.FALL],
     shipping: true,
     polyculture: true,
     monoculture: true,
@@ -835,10 +681,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(160 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(160 * 2) + "g" },
     ],
-    sources: [
-      "Pierre's: 60g",
-      "JojaMart: 75g"
-    ]
+    sources: ["Pierre's: 60g", "JojaMart: 75g"],
   },
   {
     id: 454,
@@ -847,11 +690,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/0/01/Ancient_Fruit.png",
     harvest: "28 Days",
     regrowth: "7 Days",
-    seasons: [
-      SEASONS.SPRING,
-      SEASONS.SUMMER,
-      SEASONS.FALL
-    ],
+    seasons: [SEASONS.SPRING, SEASONS.SUMMER, SEASONS.FALL],
     shipping: true,
     polyculture: false,
     monoculture: true,
@@ -861,10 +700,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(550 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(550 * 2) + "g" },
     ],
-    sources: [
-      "Crafting Recipe: Free",
-      "Traveling Cart: 100-1,000g"
-    ]
+    sources: ["Crafting Recipe: Free", "Traveling Cart: 100-1,000g"],
   },
   {
     id: 90,
@@ -873,10 +709,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/3/32/Cactus_Fruit.png",
     harvest: "12 Days",
     regrowth: "3 Days",
-    seasons: [
-      "Greenhouse",
-      SEASONS.INDOORS,
-    ],
+    seasons: ["Greenhouse", SEASONS.INDOORS],
     shipping: true,
     polyculture: false,
     monoculture: false,
@@ -886,9 +719,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(75 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(75 * 2) + "g" },
     ],
-    sources: [
-      "Oasis: 150g",
-    ]
+    sources: ["Oasis: 150g"],
   },
   {
     id: 771,
@@ -897,21 +728,12 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/4/45/Fiber.png",
     harvest: "7 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SPRING,
-      SEASONS.SUMMER,
-      SEASONS.FALL,
-      SEASONS.WINTER,
-    ],
+    seasons: [SEASONS.SPRING, SEASONS.SUMMER, SEASONS.FALL, SEASONS.WINTER],
     shipping: true,
     polyculture: false,
     monoculture: false,
-    prices: [
-      { color: "text-gray-900", cost: "1g" },
-    ],
-    sources: [
-      "Crafting Recipe: Free",
-    ]
+    prices: [{ color: "text-gray-900", cost: "1g" }],
+    sources: ["Crafting Recipe: Free"],
   },
   {
     id: 832,
@@ -920,10 +742,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/f/fb/Pineapple.png",
     harvest: "14 Days",
     regrowth: "7 Days",
-    seasons: [
-      SEASONS.SUMMER,
-      SEASONS.ALLGINGER,
-    ],
+    seasons: [SEASONS.SUMMER, SEASONS.ALLGINGER],
     shipping: true,
     polyculture: false,
     monoculture: false,
@@ -933,10 +752,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(300 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(300 * 2) + "g" },
     ],
-    sources: [
-      "Island Trader:",
-      "Magma Cap (1)"
-    ]
+    sources: ["Island Trader:", "Magma Cap (1)"],
   },
   {
     id: 830,
@@ -945,10 +761,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/0/01/Taro_Root.png",
     harvest: "10 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.SUMMER,
-      SEASONS.ALLGINGER,
-    ],
+    seasons: [SEASONS.SUMMER, SEASONS.ALLGINGER],
     shipping: true,
     polyculture: false,
     monoculture: false,
@@ -958,10 +771,7 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(100 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(100 * 2) + "g" },
     ],
-    sources: [
-      "Island Trader:",
-      "Bone Fragment (2)",
-    ]
+    sources: ["Island Trader:", "Bone Fragment (2)"],
   },
   {
     id: 417,
@@ -970,9 +780,7 @@ const crops = [
     img: "https://stardewvalleywiki.com/mediawiki/images/8/88/Sweet_Gem_Berry.png",
     harvest: "24 Days",
     regrowth: "n/a",
-    seasons: [
-      SEASONS.FALL,
-    ],
+    seasons: [SEASONS.FALL],
     shipping: true,
     polyculture: false,
     monoculture: false,
@@ -982,32 +790,22 @@ const crops = [
       { color: "text-yellow-500", cost: Math.floor(3000 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(3000 * 2) + "g" },
     ],
-    sources: [
-      "Traveling Cart: 1,000g",
-    ]
+    sources: ["Traveling Cart: 1,000g"],
   },
   {
     id: 815,
     name: "Tea Leaves",
-    description: "The young leaves of the tea plant. Can be brewed into the popular, energizing beverage.",
+    description:
+      "The young leaves of the tea plant. Can be brewed into the popular, energizing beverage.",
     img: "https://stardewvalleywiki.com/mediawiki/images/5/5b/Tea_Leaves.png",
     harvest: "20 Days",
     regrowth: "1 day",
-    seasons: [
-      SEASONS.SPRING,
-      SEASONS.SUMMER,
-      SEASONS.FALL,
-      SEASONS.INDOORS,
-    ],
+    seasons: [SEASONS.SPRING, SEASONS.SUMMER, SEASONS.FALL, SEASONS.INDOORS],
     shipping: true,
     polyculture: false,
     monoculture: false,
-    prices: [
-      { color: "text-gray-900", cost: "50g" },
-    ],
-    sources: [
-      "Crafting Recipe: Free",
-    ]
+    prices: [{ color: "text-gray-900", cost: "50g" }],
+    sources: ["Crafting Recipe: Free"],
   },
 ];
 

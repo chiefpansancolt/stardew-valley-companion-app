@@ -21,9 +21,9 @@ export default function Foraging() {
             <div className="px-4 py-5 sm:px-6">
               <h3 className="text-lg leading-6 font-medium text-gray-900">Foraging</h3>
               <p className="mt-1 text-sm text-gray-500">
-                Foraging is the skill associated with gathering wild resources found on the
-                ground throughout Stardew Valley, and with chopping down Trees. Foraging skill
-                also increases by harvesting crops grown from Wild Seeds.
+                Foraging is the skill associated with gathering wild resources found on the ground
+                throughout Stardew Valley, and with chopping down Trees. Foraging skill also
+                increases by harvesting crops grown from Wild Seeds.
               </p>
             </div>
             <div className="border-t border-gray-200">

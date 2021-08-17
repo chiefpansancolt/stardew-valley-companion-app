@@ -695,12 +695,14 @@ function buildCrops(data) {
 
   for (let i = 0; i < crops.length; i++) {
     const crop = crops[i];
-    const item = data.SaveGame.player[0].basicShipped[0].item.find((e) => e.key[0].int[0] === String(crop.id));
+    const item = data.SaveGame.player[0].basicShipped[0].item.find(
+      (e) => e.key[0].int[0] === String(crop.id)
+    );
 
     crop.count = item ? parseInt(item.value[0].int[0]) : 0;
-    crop.shipped = crop.shipping ? crop.count > 0 ? true : false : "n/a";
-    crop.polycultured = crop.polyculture ? crop.count > 15 ? true : false : "n/a";
-    crop.monocultured = crop.monoculture ? crop.count > 300 ? true : false : "n/a";
+    crop.shipped = crop.shipping ? (crop.count > 0 ? true : false) : "n/a";
+    crop.polycultured = crop.polyculture ? (crop.count > 15 ? true : false) : "n/a";
+    crop.monocultured = crop.monoculture ? (crop.count > 300 ? true : false) : "n/a";
 
     cropList.push(crop);
   }
@@ -727,10 +729,12 @@ function buildForage(data) {
 
   for (let i = 0; i < foraging.length; i++) {
     const forage = foraging[i];
-    const item = data.SaveGame.player[0].basicShipped[0].item.find((e) => e.key[0].int[0] === String(forage.id));
+    const item = data.SaveGame.player[0].basicShipped[0].item.find(
+      (e) => e.key[0].int[0] === String(forage.id)
+    );
 
     forage.count = item ? parseInt(item.value[0].int[0]) : 0;
-    forage.shipped = forage.shipping ? forage.count > 0 ? true : false : "n/a";
+    forage.shipped = forage.shipping ? (forage.count > 0 ? true : false) : "n/a";
 
     forageList.push(forage);
   }
@@ -749,10 +753,12 @@ function buildArtisanGoods(data) {
 
   for (let i = 0; i < artisanGoods.length; i++) {
     const artisanGood = artisanGoods[i];
-    const item = data.SaveGame.player[0].basicShipped[0].item.find((e) => e.key[0].int[0] === String(artisanGood.id));
+    const item = data.SaveGame.player[0].basicShipped[0].item.find(
+      (e) => e.key[0].int[0] === String(artisanGood.id)
+    );
 
     artisanGood.count = item ? parseInt(item.value[0].int[0]) : 0;
-    artisanGood.shipped = artisanGood.shipping ? artisanGood.count > 0 ? true : false : "n/a";
+    artisanGood.shipped = artisanGood.shipping ? (artisanGood.count > 0 ? true : false) : "n/a";
 
     artisanGoodsList.push(artisanGood);
   }

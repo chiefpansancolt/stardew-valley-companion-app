@@ -22,10 +22,10 @@ export default function ArtisanGoods() {
               <h3 className="text-lg leading-6 font-medium text-gray-900">Artisan Goods</h3>
               <p className="mt-1 text-sm text-gray-500">
                 Artisan Goods are items that can be created on your farm by various Artisan
-                Equipment. They can take anywhere from a few hours to a few days (in-game time)
-                to be processed. Most Artisan Goods do not have a star quality, so the star
-                quality of the ingredients used is ignored. The only exception is the Ostrich
-                Egg, the star quality of whose artisan product will match that of the ingredient.
+                Equipment. They can take anywhere from a few hours to a few days (in-game time) to
+                be processed. Most Artisan Goods do not have a star quality, so the star quality of
+                the ingredients used is ignored. The only exception is the Ostrich Egg, the star
+                quality of whose artisan product will match that of the ingredient.
               </p>
             </div>
             <div className="border-t border-gray-200">

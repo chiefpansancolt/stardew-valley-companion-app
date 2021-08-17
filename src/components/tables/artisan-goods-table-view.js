@@ -52,9 +52,7 @@ export default function ArtisanGoodsTableView({ collection }) {
                           <img className="h-10 w-10" src={item.img} alt="" />
                         </div>
                         <div className="ml-4">
-                          <div className="text-sm font-medium text-gray-900">
-                            {item.name}
-                          </div>
+                          <div className="text-sm font-medium text-gray-900">{item.name}</div>
                           <div className="text-sm text-gray-500">{item.description}</div>
                         </div>
                       </div>
@@ -65,7 +63,9 @@ export default function ArtisanGoodsTableView({ collection }) {
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       <ul>
                         {item.ingredients.map((ingredient) => (
-                          <li key={ingredient.name}>{ingredient.name} ({ingredient.count})</li>
+                          <li key={ingredient.name}>
+                            {ingredient.name} ({ingredient.count})
+                          </li>
                         ))}
                       </ul>
                     </td>
@@ -73,23 +73,26 @@ export default function ArtisanGoodsTableView({ collection }) {
                       <ul>
                         {item.prices.map((price) => (
                           <li key={price.cost} className="flex items-center">
-                            {price.color &&
+                            {price.color && (
                               <>
                                 <StarIcon className={classNames(price.color, "h-4 w-4 mr-1")} />
                                 {price.cost}
                               </>
-                            }
-                            {!price.color &&
+                            )}
+                            {!price.color && (
                               <>
                                 {price.flower} - {price.cost}
                               </>
-                            }
+                            )}
                           </li>
                         ))}
                       </ul>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <Badge label={item.shipped ? "Shipped" : "Not Shipped"} isSuccess={item.shipped} />
+                      <Badge
+                        label={item.shipped ? "Shipped" : "Not Shipped"}
+                        isSuccess={item.shipped}
+                      />
                     </td>
                   </tr>
                 ))}

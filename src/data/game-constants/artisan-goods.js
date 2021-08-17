@@ -77,7 +77,10 @@ const artisanGoods = [
     name: "Cheese",
     description: "It's your basic cheese.",
     img: "https://stardewvalleywiki.com/mediawiki/images/a/a5/Cheese.png",
-    ingredients: [{ name: "Milk", count: 1 }, { name: "Large Milk", count: 1 }],
+    ingredients: [
+      { name: "Milk", count: 1 },
+      { name: "Large Milk", count: 1 },
+    ],
     prices: [
       { color: "text-gray-900", cost: "230g" },
       { color: "text-gray-500", cost: Math.floor(230 * 1.25) + "g" },
@@ -91,7 +94,10 @@ const artisanGoods = [
     name: "Ghoat Cheese",
     description: "Soft cheese made from goat's milk.",
     img: "https://stardewvalleywiki.com/mediawiki/images/c/c8/Goat_Cheese.png",
-    ingredients: [{ name: "Goat Milk", count: 1 }, { name: "Large Goat Milk", count: 1 }],
+    ingredients: [
+      { name: "Goat Milk", count: 1 },
+      { name: "Large Goat Milk", count: 1 },
+    ],
     prices: [
       { color: "text-gray-900", cost: "400g" },
       { color: "text-gray-500", cost: Math.floor(400 * 1.25) + "g" },
@@ -106,9 +112,7 @@ const artisanGoods = [
     description: "It smells delicious. This is sure to give you a boost.",
     img: "https://stardewvalleywiki.com/mediawiki/images/e/e9/Coffee.png",
     ingredients: [{ name: "Coffee Bean", count: 5 }],
-    prices: [
-      { color: "text-gray-900", cost: "150g" },
-    ],
+    prices: [{ color: "text-gray-900", cost: "150g" }],
     shipping: true,
   },
   {
@@ -117,9 +121,7 @@ const artisanGoods = [
     description: "A pleasant, energizing beverage made from lightly processed tea leaves.",
     img: "https://stardewvalleywiki.com/mediawiki/images/8/8f/Green_Tea.png",
     ingredients: [{ name: "Tea Leaves", count: 1 }],
-    prices: [
-      { color: "text-gray-900", cost: "100g" },
-    ],
+    prices: [{ color: "text-gray-900", cost: "100g" }],
     shipping: true,
   },
   {
@@ -128,9 +130,7 @@ const artisanGoods = [
     description: "A sweet, nutritious beverage.",
     img: "https://stardewvalleywiki.com/mediawiki/images/f/f1/Juice.png",
     ingredients: [{ name: "Any Vegetable", count: 1 }],
-    prices: [
-      { color: "text-gray-900", cost: "2.25 × Vegetable Base Price" },
-    ],
+    prices: [{ color: "text-gray-900", cost: "2.25 × Vegetable Base Price" }],
     shipping: true,
   },
   {
@@ -139,9 +139,7 @@ const artisanGoods = [
     description: "A bolt of fine wool cloth.",
     img: "https://stardewvalleywiki.com/mediawiki/images/5/51/Cloth.png",
     ingredients: [{ name: "Wool", count: 1 }],
-    prices: [
-      { color: "text-gray-900", cost: "470g" },
-    ],
+    prices: [{ color: "text-gray-900", cost: "470g" }],
     shipping: true,
   },
   {
@@ -149,7 +147,12 @@ const artisanGoods = [
     name: "Mayonnaise",
     description: "It looks spreadable.",
     img: "https://stardewvalleywiki.com/mediawiki/images/4/4e/Mayonnaise.png",
-    ingredients: [{ name: "Egg", count: 1 }, { name: "Large Egg", count: 1 }, { name: "Ostrich Egg", count: 1 }, { name: "Golden Egg", count: 1 },],
+    ingredients: [
+      { name: "Egg", count: 1 },
+      { name: "Large Egg", count: 1 },
+      { name: "Ostrich Egg", count: 1 },
+      { name: "Golden Egg", count: 1 },
+    ],
     prices: [
       { color: "text-gray-900", cost: "190g" },
       { color: "text-gray-500", cost: Math.floor(190 * 1.25) + "g" },
@@ -164,9 +167,7 @@ const artisanGoods = [
     description: "It's a rich, yellow mayonnaise.",
     img: "https://stardewvalleywiki.com/mediawiki/images/2/23/Duck_Mayonnaise.png",
     ingredients: [{ name: "Duck Egg", count: 1 }],
-    prices: [
-      { color: "text-gray-900", cost: "375g" },
-    ],
+    prices: [{ color: "text-gray-900", cost: "375g" }],
     shipping: true,
   },
   {
@@ -175,9 +176,7 @@ const artisanGoods = [
     description: "A thick, black paste that smells like burnt hair.",
     img: "https://stardewvalleywiki.com/mediawiki/images/f/f3/Void_Mayonnaise.png",
     ingredients: [{ name: "Void Egg", count: 1 }],
-    prices: [
-      { color: "text-gray-900", cost: "275g" },
-    ],
+    prices: [{ color: "text-gray-900", cost: "275g" }],
     shipping: true,
   },
   {
@@ -186,9 +185,7 @@ const artisanGoods = [
     description: "It's thick and creamy, with a vivid green hue. It smells like grass and leather.",
     img: "https://stardewvalleywiki.com/mediawiki/images/c/c3/Dinosaur_Mayonnaise.png",
     ingredients: [{ name: "Dinosaur Egg", count: 1 }],
-    prices: [
-      { color: "text-gray-900", cost: "800g" },
-    ],
+    prices: [{ color: "text-gray-900", cost: "800g" }],
     shipping: true,
   },
   {
@@ -196,10 +193,8 @@ const artisanGoods = [
     name: "Truffle Oil",
     description: "A gourmet cooking ingredient.",
     img: "https://stardewvalleywiki.com/mediawiki/images/3/3d/Truffle_Oil.png",
-    ingredients: [{ name: "Truffle", count : 1 }],
-    prices: [
-      { color: "text-gray-900", cost: "1,065g" },
-    ],
+    ingredients: [{ name: "Truffle", count: 1 }],
+    prices: [{ color: "text-gray-900", cost: "1,065g" }],
     shipping: true,
   },
   {
@@ -207,10 +202,12 @@ const artisanGoods = [
     name: "Oil",
     description: "All purpose cooking oil.",
     img: "https://stardewvalleywiki.com/mediawiki/images/0/06/Oil.png",
-    ingredients: [{ name: "Corn", count : 1 }, { name: "Sunflower Seed", count : 1 }, { name: "Sunflower", count : 1 }],
-    prices: [
-      { color: "text-gray-900", cost: "100g" },
+    ingredients: [
+      { name: "Corn", count: 1 },
+      { name: "Sunflower Seed", count: 1 },
+      { name: "Sunflower", count: 1 },
     ],
+    prices: [{ color: "text-gray-900", cost: "100g" }],
     shipping: true,
   },
   {
@@ -218,10 +215,11 @@ const artisanGoods = [
     name: "Pickles",
     description: "A jar of your home-made pickles.",
     img: "https://stardewvalleywiki.com/mediawiki/images/c/c7/Pickles.png",
-    ingredients: [{ name: "Any Vegetable", count: 1 }, { name: "Ginger", count: 1 }],
-    prices: [
-      { color: "text-gray-900", cost: "2 × Base Vegetable Price + 50g" },
+    ingredients: [
+      { name: "Any Vegetable", count: 1 },
+      { name: "Ginger", count: 1 },
     ],
+    prices: [{ color: "text-gray-900", cost: "2 × Base Vegetable Price + 50g" }],
     shipping: true,
   },
   {
@@ -230,9 +228,7 @@ const artisanGoods = [
     description: "Gooey.",
     img: "https://stardewvalleywiki.com/mediawiki/images/0/05/Jelly.png",
     ingredients: [{ name: "Any Fruit", count: 1 }],
-    prices: [
-      { color: "text-gray-900", cost: "2 × Base Fruit Price + 50g" },
-    ],
+    prices: [{ color: "text-gray-900", cost: "2 × Base Fruit Price + 50g" }],
     shipping: true,
   },
   {
@@ -241,9 +237,7 @@ const artisanGoods = [
     description: "The cured roe of a sturgeon fish. Considered to be a luxurious delicacy!",
     img: "https://stardewvalleywiki.com/mediawiki/images/8/89/Caviar.png",
     ingredients: [{ name: "Sturgeon Roe", count: 1 }],
-    prices: [
-      { color: "text-gray-900", cost: "500g" },
-    ],
+    prices: [{ color: "text-gray-900", cost: "500g" }],
     shipping: true,
   },
   {
@@ -252,9 +246,7 @@ const artisanGoods = [
     description: "Fish eggs aged in salt to bring out the flavor.",
     img: "https://stardewvalleywiki.com/mediawiki/images/0/0e/Aged_Roe.png",
     ingredients: [{ name: "Roe", count: 1 }],
-    prices: [
-      { color: "text-gray-900", cost: "2 × base Roe sell price" },
-    ],
+    prices: [{ color: "text-gray-900", cost: "2 × base Roe sell price" }],
     shipping: true,
   },
 ];
