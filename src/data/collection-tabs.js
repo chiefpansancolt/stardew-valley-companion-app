@@ -113,6 +113,16 @@ const artisanGoodsTabs = [
   { name: "To-Be Shipped", icon: faListAlt },
 ];
 
+const treesTabs = [
+  {
+    name: "All Trees",
+    icon: null,
+    img: "https://stardewvalleywiki.com/mediawiki/images/6/68/Apple_Sapling.png",
+  },
+  { name: "Shipped", icon: faCheckDouble },
+  { name: "To-Be Shipped", icon: faListAlt },
+];
+
 export {
   artifactsTabs,
   mineralTabs,
@@ -123,4 +133,5 @@ export {
   cropTabs,
   forageTabs,
   artisanGoodsTabs,
+  treesTabs,
 };

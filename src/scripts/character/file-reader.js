@@ -32,6 +32,7 @@ import crafts from "@/data/game-constants/crafting";
 import crops from "@/data/game-constants/crops";
 import foraging from "@/data/game-constants/foraging";
 import artisanGoods from "@/data/game-constants/artisan-goods";
+import trees from "@/data/game-constants/trees";
 
 export function handleFileSelect(file) {
   String.prototype.capitalize = function () {
@@ -62,6 +63,7 @@ export function handleFileSelect(file) {
     saveInfo.crops = buildCrops(gameData);
     saveInfo.foraging = buildForage(gameData);
     saveInfo.artisanGoods = buildArtisanGoods(gameData);
+    saveInfo.trees = buildTrees(gameData);
     saveInfo.character.achievements = buildCharacterAchievements(gameData, saveInfo);
     localStorage.setItem(file.name, JSON.stringify(saveInfo));
     addCharactersList(saveInfo.character);
@@ -769,6 +771,30 @@ function buildArtisanGoods(data) {
     fullList: artisanGoodsList,
     shippedList: artisanGoodsList.filter((e) => e.shipped === true),
     unshippedList: artisanGoodsList.filter((e) => e.shipped === false),
+  };
+}
+
+function buildTrees(data) {
+  let treesList = [];
+
+  for (let i = 0; i < trees.length; i++) {
+    const tree = trees[i];
+    const item = data.SaveGame.player[0].basicShipped[0].item.find(
+      (e) => e.key[0].int[0] === String(tree.id)
+    );
+
+    tree.count = item ? parseInt(item.value[0].int[0]) : 0;
+    tree.shipped = tree.shipping ? (tree.count > 0 ? true : false) : "n/a";
+
+    treesList.push(tree);
+  }
+
+  return {
+    shipped: treesList.filter((e) => e.shipped === true).length,
+    unshipped: treesList.filter((e) => e.shipped === false).length,
+    fullList: treesList,
+    shippedList: treesList.filter((e) => e.shipped === true),
+    unshippedList: treesList.filter((e) => e.shipped === false),
   };
 }
 
