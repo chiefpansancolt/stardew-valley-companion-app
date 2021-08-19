@@ -16,7 +16,10 @@ const crops = [
     harvest: "7 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SPRING],
-    shipping: true,
+    shipping: {
+      order: 114,
+      usage: true,
+    },
     polyculture: false,
     monoculture: true,
     prices: [
@@ -36,7 +39,10 @@ const crops = [
     harvest: "12 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SPRING],
-    shipping: true,
+    shipping: {
+      order: 18,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -56,7 +62,10 @@ const crops = [
     harvest: "10 Days",
     regrowth: "2 Days",
     seasons: [SEASONS.SPRING],
-    shipping: true,
+    shipping: {
+      order: 100,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -75,7 +84,10 @@ const crops = [
     harvest: "4 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SPRING],
-    shipping: true,
+    shipping: {
+      order: 20,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -94,7 +106,10 @@ const crops = [
     harvest: "10 Days",
     regrowth: "3 Days",
     seasons: [SEASONS.SPRING],
-    shipping: true,
+    shipping: {
+      order: 17,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -113,7 +128,10 @@ const crops = [
     harvest: "6 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SPRING],
-    shipping: true,
+    shipping: {
+      order: 21,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -133,7 +151,10 @@ const crops = [
     harvest: "4 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SPRING],
-    shipping: true,
+    shipping: {
+      order: 5,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -152,7 +173,10 @@ const crops = [
     harvest: "6 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SPRING],
-    shipping: true,
+    shipping: {
+      order: 19,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -171,7 +195,10 @@ const crops = [
     harvest: "13 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SPRING],
-    shipping: true,
+    shipping: {
+      order: 22,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -190,7 +217,10 @@ const crops = [
     harvest: "8 Days",
     regrowth: "4 Days",
     seasons: [SEASONS.SPRING],
-    shipping: true,
+    shipping: {
+      order: 81,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -209,7 +239,10 @@ const crops = [
     harvest: "6 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SPRING],
-    shipping: true,
+    shipping: {
+      order: 111,
+      usage: true,
+    },
     polyculture: false,
     monoculture: true,
     prices: [
@@ -228,7 +261,10 @@ const crops = [
     harvest: "8 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SPRING],
-    shipping: true,
+    shipping: {
+      order: 34,
+      usage: true,
+    },
     polyculture: false,
     monoculture: false,
     prices: [
@@ -248,7 +284,10 @@ const crops = [
     harvest: "13 Days",
     regrowth: "4 Days",
     seasons: [SEASONS.SUMMER],
-    shipping: true,
+    shipping: {
+      order: 26,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -267,7 +306,10 @@ const crops = [
     harvest: "14 Days",
     regrowth: "4 Days",
     seasons: [SEASONS.SUMMER, SEASONS.FALL],
-    shipping: true,
+    shipping: {
+      order: 33,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -286,7 +328,10 @@ const crops = [
     harvest: "11 Days",
     regrowth: "1 day",
     seasons: [SEASONS.SUMMER],
-    shipping: true,
+    shipping: {
+      order: 48,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -305,7 +350,10 @@ const crops = [
     harvest: "5 Days",
     regrowth: "3 Days",
     seasons: [SEASONS.SUMMER],
-    shipping: true,
+    shipping: {
+      order: 28,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -324,7 +372,10 @@ const crops = [
     harvest: "12 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SUMMER],
-    shipping: true,
+    shipping: {
+      order: 23,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -343,7 +394,10 @@ const crops = [
     harvest: "7 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SUMMER],
-    shipping: true,
+    shipping: {
+      order: 66,
+      usage: true,
+    },
     polyculture: false,
     monoculture: false,
     prices: [
@@ -362,7 +416,10 @@ const crops = [
     harvest: "6 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SUMMER],
-    shipping: true,
+    shipping: {
+      order: 30,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -382,7 +439,10 @@ const crops = [
     harvest: "9 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SUMMER],
-    shipping: true,
+    shipping: {
+      order: 31,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -402,7 +462,10 @@ const crops = [
     harvest: "13 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SUMMER],
-    shipping: true,
+    shipping: {
+      order: 32,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -421,7 +484,10 @@ const crops = [
     harvest: "8 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SUMMER],
-    shipping: true,
+    shipping: {
+      order: 112,
+      usage: true,
+    },
     polyculture: false,
     monoculture: true,
     prices: [
@@ -440,7 +506,10 @@ const crops = [
     harvest: "8 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SUMMER],
-    shipping: true,
+    shipping: {
+      order: 93,
+      usage: true,
+    },
     polyculture: false,
     monoculture: false,
     prices: [
@@ -459,7 +528,10 @@ const crops = [
     harvest: "11 Days",
     regrowth: "4 Days",
     seasons: [SEASONS.SUMMER],
-    shipping: true,
+    shipping: {
+      order: 24,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -479,7 +551,10 @@ const crops = [
     harvest: "4 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SUMMER],
-    shipping: true,
+    shipping: {
+      order: 29,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -498,7 +573,10 @@ const crops = [
     harvest: "7 Days",
     regrowth: "n/a",
     seasons: [SEASONS.FALL],
-    shipping: true,
+    shipping: {
+      order: 46,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -518,7 +596,10 @@ const crops = [
     harvest: "8 Days",
     regrowth: "n/a",
     seasons: [SEASONS.FALL],
-    shipping: true,
+    shipping: {
+      order: 36,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -537,7 +618,10 @@ const crops = [
     harvest: "6 Days",
     regrowth: "n/a",
     seasons: [SEASONS.FALL],
-    shipping: true,
+    shipping: {
+      order: 43,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -556,7 +640,10 @@ const crops = [
     harvest: "4 Days",
     regrowth: "n/a",
     seasons: [SEASONS.FALL],
-    shipping: true,
+    shipping: {
+      order: 38,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -575,7 +662,10 @@ const crops = [
     harvest: "7 Days",
     regrowth: "5 Days",
     seasons: [SEASONS.FALL],
-    shipping: true,
+    shipping: {
+      order: 41,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -594,7 +684,10 @@ const crops = [
     harvest: "5 Days",
     regrowth: "5 Days",
     seasons: [SEASONS.FALL],
-    shipping: true,
+    shipping: {
+      order: 35,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -614,7 +707,10 @@ const crops = [
     harvest: "12 Days",
     regrowth: "n/a",
     seasons: [SEASONS.FALL],
-    shipping: true,
+    shipping: {
+      order: 113,
+      usage: true,
+    },
     polyculture: false,
     monoculture: true,
     prices: [
@@ -633,7 +729,10 @@ const crops = [
     harvest: "10 Days",
     regrowth: "3 Days",
     seasons: [SEASONS.FALL],
-    shipping: true,
+    shipping: {
+      order: 79,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -653,7 +752,10 @@ const crops = [
     harvest: "13 Days",
     regrowth: "n/a",
     seasons: [SEASONS.FALL],
-    shipping: true,
+    shipping: {
+      order: 37,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -672,7 +774,10 @@ const crops = [
     harvest: "10 Days",
     regrowth: "n/a",
     seasons: [SEASONS.FALL],
-    shipping: true,
+    shipping: {
+      order: 39,
+      usage: true,
+    },
     polyculture: true,
     monoculture: true,
     prices: [
@@ -691,7 +796,10 @@ const crops = [
     harvest: "28 Days",
     regrowth: "7 Days",
     seasons: [SEASONS.SPRING, SEASONS.SUMMER, SEASONS.FALL],
-    shipping: true,
+    shipping: {
+      order: 109,
+      usage: true,
+    },
     polyculture: false,
     monoculture: true,
     prices: [
@@ -710,7 +818,10 @@ const crops = [
     harvest: "12 Days",
     regrowth: "3 Days",
     seasons: ["Greenhouse", SEASONS.INDOORS],
-    shipping: true,
+    shipping: {
+      order: 8,
+      usage: true,
+    },
     polyculture: false,
     monoculture: false,
     prices: [
@@ -729,7 +840,10 @@ const crops = [
     harvest: "7 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SPRING, SEASONS.SUMMER, SEASONS.FALL, SEASONS.WINTER],
-    shipping: true,
+    shipping: {
+      order: 131,
+      usage: true,
+    },
     polyculture: false,
     monoculture: false,
     prices: [{ color: "text-gray-900", cost: "1g" }],
@@ -743,7 +857,10 @@ const crops = [
     harvest: "14 Days",
     regrowth: "7 Days",
     seasons: [SEASONS.SUMMER, SEASONS.ALLGINGER],
-    shipping: true,
+    shipping: {
+      order: 139,
+      usage: true,
+    },
     polyculture: false,
     monoculture: false,
     prices: [
@@ -762,7 +879,10 @@ const crops = [
     harvest: "10 Days",
     regrowth: "n/a",
     seasons: [SEASONS.SUMMER, SEASONS.ALLGINGER],
-    shipping: true,
+    shipping: {
+      order: 138,
+      usage: true,
+    },
     polyculture: false,
     monoculture: false,
     prices: [
@@ -781,7 +901,10 @@ const crops = [
     harvest: "24 Days",
     regrowth: "n/a",
     seasons: [SEASONS.FALL],
-    shipping: true,
+    shipping: {
+      order: 90,
+      usage: true,
+    },
     polyculture: false,
     monoculture: false,
     prices: [
@@ -801,7 +924,10 @@ const crops = [
     harvest: "20 Days",
     regrowth: "1 day",
     seasons: [SEASONS.SPRING, SEASONS.SUMMER, SEASONS.FALL, SEASONS.INDOORS],
-    shipping: true,
+    shipping: {
+      order: 136,
+      usage: true,
+    },
     polyculture: false,
     monoculture: false,
     prices: [{ color: "text-gray-900", cost: "50g" }],

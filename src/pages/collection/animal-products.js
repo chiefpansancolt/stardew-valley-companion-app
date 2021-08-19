@@ -5,7 +5,7 @@ import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
 import Base from "@/components/page-headings/base";
 import Tabs from "@/components/tabs";
-import AnimalProductsTableView from "@/components/tables/animal-products-table-view";
+import TableView from "@/components/tables/table-view";
 import { animalProductTabs } from "@/data/collection-tabs";
 
 export default function AnimalProducts() {
@@ -39,20 +39,23 @@ export default function AnimalProducts() {
                   collection={character.animalProducts}
                 >
                   {(!currentTab || currentTab === "All Animal Products") && (
-                    <AnimalProductsTableView
+                    <TableView
                       collection={character.animalProducts.fullList}
+                      type="animalProducts"
                       profession={character.character.skills.farming.profession1}
                     />
                   )}
                   {currentTab === "Shipped" && (
-                    <AnimalProductsTableView
+                    <TableView
                       collection={character.animalProducts.shippedList}
+                      type="animalProducts"
                       profession={character.character.skills.farming.profession1}
                     />
                   )}
                   {currentTab === "To-Be Shipped" && (
-                    <AnimalProductsTableView
+                    <TableView
                       collection={character.animalProducts.unshippedList}
+                      type="animalProducts"
                       profession={character.character.skills.farming.profession1}
                     />
                   )}

@@ -5,7 +5,7 @@ import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
 import Base from "@/components/page-headings/base";
 import Tabs from "@/components/tabs";
-import ArtisanGoodsTableView from "@/components/tables/artisan-goods-table-view";
+import TableView from "@/components/tables/table-view";
 import { artisanGoodsTabs } from "@/data/collection-tabs";
 
 export default function ArtisanGoods() {
@@ -17,7 +17,7 @@ export default function ArtisanGoods() {
       <Base title="Artisan Goods" showButtons={true} />
       <LayoutContainer>
         <LayoutMain isAlone={true}>
-          <div className="mt-4 bg-white shadow overflow-hidden sm:rounded-lg">
+          <div className="bg-white shadow overflow-hidden sm:rounded-lg">
             <div className="px-4 py-5 sm:px-6">
               <h3 className="text-lg leading-6 font-medium text-gray-900">Artisan Goods</h3>
               <p className="mt-1 text-sm text-gray-500">
@@ -37,13 +37,19 @@ export default function ArtisanGoods() {
                   collection={character.artisanGoods}
                 >
                   {(!currentTab || currentTab === "All Artisan Goods") && (
-                    <ArtisanGoodsTableView collection={character.artisanGoods.fullList} />
+                    <TableView collection={character.artisanGoods.fullList} type="artisanGoods" />
                   )}
                   {currentTab === "Shipped" && (
-                    <ArtisanGoodsTableView collection={character.artisanGoods.shippedList} />
+                    <TableView
+                      collection={character.artisanGoods.shippedList}
+                      type="artisanGoods"
+                    />
                   )}
                   {currentTab === "To-Be Shipped" && (
-                    <ArtisanGoodsTableView collection={character.artisanGoods.unshippedList} />
+                    <TableView
+                      collection={character.artisanGoods.unshippedList}
+                      type="artisanGoods"
+                    />
                   )}
                 </Tabs>
               )}

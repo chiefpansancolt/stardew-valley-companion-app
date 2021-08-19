@@ -32,9 +32,9 @@ const ANYTIME = "Anytime";
 const ANY = "Any";
 const TYPE = {
   FISH: "Fish",
-  OTHER: "Other",
   LEGENDARYFISH: "Legendary Fish",
   CRABPOTFISH: "Crab Pot Fish",
+  OTHER: "Other",
 };
 const COLORS = {
   BLANK: "",
@@ -42,6 +42,8 @@ const COLORS = {
   YELLOW: "text-yellow-500",
   PURPLE: "text-purple-500",
 };
+
+const Types = [TYPE.FISH, TYPE.LEGENDARYFISH, TYPE.CRABPOTFISH, TYPE.OTHER];
 
 const fish = [
   {
@@ -2683,4 +2685,4 @@ const fish = [
   },
 ];
 
-export default fish;
+export { Types, fish };

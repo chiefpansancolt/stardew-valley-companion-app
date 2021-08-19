@@ -5,7 +5,7 @@ import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
 import Base from "@/components/page-headings/base";
 import Tabs from "@/components/tabs";
-import TreesTableView from "@/components/tables/trees-table-view";
+import TableView from "@/components/tables/table-view";
 import { treesTabs } from "@/data/collection-tabs";
 
 export default function Trees() {
@@ -17,7 +17,7 @@ export default function Trees() {
       <Base title="Trees" showButtons={true} />
       <LayoutContainer>
         <LayoutMain isAlone={true}>
-          <div className="mt-4 bg-white shadow overflow-hidden sm:rounded-lg">
+          <div className="bg-white shadow overflow-hidden sm:rounded-lg">
             <div className="px-4 py-5 sm:px-6">
               <h3 className="text-lg leading-6 font-medium text-gray-900">Trees</h3>
               <p className="mt-1 text-sm text-gray-500">
@@ -43,13 +43,13 @@ export default function Trees() {
                   collection={character.trees}
                 >
                   {(!currentTab || currentTab === "All Trees") && (
-                    <TreesTableView collection={character.trees.fullList} />
+                    <TableView collection={character.trees.fullList} type="trees" />
                   )}
                   {currentTab === "Shipped" && (
-                    <TreesTableView collection={character.trees.shippedList} />
+                    <TableView collection={character.trees.shippedList} type="trees" />
                   )}
                   {currentTab === "To-Be Shipped" && (
-                    <TreesTableView collection={character.trees.unshippedList} />
+                    <TableView collection={character.trees.unshippedList} type="trees" />
                   )}
                 </Tabs>
               )}

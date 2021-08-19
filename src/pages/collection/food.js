@@ -6,7 +6,7 @@ import LayoutMain from "@/components/layouts/layout-main";
 import Base from "@/components/page-headings/base";
 import Tabs from "@/components/tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
-import FoodTableView from "@/components/tables/food-table-view";
+import TableView from "@/components/tables/table-view";
 import { foodTabs } from "@/data/collection-tabs";
 
 export default function Food() {
@@ -50,23 +50,25 @@ export default function Food() {
                   collection={character.recipes}
                 >
                   {(!currentTab || currentTab === "All Recipes") && (
-                    <FoodTableView collection={character.recipes.fullList} />
+                    <TableView collection={character.recipes.fullList} type="food" />
                   )}
                   {currentTab === "Found" && (
-                    <FoodTableView collection={character.recipes.foundList} />
+                    <TableView collection={character.recipes.foundList} type="food" />
                   )}
                   {currentTab === "Cooked" && (
-                    <FoodTableView
+                    <TableView
                       collection={character.recipes.foundList.filter((e) => e.cooked === true)}
+                      type="food"
                     />
                   )}
                   {currentTab === "To-Be Cooked" && (
-                    <FoodTableView
+                    <TableView
                       collection={character.recipes.fullList.filter((e) => e.cooked === false)}
+                      type="food"
                     />
                   )}
                   {currentTab === "To-Be Found" && (
-                    <FoodTableView collection={character.recipes.unfoundList} />
+                    <TableView collection={character.recipes.unfoundList} type="food" />
                   )}
                 </Tabs>
               )}

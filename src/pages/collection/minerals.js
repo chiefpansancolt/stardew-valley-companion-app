@@ -5,7 +5,7 @@ import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
 import Base from "@/components/page-headings/base";
 import Tabs from "@/components/tabs";
-import MineralsTableView from "@/components/tables/minerals-table-view";
+import TableView from "@/components/tables/table-view";
 import { mineralTabs } from "@/data/collection-tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
 
@@ -51,31 +51,28 @@ export default function Minerals() {
                   collection={character.minerals}
                 >
                   {(!currentTab || currentTab === "All Minerals") && (
-                    <MineralsTableView
-                      isGeode={false}
+                    <TableView
                       collection={character.minerals.fullList.filter((e) => e.type !== "Geode")}
+                      type="minerals"
                     />
                   )}
                   {currentTab === "Found" && (
-                    <MineralsTableView isGeode={false} collection={character.minerals.foundList} />
+                    <TableView collection={character.minerals.foundList} type="minerals" />
                   )}
                   {currentTab === "Donated" && (
-                    <MineralsTableView
-                      isGeode={false}
+                    <TableView
                       collection={character.minerals.foundList.filter((e) => e.donated === true)}
+                      type="minerals"
                     />
                   )}
                   {currentTab === "To-Be Donated" && (
-                    <MineralsTableView
-                      isGeode={false}
+                    <TableView
                       collection={character.minerals.foundList.filter((e) => e.donated === false)}
+                      type="minerals"
                     />
                   )}
                   {currentTab === "To-Be Found" && (
-                    <MineralsTableView
-                      isGeode={false}
-                      collection={character.minerals.unfoundList}
-                    />
+                    <TableView collection={character.minerals.unfoundList} type="minerals" />
                   )}
                 </Tabs>
               )}
@@ -92,9 +89,9 @@ export default function Minerals() {
             </div>
             <div className="border-t border-gray-200">
               {character.minerals && (
-                <MineralsTableView
-                  isGeode={true}
+                <TableView
                   collection={character.minerals.fullList.filter((e) => e.type === "Geode")}
+                  type="geodes"
                 />
               )}
             </div>

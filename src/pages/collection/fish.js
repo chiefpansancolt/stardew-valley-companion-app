@@ -5,9 +5,33 @@ import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
 import Base from "@/components/page-headings/base";
 import Tabs from "@/components/tabs";
-import FishTableView from "@/components/tables/fish-table-view";
+import TableView from "@/components/tables/table-view";
 import { fishTabs } from "@/data/collection-tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
+import { Types } from "@/data/game-constants/fish";
+
+function TableDetails({ category, list, index, profession }) {
+  return (
+    <>
+      {index === 0 ? (
+        <TableView
+          collection={list.filter((e) => e.type === category)}
+          type="fish"
+          profession={profession}
+        />
+      ) : (
+        <div className="mt-4">
+          <h2 className="pl-4 pb-4 text-lg leading-6 font-medium text-gray-900">{category}</h2>
+          <TableView
+            collection={list.filter((e) => e.type === category)}
+            type="fish"
+            profession={profession}
+          />
+        </div>
+      )}
+    </>
+  );
+}
 
 export default function Fish() {
   const { character } = useContext(CharacterContext);
@@ -58,121 +82,38 @@ export default function Fish() {
                 >
                   {(!currentTab || currentTab === "All Fish") && (
                     <>
-                      <FishTableView
-                        collection={character.fishing.fullList.filter((e) => e.type === "Fish")}
-                        profession={currentProfession}
-                      />
-                      <div className="mt-4">
-                        <h2 className="pl-4 pb-4 text-lg leading-6 font-medium text-gray-900">
-                          Legendary Fish
-                        </h2>
-                        <FishTableView
-                          collection={character.fishing.fullList.filter(
-                            (e) => e.type === "Legendary Fish"
-                          )}
+                      {Types.map((category, index) => (
+                        <TableDetails
+                          category={category}
+                          list={character.fishing.fullList}
+                          index={index}
                           profession={currentProfession}
                         />
-                      </div>
-                      <div className="mt-4">
-                        <h2 className="pl-4 pb-4 text-lg leading-6 font-medium text-gray-900">
-                          Crab Pot Fish
-                        </h2>
-                        <FishTableView
-                          collection={character.fishing.fullList.filter(
-                            (e) => e.type === "Crab Pot Fish"
-                          )}
-                          profession={currentProfession}
-                        />
-                      </div>
-                      <div className="mt-4">
-                        <h2 className="pl-4 pb-4 text-lg leading-6 font-medium text-gray-900">
-                          Other
-                        </h2>
-                        <FishTableView
-                          collection={character.fishing.fullList.filter((e) => e.type === "Other")}
-                          profession={currentProfession}
-                        />
-                      </div>
+                      ))}
                     </>
                   )}
                   {currentTab === "Caught" && (
                     <>
-                      <FishTableView
-                        collection={character.fishing.foundList.filter((e) => e.type === "Fish")}
-                        profession={currentProfession}
-                      />
-                      <div className="mt-4">
-                        <h2 className="pl-4 pb-4 text-lg leading-6 font-medium text-gray-900">
-                          Legendary Fish
-                        </h2>
-                        <FishTableView
-                          collection={character.fishing.foundList.filter(
-                            (e) => e.type === "Legendary Fish"
-                          )}
+                      {Types.map((category, index) => (
+                        <TableDetails
+                          category={category}
+                          list={character.fishing.foundList}
+                          index={index}
                           profession={currentProfession}
                         />
-                      </div>
-                      <div className="mt-4">
-                        <h2 className="pl-4 pb-4 text-lg leading-6 font-medium text-gray-900">
-                          Crab Pot Fish
-                        </h2>
-                        <FishTableView
-                          collection={character.fishing.foundList.filter(
-                            (e) => e.type === "Crab Pot Fish"
-                          )}
-                          profession={currentProfession}
-                        />
-                      </div>
-                      <div className="mt-4">
-                        <h2 className="pl-4 pb-4 text-lg leading-6 font-medium text-gray-900">
-                          Other
-                        </h2>
-                        <FishTableView
-                          collection={character.fishing.foundList.filter((e) => e.type === "Other")}
-                          profession={currentProfession}
-                        />
-                      </div>
+                      ))}
                     </>
                   )}
                   {currentTab === "To-Do" && (
                     <>
-                      <FishTableView
-                        collection={character.fishing.unfoundList.filter((e) => e.type === "Fish")}
-                        profession={currentProfession}
-                      />
-                      <div className="mt-4">
-                        <h2 className="pl-4 pb-4 text-lg leading-6 font-medium text-gray-900">
-                          Legendary Fish
-                        </h2>
-                        <FishTableView
-                          collection={character.fishing.unfoundList.filter(
-                            (e) => e.type === "Legendary Fish"
-                          )}
+                      {Types.map((category, index) => (
+                        <TableDetails
+                          category={category}
+                          list={character.fishing.unfoundList}
+                          index={index}
                           profession={currentProfession}
                         />
-                      </div>
-                      <div className="mt-4">
-                        <h2 className="pl-4 pb-4 text-lg leading-6 font-medium text-gray-900">
-                          Crab Pot Fish
-                        </h2>
-                        <FishTableView
-                          collection={character.fishing.unfoundList.filter(
-                            (e) => e.type === "Crab Pot Fish"
-                          )}
-                          profession={currentProfession}
-                        />
-                      </div>
-                      <div className="mt-4">
-                        <h2 className="pl-4 pb-4 text-lg leading-6 font-medium text-gray-900">
-                          Other
-                        </h2>
-                        <FishTableView
-                          collection={character.fishing.unfoundList.filter(
-                            (e) => e.type === "Other"
-                          )}
-                          profession={currentProfession}
-                        />
-                      </div>
+                      ))}
                     </>
                   )}
                 </Tabs>

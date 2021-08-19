@@ -14,7 +14,10 @@ const trees = [
     seasons: [SEASONS.ALL],
     sources: ["Trees", "Large Stump", "Carpenter's Shop"],
     price: "2g",
-    shipping: true,
+    shipping: {
+      order: 72,
+      usage: true,
+    },
   },
   {
     id: 709,
@@ -24,7 +27,10 @@ const trees = [
     seasons: [SEASONS.ALL],
     sources: ["Foraging", "Large Log", "Woodskip (Fish Pond)", "Mahogany Trees"],
     price: "15g",
-    shipping: true,
+    shipping: {
+      order: 123,
+      usage: true,
+    },
   },
   {
     id: 92,
@@ -34,7 +40,10 @@ const trees = [
     seasons: [SEASONS.ALL],
     sources: ["Trees", "Slimes"],
     price: "2g",
-    shipping: true,
+    shipping: {
+      order: 10,
+      usage: true,
+    },
   },
   {
     id: 310,
@@ -44,7 +53,9 @@ const trees = [
     seasons: [SEASONS.ALL],
     sources: ["Maple Tree"],
     price: "5g",
-    shipping: false,
+    shipping: {
+      usage: false,
+    },
   },
   {
     id: 309,
@@ -54,7 +65,9 @@ const trees = [
     seasons: [SEASONS.ALL],
     sources: ["Oak Tree"],
     price: "20g",
-    shipping: false,
+    shipping: {
+      usage: false,
+    },
   },
   {
     id: 311,
@@ -64,7 +77,9 @@ const trees = [
     seasons: [SEASONS.ALL],
     sources: ["Pine Tree"],
     price: "5g",
-    shipping: false,
+    shipping: {
+      usage: false,
+    },
   },
   {
     id: 292,
@@ -74,7 +89,9 @@ const trees = [
     seasons: [SEASONS.ALL],
     sources: ["Mahogany Tree"],
     price: "100g",
-    shipping: false,
+    shipping: {
+      usage: false,
+    },
   },
   {
     id: 725,
@@ -84,7 +101,10 @@ const trees = [
     seasons: [SEASONS.ALL],
     sources: ["Oak Tree"],
     price: "150g",
-    shipping: true,
+    shipping: {
+      order: 125,
+      usage: true,
+    },
   },
   {
     id: 726,
@@ -94,7 +114,10 @@ const trees = [
     seasons: [SEASONS.ALL],
     sources: ["Pine Tree"],
     price: "100g",
-    shipping: true,
+    shipping: {
+      order: 126,
+      usage: true,
+    },
   },
   {
     id: 724,
@@ -104,7 +127,10 @@ const trees = [
     seasons: [SEASONS.ALL],
     sources: ["Maple Tree"],
     price: "200g",
-    shipping: true,
+    shipping: {
+      order: 124,
+      usage: true,
+    },
   },
   {
     id: 634,
@@ -119,7 +145,10 @@ const trees = [
       { color: "text-yellow-500", cost: Math.floor(50 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(50 * 2) + "g" },
     ],
-    shipping: true,
+    shipping: {
+      order: 117,
+      usage: true,
+    },
   },
   {
     id: 638,
@@ -134,7 +163,10 @@ const trees = [
       { color: "text-yellow-500", cost: Math.floor(80 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(80 * 2) + "g" },
     ],
-    shipping: true,
+    shipping: {
+      order: 121,
+      usage: true,
+    },
   },
   {
     id: 91,
@@ -149,7 +181,10 @@ const trees = [
       { color: "text-yellow-500", cost: Math.floor(150 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(150 * 2) + "g" },
     ],
-    shipping: true,
+    shipping: {
+      order: 9,
+      usage: true,
+    },
   },
   {
     id: 834,
@@ -164,7 +199,10 @@ const trees = [
       { color: "text-yellow-500", cost: Math.floor(130 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(130 * 2) + "g" },
     ],
-    shipping: true,
+    shipping: {
+      order: 140,
+      usage: true,
+    },
   },
   {
     id: 635,
@@ -179,7 +217,10 @@ const trees = [
       { color: "text-yellow-500", cost: Math.floor(100 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(100 * 2) + "g" },
     ],
-    shipping: true,
+    shipping: {
+      order: 118,
+      usage: true,
+    },
   },
   {
     id: 636,
@@ -194,7 +235,10 @@ const trees = [
       { color: "text-yellow-500", cost: Math.floor(140 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(140 * 2) + "g" },
     ],
-    shipping: true,
+    shipping: {
+      order: 119,
+      usage: true,
+    },
   },
   {
     id: 613,
@@ -209,7 +253,10 @@ const trees = [
       { color: "text-yellow-500", cost: Math.floor(100 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(100 * 2) + "g" },
     ],
-    shipping: true,
+    shipping: {
+      order: 115,
+      usage: true,
+    },
   },
   {
     id: 637,
@@ -224,7 +271,10 @@ const trees = [
       { color: "text-yellow-500", cost: Math.floor(140 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(140 * 2) + "g" },
     ],
-    shipping: true,
+    shipping: {
+      order: 120,
+      usage: true,
+    },
   },
 ];
 

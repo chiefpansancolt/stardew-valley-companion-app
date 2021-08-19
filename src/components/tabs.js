@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Tabs({ tabs, current, currentTab, collection, children }) {
   for (let i = 0; i < tabs.length; i++) {
-    if (tabs[i].name.includes("All")) {
+    if (tabs[i].name.includes("All") && !tabs[i].name.includes("Monster")) {
       tabs[i].count = collection.fullList.length;
     } else if (tabs[i].name === "Found") {
       tabs[i].count = collection.found;

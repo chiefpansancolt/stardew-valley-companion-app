@@ -14,7 +14,10 @@ const artisanGoods = [
       { flower: "Poppy", cost: "380g" },
       { flower: "Fairy Rose", cost: "680g" },
     ],
-    shipping: true,
+    shipping: {
+      order: 59,
+      usage: true,
+    },
   },
   {
     id: 348,
@@ -28,7 +31,10 @@ const artisanGoods = [
       { color: "text-yellow-500", cost: "1.5 x 3x Fruit Base Price" },
       { color: "text-purple-500", cost: "2 x 3x Fruit Base Price" },
     ],
-    shipping: true,
+    shipping: {
+      order: 63,
+      usage: true,
+    },
   },
   {
     id: 303,
@@ -42,7 +48,10 @@ const artisanGoods = [
       { color: "text-yellow-500", cost: Math.floor(300 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(300 * 2) + "g" },
     ],
-    shipping: true,
+    shipping: {
+      order: 47,
+      usage: true,
+    },
   },
   {
     id: 346,
@@ -56,7 +65,10 @@ const artisanGoods = [
       { color: "text-yellow-500", cost: Math.floor(200 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(200 * 2) + "g" },
     ],
-    shipping: true,
+    shipping: {
+      order: 62,
+      usage: true,
+    },
   },
   {
     id: 459,
@@ -70,7 +82,10 @@ const artisanGoods = [
       { color: "text-yellow-500", cost: Math.floor(200 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(200 * 2) + "g" },
     ],
-    shipping: true,
+    shipping: {
+      order: 110,
+      usage: true,
+    },
   },
   {
     id: 424,
@@ -87,7 +102,10 @@ const artisanGoods = [
       { color: "text-yellow-500", cost: Math.floor(230 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(230 * 2) + "g" },
     ],
-    shipping: true,
+    shipping: {
+      order: 95,
+      usage: true,
+    },
   },
   {
     id: 426,
@@ -104,7 +122,10 @@ const artisanGoods = [
       { color: "text-yellow-500", cost: Math.floor(400 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(400 * 2) + "g" },
     ],
-    shipping: true,
+    shipping: {
+      order: 96,
+      usage: true,
+    },
   },
   {
     id: 395,
@@ -112,8 +133,10 @@ const artisanGoods = [
     description: "It smells delicious. This is sure to give you a boost.",
     img: "https://stardewvalleywiki.com/mediawiki/images/e/e9/Coffee.png",
     ingredients: [{ name: "Coffee Bean", count: 5 }],
-    prices: [{ color: "text-gray-900", cost: "150g" }],
-    shipping: true,
+    price: "150g",
+    shipping: {
+      usage: false,
+    },
   },
   {
     id: 614,
@@ -121,8 +144,11 @@ const artisanGoods = [
     description: "A pleasant, energizing beverage made from lightly processed tea leaves.",
     img: "https://stardewvalleywiki.com/mediawiki/images/8/8f/Green_Tea.png",
     ingredients: [{ name: "Tea Leaves", count: 1 }],
-    prices: [{ color: "text-gray-900", cost: "100g" }],
-    shipping: true,
+    price: "100g",
+    shipping: {
+      order: 116,
+      usage: true,
+    },
   },
   {
     id: 350,
@@ -130,8 +156,11 @@ const artisanGoods = [
     description: "A sweet, nutritious beverage.",
     img: "https://stardewvalleywiki.com/mediawiki/images/f/f1/Juice.png",
     ingredients: [{ name: "Any Vegetable", count: 1 }],
-    prices: [{ color: "text-gray-900", cost: "2.25 × Vegetable Base Price" }],
-    shipping: true,
+    price: "2.25 × Vegetable Base Price",
+    shipping: {
+      order: 64,
+      usage: true,
+    },
   },
   {
     id: 428,
@@ -139,8 +168,11 @@ const artisanGoods = [
     description: "A bolt of fine wool cloth.",
     img: "https://stardewvalleywiki.com/mediawiki/images/5/51/Cloth.png",
     ingredients: [{ name: "Wool", count: 1 }],
-    prices: [{ color: "text-gray-900", cost: "470g" }],
-    shipping: true,
+    price: "470g",
+    shipping: {
+      order: 97,
+      usage: true,
+    },
   },
   {
     id: 306,
@@ -159,7 +191,10 @@ const artisanGoods = [
       { color: "text-yellow-500", cost: Math.floor(190 * 1.5) + "g" },
       { color: "text-purple-500", cost: Math.floor(190 * 2) + "g" },
     ],
-    shipping: true,
+    shipping: {
+      order: 50,
+      usage: true,
+    },
   },
   {
     id: 307,
@@ -167,8 +202,11 @@ const artisanGoods = [
     description: "It's a rich, yellow mayonnaise.",
     img: "https://stardewvalleywiki.com/mediawiki/images/2/23/Duck_Mayonnaise.png",
     ingredients: [{ name: "Duck Egg", count: 1 }],
-    prices: [{ color: "text-gray-900", cost: "375g" }],
-    shipping: true,
+    price: "375g",
+    shipping: {
+      order: 51,
+      usage: true,
+    },
   },
   {
     id: 308,
@@ -176,8 +214,11 @@ const artisanGoods = [
     description: "A thick, black paste that smells like burnt hair.",
     img: "https://stardewvalleywiki.com/mediawiki/images/f/f3/Void_Mayonnaise.png",
     ingredients: [{ name: "Void Egg", count: 1 }],
-    prices: [{ color: "text-gray-900", cost: "275g" }],
-    shipping: true,
+    price: "275g",
+    shipping: {
+      order: 52,
+      usage: true,
+    },
   },
   {
     id: 807,
@@ -185,8 +226,11 @@ const artisanGoods = [
     description: "It's thick and creamy, with a vivid green hue. It smells like grass and leather.",
     img: "https://stardewvalleywiki.com/mediawiki/images/c/c3/Dinosaur_Mayonnaise.png",
     ingredients: [{ name: "Dinosaur Egg", count: 1 }],
-    prices: [{ color: "text-gray-900", cost: "800g" }],
-    shipping: true,
+    price: "800g",
+    shipping: {
+      order: 133,
+      usage: true,
+    },
   },
   {
     id: 432,
@@ -194,8 +238,11 @@ const artisanGoods = [
     description: "A gourmet cooking ingredient.",
     img: "https://stardewvalleywiki.com/mediawiki/images/3/3d/Truffle_Oil.png",
     ingredients: [{ name: "Truffle", count: 1 }],
-    prices: [{ color: "text-gray-900", cost: "1,065g" }],
-    shipping: true,
+    price: "1,065g",
+    shipping: {
+      order: 99,
+      usage: true,
+    },
   },
   {
     id: 247,
@@ -207,8 +254,10 @@ const artisanGoods = [
       { name: "Sunflower Seed", count: 1 },
       { name: "Sunflower", count: 1 },
     ],
-    prices: [{ color: "text-gray-900", cost: "100g" }],
-    shipping: true,
+    price: "100g",
+    shipping: {
+      usage: false,
+    },
   },
   {
     id: 342,
@@ -219,8 +268,11 @@ const artisanGoods = [
       { name: "Any Vegetable", count: 1 },
       { name: "Ginger", count: 1 },
     ],
-    prices: [{ color: "text-gray-900", cost: "2 × Base Vegetable Price + 50g" }],
-    shipping: true,
+    price: "2 × Base Vegetable Price + 50g",
+    shipping: {
+      order: 60,
+      usage: true,
+    },
   },
   {
     id: 344,
@@ -228,8 +280,11 @@ const artisanGoods = [
     description: "Gooey.",
     img: "https://stardewvalleywiki.com/mediawiki/images/0/05/Jelly.png",
     ingredients: [{ name: "Any Fruit", count: 1 }],
-    prices: [{ color: "text-gray-900", cost: "2 × Base Fruit Price + 50g" }],
-    shipping: true,
+    price: "2 × Base Fruit Price + 50g",
+    shipping: {
+      order: 61,
+      usage: true,
+    },
   },
   {
     id: 445,
@@ -237,8 +292,11 @@ const artisanGoods = [
     description: "The cured roe of a sturgeon fish. Considered to be a luxurious delicacy!",
     img: "https://stardewvalleywiki.com/mediawiki/images/8/89/Caviar.png",
     ingredients: [{ name: "Sturgeon Roe", count: 1 }],
-    prices: [{ color: "text-gray-900", cost: "500g" }],
-    shipping: true,
+    price: "500g",
+    shipping: {
+      order: 106,
+      usage: true,
+    },
   },
   {
     id: 447,
@@ -246,8 +304,23 @@ const artisanGoods = [
     description: "Fish eggs aged in salt to bring out the flavor.",
     img: "https://stardewvalleywiki.com/mediawiki/images/0/0e/Aged_Roe.png",
     ingredients: [{ name: "Roe", count: 1 }],
-    prices: [{ color: "text-gray-900", cost: "2 × base Roe sell price" }],
-    shipping: true,
+    price: "2 × base Roe sell price",
+    shipping: {
+      order: 108,
+      usage: true,
+    },
+  },
+  {
+    id: 787,
+    name: "Battery Pack",
+    description: "It's fully charged with precious energy.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/2/25/Battery_Pack.png",
+    ingredients: [],
+    price: "500g",
+    shipping: {
+      order: 108,
+      usage: true,
+    },
   },
 ];
 

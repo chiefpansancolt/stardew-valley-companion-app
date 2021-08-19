@@ -5,7 +5,7 @@ import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
 import Base from "@/components/page-headings/base";
 import Tabs from "@/components/tabs";
-import ForagingTableView from "@/components/tables/foraging-table-view";
+import TableView from "@/components/tables/table-view";
 import { forageTabs } from "@/data/collection-tabs";
 
 export default function Foraging() {
@@ -17,7 +17,7 @@ export default function Foraging() {
       <Base title="Foraging" showButtons={true} />
       <LayoutContainer>
         <LayoutMain isAlone={true}>
-          <div className="mt-4 bg-white shadow overflow-hidden sm:rounded-lg">
+          <div className="bg-white shadow overflow-hidden sm:rounded-lg">
             <div className="px-4 py-5 sm:px-6">
               <h3 className="text-lg leading-6 font-medium text-gray-900">Foraging</h3>
               <p className="mt-1 text-sm text-gray-500">
@@ -35,13 +35,13 @@ export default function Foraging() {
                   collection={character.foraging}
                 >
                   {(!currentTab || currentTab === "All Foraging") && (
-                    <ForagingTableView collection={character.foraging.fullList} />
+                    <TableView collection={character.foraging.fullList} type="foraging" />
                   )}
                   {currentTab === "Shipped" && (
-                    <ForagingTableView collection={character.foraging.shippedList} />
+                    <TableView collection={character.foraging.shippedList} type="foraging" />
                   )}
                   {currentTab === "To-Be Shipped" && (
-                    <ForagingTableView collection={character.foraging.unshippedList} />
+                    <TableView collection={character.foraging.unshippedList} type="foraging" />
                   )}
                 </Tabs>
               )}

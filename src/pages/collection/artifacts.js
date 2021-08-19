@@ -5,7 +5,7 @@ import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
 import Base from "@/components/page-headings/base";
 import Tabs from "@/components/tabs";
-import ArtifactsTableView from "@/components/tables/artifacts-table-view";
+import TableView from "@/components/tables/table-view";
 import { artifactsTabs } from "@/data/collection-tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
 
@@ -47,23 +47,25 @@ export default function Artifacts() {
                   collection={character.artifacts}
                 >
                   {(!currentTab || currentTab === "All Artifacts") && (
-                    <ArtifactsTableView collection={character.artifacts.fullList} />
+                    <TableView collection={character.artifacts.fullList} type="artifacts" />
                   )}
                   {currentTab === "Found" && (
-                    <ArtifactsTableView collection={character.artifacts.foundList} />
+                    <TableView collection={character.artifacts.foundList} type="artifacts" />
                   )}
                   {currentTab === "Donated" && (
-                    <ArtifactsTableView
+                    <TableView
                       collection={character.artifacts.foundList.filter((e) => e.donated === true)}
+                      type="artifacts"
                     />
                   )}
                   {currentTab === "To-Be Donated" && (
-                    <ArtifactsTableView
+                    <TableView
                       collection={character.artifacts.foundList.filter((e) => e.donated === false)}
+                      type="artifacts"
                     />
                   )}
                   {currentTab === "To-Be Found" && (
-                    <ArtifactsTableView collection={character.artifacts.unfoundList} />
+                    <TableView collection={character.artifacts.unfoundList} type="artifacts" />
                   )}
                 </Tabs>
               )}

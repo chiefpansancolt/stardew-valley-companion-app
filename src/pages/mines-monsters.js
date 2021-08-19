@@ -8,7 +8,7 @@ import LayoutAside from "@/components/layouts/layout-aside";
 import FullStat from "@/components/cards/full-stat";
 import Tabs from "@/components/tabs";
 import { monsterTabs } from "@/data/collection-tabs";
-import MinesMonstersTableView from "@/components/tables/mines-monsters-table-view";
+import TableView from "@/components/tables/table-view";
 import Badge from "@/components/badges/badge";
 import AchievementStat from "@/components/cards/achievement-stat";
 
@@ -53,7 +53,7 @@ export default function MinesMonsters() {
                   collection={character.minesMonsters}
                 >
                   {(!currentTab || currentTab === "All Monsters") && (
-                    <MinesMonstersTableView collection={character.minesMonsters.monsterList} />
+                    <TableView collection={character.minesMonsters.monsterList} type="monsters" />
                   )}
                   {currentTab === "Eradication Goals" && (
                     <>
@@ -63,16 +63,18 @@ export default function MinesMonsters() {
                           <div key={type.category} className="mt-4">
                             <h2 className="px-4 pb-4 text-lg leading-6 font-medium text-gray-900 flex justify-between">
                               <span>{type.category}</span>
-                              {type.percent >= 100 && <Badge label="Complete" isSuccess={true} />}
-                              {type.percent < 100 && (
+                              {type.percent >= 100 ? (
+                                <Badge label="Complete" isSuccess={true} />
+                              ) : (
                                 <span className="text-sm">
                                   {type.trackableSum} / {type.goal}
                                   {" - (" + type.percent + "%)"}
                                 </span>
                               )}
                             </h2>
-                            <MinesMonstersTableView
+                            <TableView
                               collection={type.monsters.filter((e) => e.trackable === true)}
+                              type="monsters"
                             />
                           </div>
                         ))}
@@ -87,8 +89,9 @@ export default function MinesMonsters() {
                               <h2 className="px-4 pb-4 text-lg leading-6 font-medium text-gray-900 flex justify-between">
                                 {type.category}
                               </h2>
-                              <MinesMonstersTableView
+                              <TableView
                                 collection={type.monsters.filter((e) => e.trackable === false)}
+                                type="monsters"
                               />
                             </div>
                           )}

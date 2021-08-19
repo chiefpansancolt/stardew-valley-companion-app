@@ -6,7 +6,7 @@ import LayoutMain from "@/components/layouts/layout-main";
 import Base from "@/components/page-headings/base";
 import Tabs from "@/components/tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
-import CraftsTableView from "@/components/tables/crafts-table-view";
+import TableView from "@/components/tables/table-view";
 import { craftingTabs } from "@/data/collection-tabs";
 
 export default function Crafting() {
@@ -49,23 +49,25 @@ export default function Crafting() {
                   collection={character.crafting}
                 >
                   {(!currentTab || currentTab === "All Crafts") && (
-                    <CraftsTableView collection={character.crafting.fullList} />
+                    <TableView collection={character.crafting.fullList} type="crafts" />
                   )}
                   {currentTab === "Found" && (
-                    <CraftsTableView collection={character.crafting.foundList} />
+                    <TableView collection={character.crafting.foundList} type="crafts" />
                   )}
                   {currentTab === "Crafted" && (
-                    <CraftsTableView
+                    <TableView
                       collection={character.crafting.foundList.filter((e) => e.crafted === true)}
+                      type="crafts"
                     />
                   )}
                   {currentTab === "To-Be Crafted" && (
-                    <CraftsTableView
+                    <TableView
                       collection={character.crafting.foundList.filter((e) => e.crafted === false)}
+                      type="crafts"
                     />
                   )}
                   {currentTab === "To-Be Found" && (
-                    <CraftsTableView collection={character.crafting.unfoundList} />
+                    <TableView collection={character.crafting.unfoundList} type="crafts" />
                   )}
                 </Tabs>
               )}

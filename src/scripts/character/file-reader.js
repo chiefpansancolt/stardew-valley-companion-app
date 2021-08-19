@@ -24,7 +24,7 @@ import weather from "@/data/game-constants/weather";
 import artifacts from "@/data/game-constants/artifacts";
 import minerals from "@/data/game-constants/minerals";
 import townPeople from "@/data/game-constants/town-people";
-import fish from "@/data/game-constants/fish";
+import { fish } from "@/data/game-constants/fish";
 import monsterTypes from "@/data/game-constants/monsters";
 import stardrops from "@/data/game-constants/stardrop";
 import recipes from "@/data/game-constants/recipes";
@@ -649,7 +649,7 @@ function buildCooking(data) {
       ? true
       : false;
     recipe.cooked = data.SaveGame.player[0].recipesCooked[0].item.find(
-      (e) => e.key[0].int[0] === recipe.id
+      (e) => e.key[0].int[0] === String(recipe.id)
     )
       ? true
       : false;
@@ -678,7 +678,7 @@ function buildCrafting(data) {
 
     craft.found = item ? true : false;
     craft.crafted = item && parseInt(item.value[0].int[0]) > 0 ? true : false;
-    craft.craftCount = item ? parseInt(item.value[0].int[0]) : 0;
+    craft.count = item ? parseInt(item.value[0].int[0]) : 0;
 
     craftList.push(craft);
   }
@@ -704,7 +704,7 @@ function buildCrops(data) {
     );
 
     crop.count = item ? parseInt(item.value[0].int[0]) : 0;
-    crop.shipped = crop.shipping ? (crop.count > 0 ? true : false) : "n/a";
+    crop.shipped = crop.shipping.usage ? (crop.count > 0 ? true : false) : "n/a";
     crop.polycultured = crop.polyculture ? (crop.count > 15 ? true : false) : "n/a";
     crop.monocultured = crop.monoculture ? (crop.count > 300 ? true : false) : "n/a";
 
@@ -738,7 +738,7 @@ function buildForage(data) {
     );
 
     forage.count = item ? parseInt(item.value[0].int[0]) : 0;
-    forage.shipped = forage.shipping ? (forage.count > 0 ? true : false) : "n/a";
+    forage.shipped = forage.shipping.usage ? (forage.count > 0 ? true : false) : "n/a";
 
     forageList.push(forage);
   }
@@ -762,7 +762,11 @@ function buildArtisanGoods(data) {
     );
 
     artisanGood.count = item ? parseInt(item.value[0].int[0]) : 0;
-    artisanGood.shipped = artisanGood.shipping ? (artisanGood.count > 0 ? true : false) : "n/a";
+    artisanGood.shipped = artisanGood.shipping.usage
+      ? artisanGood.count > 0
+        ? true
+        : false
+      : "n/a";
 
     artisanGoodsList.push(artisanGood);
   }
@@ -786,7 +790,7 @@ function buildTrees(data) {
     );
 
     tree.count = item ? parseInt(item.value[0].int[0]) : 0;
-    tree.shipped = tree.shipping ? (tree.count > 0 ? true : false) : "n/a";
+    tree.shipped = tree.shipping.usage ? (tree.count > 0 ? true : false) : "n/a";
 
     treesList.push(tree);
   }

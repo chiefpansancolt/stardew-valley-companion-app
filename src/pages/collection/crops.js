@@ -6,7 +6,7 @@ import LayoutMain from "@/components/layouts/layout-main";
 import Base from "@/components/page-headings/base";
 import Tabs from "@/components/tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
-import CropsTableView from "@/components/tables/crops-table-view";
+import TableView from "@/components/tables/table-view";
 import { cropTabs } from "@/data/collection-tabs";
 
 export default function Crops() {
@@ -48,19 +48,19 @@ export default function Crops() {
                   collection={character.crops}
                 >
                   {(!currentTab || currentTab === "All Crops") && (
-                    <CropsTableView collection={character.crops.fullList} />
+                    <TableView collection={character.crops.fullList} type="crops" />
                   )}
                   {currentTab === "Shipped" && (
-                    <CropsTableView collection={character.crops.shippedList} />
+                    <TableView collection={character.crops.shippedList} type="crops" />
                   )}
                   {currentTab === "Polycultured" && (
-                    <CropsTableView collection={character.crops.polycultureList} />
+                    <TableView collection={character.crops.polycultureList} type="crops" />
                   )}
                   {currentTab === "To-Be Polycultured" && (
-                    <CropsTableView collection={character.crops.unpolycultureList} />
+                    <TableView collection={character.crops.unpolycultureList} type="crops" />
                   )}
                   {currentTab === "To-Be Shipped" && (
-                    <CropsTableView collection={character.crops.unshippedList} />
+                    <TableView collection={character.crops.unshippedList} type="crops" />
                   )}
                 </Tabs>
               )}

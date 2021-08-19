@@ -82,7 +82,7 @@ const crafts = [
   },
   {
     name: "Iron Fence",
-    generatedCount: 10,
+    nameCount: 10,
     description: "Lasts longer than a stone fence.",
     img: "https://stardewvalleywiki.com/mediawiki/images/9/9d/Iron_Fence.png",
     lastsFor: "248-252 days",
@@ -256,7 +256,7 @@ const crafts = [
   },
   {
     name: "Deluxe Fertilizer",
-    generatedCount: 5,
+    nameCount: 5,
     description:
       "Greatly improves soil quality, increasing your chance to grow quality crops. Mix into tilled soil.",
     img: "https://stardewvalleywiki.com/mediawiki/images/1/1c/Deluxe_Fertilizer.png",
@@ -269,7 +269,7 @@ const crafts = [
   },
   {
     name: "Speed-Gro",
-    generatedCount: 5,
+    nameCount: 5,
     description:
       "Stimulates leaf production. Guaranteed to increase growth rate by at least 10%. Mix into tilled soil.",
     img: "https://stardewvalleywiki.com/mediawiki/images/9/94/Speed-Gro.png",
@@ -282,7 +282,7 @@ const crafts = [
   },
   {
     name: "Deluxe Speed-Gro",
-    generatedCount: 5,
+    nameCount: 5,
     description:
       "Stimulates leaf production. Guaranteed to increase growth rate by at least 25%. Mix into tilled soil.",
     img: "https://stardewvalleywiki.com/mediawiki/images/6/6d/Deluxe_Speed-Gro.png",
@@ -316,7 +316,7 @@ const crafts = [
   },
   {
     name: "Quality Retaining Soil",
-    generatedCount: 2,
+    nameCount: 2,
     description: "This soil has a good chance of staying watered overnight. Mix into tilled soil.",
     img: "https://stardewvalleywiki.com/mediawiki/images/0/0a/Quality_Retaining_Soil.png",
     ingredients: [
@@ -436,7 +436,7 @@ const crafts = [
   },
   {
     name: "Fiber Seeds",
-    generatedCount: 4,
+    nameCount: 4,
     description:
       "Plant these in any season. Does not require watering. Harvest with the scythe. Takes 7 days to grow.",
     img: "https://stardewvalleywiki.com/mediawiki/images/0/05/Fiber_Seeds.png",
@@ -485,7 +485,7 @@ const crafts = [
   },
   {
     name: "Crystal Floor",
-    generatedCount: 5,
+    nameCount: 5,
     description: "Place on the ground to create paths or to spruce up your floors.",
     img: "https://stardewvalleywiki.com/mediawiki/images/a/a4/Crystal_Floor.png",
     ingredients: [{ name: "Refined Quartz", count: 1 }],
@@ -510,7 +510,7 @@ const crafts = [
   },
   {
     name: "Brick Floor",
-    generatedCount: 5,
+    nameCount: 5,
     description: "Place on the ground to create paths or to decorate your floors.",
     img: "https://stardewvalleywiki.com/mediawiki/images/2/29/Brick_Floor.png",
     ingredients: [
@@ -554,7 +554,7 @@ const crafts = [
   },
   {
     name: "Crystal Path",
-    generatedCount: 5,
+    nameCount: 5,
     description: "Place on the ground to create paths or to spruce up your floors.",
     img: "https://stardewvalleywiki.com/mediawiki/images/9/9b/Crystal_Path.png",
     ingredients: [{ name: "Refined Quartz", count: 1 }],
@@ -641,7 +641,7 @@ const crafts = [
   },
   {
     name: "Magnet",
-    generatedCount: 3,
+    nameCount: 3,
     description:
       "Increases the chance of finding treasures when fishing. However, fish aren't crazy about the taste.",
     img: "https://stardewvalleywiki.com/mediawiki/images/8/8c/Magnet.png",
@@ -651,7 +651,7 @@ const crafts = [
   },
   {
     name: "Bait",
-    generatedCount: 5,
+    nameCount: 5,
     description: "Causes fish to bite faster. Must first be attached to a fishing rod.",
     img: "https://stardewvalleywiki.com/mediawiki/images/f/ff/Bait.png",
     ingredients: [{ name: "Bug Meat", count: 1 }],
@@ -660,7 +660,7 @@ const crafts = [
   },
   {
     name: "Wild Bait",
-    generatedCount: 5,
+    nameCount: 5,
     description: "A unique recipe from Linus that gives you a chance to catch two fish at once.",
     img: "https://stardewvalleywiki.com/mediawiki/images/d/da/Wild_Bait.png",
     ingredients: [
@@ -673,7 +673,7 @@ const crafts = [
   },
   {
     name: "Magic Bait",
-    generatedCount: 5,
+    nameCount: 5,
     description:
       "Allows you to catch fish from any season, time, or weather, from whichever type of water you cast into.",
     img: "https://stardewvalleywiki.com/mediawiki/images/5/58/Magic_Bait.png",
@@ -1387,7 +1387,7 @@ const crafts = [
   },
   {
     name: "Explosive Ammo",
-    generatedCount: 5,
+    nameCount: 5,
     description: "Fire this with the slingshot.",
     img: "https://stardewvalleywiki.com/mediawiki/images/f/f3/Explosive_Ammo.png",
     ingredients: [
