@@ -401,4 +401,19 @@ const artifacts = [
   },
 ];
 
-export default artifacts;
+const artifactsShipping = [
+  {
+    id: 881,
+    name: "Bone Fragment",
+    description: "A small piece of bone.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/9/97/Bone_Fragment.png",
+    sources: ["Skeletons", "Lava Lurks", "Artifact Spots", "Bone Nodes"],
+    price: "12g",
+    shipping: {
+      order: 143,
+      usage: true,
+    },
+  },
+];
+
+export { artifacts, artifactsShipping };

@@ -322,6 +322,109 @@ const artisanGoods = [
       usage: true,
     },
   },
+  {
+    id: 334,
+    name: "Copper Bar",
+    description: "A bar of pure copper.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/f/f1/Copper_Bar.png",
+    ingredients: [
+      { name: "Copper Ore", count: 5 },
+      { name: "Coal", count: 1 },
+    ],
+    prices: {
+      main: "60g",
+      blacksmith: "90g",
+    },
+    shipping: {
+      order: 54,
+      usage: true,
+    },
+  },
+  {
+    id: 335,
+    name: "Iron Bar",
+    description: "A bar of pure iron.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/6/6c/Iron_Bar.png",
+    ingredients: [
+      { name: "Iron Ore", count: 1 },
+      { name: "Coal", count: 1 },
+    ],
+    prices: {
+      main: "120g",
+      blacksmith: "180g",
+    },
+    shipping: {
+      order: 55,
+      usage: true,
+    },
+  },
+  {
+    id: 336,
+    name: "Gold Bar",
+    description: "A bar of pure gold.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/4/4e/Gold_Bar.png",
+    ingredients: [
+      { name: "Gold Ore", count: 5 },
+      { name: "Coal", count: 1 },
+    ],
+    prices: {
+      main: "120g",
+      blacksmith: "180g",
+    },
+    shipping: {
+      order: 56,
+      usage: true,
+    },
+  },
+  {
+    id: 337,
+    name: "Iridium Bar",
+    description: "A bar of pure iridium.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/c/c4/Iridium_Bar.png",
+    ingredients: [
+      { name: "Iridium Ore", count: 5 },
+      { name: "", count: 1 },
+    ],
+    prices: {
+      main: "1,000g",
+      blacksmith: "1,500g",
+    },
+    shipping: {
+      order: 57,
+      usage: true,
+    },
+  },
+  {
+    id: 338,
+    name: "Refined Quartz",
+    description: "A more pure form of quartz.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/9/98/Refined_Quartz.png",
+    ingredients: [
+      { name: "Quartz / Fire Quartz", count: 1 },
+      { name: "Coal", count: 1 },
+    ],
+    price: "50g",
+    shipping: {
+      order: 58,
+      usage: true,
+    },
+  },
+
+  {
+    id: 910,
+    name: "Radioactive Bar",
+    description: "Known by the Zuzu City Safety Commission to cause irreversible bodily harm.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/7/7e/Radioactive_Bar.png",
+    ingredients: [
+      { name: "Radioactive Ore", count: 5 },
+      { name: "Coal", count: 1 },
+    ],
+    price: "3,000g",
+    shipping: {
+      order: 145,
+      usage: true,
+    },
+  },
 ];
 
 export default artisanGoods;

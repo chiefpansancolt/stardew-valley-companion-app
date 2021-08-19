@@ -21,11 +21,11 @@ import professions from "@/data/game-constants/professions";
 import achievements from "@/data/game-constants/achievements";
 import { addCharactersList, setCurrentCharacterSetting } from "./new-character";
 import weather from "@/data/game-constants/weather";
-import artifacts from "@/data/game-constants/artifacts";
-import minerals from "@/data/game-constants/minerals";
+import { artifacts, artifactsShipping } from "@/data/game-constants/artifacts";
+import { minerals, mineralsShipping } from "@/data/game-constants/minerals";
 import townPeople from "@/data/game-constants/town-people";
 import { fish } from "@/data/game-constants/fish";
-import monsterTypes from "@/data/game-constants/monsters";
+import { monsterTypes, monsterShippings } from "@/data/game-constants/monsters";
 import stardrops from "@/data/game-constants/stardrop";
 import recipes from "@/data/game-constants/recipes";
 import crafts from "@/data/game-constants/crafting";
@@ -493,6 +493,7 @@ function buildCollectionArtifacts(data) {
   let found = [];
   let unfound = [];
   let all = [];
+  let artifactDrops = [];
 
   for (let i = 0; i < artifacts.length; i++) {
     const artifact = artifacts[i].value;
@@ -519,10 +520,33 @@ function buildCollectionArtifacts(data) {
     all.push(artifact);
   }
 
+  for (let i = 0; i < artifactsShipping.length; i++) {
+    const artifactDrop = artifactsShipping[i];
+    const item = data.SaveGame.player[0].basicShipped[0].item.find(
+      (e) => e.key[0].int[0] === String(artifactDrop.id)
+    );
+
+    artifactDrop.count = item ? parseInt(item.value[0].int[0]) : 0;
+    artifactDrop.shipped = artifactDrop.shipping.usage
+      ? artifactDrop.count > 0
+        ? true
+        : false
+      : "n/a";
+
+    artifactDrops.push(artifactDrop);
+  }
+
   return {
+    shipping: {
+      shipped: artifactDrops.filter((e) => e.shipped === true).length,
+      unshipped: artifactDrops.filter((e) => e.shipped === false).length,
+      fullList: artifactDrops,
+      shippedList: artifactDrops.filter((e) => e.shipped === true),
+      unshippedList: artifactDrops.filter((e) => e.shipped === false),
+    },
     found: found.length,
     donated: found.filter((e) => e.donated === true).length,
-    undonated: found.filter((e) => e.donated === false).length,
+    undonated: all.filter((e) => e.donated === false).length,
     unfound: unfound.length,
     fullList: all,
     foundList: found,
@@ -537,6 +561,7 @@ function buildCollectionMinerals(data) {
   let found = [];
   let unfound = [];
   let all = [];
+  let mineralDrops = [];
 
   for (let i = 0; i < minerals.length; i++) {
     const mineral = minerals[i].value;
@@ -559,10 +584,33 @@ function buildCollectionMinerals(data) {
     all.push(mineral);
   }
 
+  for (let i = 0; i < mineralsShipping.length; i++) {
+    const mineralDrop = mineralsShipping[i];
+    const item = data.SaveGame.player[0].basicShipped[0].item.find(
+      (e) => e.key[0].int[0] === String(mineralDrop.id)
+    );
+
+    mineralDrop.count = item ? parseInt(item.value[0].int[0]) : 0;
+    mineralDrop.shipped = mineralDrop.shipping.usage
+      ? mineralDrop.count > 0
+        ? true
+        : false
+      : "n/a";
+
+    mineralDrops.push(mineralDrop);
+  }
+
   return {
+    shipping: {
+      shipped: mineralDrops.filter((e) => e.shipped === true).length,
+      unshipped: mineralDrops.filter((e) => e.shipped === false).length,
+      fullList: mineralDrops,
+      shippedList: mineralDrops.filter((e) => e.shipped === true),
+      unshippedList: mineralDrops.filter((e) => e.shipped === false),
+    },
     found: found.length,
     donated: found.filter((e) => e.donated === true).length,
-    undonated: found.filter((e) => e.donated === false).length,
+    undonated: all.filter((e) => e.type !== "Geode" && e.donated === false).length,
     unfound: unfound.filter((e) => e.type !== "Geode").length,
     fullList: all,
     foundList: found,
@@ -603,6 +651,8 @@ function buildMinesAndMonsters(data) {
   const reducer = (accumulator, currentValue) => accumulator + currentValue.count;
   let types = monsterTypes;
   let monsters = [];
+  let monsterDrops = [];
+
   for (let i = 0; i < types.length; i++) {
     const type = types[i];
 
@@ -622,7 +672,30 @@ function buildMinesAndMonsters(data) {
     type.percent = ((type.trackableSum / type.goal) * 100).toFixed(2);
   }
 
+  for (let i = 0; i < monsterShippings.length; i++) {
+    const monsterDrop = monsterShippings[i];
+    const item = data.SaveGame.player[0].basicShipped[0].item.find(
+      (e) => e.key[0].int[0] === String(monsterDrop.id)
+    );
+
+    monsterDrop.count = item ? parseInt(item.value[0].int[0]) : 0;
+    monsterDrop.shipped = monsterDrop.shipping.usage
+      ? monsterDrop.count > 0
+        ? true
+        : false
+      : "n/a";
+
+    monsterDrops.push(monsterDrop);
+  }
+
   return {
+    shipping: {
+      shipped: monsterDrops.filter((e) => e.shipped === true).length,
+      unshipped: monsterDrops.filter((e) => e.shipped === false).length,
+      fullList: monsterDrops,
+      shippedList: monsterDrops.filter((e) => e.shipped === true),
+      unshippedList: monsterDrops.filter((e) => e.shipped === false),
+    },
     monsterList: monsters,
     monsterTypes: types,
     hasSkullKey: data.SaveGame.player[0].hasSkullKey[0] === "true",

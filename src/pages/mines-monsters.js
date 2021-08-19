@@ -7,7 +7,7 @@ import LayoutMain from "@/components/layouts/layout-main";
 import LayoutAside from "@/components/layouts/layout-aside";
 import FullStat from "@/components/cards/full-stat";
 import Tabs from "@/components/tabs";
-import { monsterTabs } from "@/data/collection-tabs";
+import { monsterTabs, monsterShippingTabs } from "@/data/collection-tabs";
 import TableView from "@/components/tables/table-view";
 import Badge from "@/components/badges/badge";
 import AchievementStat from "@/components/cards/achievement-stat";
@@ -98,6 +98,42 @@ export default function MinesMonsters() {
                         </>
                       ))}
                     </>
+                  )}
+                </Tabs>
+              )}
+            </div>
+          </div>
+
+          <div className="mt-4 bg-white shadow overflow-hidden sm:rounded-lg">
+            <div className="px-4 py-5 sm:px-6">
+              <h3 className="text-lg leading-6 font-medium text-gray-900">Monster Droppings</h3>
+              <p className="mt-1 text-sm text-gray-500">Items dropped by monsters.</p>
+            </div>
+            <div className="border-t border-gray-200">
+              {character.minesMonsters && (
+                <Tabs
+                  tabs={monsterShippingTabs}
+                  currentTab={currentTab}
+                  current="/mines-monsters"
+                  collection={character.minesMonsters.shipping}
+                >
+                  {(!currentTab || currentTab === "All Trees") && (
+                    <TableView
+                      collection={character.minesMonsters.shipping.fullList}
+                      type="shipping"
+                    />
+                  )}
+                  {currentTab === "Shipped" && (
+                    <TableView
+                      collection={character.minesMonsters.shipping.shippedList}
+                      type="shipping"
+                    />
+                  )}
+                  {currentTab === "To-Be Shipped" && (
+                    <TableView
+                      collection={character.minesMonsters.shipping.unshippedList}
+                      type="shipping"
+                    />
                   )}
                 </Tabs>
               )}

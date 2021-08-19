@@ -2,10 +2,16 @@ import classNames from "@/scripts/class-names";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Tabs({ tabs, current, currentTab, collection, children }) {
+export default function Tabs({ tabs, current, currentTab, collection, children, subTab }) {
   for (let i = 0; i < tabs.length; i++) {
-    if (tabs[i].name.includes("All") && !tabs[i].name.includes("Monster")) {
+    if (
+      tabs[i].name.includes("All") &&
+      !tabs[i].name.includes("Monster") &&
+      !tabs[i].name.includes("Minerals")
+    ) {
       tabs[i].count = collection.fullList.length;
+    } else if (tabs[i].name === "All Minerals") {
+      tabs[i].count = collection.fullList.filter((e) => e.type !== "Geode").length;
     } else if (tabs[i].name === "Found") {
       tabs[i].count = collection.found;
     } else if (tabs[i].name === "Donated") {
@@ -41,13 +47,17 @@ export default function Tabs({ tabs, current, currentTab, collection, children }
     }
   }
 
+  function usage(name) {
+    return subTab ? { secondaryTab: name } : { currentTab: name };
+  }
+
   return (
     <div>
       <div className="border-b border-gray-200">
         <div className="px-5">
           <nav className="-mb-px flex space-x-8 justify-center" aria-label="Tabs">
             {tabs.map((tab, index) => (
-              <Link key={tab.name} href={{ pathname: current, query: { currentTab: tab.name } }}>
+              <Link key={tab.name} href={{ pathname: current, query: usage(tab.name) }}>
                 <a
                   className={classNames(
                     (!currentTab && index === 0) || currentTab === tab.name

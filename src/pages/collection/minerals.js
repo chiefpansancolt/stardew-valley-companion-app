@@ -6,13 +6,14 @@ import LayoutMain from "@/components/layouts/layout-main";
 import Base from "@/components/page-headings/base";
 import Tabs from "@/components/tabs";
 import TableView from "@/components/tables/table-view";
-import { mineralTabs } from "@/data/collection-tabs";
+import { mineralTabs, mineralShippingTabs } from "@/data/collection-tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
 
 export default function Minerals() {
   const { character } = useContext(CharacterContext);
   const router = useRouter();
   const { currentTab } = router.query;
+  const { secondaryTab } = router.query;
 
   return (
     <>
@@ -67,7 +68,9 @@ export default function Minerals() {
                   )}
                   {currentTab === "To-Be Donated" && (
                     <TableView
-                      collection={character.minerals.foundList.filter((e) => e.donated === false)}
+                      collection={character.minerals.fullList.filter(
+                        (e) => e.type !== "Geode" && e.donated === false
+                      )}
                       type="minerals"
                     />
                   )}
@@ -79,7 +82,7 @@ export default function Minerals() {
             </div>
           </div>
 
-          <div className="bg-white shadow overflow-hidden sm:rounded-lg mt-5">
+          <div className="mt-4 bg-white shadow overflow-hidden sm:rounded-lg">
             <div className="px-4 py-5 sm:px-6">
               <h3 className="text-lg leading-6 font-medium text-gray-900">Geode Items</h3>
               <p className="mt-1 text-sm text-gray-500">
@@ -93,6 +96,42 @@ export default function Minerals() {
                   collection={character.minerals.fullList.filter((e) => e.type === "Geode")}
                   type="geodes"
                 />
+              )}
+            </div>
+          </div>
+
+          <div className="mt-4 bg-white shadow overflow-hidden sm:rounded-lg">
+            <div className="px-4 py-5 sm:px-6">
+              <h3 className="text-lg leading-6 font-medium text-gray-900">Mineral Droppings</h3>
+              <p className="mt-1 text-sm text-gray-500">
+                Items dropped by harvesting Rocks or Geodes.
+              </p>
+            </div>
+            <div className="border-t border-gray-200">
+              {character.minerals && (
+                <Tabs
+                  tabs={mineralShippingTabs}
+                  currentTab={secondaryTab}
+                  current="/collection/minerals"
+                  collection={character.minerals.shipping}
+                  subTab={true}
+                >
+                  {(!secondaryTab || secondaryTab === "All Mineral Droppings") && (
+                    <TableView collection={character.minerals.shipping.fullList} type="shipping" />
+                  )}
+                  {secondaryTab === "Shipped" && (
+                    <TableView
+                      collection={character.minerals.shipping.shippedList}
+                      type="shipping"
+                    />
+                  )}
+                  {secondaryTab === "To-Be Shipped" && (
+                    <TableView
+                      collection={character.minerals.shipping.unshippedList}
+                      type="shipping"
+                    />
+                  )}
+                </Tabs>
               )}
             </div>
           </div>

@@ -453,4 +453,79 @@ const monsterTypes = [
   },
 ];
 
-export default monsterTypes;
+const monsterShippings = [
+  {
+    id: 766,
+    name: "Slime",
+    description: "A shimmering, gelatinous glob with no smell.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/3/38/Slime.png",
+    price: "5g",
+    sources: ["Slimes", "Fish Pond"],
+    shipping: {
+      order: 127,
+      usage: true,
+    },
+  },
+  {
+    id: 767,
+    name: "Bat Wings",
+    description: "The material is surprisingly delicate.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/3/35/Bat_Wing.png",
+    price: "15g",
+    sources: ["Bat", "Frost Bat", "Lava Bat", "Bat (dangerous)", "Frost Bat (dangerous)"],
+    shipping: {
+      order: 128,
+      usage: true,
+    },
+  },
+  {
+    id: 768,
+    name: "Solar Essence",
+    description: "The glowing face is warm to the touch.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/f/f4/Solar_Essence.png",
+    price: "40g",
+    sources: [
+      "Ghost",
+      "Iridium Bat",
+      "Metal Head",
+      "Metal Head (dangerous)",
+      "Haunted Skull",
+      "Squid Kid",
+      "Squid Kid (dangerous)",
+      "Mummy",
+      "Krobus",
+      "Hot Head",
+      "Blue Squid",
+      "Sunfish (Fish Pond)",
+    ],
+    shipping: {
+      order: 129,
+      usage: true,
+    },
+  },
+  {
+    id: 769,
+    name: "Void Essence",
+    description: "It's quivering with dark energy.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/1/1f/Void_Essence.png",
+    price: "50g",
+    sources: [
+      "Shadow Brute",
+      "Shadow Brute (dangerous)",
+      "Shadow Shaman",
+      "Shadow Shaman (dangerous)",
+      "Haunted Skull",
+      "Serpent",
+      "Shadow Sniper",
+      "Spider",
+      "Krobus",
+      "Void Salmon (Fish Pond)",
+    ],
+    shipping: {
+      order: 130,
+      usage: true,
+    },
+  },
+];
+
+export { monsterTypes, monsterShippings };

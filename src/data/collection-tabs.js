@@ -133,6 +133,36 @@ const animalProductTabs = [
   { name: "To-Be Shipped", icon: faListAlt },
 ];
 
+const monsterShippingTabs = [
+  {
+    name: "All Monster Droppings",
+    icon: null,
+    img: "https://stardewvalleywiki.com/mediawiki/images/3/35/Bat_Wing.png",
+  },
+  { name: "Shipped", icon: faCheckDouble },
+  { name: "To-Be Shipped", icon: faListAlt },
+];
+
+const mineralShippingTabs = [
+  {
+    name: "All Mineral Droppings",
+    icon: null,
+    img: "https://stardewvalleywiki.com/mediawiki/images/e/e9/Iridium_Ore.png",
+  },
+  { name: "Shipped", icon: faCheckDouble },
+  { name: "To-Be Shipped", icon: faListAlt },
+];
+
+const artifactShippingTabs = [
+  {
+    name: "All Artifact Droppings",
+    icon: null,
+    img: "https://stardewvalleywiki.com/mediawiki/images/9/97/Bone_Fragment.png",
+  },
+  { name: "Shipped", icon: faCheckDouble },
+  { name: "To-Be Shipped", icon: faListAlt },
+];
+
 export {
   artifactsTabs,
   mineralTabs,
@@ -145,4 +175,7 @@ export {
   artisanGoodsTabs,
   treesTabs,
   animalProductTabs,
+  monsterShippingTabs,
+  mineralShippingTabs,
+  artifactShippingTabs,
 };

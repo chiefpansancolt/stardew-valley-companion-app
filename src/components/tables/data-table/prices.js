@@ -43,6 +43,23 @@ export default function Prices({ single, list, profession }) {
           </ul>
         </td>
       );
+    } else if (list.main || list.blacksmith) {
+      return (
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+          <ul>
+            {(profession === "" || profession !== "Blacksmith") && (
+              <li key={list.main} className="flex items-center">
+                {list.main}
+              </li>
+            )}
+            {profession === "Blacksmith" && (
+              <li key={list.main} className="flex items-center">
+                {list.main}
+              </li>
+            )}
+          </ul>
+        </td>
+      );
     } else {
       return (
         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">

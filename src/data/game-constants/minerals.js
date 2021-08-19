@@ -629,4 +629,152 @@ const minerals = [
   },
 ];
 
-export default minerals;
+const mineralsShipping = [
+  {
+    id: 330,
+    name: "Clay",
+    description: "Used in crafting and construction.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/a/a2/Clay.png",
+    sources: ["Artifact Spots", "Geodes"],
+    price: "20g",
+    shipping: {
+      order: 53,
+      usage: true,
+    },
+  },
+  {
+    id: 378,
+    name: "Copper Ore",
+    description: "A common ore that can be smelted into bars.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/7/78/Copper_Ore.png",
+    sources: [
+      "The Mines",
+      "Blacksmith",
+      "Fishing",
+      "Artifact Spot",
+      "Geodes",
+      "Panning",
+      "Traveling Cart",
+    ],
+    price: "5g",
+    shipping: {
+      order: 67,
+      usage: true,
+    },
+  },
+  {
+    id: 380,
+    name: "Iron Ore",
+    description: "A fairly common ore that can be smelted into bars.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/8/87/Iron_Ore.png",
+    sources: ["Mines", "Blacksmith", "Fishing", "Geodes", "Panning", "Traveling Cart"],
+    price: "10g",
+    shipping: {
+      order: 68,
+      usage: true,
+    },
+  },
+  {
+    id: 382,
+    name: "Coal",
+    description: "A combustible rock that is useful for crafting and smelting.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/a/a7/Coal.png",
+    sources: [
+      "Mines",
+      "Blacksmith",
+      "Charcoal Kiln",
+      "Recycling Machine",
+      "Geodes",
+      "Fishing Treasure Chest",
+      "Artifact Spot",
+      "Panning",
+      "Traveling Cart",
+    ],
+    price: "15g",
+    shipping: {
+      order: 69,
+      usage: true,
+    },
+  },
+  {
+    id: 384,
+    name: "Gold Ore",
+    description: "A precious ore that can be smelted into bars.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/f/f7/Gold_Ore.png",
+    sources: [
+      "Mining",
+      "Blacksmith",
+      "Fishing",
+      "Frozen Geode",
+      "Magma Geode",
+      "Omni Geode",
+      "Panning",
+      "Traveling Cart",
+      "Lava Eel Fish Pond",
+    ],
+    price: "25g",
+    shipping: {
+      order: 70,
+      usage: true,
+    },
+  },
+  {
+    id: 386,
+    name: "Iridium Ore",
+    description: "An exotic ore with many curious properties. Can be smelted into bars.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/e/e9/Iridium_Ore.png",
+    sources: [
+      "Skull Cavern",
+      "Mines",
+      "Statue Of Perfection",
+      "Fishing",
+      "Magma Geode",
+      "Omni Geode",
+      "Panning",
+      "Traveling Cart",
+    ],
+    price: "100g",
+    shipping: {
+      order: 71,
+      usage: true,
+    },
+  },
+  {
+    id: 390,
+    name: "Stone",
+    description: "A common material with many uses in crafting and building.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/d/d4/Stone.png",
+    sources: ["Rocks", "Carpenter's Shop", "Fishing"],
+    price: "2g",
+    shipping: {
+      order: 73,
+      usage: true,
+    },
+  },
+  {
+    id: 848,
+    name: "Cinder Shard",
+    description: "You can feel a warm glow from within this stone.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/f/fd/Cinder_Shard.png",
+    sources: ["Ginger Island", "Fish Pond"],
+    price: "50g",
+    shipping: {
+      order: 141,
+      usage: true,
+    },
+  },
+  {
+    id: 909,
+    name: "Radioactive Ore",
+    description: "It's glowing with dangerous energy... Can be smelted into bars.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/9/9f/Radioactive_Ore.png",
+    sources: ["The Mines", "Skull Cavern"],
+    price: "300g",
+    shipping: {
+      order: 144,
+      usage: true,
+    },
+  },
+];
+
+export { minerals, mineralsShipping };
