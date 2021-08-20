@@ -61,6 +61,7 @@ const navigation = [
       },
     ],
   },
+  { name: "Shipping", href: "/shipping", icon: faShoppingBasket, standardIcon: false },
   { name: "Animals", href: "/animals", icon: faHorse, standardIcon: false },
   { name: "Community Center", href: "/community-center", icon: faBuilding, standardIcon: false },
   { name: "Quests", href: "/quests", icon: faExclamationCircle, standardIcon: false },

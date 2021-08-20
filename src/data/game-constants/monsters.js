@@ -455,6 +455,29 @@ const monsterTypes = [
 
 const monsterShippings = [
   {
+    id: 684,
+    name: "Bug Meat",
+    description: "It's a juicy wad of bug flesh.",
+    img: "https://stardewvalleywiki.com/mediawiki/images/b/b6/Bug_Meat.png",
+    price: "8g",
+    sources: [
+      "Bug",
+      "Bug (dangerous)",
+      "Cave Fly",
+      "Cave Fly (dangerous)",
+      "Grub",
+      "Grub (dangerous)",
+      "Mutant Fly",
+      "Mutant Grub",
+      "Armored Bug",
+      "Armored Bug (dangerous)",
+    ],
+    shipping: {
+      order: 122,
+      usage: true,
+    },
+  },
+  {
     id: 766,
     name: "Slime",
     description: "A shimmering, gelatinous glob with no smell.",

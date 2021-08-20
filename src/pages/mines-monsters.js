@@ -149,6 +149,11 @@ export default function MinesMonsters() {
                 .map((achievement) => (
                   <AchievementStat key={achievement.name} achievement={achievement} />
                 ))}
+              {character.character.achievements.achievements
+                .filter((e) => e.detailLink === "/shipping")
+                .map((achievement) => (
+                  <AchievementStat key={achievement.name} achievement={achievement} />
+                ))}
             </div>
           </div>
           <div className="mt-4 mx-auto">

@@ -31,6 +31,11 @@ module.exports = {
       violet: colors.violet,
       yellow: colors.yellow,
     },
+    extend: {
+      gridTemplateColumns: {
+        '16': 'repeat(16, minmax(0, 1fr))',
+      },
+    },
   },
   variants: {
     extend: {

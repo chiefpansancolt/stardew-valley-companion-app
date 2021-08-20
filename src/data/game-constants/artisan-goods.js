@@ -318,7 +318,7 @@ const artisanGoods = [
     ingredients: [],
     price: "500g",
     shipping: {
-      order: 108,
+      order: 132,
       usage: true,
     },
   },

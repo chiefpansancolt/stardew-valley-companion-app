@@ -389,7 +389,7 @@ const achievements = [
       img: "https://stardewvalleywiki.com/mediawiki/images/b/b8/Achievement_Full_Shipment.jpg",
       description: "Ship every item.",
       linkType: "Link",
-      detailLink: "/shipment",
+      detailLink: "/shipping",
       isSteam: true,
       isInGame: true,
       count: "Calculated",

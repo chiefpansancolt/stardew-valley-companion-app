@@ -7,7 +7,7 @@ import Prices from "@/components/tables/data-table/prices";
 import ComplexList from "@/components/tables/data-table/complex-list";
 import Harvest from "./data-table/harvet";
 
-export default function AnimalProductsTableView({ collection, type, profession }) {
+export default function TableView({ collection, type, profession }) {
   return (
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -20,6 +20,7 @@ export default function AnimalProductsTableView({ collection, type, profession }
                     <th
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                      key={heading}
                     >
                       {heading}
                     </th>

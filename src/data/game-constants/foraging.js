@@ -200,7 +200,7 @@ const foraging = [
     img: "https://stardewvalleywiki.com/mediawiki/images/d/d9/Sweet_Pea.png",
     locations: [LOCATIONS.SUMMER],
     shipping: {
-      order: 81,
+      order: 82,
       usage: true,
     },
     prices: [
@@ -234,7 +234,7 @@ const foraging = [
     img: "https://stardewvalleywiki.com/mediawiki/images/4/48/Fiddlehead_Fern.png",
     locations: [LOCATIONS.SUMMER],
     shipping: {
-      order: 37,
+      order: 27,
       usage: true,
     },
     prices: [

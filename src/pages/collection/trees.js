@@ -7,6 +7,7 @@ import Base from "@/components/page-headings/base";
 import Tabs from "@/components/tabs";
 import TableView from "@/components/tables/table-view";
 import { treesTabs } from "@/data/collection-tabs";
+import AchievementStat from "@/components/cards/achievement-stat";
 
 export default function Trees() {
   const { character } = useContext(CharacterContext);
@@ -17,7 +18,17 @@ export default function Trees() {
       <Base title="Trees" showButtons={true} />
       <LayoutContainer>
         <LayoutMain isAlone={true}>
-          <div className="bg-white shadow overflow-hidden sm:rounded-lg">
+          <div className="mx-auto">
+            <h2 className="text-lg leading-6 font-medium text-gray-900">Achievements</h2>
+            <div className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+              {character.character.achievements.achievements
+                .filter((e) => e.detailLink === "/shipping")
+                .map((achievement) => (
+                  <AchievementStat key={achievement.name} achievement={achievement} />
+                ))}
+            </div>
+          </div>
+          <div className="mt-4 bg-white shadow overflow-hidden sm:rounded-lg">
             <div className="px-4 py-5 sm:px-6">
               <h3 className="text-lg leading-6 font-medium text-gray-900">Trees</h3>
               <p className="mt-1 text-sm text-gray-500">

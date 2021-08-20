@@ -66,6 +66,7 @@ export function handleFileSelect(file) {
     saveInfo.artisanGoods = buildArtisanGoods(gameData);
     saveInfo.trees = buildTrees(gameData);
     saveInfo.animalProducts = buildAnimalProducts(gameData);
+    saveInfo.shipping = buildShipping(saveInfo);
     saveInfo.character.achievements = buildCharacterAchievements(gameData, saveInfo);
     localStorage.setItem(file.name, JSON.stringify(saveInfo));
     addCharactersList(saveInfo.character);
@@ -401,6 +402,9 @@ function buildCharacterAchievements(data, saveInfo) {
           el.value.percent = percentCalc(el.value.current, el.value.count);
           break;
         case 34:
+          el.value.count = saveInfo.shipping.fullList.length;
+          el.value.current = saveInfo.shipping.shipped;
+          el.value.percent = percentCalc(el.value.current, el.value.count);
           break;
         default:
           console.log(el.key);
@@ -903,6 +907,86 @@ function buildAnimalProducts(data) {
     shippedList: animalProductsList.filter((e) => e.shipped === true),
     unshippedList: animalProductsList.filter((e) => e.shipped === false),
   };
+}
+
+function buildShipping(data) {
+  let shippingList = [];
+  const artisanGoods = data.artisanGoods.fullList.filter((e) => e.shipping.usage === true);
+  const animalProducts = data.animalProducts.fullList.filter((e) => e.shipping.usage === true);
+  const crops = data.crops.fullList.filter((e) => e.shipping.usage === true);
+  const foraging = data.foraging.fullList.filter((e) => e.shipping.usage === true);
+  const trees = data.trees.fullList.filter((e) => e.shipping.usage === true);
+  const minerals = data.minerals.shipping.fullList.filter((e) => e.shipping.usage === true);
+  const artifacts = data.artifacts.shipping.fullList.filter((e) => e.shipping.usage === true);
+  const minesMonsters = data.minesMonsters.shipping.fullList.filter((e) => e.shipping.usage === true);
+
+  for (let i = 0; i < artisanGoods.length; i++) {
+    if (!shippingList.some(item => item.id === artisanGoods[i].id)) {
+      shippingList.push(artisanGoods[i]);
+    }
+  }
+
+  for (let i = 0; i < animalProducts.length; i++) {
+    if (!shippingList.some(item => item.id === animalProducts[i].id)) {
+      shippingList.push(animalProducts[i]);
+    }
+  }
+
+  for (let i = 0; i < crops.length; i++) {
+    if (!shippingList.some(item => item.id === crops[i].id)) {
+      shippingList.push(crops[i]);
+    }
+  }
+
+  for (let i = 0; i < foraging.length; i++) {
+    if (!shippingList.some(item => item.id === foraging[i].id)) {
+      shippingList.push(foraging[i]);
+    }
+  }
+
+  for (let i = 0; i < trees.length; i++) {
+    if (!shippingList.some(item => item.id === trees[i].id)) {
+      shippingList.push(trees[i]);
+    }
+  }
+
+  for (let i = 0; i < minerals.length; i++) {
+    if (!shippingList.some(item => item.id === minerals[i].id)) {
+      shippingList.push(minerals[i]);
+    }
+  }
+
+  for (let i = 0; i < artifacts.length; i++) {
+    if (!shippingList.some(item => item.id === artifacts[i].id)) {
+      shippingList.push(artifacts[i]);
+    }
+  }
+
+  for (let i = 0; i < minesMonsters.length; i++) {
+    if (!shippingList.some(item => item.id === minesMonsters[i].id)) {
+      shippingList.push(minesMonsters[i]);
+    }
+  }
+
+  shippingList.sort(compare);
+
+  return {
+    shipped: shippingList.filter((e) => e.shipped === true).length,
+    unshipped: shippingList.filter((e) => e.shipped === false).length,
+    fullList: shippingList,
+    shippedList: shippingList.filter((e) => e.shipped === true),
+    unshippedList: shippingList.filter((e) => e.shipped === false),
+  }
+}
+
+function compare( a, b ) {
+  if ( a.shipping.order < b.shipping.order ){
+    return -1;
+  }
+  if ( a.shipping.order > b.shipping.order ){
+    return 1;
+  }
+  return 0;
 }
 
 function isLibraryMuseum(element) {
