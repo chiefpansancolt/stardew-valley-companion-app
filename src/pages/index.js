@@ -92,6 +92,14 @@ function OtherDetails({ name, character }) {
         {character.character.stardrops.length}
       </>
     );
+  } else if (name === "Full Shipment") {
+    return (
+      <>
+        {character.shipping.shipped}
+        {" / "}
+        {character.shipping.fullList.length}
+      </>
+    );
   }
 }
 

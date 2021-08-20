@@ -55,6 +55,11 @@ const other = [
     img: "https://stardewvalleywiki.com/mediawiki/images/thumb/2/24/Achievements_Icon.png/32px-Achievements_Icon.png",
     link: "/character",
   },
+  {
+    label: "Full Shipment",
+    img: "https://stardewvalleywiki.com/mediawiki/images/b/b8/Achievement_Full_Shipment.jpg",
+    link: "/shipping",
+  },
 ];
 
 export { skills, museum, other };
