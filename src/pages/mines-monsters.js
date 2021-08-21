@@ -76,9 +76,9 @@ export default function MinesMonsters() {
                   <Tab.Panel>
                     <>
                       {character.minesMonsters.monsterTypes.map((type) => (
-                        <>
+                        <span key={type.category}>
                           {type.monsters.filter((e) => e.trackable === false).length > 0 && (
-                            <div key={type.category} className="mt-4">
+                            <div className="mt-4">
                               <h2 className="px-4 pb-4 text-lg leading-6 font-medium text-gray-900 flex justify-between">
                                 {type.category}
                               </h2>
@@ -88,7 +88,7 @@ export default function MinesMonsters() {
                               />
                             </div>
                           )}
-                        </>
+                        </span>
                       ))}
                     </>
                   </Tab.Panel>
