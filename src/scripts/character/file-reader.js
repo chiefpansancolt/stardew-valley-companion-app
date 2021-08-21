@@ -34,6 +34,7 @@ import foraging from "@/data/game-constants/foraging";
 import artisanGoods from "@/data/game-constants/artisan-goods";
 import trees from "@/data/game-constants/trees";
 import animalProducts from "@/data/game-constants/animal-products";
+import { candles, grandpa } from "@/data/game-constants/grandpa";
 
 export function handleFileSelect(file) {
   String.prototype.capitalize = function () {
@@ -68,6 +69,7 @@ export function handleFileSelect(file) {
     saveInfo.animalProducts = buildAnimalProducts(gameData);
     saveInfo.shipping = buildShipping(saveInfo);
     saveInfo.character.achievements = buildCharacterAchievements(gameData, saveInfo);
+    saveInfo.grandpa = buildGrandpaEvaluation(saveInfo);
     localStorage.setItem(file.name, JSON.stringify(saveInfo));
     addCharactersList(saveInfo.character);
     setCurrentCharacterSetting(saveInfo.character);
@@ -114,7 +116,8 @@ function buildCharacterInfo(fileName, data) {
     rainChance: parseFloat(data.SaveGame.chanceToRainTomorrow[0]).toFixed(4),
     dailyLuck: parseFloat(data.SaveGame.dailyLuck[0]).toFixed(4),
     weatherTomorrow: weather[data.SaveGame.weatherForTomorrow[0]],
-    farmHouseLevel: player.houseUpgradeLevel[0],
+    farmHouseLevel: parseInt(player.houseUpgradeLevel[0]),
+    hasRustyKey: player.hasRustyKey[0] === "true",
     pet: {
       type: pet.type ? pet.type : pet["xsi:type"][0],
       name: !pet.type ? pet.name[0] : "",
@@ -918,52 +921,54 @@ function buildShipping(data) {
   const trees = data.trees.fullList.filter((e) => e.shipping.usage === true);
   const minerals = data.minerals.shipping.fullList.filter((e) => e.shipping.usage === true);
   const artifacts = data.artifacts.shipping.fullList.filter((e) => e.shipping.usage === true);
-  const minesMonsters = data.minesMonsters.shipping.fullList.filter((e) => e.shipping.usage === true);
+  const minesMonsters = data.minesMonsters.shipping.fullList.filter(
+    (e) => e.shipping.usage === true
+  );
 
   for (let i = 0; i < artisanGoods.length; i++) {
-    if (!shippingList.some(item => item.id === artisanGoods[i].id)) {
+    if (!shippingList.some((item) => item.id === artisanGoods[i].id)) {
       shippingList.push(artisanGoods[i]);
     }
   }
 
   for (let i = 0; i < animalProducts.length; i++) {
-    if (!shippingList.some(item => item.id === animalProducts[i].id)) {
+    if (!shippingList.some((item) => item.id === animalProducts[i].id)) {
       shippingList.push(animalProducts[i]);
     }
   }
 
   for (let i = 0; i < crops.length; i++) {
-    if (!shippingList.some(item => item.id === crops[i].id)) {
+    if (!shippingList.some((item) => item.id === crops[i].id)) {
       shippingList.push(crops[i]);
     }
   }
 
   for (let i = 0; i < foraging.length; i++) {
-    if (!shippingList.some(item => item.id === foraging[i].id)) {
+    if (!shippingList.some((item) => item.id === foraging[i].id)) {
       shippingList.push(foraging[i]);
     }
   }
 
   for (let i = 0; i < trees.length; i++) {
-    if (!shippingList.some(item => item.id === trees[i].id)) {
+    if (!shippingList.some((item) => item.id === trees[i].id)) {
       shippingList.push(trees[i]);
     }
   }
 
   for (let i = 0; i < minerals.length; i++) {
-    if (!shippingList.some(item => item.id === minerals[i].id)) {
+    if (!shippingList.some((item) => item.id === minerals[i].id)) {
       shippingList.push(minerals[i]);
     }
   }
 
   for (let i = 0; i < artifacts.length; i++) {
-    if (!shippingList.some(item => item.id === artifacts[i].id)) {
+    if (!shippingList.some((item) => item.id === artifacts[i].id)) {
       shippingList.push(artifacts[i]);
     }
   }
 
   for (let i = 0; i < minesMonsters.length; i++) {
-    if (!shippingList.some(item => item.id === minesMonsters[i].id)) {
+    if (!shippingList.some((item) => item.id === minesMonsters[i].id)) {
       shippingList.push(minesMonsters[i]);
     }
   }
@@ -976,14 +981,103 @@ function buildShipping(data) {
     fullList: shippingList,
     shippedList: shippingList.filter((e) => e.shipped === true),
     unshippedList: shippingList.filter((e) => e.shipped === false),
-  }
+  };
 }
 
-function compare( a, b ) {
-  if ( a.shipping.order < b.shipping.order ){
+function buildGrandpaEvaluation(data) {
+  let grandpaEvaluation = [];
+  let count = 0;
+
+  for (let i = 0; i < grandpa.length; i++) {
+    const item = grandpa[i];
+
+    if (item.requirement.type === "money") {
+      item.current = data.character.totalMoneyEarned.number;
+    } else if (item.requirement.type === "skills") {
+      item.current =
+        data.character.skills.farming.level +
+        data.character.skills.fishing.level +
+        data.character.skills.foraging.level +
+        data.character.skills.mining.level +
+        data.character.skills.combat.level;
+    } else if (item.requirement.type === "achievement") {
+      const val = data.character.achievements.achievements.find(
+        (e) => e.name === item.requirement.count
+      );
+      item.requirement.count = val.count;
+      item.current = val.current ? val.current : 9999;
+    } else if (item.requirement.type === "married_house") {
+      item.married = data.character.spouse ? true : false;
+      item.current = data.character.farmHouseLevel;
+      item.completed =
+        item.current >= item.requirement.count && item.married === item.requirement.married
+          ? true
+          : false;
+      item.percent = Math.round(item.current * 0.3333 + (item.married ? 0.3333 : 0));
+    } else if (item.requirement.type === "friends") {
+      item.current = 0;
+      for (let h = 0; h < data.townPeople.length; h++) {
+        const friendData = data.townPeople[h];
+        const hearts = friendData.points / 250;
+        item.current += hearts >= item.requirement.hearts ? 1 : 0;
+      }
+    } else if (item.requirement.type === "pet") {
+      item.current = data.character.pet.friendshipLevel / 200;
+    } else if (item.requirement.type === "community_center") {
+      //to-do
+    } else if (item.requirement.type === "community_center_event") {
+      //to-do
+    } else if (item.requirement.type === "skull_key") {
+      item.current = data.minesMonsters.hasSkullKey;
+      item.completed = item.current === item.requirement.count;
+    } else if (item.requirement.type === "rust_key") {
+      item.current = data.character.hasRustyKey;
+      item.completed = item.current === item.requirement.count;
+    }
+
+    if (
+      item.requirement.type !== "married_house" &&
+      item.requirement.type !== "skull_key" &&
+      item.requirement.type !== "rust_key"
+    ) {
+      item.completed = item.current >= item.requirement.count ? true : false;
+      item.percent = percentCalc(item.current, item.requirement.count);
+    }
+
+    grandpaEvaluation.push(item);
+
+    count += item.completed ? item.points : 0;
+  }
+
+  return {
+    fullList: grandpaEvaluation,
+    count: count,
+    candles: {
+      one: {
+        completed: count > candles.one.max ? true : false,
+        active: count > candles.one.min && count < candles.one.max ? true : false,
+      },
+      two: {
+        completed: count > candles.two.max ? true : false,
+        active: count > candles.two.min && count < candles.two.max ? true : false,
+      },
+      three: {
+        completed: count > candles.three.max ? true : false,
+        active: count > candles.three.min && count < candles.three.max ? true : false,
+      },
+      four: {
+        completed: count > candles.four.max ? true : false,
+        active: count > candles.four.min && count < candles.four.max ? true : false,
+      },
+    },
+  };
+}
+
+function compare(a, b) {
+  if (a.shipping.order < b.shipping.order) {
     return -1;
   }
-  if ( a.shipping.order > b.shipping.order ){
+  if (a.shipping.order > b.shipping.order) {
     return 1;
   }
   return 0;
