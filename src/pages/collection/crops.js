@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useRouter } from "next/router";
 import CharacterContext from "@/components/characterContext";
 import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
@@ -8,11 +7,10 @@ import Tabs from "@/components/tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
 import TableView from "@/components/tables/table-view";
 import { cropTabs } from "@/data/collection-tabs";
+import { Tab } from "@headlessui/react";
 
 export default function Crops() {
   const { character } = useContext(CharacterContext);
-  const router = useRouter();
-  const { currentTab } = router.query;
   return (
     <>
       <Base title="Crops" showButtons={true} />
@@ -46,27 +44,22 @@ export default function Crops() {
             </div>
             <div className="border-t border-gray-200">
               {character.crops && (
-                <Tabs
-                  tabs={cropTabs}
-                  currentTab={currentTab}
-                  current="/collection/crops"
-                  collection={character.crops}
-                >
-                  {(!currentTab || currentTab === "All Crops") && (
+                <Tabs tabs={cropTabs} collection={character.crops}>
+                  <Tab.Panel>
                     <TableView collection={character.crops.fullList} type="crops" />
-                  )}
-                  {currentTab === "Shipped" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView collection={character.crops.shippedList} type="crops" />
-                  )}
-                  {currentTab === "Polycultured" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView collection={character.crops.polycultureList} type="crops" />
-                  )}
-                  {currentTab === "To-Be Polycultured" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView collection={character.crops.unpolycultureList} type="crops" />
-                  )}
-                  {currentTab === "To-Be Shipped" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView collection={character.crops.unshippedList} type="crops" />
-                  )}
+                  </Tab.Panel>
                 </Tabs>
               )}
             </div>

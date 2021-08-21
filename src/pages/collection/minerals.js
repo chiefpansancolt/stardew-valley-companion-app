@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useRouter } from "next/router";
 import CharacterContext from "@/components/characterContext";
 import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
@@ -8,13 +7,10 @@ import Tabs from "@/components/tabs";
 import TableView from "@/components/tables/table-view";
 import { mineralTabs, mineralShippingTabs } from "@/data/collection-tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
+import { Tab } from "@headlessui/react";
 
 export default function Minerals() {
   const { character } = useContext(CharacterContext);
-  const router = useRouter();
-  const { currentTab } = router.query;
-  const { secondaryTab } = router.query;
-
   return (
     <>
       <Base title="Minerals" showButtons={true} />
@@ -50,38 +46,33 @@ export default function Minerals() {
             </div>
             <div className="border-t border-gray-200">
               {character.minerals && (
-                <Tabs
-                  tabs={mineralTabs}
-                  currentTab={currentTab}
-                  current="/collection/minerals"
-                  collection={character.minerals}
-                >
-                  {(!currentTab || currentTab === "All Minerals") && (
+                <Tabs tabs={mineralTabs} collection={character.minerals}>
+                  <Tab.Panel>
                     <TableView
                       collection={character.minerals.fullList.filter((e) => e.type !== "Geode")}
                       type="minerals"
                     />
-                  )}
-                  {currentTab === "Found" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView collection={character.minerals.foundList} type="minerals" />
-                  )}
-                  {currentTab === "Donated" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.minerals.foundList.filter((e) => e.donated === true)}
                       type="minerals"
                     />
-                  )}
-                  {currentTab === "To-Be Donated" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.minerals.fullList.filter(
                         (e) => e.type !== "Geode" && e.donated === false
                       )}
                       type="minerals"
                     />
-                  )}
-                  {currentTab === "To-Be Found" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView collection={character.minerals.unfoundList} type="minerals" />
-                  )}
+                  </Tab.Panel>
                 </Tabs>
               )}
             </div>
@@ -114,28 +105,22 @@ export default function Minerals() {
             </div>
             <div className="border-t border-gray-200">
               {character.minerals && (
-                <Tabs
-                  tabs={mineralShippingTabs}
-                  currentTab={secondaryTab}
-                  current="/collection/minerals"
-                  collection={character.minerals.shipping}
-                  subTab={true}
-                >
-                  {(!secondaryTab || secondaryTab === "All Mineral Droppings") && (
+                <Tabs tabs={mineralShippingTabs} collection={character.minerals.shipping}>
+                  <Tab.Panel>
                     <TableView collection={character.minerals.shipping.fullList} type="shipping" />
-                  )}
-                  {secondaryTab === "Shipped" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.minerals.shipping.shippedList}
                       type="shipping"
                     />
-                  )}
-                  {secondaryTab === "To-Be Shipped" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.minerals.shipping.unshippedList}
                       type="shipping"
                     />
-                  )}
+                  </Tab.Panel>
                 </Tabs>
               )}
             </div>

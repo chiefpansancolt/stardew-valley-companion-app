@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useRouter } from "next/router";
 import CharacterContext from "@/components/characterContext";
 import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
@@ -8,11 +7,10 @@ import Tabs from "@/components/tabs";
 import TableView from "@/components/tables/table-view";
 import { animalProductTabs } from "@/data/collection-tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
+import { Tab } from "@headlessui/react";
 
 export default function AnimalProducts() {
   const { character } = useContext(CharacterContext);
-  const router = useRouter();
-  const { currentTab } = router.query;
   return (
     <>
       <Base title="Animal Products" showButtons={true} />
@@ -43,33 +41,28 @@ export default function AnimalProducts() {
             </div>
             <div className="border-t border-gray-200">
               {character.animalProducts && (
-                <Tabs
-                  tabs={animalProductTabs}
-                  currentTab={currentTab}
-                  current="/collection/animal-products"
-                  collection={character.animalProducts}
-                >
-                  {(!currentTab || currentTab === "All Animal Products") && (
+                <Tabs tabs={animalProductTabs} collection={character.animalProducts}>
+                  <Tab.Panel>
                     <TableView
                       collection={character.animalProducts.fullList}
                       type="animalProducts"
                       profession={character.character.skills.farming.profession1}
                     />
-                  )}
-                  {currentTab === "Shipped" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.animalProducts.shippedList}
                       type="animalProducts"
                       profession={character.character.skills.farming.profession1}
                     />
-                  )}
-                  {currentTab === "To-Be Shipped" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.animalProducts.unshippedList}
                       type="animalProducts"
                       profession={character.character.skills.farming.profession1}
                     />
-                  )}
+                  </Tab.Panel>
                 </Tabs>
               )}
             </div>

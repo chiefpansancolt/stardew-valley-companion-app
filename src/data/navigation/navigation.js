@@ -2,7 +2,6 @@ import {
   faFish,
   faMortarPestle,
   faGem,
-  faHamburger,
   faSeedling,
   faTree,
   faHammer,
@@ -10,23 +9,27 @@ import {
   faExclamationCircle,
   faCheese,
   faHorse,
-  faShoppingCart,
-  faStickyNote,
   faShoppingBasket,
   faFeather,
-} from "@fortawesome/free-solid-svg-icons";
-import { CollectionIcon, UserGroupIcon } from "@heroicons/react/outline";
-import { DashboardIcon, UserIcon } from "@iconicicons/react";
+  faClipboardList,
+  faSwords,
+  faUsers,
+  faUser,
+  faHamburger,
+  faArchive,
+  faClone,
+} from "@fortawesome/pro-solid-svg-icons";
+import { DashboardIcon } from "@iconicicons/react";
 
 const navigation = [
   { name: "Overview", href: "/", icon: DashboardIcon, standardIcon: true },
-  { name: "Character", href: "/character", icon: UserIcon, standardIcon: true },
-  { name: "Town People", href: "/town-people", icon: UserGroupIcon, standardIcon: true },
+  { name: "Character", href: "/character", icon: faUser, standardIcon: false },
+  { name: "Town People", href: "/town-people", icon: faUsers, standardIcon: false },
   {
     name: "Collections",
     href: "#",
-    icon: CollectionIcon,
-    standardIcon: true,
+    icon: faClone,
+    standardIcon: false,
     current: false,
     children: [
       { name: "Food", href: "/collection/food", icon: faHamburger, standardIcon: false },
@@ -61,12 +64,17 @@ const navigation = [
       },
     ],
   },
-  { name: "Shipping", href: "/shipping", icon: faShoppingBasket, standardIcon: false },
+  { name: "Shipping", href: "/shipping", icon: faArchive, standardIcon: false },
   { name: "Animals", href: "/animals", icon: faHorse, standardIcon: false },
   { name: "Community Center", href: "/community-center", icon: faBuilding, standardIcon: false },
   { name: "Quests", href: "/quests", icon: faExclamationCircle, standardIcon: false },
-  { name: "Mines & Monsters", href: "/mines-monsters", icon: faShoppingCart, standardIcon: false },
-  { name: "GrandFather Note", href: "/grandfather-note", icon: faStickyNote, standardIcon: false },
+  { name: "Mines & Monsters", href: "/mines-monsters", icon: faSwords, standardIcon: false },
+  {
+    name: "GrandFather Note",
+    href: "/grandfather-note",
+    icon: faClipboardList,
+    standardIcon: false,
+  },
 ];
 
 export default navigation;

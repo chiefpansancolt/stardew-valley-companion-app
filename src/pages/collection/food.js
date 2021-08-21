@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useRouter } from "next/router";
 import CharacterContext from "@/components/characterContext";
 import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
@@ -8,11 +7,10 @@ import Tabs from "@/components/tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
 import TableView from "@/components/tables/table-view";
 import { foodTabs } from "@/data/collection-tabs";
+import { Tab } from "@headlessui/react";
 
 export default function Food() {
   const { character } = useContext(CharacterContext);
-  const router = useRouter();
-  const { currentTab } = router.query;
   return (
     <>
       <Base title="Food" showButtons={true} />
@@ -43,33 +41,28 @@ export default function Food() {
             </div>
             <div className="border-t border-gray-200">
               {character.recipes && (
-                <Tabs
-                  tabs={foodTabs}
-                  currentTab={currentTab}
-                  current="/collection/food"
-                  collection={character.recipes}
-                >
-                  {(!currentTab || currentTab === "All Recipes") && (
+                <Tabs tabs={foodTabs} collection={character.recipes}>
+                  <Tab.Panel>
                     <TableView collection={character.recipes.fullList} type="food" />
-                  )}
-                  {currentTab === "Found" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView collection={character.recipes.foundList} type="food" />
-                  )}
-                  {currentTab === "Cooked" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.recipes.foundList.filter((e) => e.cooked === true)}
                       type="food"
                     />
-                  )}
-                  {currentTab === "To-Be Cooked" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.recipes.fullList.filter((e) => e.cooked === false)}
                       type="food"
                     />
-                  )}
-                  {currentTab === "To-Be Found" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView collection={character.recipes.unfoundList} type="food" />
-                  )}
+                  </Tab.Panel>
                 </Tabs>
               )}
             </div>

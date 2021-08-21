@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useRouter } from "next/router";
 import CharacterContext from "@/components/characterContext";
 import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
@@ -8,11 +7,10 @@ import Tabs from "@/components/tabs";
 import TableView from "@/components/tables/table-view";
 import { forageTabs } from "@/data/collection-tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
+import { Tab } from "@headlessui/react";
 
 export default function Foraging() {
   const { character } = useContext(CharacterContext);
-  const router = useRouter();
-  const { currentTab } = router.query;
   return (
     <>
       <Base title="Foraging" showButtons={true} />
@@ -39,21 +37,16 @@ export default function Foraging() {
             </div>
             <div className="border-t border-gray-200">
               {character.foraging && (
-                <Tabs
-                  tabs={forageTabs}
-                  currentTab={currentTab}
-                  current="/collection/foraging"
-                  collection={character.foraging}
-                >
-                  {(!currentTab || currentTab === "All Foraging") && (
+                <Tabs tabs={forageTabs} collection={character.foraging}>
+                  <Tab.Panel>
                     <TableView collection={character.foraging.fullList} type="foraging" />
-                  )}
-                  {currentTab === "Shipped" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView collection={character.foraging.shippedList} type="foraging" />
-                  )}
-                  {currentTab === "To-Be Shipped" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView collection={character.foraging.unshippedList} type="foraging" />
-                  )}
+                  </Tab.Panel>
                 </Tabs>
               )}
             </div>

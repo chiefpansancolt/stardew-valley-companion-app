@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useRouter } from "next/router";
 import CharacterContext from "@/components/characterContext";
 import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
@@ -9,6 +8,7 @@ import TableView from "@/components/tables/table-view";
 import { fishTabs } from "@/data/collection-tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
 import { Types } from "@/data/game-constants/fish";
+import { Tab } from "@headlessui/react";
 
 function TableDetails({ category, list, index, profession }) {
   return (
@@ -35,8 +35,6 @@ function TableDetails({ category, list, index, profession }) {
 
 export default function Fish() {
   const { character } = useContext(CharacterContext);
-  const router = useRouter();
-  const { currentTab } = router.query;
   const fishingSkill = character.character.skills.fishing;
   const currentProfession =
     fishingSkill.profession1 !== "Fisher" || fishingSkill.profession2 !== "Angler"
@@ -74,13 +72,8 @@ export default function Fish() {
             </div>
             <div className="border-t border-gray-200">
               {character.fishing && (
-                <Tabs
-                  tabs={fishTabs}
-                  currentTab={currentTab}
-                  current="/collection/fish"
-                  collection={character.fishing}
-                >
-                  {(!currentTab || currentTab === "All Fish") && (
+                <Tabs tabs={fishTabs} collection={character.fishing}>
+                  <Tab.Panel>
                     <>
                       {Types.map((category, index) => (
                         <TableDetails
@@ -91,8 +84,8 @@ export default function Fish() {
                         />
                       ))}
                     </>
-                  )}
-                  {currentTab === "Caught" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <>
                       {Types.map((category, index) => (
                         <TableDetails
@@ -103,8 +96,8 @@ export default function Fish() {
                         />
                       ))}
                     </>
-                  )}
-                  {currentTab === "To-Do" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <>
                       {Types.map((category, index) => (
                         <TableDetails
@@ -115,7 +108,7 @@ export default function Fish() {
                         />
                       ))}
                     </>
-                  )}
+                  </Tab.Panel>
                 </Tabs>
               )}
             </div>

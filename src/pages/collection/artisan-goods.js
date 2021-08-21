@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useRouter } from "next/router";
 import CharacterContext from "@/components/characterContext";
 import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
@@ -8,11 +7,10 @@ import Tabs from "@/components/tabs";
 import TableView from "@/components/tables/table-view";
 import { artisanGoodsTabs } from "@/data/collection-tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
+import { Tab } from "@headlessui/react";
 
 export default function ArtisanGoods() {
   const { character } = useContext(CharacterContext);
-  const router = useRouter();
-  const { currentTab } = router.query;
   return (
     <>
       <Base title="Artisan Goods" showButtons={true} />
@@ -41,27 +39,22 @@ export default function ArtisanGoods() {
             </div>
             <div className="border-t border-gray-200">
               {character.artisanGoods && (
-                <Tabs
-                  tabs={artisanGoodsTabs}
-                  currentTab={currentTab}
-                  current="/collection/artisan-goods"
-                  collection={character.artisanGoods}
-                >
-                  {(!currentTab || currentTab === "All Artisan Goods") && (
+                <Tabs tabs={artisanGoodsTabs} collection={character.artisanGoods}>
+                  <Tab.Panel>
                     <TableView collection={character.artisanGoods.fullList} type="artisanGoods" />
-                  )}
-                  {currentTab === "Shipped" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.artisanGoods.shippedList}
                       type="artisanGoods"
                     />
-                  )}
-                  {currentTab === "To-Be Shipped" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.artisanGoods.unshippedList}
                       type="artisanGoods"
                     />
-                  )}
+                  </Tab.Panel>
                 </Tabs>
               )}
             </div>

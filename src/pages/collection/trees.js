@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useRouter } from "next/router";
 import CharacterContext from "@/components/characterContext";
 import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
@@ -8,11 +7,10 @@ import Tabs from "@/components/tabs";
 import TableView from "@/components/tables/table-view";
 import { treesTabs } from "@/data/collection-tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
+import { Tab } from "@headlessui/react";
 
 export default function Trees() {
   const { character } = useContext(CharacterContext);
-  const router = useRouter();
-  const { currentTab } = router.query;
   return (
     <>
       <Base title="Trees" showButtons={true} />
@@ -47,21 +45,16 @@ export default function Trees() {
             </div>
             <div className="border-t border-gray-200">
               {character.trees && (
-                <Tabs
-                  tabs={treesTabs}
-                  currentTab={currentTab}
-                  current="/collection/trees"
-                  collection={character.trees}
-                >
-                  {(!currentTab || currentTab === "All Trees") && (
+                <Tabs tabs={treesTabs} collection={character.trees}>
+                  <Tab.Panel>
                     <TableView collection={character.trees.fullList} type="trees" />
-                  )}
-                  {currentTab === "Shipped" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView collection={character.trees.shippedList} type="trees" />
-                  )}
-                  {currentTab === "To-Be Shipped" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView collection={character.trees.unshippedList} type="trees" />
-                  )}
+                  </Tab.Panel>
                 </Tabs>
               )}
             </div>

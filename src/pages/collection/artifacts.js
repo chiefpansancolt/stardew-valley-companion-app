@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useRouter } from "next/router";
 import CharacterContext from "@/components/characterContext";
 import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
@@ -8,12 +7,10 @@ import Tabs from "@/components/tabs";
 import TableView from "@/components/tables/table-view";
 import { artifactsTabs, artifactShippingTabs } from "@/data/collection-tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
+import { Tab } from "@headlessui/react";
 
 export default function Artifacts() {
   const { character } = useContext(CharacterContext);
-  const router = useRouter();
-  const { currentTab } = router.query;
-  const { secondaryTab } = router.query;
   return (
     <>
       <Base title="Artifacts" showButtons={true} />
@@ -46,33 +43,28 @@ export default function Artifacts() {
             </div>
             <div className="border-t border-gray-200">
               {character.artifacts && (
-                <Tabs
-                  tabs={artifactsTabs}
-                  currentTab={currentTab}
-                  current="/collection/artifacts"
-                  collection={character.artifacts}
-                >
-                  {(!currentTab || currentTab === "All Artifacts") && (
+                <Tabs tabs={artifactsTabs} collection={character.artifacts}>
+                  <Tab.Panel>
                     <TableView collection={character.artifacts.fullList} type="artifacts" />
-                  )}
-                  {currentTab === "Found" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView collection={character.artifacts.foundList} type="artifacts" />
-                  )}
-                  {currentTab === "Donated" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.artifacts.foundList.filter((e) => e.donated === true)}
                       type="artifacts"
                     />
-                  )}
-                  {currentTab === "To-Be Donated" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.artifacts.fullList.filter((e) => e.donated === false)}
                       type="artifacts"
                     />
-                  )}
-                  {currentTab === "To-Be Found" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView collection={character.artifacts.unfoundList} type="artifacts" />
-                  )}
+                  </Tab.Panel>
                 </Tabs>
               )}
             </div>
@@ -87,28 +79,22 @@ export default function Artifacts() {
             </div>
             <div className="border-t border-gray-200">
               {character.artifacts && (
-                <Tabs
-                  tabs={artifactShippingTabs}
-                  currentTab={secondaryTab}
-                  current="/collection/artifacts"
-                  collection={character.artifacts.shipping}
-                  subTab={true}
-                >
-                  {(!secondaryTab || secondaryTab === "All Artifact Droppings") && (
+                <Tabs tabs={artifactShippingTabs} collection={character.artifacts.shipping}>
+                  <Tab.Panel>
                     <TableView collection={character.artifacts.shipping.fullList} type="shipping" />
-                  )}
-                  {secondaryTab === "Shipped" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.artifacts.shipping.shippedList}
                       type="shipping"
                     />
-                  )}
-                  {secondaryTab === "To-Be Shipped" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.artifacts.shipping.unshippedList}
                       type="shipping"
                     />
-                  )}
+                  </Tab.Panel>
                 </Tabs>
               )}
             </div>

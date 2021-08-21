@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useRouter } from "next/router";
 import CharacterContext from "@/components/characterContext";
 import Base from "@/components/page-headings/base";
 import LayoutContainer from "@/components/layouts/layout-container";
@@ -11,11 +10,10 @@ import { monsterTabs, monsterShippingTabs } from "@/data/collection-tabs";
 import TableView from "@/components/tables/table-view";
 import Badge from "@/components/badges/badge";
 import AchievementStat from "@/components/cards/achievement-stat";
+import { Tab } from "@headlessui/react";
 
 export default function MinesMonsters() {
   const { character } = useContext(CharacterContext);
-  const router = useRouter();
-  const { currentTab } = router.query;
   const theMines = {
     label: "The Mines",
     img: "https://stardewvalleywiki.com/mediawiki/images/8/84/The_Mines_Icon.png",
@@ -46,16 +44,11 @@ export default function MinesMonsters() {
             </div>
             <div className="border-t border-gray-200">
               {character.minesMonsters && (
-                <Tabs
-                  tabs={monsterTabs}
-                  currentTab={currentTab}
-                  current="/mines-monsters"
-                  collection={character.minesMonsters}
-                >
-                  {(!currentTab || currentTab === "All Monsters") && (
+                <Tabs tabs={monsterTabs} collection={character.minesMonsters}>
+                  <Tab.Panel>
                     <TableView collection={character.minesMonsters.monsterList} type="monsters" />
-                  )}
-                  {currentTab === "Eradication Goals" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <>
                       {character.minesMonsters.monsterTypes
                         .filter((e) => e.goal !== "None")
@@ -79,8 +72,8 @@ export default function MinesMonsters() {
                           </div>
                         ))}
                     </>
-                  )}
-                  {currentTab === "No Eradication Goals" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <>
                       {character.minesMonsters.monsterTypes.map((type) => (
                         <>
@@ -98,7 +91,7 @@ export default function MinesMonsters() {
                         </>
                       ))}
                     </>
-                  )}
+                  </Tab.Panel>
                 </Tabs>
               )}
             </div>
@@ -111,30 +104,25 @@ export default function MinesMonsters() {
             </div>
             <div className="border-t border-gray-200">
               {character.minesMonsters && (
-                <Tabs
-                  tabs={monsterShippingTabs}
-                  currentTab={currentTab}
-                  current="/mines-monsters"
-                  collection={character.minesMonsters.shipping}
-                >
-                  {(!currentTab || currentTab === "All Trees") && (
+                <Tabs tabs={monsterShippingTabs} collection={character.minesMonsters.shipping}>
+                  <Tab.Panel>
                     <TableView
                       collection={character.minesMonsters.shipping.fullList}
                       type="shipping"
                     />
-                  )}
-                  {currentTab === "Shipped" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.minesMonsters.shipping.shippedList}
                       type="shipping"
                     />
-                  )}
-                  {currentTab === "To-Be Shipped" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.minesMonsters.shipping.unshippedList}
                       type="shipping"
                     />
-                  )}
+                  </Tab.Panel>
                 </Tabs>
               )}
             </div>

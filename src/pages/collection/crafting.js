@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { useRouter } from "next/router";
 import CharacterContext from "@/components/characterContext";
 import LayoutContainer from "@/components/layouts/layout-container";
 import LayoutMain from "@/components/layouts/layout-main";
@@ -8,11 +7,10 @@ import Tabs from "@/components/tabs";
 import AchievementStat from "@/components/cards/achievement-stat";
 import TableView from "@/components/tables/table-view";
 import { craftingTabs } from "@/data/collection-tabs";
+import { Tab } from "@headlessui/react";
 
 export default function Crafting() {
   const { character } = useContext(CharacterContext);
-  const router = useRouter();
-  const { currentTab } = router.query;
   return (
     <>
       <Base title="Crafting" showButtons={true} />
@@ -42,33 +40,28 @@ export default function Crafting() {
             </div>
             <div className="border-t border-gray-200">
               {character.crafting && (
-                <Tabs
-                  tabs={craftingTabs}
-                  currentTab={currentTab}
-                  current="/collection/crafting"
-                  collection={character.crafting}
-                >
-                  {(!currentTab || currentTab === "All Crafts") && (
+                <Tabs tabs={craftingTabs} collection={character.crafting}>
+                  <Tab.Panel>
                     <TableView collection={character.crafting.fullList} type="crafts" />
-                  )}
-                  {currentTab === "Found" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView collection={character.crafting.foundList} type="crafts" />
-                  )}
-                  {currentTab === "Crafted" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.crafting.foundList.filter((e) => e.crafted === true)}
                       type="crafts"
                     />
-                  )}
-                  {currentTab === "To-Be Crafted" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView
                       collection={character.crafting.foundList.filter((e) => e.crafted === false)}
                       type="crafts"
                     />
-                  )}
-                  {currentTab === "To-Be Found" && (
+                  </Tab.Panel>
+                  <Tab.Panel>
                     <TableView collection={character.crafting.unfoundList} type="crafts" />
-                  )}
+                  </Tab.Panel>
                 </Tabs>
               )}
             </div>
